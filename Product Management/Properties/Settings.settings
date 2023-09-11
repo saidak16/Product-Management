@@ -12,10 +12,10 @@
       <Value Profile="(Default)">Windows</Value>
     </Setting>
     <Setting Name="ID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sa</Value>
+      <Value Profile="(Default)">lip</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sa123</Value>
+      <Value Profile="(Default)">lip123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

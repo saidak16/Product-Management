@@ -20,5 +20,17 @@ namespace Product_Management.BL
             dal.Close();
             return dt;
         }
+
+        public DataTable GetExpDateStore()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+
+            dt = dal.SelectData("PRM_Stock_ExpDate", null);
+            dal.Close();
+            return dt;
+        }
     }
 }

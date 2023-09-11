@@ -47,6 +47,8 @@ namespace Product_Management.DAL
         //Function To Receive Data From DataBase
         public DataTable SelectData(string StoredProceder, SqlParameter[] param)
         {
+            try
+            {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = StoredProceder;
@@ -63,7 +65,13 @@ namespace Product_Management.DAL
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                return dt;            
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }          
         }
 
         //Function To Send Data From DataBase

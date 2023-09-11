@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace Product_Management.PL
 {
-    public partial class FRM_Stock : Form
+    public partial class Frm_Expiry_Date : Form
     {
         CLS_Stock _Stock = new CLS_Stock();
-        
 
-        public FRM_Stock()
+        public Frm_Expiry_Date()
         {
             InitializeComponent();
+
             try
             {
                 DataTable dt = new DataTable();
-                dt = _Stock.GetStockStatuse();
+                dt = _Stock.GetExpDateStore();
 
                 if (dt.Rows.Count > 0)
                 {
@@ -43,11 +43,6 @@ namespace Product_Management.PL
                 MessageBox.Show(ex.Message);
                 return;
             }
-        }
-
-        private void FRM_Stock_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

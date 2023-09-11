@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Product_Management</RootNamespace>
     <AssemblyName>Product Management</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -105,6 +106,18 @@
     </Compile>
     <Compile Include="PL\FRM_CUST_LIST.Designer.cs">
       <DependentUpon>FRM_CUST_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Dashboard.Designer.cs">
+      <DependentUpon>FRM_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Expiry_Date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Expiry_Date.Designer.cs">
+      <DependentUpon>Frm_Expiry_Date.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Login.cs">
       <SubType>Form</SubType>
@@ -227,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CUST_LIST.resx">
       <DependentUpon>FRM_CUST_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Expiry_Date.resx">
+      <DependentUpon>Frm_Expiry_Date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
