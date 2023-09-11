@@ -543,6 +543,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap expiryDate {
+            get {
+                object obj = ResourceManager.GetObject("expiryDate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fb5b958f {
             get {
                 object obj = ResourceManager.GetObject("fb5b958f", resourceCulture);

@@ -59,6 +59,22 @@ namespace Product_Management.PL
             {
                 this.toolStripMenuItem1.Visible = false;
             }
+
+            DataTable dt2 = new DataTable();
+            dt2 = _Stock.GetExpDateStore();
+
+            if (dt2.Rows.Count > 0)
+            {
+                this.toolStripMenuItem3.Visible = true;
+                this.toolStripMenuItem3.BackColor = Color.Red;
+                this.toolStripMenuItem3.Text = "تنبيه التوالف : " + dt2.Rows.Count.ToString();
+                SystemSounds.Asterisk.Play();
+
+            }
+            else
+            {
+                this.toolStripMenuItem3.Visible = false;
+            }
         }
 
         private void الخروجToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,6 +179,11 @@ namespace Product_Management.PL
         {
             FRM_Stock stock = new FRM_Stock();
             stock.ShowDialog();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
