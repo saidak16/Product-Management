@@ -1,4 +1,5 @@
 ﻿using Product_Management.BL;
+using Product_Management.RPT;
 using System;
 using System.Data;
 using System.Drawing;
@@ -42,7 +43,8 @@ namespace Product_Management.PL
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
             this.الخروجToolStripMenuItem.Enabled = false;
-            
+            this.الموردينToolStripMenuItem.Enabled = false;
+
 
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();
@@ -83,6 +85,7 @@ namespace Product_Management.PL
             this.المنتجاتToolStripMenuItem.Enabled = false;
             this.المبيعاتToolStripMenuItem.Enabled = false;
             this.العملاءToolStripMenuItem.Enabled = false;
+            this.الموردينToolStripMenuItem.Enabled = false;
             this.toolStripMenuItem1.Enabled = false;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
@@ -199,6 +202,12 @@ namespace Product_Management.PL
         {
             FRM_Suppliers fRM_Suppliers = new FRM_Suppliers();
             fRM_Suppliers.ShowDialog();
+        }
+
+        private void عنالبرنامجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_About frm = new FRM_About();
+            frm.ShowDialog(this);
         }
     }
 }

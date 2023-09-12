@@ -42,6 +42,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.الموردينToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = true;

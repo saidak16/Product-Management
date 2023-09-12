@@ -195,6 +195,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PL\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPT\FRM_Single_Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PL\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\FRM_Single_Product.resx">
       <DependentUpon>FRM_Single_Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -756,6 +765,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\expiryDate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO-8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

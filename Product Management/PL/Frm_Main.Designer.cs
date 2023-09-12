@@ -36,6 +36,9 @@
             this.استعادةنسخةمحفوظةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اعداداتالاتصالبالسيرفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافةموردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الموردينToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.المنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمنتججديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.إدارةالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +56,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.الموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.اضافةموردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الموردينToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,8 @@
             this.المستخدمينToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.عنالبرنامجToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1226, 27);
@@ -131,6 +133,32 @@
             this.الخروجToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.الخروجToolStripMenuItem.Text = "تسجيل الخروج";
             this.الخروجToolStripMenuItem.Click += new System.EventHandler(this.الخروجToolStripMenuItem_Click);
+            // 
+            // الموردينToolStripMenuItem
+            // 
+            this.الموردينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اضافةموردToolStripMenuItem,
+            this.الموردينToolStripMenuItem1});
+            this.الموردينToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325492_User;
+            this.الموردينToolStripMenuItem.Name = "الموردينToolStripMenuItem";
+            this.الموردينToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
+            this.الموردينToolStripMenuItem.Text = "الموردين";
+            // 
+            // اضافةموردToolStripMenuItem
+            // 
+            this.اضافةموردToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Add_Male_User_icon;
+            this.اضافةموردToolStripMenuItem.Name = "اضافةموردToolStripMenuItem";
+            this.اضافةموردToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اضافةموردToolStripMenuItem.Text = "اضافة مورد";
+            this.اضافةموردToolStripMenuItem.Click += new System.EventHandler(this.اضافةموردToolStripMenuItem_Click);
+            // 
+            // الموردينToolStripMenuItem1
+            // 
+            this.الموردينToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue1;
+            this.الموردينToolStripMenuItem1.Name = "الموردينToolStripMenuItem1";
+            this.الموردينToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.الموردينToolStripMenuItem1.Text = "الموردين";
+            this.الموردينToolStripMenuItem1.Click += new System.EventHandler(this.الموردينToolStripMenuItem1_Click);
             // 
             // المنتجاتToolStripMenuItem
             // 
@@ -276,31 +304,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // الموردينToolStripMenuItem
+            // عنالبرنامجToolStripMenuItem
             // 
-            this.الموردينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.اضافةموردToolStripMenuItem,
-            this.الموردينToolStripMenuItem1});
-            this.الموردينToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325492_User;
-            this.الموردينToolStripMenuItem.Name = "الموردينToolStripMenuItem";
-            this.الموردينToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
-            this.الموردينToolStripMenuItem.Text = "الموردين";
-            // 
-            // اضافةموردToolStripMenuItem
-            // 
-            this.اضافةموردToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Add_Male_User_icon;
-            this.اضافةموردToolStripMenuItem.Name = "اضافةموردToolStripMenuItem";
-            this.اضافةموردToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.اضافةموردToolStripMenuItem.Text = "اضافة مورد";
-            this.اضافةموردToolStripMenuItem.Click += new System.EventHandler(this.اضافةموردToolStripMenuItem_Click);
-            // 
-            // الموردينToolStripMenuItem1
-            // 
-            this.الموردينToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue1;
-            this.الموردينToolStripMenuItem1.Name = "الموردينToolStripMenuItem1";
-            this.الموردينToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.الموردينToolStripMenuItem1.Text = "الموردين";
-            this.الموردينToolStripMenuItem1.Click += new System.EventHandler(this.الموردينToolStripMenuItem1_Click);
+            this.عنالبرنامجToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_working_with_a_laptop_64;
+            this.عنالبرنامجToolStripMenuItem.Name = "عنالبرنامجToolStripMenuItem";
+            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(102, 23);
+            this.عنالبرنامجToolStripMenuItem.Text = "عن البرنامج";
+            this.عنالبرنامجToolStripMenuItem.Click += new System.EventHandler(this.عنالبرنامجToolStripMenuItem_Click);
             // 
             // Frm_Main
             // 
@@ -354,8 +364,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةموردToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem عنالبرنامجToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem;
     }
 }

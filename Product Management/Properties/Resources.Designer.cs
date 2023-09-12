@@ -1053,6 +1053,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LOGO_8 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mayosoft_Azullustre_Admin_min {
             get {
                 object obj = ResourceManager.GetObject("Mayosoft-Azullustre-Admin-min", resourceCulture);

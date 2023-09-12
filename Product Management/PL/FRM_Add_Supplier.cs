@@ -90,5 +90,10 @@ namespace Product_Management.PL
             }
 
         }
+
+        private void FRM_Add_Supplier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
