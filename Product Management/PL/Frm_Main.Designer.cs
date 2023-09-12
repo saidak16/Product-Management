@@ -53,6 +53,9 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.الموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافةموردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الموردينToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +65,7 @@
             this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ملفToolStripMenuItem,
+            this.الموردينToolStripMenuItem,
             this.المنتجاتToolStripMenuItem,
             this.العملاءToolStripMenuItem,
             this.المبيعاتToolStripMenuItem,
@@ -182,7 +186,7 @@
             // 
             this.إدارةالعملاءToolStripMenuItem.Image = global::Product_Management.Properties.Resources.fb5b958f;
             this.إدارةالعملاءToolStripMenuItem.Name = "إدارةالعملاءToolStripMenuItem";
-            this.إدارةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.إدارةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.إدارةالعملاءToolStripMenuItem.Text = "إدارة العملاء";
             this.إدارةالعملاءToolStripMenuItem.Click += new System.EventHandler(this.إدارةالعملاءToolStripMenuItem_Click);
             // 
@@ -272,6 +276,32 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // الموردينToolStripMenuItem
+            // 
+            this.الموردينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اضافةموردToolStripMenuItem,
+            this.الموردينToolStripMenuItem1});
+            this.الموردينToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325492_User;
+            this.الموردينToolStripMenuItem.Name = "الموردينToolStripMenuItem";
+            this.الموردينToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
+            this.الموردينToolStripMenuItem.Text = "الموردين";
+            // 
+            // اضافةموردToolStripMenuItem
+            // 
+            this.اضافةموردToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Add_Male_User_icon;
+            this.اضافةموردToolStripMenuItem.Name = "اضافةموردToolStripMenuItem";
+            this.اضافةموردToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اضافةموردToolStripMenuItem.Text = "اضافة مورد";
+            this.اضافةموردToolStripMenuItem.Click += new System.EventHandler(this.اضافةموردToolStripMenuItem_Click);
+            // 
+            // الموردينToolStripMenuItem1
+            // 
+            this.الموردينToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue1;
+            this.الموردينToolStripMenuItem1.Name = "الموردينToolStripMenuItem1";
+            this.الموردينToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.الموردينToolStripMenuItem1.Text = "الموردين";
+            this.الموردينToolStripMenuItem1.Click += new System.EventHandler(this.الموردينToolStripMenuItem1_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,5 +354,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اضافةموردToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem1;
     }
 }

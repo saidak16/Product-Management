@@ -188,5 +188,17 @@ namespace Product_Management.PL
             Frm_Expiry_Date exp = new Frm_Expiry_Date();
             exp.ShowDialog();
         }
+
+        private void اضافةموردToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Add_Supplier sup = new FRM_Add_Supplier();
+            sup.ShowDialog();
+        }
+
+        private void الموردينToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FRM_Suppliers fRM_Suppliers = new FRM_Suppliers();
+            fRM_Suppliers.ShowDialog();
+        }
     }
 }

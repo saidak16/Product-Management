@@ -67,6 +67,12 @@
     <Compile Include="PL\Frm_Add_Product.Designer.cs">
       <DependentUpon>Frm_Add_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Add_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_Supplier.Designer.cs">
+      <DependentUpon>FRM_Add_Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Add_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     <Compile Include="PL\FRM_Stock.Designer.cs">
       <DependentUpon>FRM_Stock.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Suppliers.Designer.cs">
+      <DependentUpon>FRM_Suppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_User_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +233,9 @@
     </Compile>
     <EmbeddedResource Include="PL\Frm_Add_Product.resx">
       <DependentUpon>Frm_Add_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add_Supplier.resx">
+      <DependentUpon>FRM_Add_Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_User.resx">
       <DependentUpon>FRM_Add_User.cs</DependentUpon>
@@ -272,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Stock.resx">
       <DependentUpon>FRM_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Suppliers.resx">
+      <DependentUpon>FRM_Suppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_User_List.resx">
       <DependentUpon>FRM_User_List.cs</DependentUpon>
