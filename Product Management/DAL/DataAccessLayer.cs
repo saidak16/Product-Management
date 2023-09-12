@@ -16,6 +16,7 @@ namespace Product_Management.DAL
         public DataAccessLayer()
         {
             string mode = Properties.Settings.Default.Mode;
+
             if (mode == "Windows")
             {
                 cn = new SqlConnection("Server ="+Properties.Settings.Default.Server +"; DataBase ="+Properties.Settings.Default.Database+"; Integrated Security = true");
@@ -74,7 +75,7 @@ namespace Product_Management.DAL
             }          
         }
 
-        //Function To Send Data From DataBase
+        //Function To Send Data To DataBase
         public void ExCommand(string StP, SqlParameter[] param)
         {
             SqlCommand cmd = new SqlCommand();

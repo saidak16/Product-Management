@@ -42,7 +42,7 @@ namespace Product_Management.PL
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
             this.الخروجToolStripMenuItem.Enabled = false;
-            this.toolStripMenuItem1.Visible = false;
+            
 
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();
@@ -92,6 +92,8 @@ namespace Product_Management.PL
             this.العملاءToolStripMenuItem.Visible = true;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
+            this.toolStripMenuItem1.Visible = false;
+            this.toolStripMenuItem3.Visible = false;
            
             
             Frm_Login frm = new Frm_Login();
@@ -183,7 +185,8 @@ namespace Product_Management.PL
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-
+            Frm_Expiry_Date exp = new Frm_Expiry_Date();
+            exp.ShowDialog();
         }
     }
 }

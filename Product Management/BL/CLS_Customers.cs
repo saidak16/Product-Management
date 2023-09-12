@@ -86,7 +86,6 @@ namespace Product_Management.BL
             dal.Close();
         }
 
-
         public DataTable Search_Customers(string ser)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
@@ -100,6 +99,5 @@ namespace Product_Management.BL
             dal.Close();
             return dt;
         }
-
     }
 }

@@ -57,8 +57,10 @@
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_Products.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
+    <Compile Include="BL\CLS_Suppliers.cs" />
     <Compile Include="BL\CLS_USERS.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="PL\Frm_Add_Product.cs">
       <SubType>Form</SubType>
     </Compile>

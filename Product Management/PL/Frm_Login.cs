@@ -51,6 +51,7 @@ namespace Product_Management.PL
                     Program.SalesMan = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = true;
                     Frm_Main.getMain.اعداداتالاتصالبالسيرفرToolStripMenuItem.Enabled = true;
+
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
                 {
