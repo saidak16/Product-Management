@@ -124,11 +124,18 @@ namespace Product_Management.PL
 
         private void btnPraintAll_Click(object sender, EventArgs e)
         {
-            RPT.rpt_all_cat cat = new RPT.rpt_all_cat();
-            RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
-            cat.Refresh();
-            frm.crystalReportViewer1.ReportSource = cat;
-            frm.ShowDialog();
+            try
+            {
+                RPT.rpt_all_cat cat = new RPT.rpt_all_cat();
+                RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
+                cat.Refresh();
+                frm.crystalReportViewer1.ReportSource = cat;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void btnPrintCurrent_Click(object sender, EventArgs e)

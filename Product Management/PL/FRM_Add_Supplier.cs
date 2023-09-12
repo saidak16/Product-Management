@@ -66,18 +66,17 @@ namespace Product_Management.PL
             {
                 Supplier sup = new Supplier()
                 {
-                    Id = 0,
+                    Id = Convert.ToInt32(txtID.Text),
                     Name = txtName.Text,
                     CompanyName = txtCompany.Text,
                     Email = txtEmail.Text,
                     Phone = txtPhone.Text
                 };
 
-                var isValid = supplier.AddSupplier(sup);
+                var isValid = supplier.UpdateSupplier(sup);
 
                 if (isValid)
                 {
-
                     MessageBox.Show("تم التحديث بنجاح", "عملية التحديث", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtName.Focus();
                 }
@@ -89,6 +88,7 @@ namespace Product_Management.PL
 
             }
 
+            FRM_Suppliers.getMain.dataGridView1.DataSource = supplier.GetAllSuppliers();
         }
 
         private void FRM_Add_Supplier_Load(object sender, EventArgs e)

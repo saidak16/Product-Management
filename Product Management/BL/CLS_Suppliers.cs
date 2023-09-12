@@ -52,6 +52,27 @@ namespace Product_Management.BL
                 throw ex;
             }
         }
+         public DataTable GetSupplierByName(string name)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("name", SqlDbType.NVarChar, 50);
+                param[0].Value = name;
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSupplierByName", param);
+                dal.Close();
+                
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool AddSupplier(Supplier supplier)
         {

@@ -40,11 +40,13 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label3);
@@ -161,6 +163,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(105, 8);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(75, 29);
+            this.txtID.TabIndex = 15;
+            this.txtID.Visible = false;
+            // 
             // FRM_Add_Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,14 +199,15 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtCompany;
+        public System.Windows.Forms.TextBox txtPhone;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtID;
     }
 }
