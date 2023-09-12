@@ -202,7 +202,7 @@
             this.groupBox2.Size = new System.Drawing.Size(526, 232);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "بيانات الموظف";
+            this.groupBox2.Text = "بيانات العميل";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnCUS
@@ -277,9 +277,9 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(429, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 19);
+            this.label10.Size = new System.Drawing.Size(77, 19);
             this.label10.TabIndex = 5;
-            this.label10.Text = "معرف الموظف";
+            this.label10.Text = "معرف العميل";
             // 
             // label9
             // 

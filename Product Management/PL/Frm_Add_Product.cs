@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Product_Management.BL;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -9,14 +10,20 @@ namespace Product_Management.PL
     public partial class Frm_Add_Product : Form
     {
         public string Flag = "Add";
-        BL.CLS_Products cat = new BL.CLS_Products();
+        CLS_Products cat = new CLS_Products();
+        CLS_Suppliers supplier = new CLS_Suppliers();
 
         public Frm_Add_Product()
         {
             InitializeComponent();
+
             cmb_Cat.DataSource = cat.Get_Cat();
             cmb_Cat.DisplayMember = "Description_CAT";
             cmb_Cat.ValueMember = "ID_CAT";
+
+            cmb_supplier.DataSource = supplier.GetAllSuppliers();
+            cmb_supplier.DisplayMember = "Name";
+            cmb_supplier.ValueMember = "ID";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,7 +53,7 @@ namespace Product_Management.PL
 
                 byte[] img = ms.ToArray();
 
-                cat.Add_Product(txtID.Text, Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue));
+                cat.Add_Product(Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue),Convert.ToInt32(cmb_supplier.SelectedValue),dtp_ExpDate.Value);
 
                 MessageBox.Show("تمت الاضافة بنجاح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtID.Clear();
@@ -66,7 +73,7 @@ namespace Product_Management.PL
 
                 byte[] img = ms.ToArray();
 
-                cat.Update_Product(txtID.Text, Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue));
+                cat.Update_Product(Convert.ToInt32(txtID.Text), Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue),Convert.ToInt32(cmb_supplier.SelectedValue),dtp_ExpDate.Value);
 
                 MessageBox.Show("تم التحديث بنجاح", "عملية التحديث", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtID.Focus();
