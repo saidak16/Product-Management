@@ -53,6 +53,7 @@ namespace Product_Management.PL
                     Program.SalesMan = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = true;
                     Frm_Main.getMain.اعداداتالاتصالبالسيرفرToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.الاعداداتToolStripMenuItem.Enabled = true;
 
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
@@ -66,6 +67,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Visible = false;
+                    Frm_Main.getMain.الاعداداتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.pictureBox1.Visible = true;
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;
@@ -79,6 +81,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = false;
+                    Frm_Main.getMain.الاعداداتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.pictureBox1.Visible = true;
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;
@@ -92,6 +95,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = false;
+                    Frm_Main.getMain.الاعداداتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.pictureBox1.Visible = true;
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;

@@ -44,7 +44,7 @@ namespace Product_Management.PL
             this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
             this.الخروجToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
-
+            this.الاعداداتToolStripMenuItem.Enabled = false;
 
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();
@@ -87,6 +87,7 @@ namespace Product_Management.PL
             this.العملاءToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
             this.toolStripMenuItem1.Enabled = false;
+            this.الاعداداتToolStripMenuItem.Enabled = false;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
             this.المستخدمينToolStripMenuItem.Visible = true;

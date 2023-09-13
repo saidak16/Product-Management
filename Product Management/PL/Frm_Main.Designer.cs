@@ -179,19 +179,20 @@
             this.المشترياتToolStripMenuItem.Name = "المشترياتToolStripMenuItem";
             this.المشترياتToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
             this.المشترياتToolStripMenuItem.Text = "المشتريات";
+            this.المشترياتToolStripMenuItem.Visible = false;
             // 
             // اضافةعمليةشراءToolStripMenuItem
             // 
             this.اضافةعمليةشراءToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_add_24;
             this.اضافةعمليةشراءToolStripMenuItem.Name = "اضافةعمليةشراءToolStripMenuItem";
-            this.اضافةعمليةشراءToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.اضافةعمليةشراءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.اضافةعمليةشراءToolStripMenuItem.Text = "اضافة عملية شراء";
             // 
             // ادارةالمشترياتToolStripMenuItem
             // 
             this.ادارةالمشترياتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_shopping_bag_501;
             this.ادارةالمشترياتToolStripMenuItem.Name = "ادارةالمشترياتToolStripMenuItem";
-            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.ادارةالمشترياتToolStripMenuItem.Text = "ادارة المشتريات";
             // 
             // المنتجاتToolStripMenuItem
@@ -291,7 +292,7 @@
             // 
             this.تنبيهالمخزونToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Mayosoft_Azullustre_Admin_min;
             this.تنبيهالمخزونToolStripMenuItem.Name = "تنبيهالمخزونToolStripMenuItem";
-            this.تنبيهالمخزونToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.تنبيهالمخزونToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.تنبيهالمخزونToolStripMenuItem.Text = "تنبيهات النظام";
             this.تنبيهالمخزونToolStripMenuItem.Click += new System.EventHandler(this.تنبيهالمخزونToolStripMenuItem_Click);
             // 
@@ -449,7 +450,7 @@
         private System.Windows.Forms.ToolStripMenuItem المشترياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةعمليةشراءToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ادارةالمشترياتToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الاعداداتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تنبيهالمخزونToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem الاعداداتToolStripMenuItem;
     }
 }
