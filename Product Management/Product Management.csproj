@@ -56,6 +56,7 @@
     <Compile Include="BL\ClS_Login.cs" />
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_Products.cs" />
+    <Compile Include="BL\CLS_Setting.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
     <Compile Include="BL\CLS_Suppliers.cs" />
     <Compile Include="BL\CLS_USERS.cs" />
@@ -187,6 +188,12 @@
     <Compile Include="PL\FRM_Suppliers.Designer.cs">
       <DependentUpon>FRM_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_System_Alerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_System_Alerts.Designer.cs">
+      <DependentUpon>FRM_System_Alerts.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_User_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Suppliers.resx">
       <DependentUpon>FRM_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_System_Alerts.resx">
+      <DependentUpon>FRM_System_Alerts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_User_List.resx">
       <DependentUpon>FRM_User_List.cs</DependentUpon>

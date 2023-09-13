@@ -29,6 +29,9 @@ namespace Product_Management.PL
                     this.dgvStock.DataSource = dt;
                     this.dgvStock.Columns[1].DefaultCellStyle.ForeColor = Color.Red;
                     this.dgvStock.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    this.dgvStock.Columns[4].DefaultCellStyle.ForeColor = Color.Red;
+                    this.dgvStock.Columns[4].DefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold);
+                    this.dgvStock.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     var myBoldFont = new Font("Tahoma", 9.75F, FontStyle.Bold);
                     this.dgvStock.Columns[1].DefaultCellStyle.Font = myBoldFont;
                 }

@@ -86,7 +86,7 @@
             this.groupBox1.Size = new System.Drawing.Size(493, 275);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "بيانات الموظف";
+            this.groupBox1.Text = "بيانات العميل";
             // 
             // label7
             // 
@@ -241,9 +241,9 @@
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.btnNew);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 281);
+            this.groupBox2.Location = new System.Drawing.Point(3, 281);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(481, 79);
+            this.groupBox2.Size = new System.Drawing.Size(490, 79);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات المتاحة";
@@ -326,7 +326,7 @@
             this.groupBox3.Size = new System.Drawing.Size(562, 363);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "لائحة الموظفين";
+            this.groupBox3.Text = "لائحة العملاء";
             // 
             // dataGridView1
             // 
@@ -380,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 404);
+            this.ClientSize = new System.Drawing.Size(1064, 368);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -392,7 +392,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "إدارة الموظفين";
+            this.Text = "إدارة العملاء";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

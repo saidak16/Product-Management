@@ -101,5 +101,25 @@ namespace Product_Management.RPT
             }
         }
         #endregion
+
+        private void labelVersion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelProductName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCopyright_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCompanyName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

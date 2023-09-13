@@ -39,6 +39,7 @@ namespace Product_Management.PL
             {
                 if (dt.Rows[0][2].ToString() == "Admin")
                 {
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Enabled = true;

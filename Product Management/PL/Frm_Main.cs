@@ -209,5 +209,16 @@ namespace Product_Management.PL
             FRM_About frm = new FRM_About();
             frm.ShowDialog(this);
         }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void تنبيهالمخزونToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_System_Alerts frm = new FRM_System_Alerts();
+            frm.ShowDialog();
+        }
     }
 }
