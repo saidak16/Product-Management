@@ -22,8 +22,8 @@ namespace Product_Management.PL
             cmb_Cat.ValueMember = "ID_CAT";
 
             cmb_supplier.DataSource = supplier.GetAllSuppliers();
-            cmb_supplier.DisplayMember = "Name";
-            cmb_supplier.ValueMember = "ID";
+            cmb_supplier.DisplayMember = "اسم المورد";
+            cmb_supplier.ValueMember = "المعرف";
         }
 
         private void button1_Click(object sender, EventArgs e)
