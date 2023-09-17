@@ -31,6 +31,29 @@ namespace Product_Management.BL
             }
         }
 
+        public DataTable GetAllSuppliers(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("name", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSupplierByName", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable GetSupplier(int id)
         {
             try

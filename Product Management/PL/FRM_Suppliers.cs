@@ -87,5 +87,15 @@ namespace Product_Management.PL
         {
             dataGridView1.DataSource = supplier.GetAllSuppliers();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = supplier.GetAllSuppliers(txtID.Text);
+        }
     }
 }

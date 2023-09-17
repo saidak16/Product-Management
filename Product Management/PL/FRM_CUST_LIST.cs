@@ -26,5 +26,12 @@ namespace Product_Management.PL
         {
             this.Close();
         }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = cust.Search_Customers(txtID.Text);
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+        }
     }
 }

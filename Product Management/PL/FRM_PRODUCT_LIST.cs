@@ -23,5 +23,10 @@ namespace Product_Management.PL
         {
             this.Close();
         }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = prd.Search_Pro(txtID.Text);
+        }
     }
 }

@@ -221,5 +221,10 @@ namespace Product_Management.PL
             FRM_System_Alerts frm = new FRM_System_Alerts();
             frm.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

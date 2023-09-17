@@ -282,6 +282,11 @@ namespace Product_Management.PL
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
+            RPT.Orders_RPT rep = new RPT.Orders_RPT();
+            rep.SetParameterValue("@ID", Convert.ToInt32(txtOrderID.Text));
+            RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
+            frm.crystalReportViewer1.ReportSource = rep;
+            frm.ShowDialog();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
