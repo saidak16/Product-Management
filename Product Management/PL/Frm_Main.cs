@@ -88,6 +88,8 @@ namespace Product_Management.PL
             this.الموردينToolStripMenuItem.Enabled = false;
             this.toolStripMenuItem1.Enabled = false;
             this.الاعداداتToolStripMenuItem.Enabled = false;
+            this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
+            this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
             this.المستخدمينToolStripMenuItem.Visible = true;

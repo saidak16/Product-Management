@@ -58,10 +58,12 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
                 {
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
+                    Frm_Main.getMain.الموردينToolStripMenuItem.Visible = true;
+                    Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
+                    Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = true;
                     Frm_Main.getMain.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Visible = false;
@@ -75,8 +77,10 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Storekeeper")
                 {
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.الموردينToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = false;
@@ -89,8 +93,10 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Sales Officer")
                 {
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = false;
+                    Frm_Main.getMain.الموردينToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Visible = false;
