@@ -228,5 +228,10 @@ namespace Product_Management.PL
         {
 
         }
+
+        private void المشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
