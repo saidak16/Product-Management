@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,91 @@ namespace Product_Management.BL
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public DataTable GetSuppliersReceivables()
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSuppliersReceivables", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
+        public DataTable SearchSuppliersReceivables(string search)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("SearchSuppliersReceivables", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+        public DataTable GetSuppliersReceivablesById(int Id)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
+                param[0].Value = Id;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSuppliersReceivablesById", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
             }
         }
 

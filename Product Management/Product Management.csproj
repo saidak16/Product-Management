@@ -251,6 +251,18 @@
     <Compile Include="PL\FRM_Suppliers.Designer.cs">
       <DependentUpon>FRM_Suppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_SuppliersReceivables_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SuppliersReceivables_Details.Designer.cs">
+      <DependentUpon>FRM_SuppliersReceivables_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Suppliers_Receivables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Suppliers_Receivables.Designer.cs">
+      <DependentUpon>FRM_Suppliers_Receivables.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_System_Alerts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +390,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Suppliers.resx">
       <DependentUpon>FRM_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SuppliersReceivables_Details.resx">
+      <DependentUpon>FRM_SuppliersReceivables_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Suppliers_Receivables.resx">
+      <DependentUpon>FRM_Suppliers_Receivables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_System_Alerts.resx">
       <DependentUpon>FRM_System_Alerts.cs</DependentUpon>

@@ -38,6 +38,7 @@ namespace Product_Management.BL
                 return null;
             }
         }
+        
 
         public DataTable GetPurchasesById(int id)
         {

@@ -245,5 +245,11 @@ namespace Product_Management.PL
             FRM_Purchases frm = new FRM_Purchases();
             frm.ShowDialog();
         }
+
+        private void مستحقاتالموردينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Suppliers_Receivables frm = new FRM_Suppliers_Receivables();
+            frm.ShowDialog();
+        }
     }
 }
