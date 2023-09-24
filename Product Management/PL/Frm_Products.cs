@@ -90,6 +90,7 @@ namespace Product_Management.PL
             frm.txtQnt.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             frm.txtPrice.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
             frm.cmb_Cat.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            frm.dtp_ExpDate.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
             frm.Text = "تحديث المنتج :" + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             frm.btnAdd.Text = "تحديث";
             frm.Flag = "Update";

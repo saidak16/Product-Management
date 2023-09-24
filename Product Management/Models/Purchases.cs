@@ -20,7 +20,7 @@ namespace Product_Management.Models
 		public long PaidAmount { get; set; }
 		public long RemainingAmount { get; set; }
 		public int PaymentMethodId { get; set; }
-		public string InvoiceNumber { get; set; }
+		public int InvoiceNumber { get; set; }
 		public int BatchNumber { get; set; }
 	}
 }

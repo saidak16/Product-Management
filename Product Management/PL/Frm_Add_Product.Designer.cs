@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Add_Product));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtp_ExpDate = new System.Windows.Forms.DateTimePicker();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.cmb_supplier = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -45,10 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cmb_supplier = new System.Windows.Forms.ComboBox();
-            this.lblSupplier = new System.Windows.Forms.Label();
-            this.dtp_ExpDate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,39 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات المنتج";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(281, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "تاريخ الصلاحية:";
+            // 
+            // dtp_ExpDate
+            // 
+            this.dtp_ExpDate.Location = new System.Drawing.Point(41, 64);
+            this.dtp_ExpDate.Name = "dtp_ExpDate";
+            this.dtp_ExpDate.Size = new System.Drawing.Size(228, 20);
+            this.dtp_ExpDate.TabIndex = 14;
+            // 
+            // lblSupplier
+            // 
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(300, 110);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(38, 13);
+            this.lblSupplier.TabIndex = 13;
+            this.lblSupplier.Text = "المورد:";
+            // 
+            // cmb_supplier
+            // 
+            this.cmb_supplier.FormattingEnabled = true;
+            this.cmb_supplier.Location = new System.Drawing.Point(43, 100);
+            this.cmb_supplier.Name = "cmb_supplier";
+            this.cmb_supplier.Size = new System.Drawing.Size(226, 21);
+            this.cmb_supplier.TabIndex = 12;
             // 
             // button1
             // 
@@ -225,39 +258,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // cmb_supplier
-            // 
-            this.cmb_supplier.FormattingEnabled = true;
-            this.cmb_supplier.Location = new System.Drawing.Point(43, 100);
-            this.cmb_supplier.Name = "cmb_supplier";
-            this.cmb_supplier.Size = new System.Drawing.Size(226, 21);
-            this.cmb_supplier.TabIndex = 12;
-            // 
-            // lblSupplier
-            // 
-            this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(300, 110);
-            this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(38, 13);
-            this.lblSupplier.TabIndex = 13;
-            this.lblSupplier.Text = "المورد:";
-            // 
-            // dtp_ExpDate
-            // 
-            this.dtp_ExpDate.Location = new System.Drawing.Point(41, 64);
-            this.dtp_ExpDate.Name = "dtp_ExpDate";
-            this.dtp_ExpDate.Size = new System.Drawing.Size(228, 20);
-            this.dtp_ExpDate.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(281, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "تاريخ الصلاحية:";
-            // 
             // Frm_Add_Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,7 +300,7 @@
         public System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblSupplier;
         public System.Windows.Forms.ComboBox cmb_supplier;
-        private System.Windows.Forms.DateTimePicker dtp_ExpDate;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.DateTimePicker dtp_ExpDate;
     }
 }

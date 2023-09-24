@@ -239,5 +239,11 @@ namespace Product_Management.PL
             FRM_Add_Purchases frm = new FRM_Add_Purchases();
             frm.ShowDialog();
         }
+
+        private void ادارةالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Purchases frm = new FRM_Purchases();
+            frm.ShowDialog();
+        }
     }
 }

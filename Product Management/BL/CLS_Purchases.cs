@@ -75,7 +75,7 @@ namespace Product_Management.BL
                 DataAccessLayer dal = new DataAccessLayer();
                 SqlParameter[] param = new SqlParameter[1];
 
-                param[0] = new SqlParameter("id", SqlDbType.NVarChar, 50);
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
                 param[0].Value = search;
 
                 dal.Open();

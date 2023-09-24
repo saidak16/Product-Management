@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\CLS_Customers.cs" />
+    <Compile Include="BL\CLS_Helper.cs" />
     <Compile Include="BL\ClS_Login.cs" />
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_Products.cs" />
@@ -225,6 +226,12 @@
     </Compile>
     <Compile Include="PL\FRM_PRODUCT_LIST.Designer.cs">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Purchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Purchases.Designer.cs">
+      <DependentUpon>FRM_Purchases.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_RESTORE.cs">
       <SubType>Form</SubType>
@@ -359,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_PRODUCT_LIST.resx">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Purchases.resx">
+      <DependentUpon>FRM_Purchases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_RESTORE.resx">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
