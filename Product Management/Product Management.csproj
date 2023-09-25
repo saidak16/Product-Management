@@ -104,6 +104,7 @@
     <Compile Include="BL\ClS_Login.cs" />
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_Products.cs" />
+    <Compile Include="BL\CLS_Proforma_Invoice.cs" />
     <Compile Include="BL\CLS_Purchases.cs" />
     <Compile Include="BL\CLS_Reporting.cs" />
     <Compile Include="BL\CLS_Setting.cs" />
@@ -233,6 +234,12 @@
     </Compile>
     <Compile Include="PL\FRM_PRODUCT_LIST.Designer.cs">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Proforma_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Proforma_Invoice.Designer.cs">
+      <DependentUpon>FRM_Proforma_Invoice.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Purchases.cs">
       <SubType>Form</SubType>
@@ -394,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_PRODUCT_LIST.resx">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Proforma_Invoice.resx">
+      <DependentUpon>FRM_Proforma_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Purchases.resx">
       <DependentUpon>FRM_Purchases.cs</DependentUpon>
