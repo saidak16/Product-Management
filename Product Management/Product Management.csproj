@@ -105,6 +105,7 @@
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_Products.cs" />
     <Compile Include="BL\CLS_Purchases.cs" />
+    <Compile Include="BL\CLS_Reporting.cs" />
     <Compile Include="BL\CLS_Setting.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
     <Compile Include="BL\CLS_Suppliers.cs" />
@@ -215,6 +216,12 @@
     <Compile Include="PL\Frm_Preview.Designer.cs">
       <DependentUpon>Frm_Preview.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Price_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Price_List.Designer.cs">
+      <DependentUpon>FRM_Price_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +326,12 @@
       <DependentUpon>rpt_all_pro.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_Price_List.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Price_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_single_cal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -372,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Preview.resx">
       <DependentUpon>Frm_Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Price_List.resx">
+      <DependentUpon>FRM_Price_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Products.resx">
       <DependentUpon>Frm_Products.cs</DependentUpon>
@@ -438,6 +454,10 @@
     <EmbeddedResource Include="RPT\rpt_all_pro.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_all_pro.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_Price_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Price_List.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_single_cal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

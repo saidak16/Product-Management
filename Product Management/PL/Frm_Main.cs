@@ -251,5 +251,11 @@ namespace Product_Management.PL
             FRM_Suppliers_Receivables frm = new FRM_Suppliers_Receivables();
             frm.ShowDialog();
         }
+
+        private void قائمةالاسعارToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Price_List frm = new FRM_Price_List();
+            frm.ShowDialog();
+        }
     }
 }
