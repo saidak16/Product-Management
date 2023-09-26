@@ -21,6 +21,31 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public bool DeleteOrderDetails(int id, int purchaseId)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+                dal.Open();
+
+                param[0] = new SqlParameter("@ID", SqlDbType.Int);
+                param[0].Value = id;
+
+                param[1] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+                param[1].Value = purchaseId;
+
+                dal.ExCommand("DeleteOrderDetails", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public void Add_Order(int id,DateTime Order_Date,int Cust_ID,string des,string SalesMan)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
@@ -47,10 +72,10 @@ namespace Product_Management.BL
         }
 
 
-        public void Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total)
+        public void Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total, int PaidAmount, int RemainingAmount, int PurchaseId)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[7];
+            SqlParameter[] param = new SqlParameter[10];
             dal.Open();
 
             param[0] = new SqlParameter("@ID_Product", SqlDbType.NVarChar , 30);
@@ -73,6 +98,15 @@ namespace Product_Management.BL
 
             param[6] = new SqlParameter("@total", SqlDbType.NVarChar, 50);
             param[6].Value = total;
+            
+            param[7] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+            param[7].Value = PaidAmount;
+            
+            param[8] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+            param[8].Value = RemainingAmount;
+            
+            param[9] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+            param[9].Value = PurchaseId;
 
             dal.ExCommand("Order_Det", param);
             dal.Close();

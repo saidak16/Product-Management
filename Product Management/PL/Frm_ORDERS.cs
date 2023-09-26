@@ -36,12 +36,15 @@ namespace Product_Management.PL
 
         void CreateColumns()
         {
+            dt.Columns.Add("المعرف");
             dt.Columns.Add("رقم المنتج");
             dt.Columns.Add("اسم المنتج");
             dt.Columns.Add("الثمن");
             dt.Columns.Add("الكمية");
             dt.Columns.Add("المبلغ");
             dt.Columns.Add("الخصم (%)");
+            dt.Columns.Add("المبلغ المدفوع");
+            dt.Columns.Add("المبلغ المتبقي");
             dt.Columns.Add("المبلغ الاجمالي");
 
             dataGridView1.DataSource = dt;
@@ -57,6 +60,9 @@ namespace Product_Management.PL
                 this.dataGridView1.Columns[4].Width = 87;
                 this.dataGridView1.Columns[5].Width = 80;
                 this.dataGridView1.Columns[6].Width = 134;
+                this.dataGridView1.Columns[7].Width = 80;
+                this.dataGridView1.Columns[8].Width = 80;
+                this.dataGridView1.Columns[9].Width = 134;
         }
 
         void clearBoxes()
@@ -115,9 +121,10 @@ namespace Product_Management.PL
         {
             FRM_PRODUCT_LIST frm = new FRM_PRODUCT_LIST();
             frm.ShowDialog();
-            txtIDpro.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtPROName.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtPROPrice.Text = frm.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtId.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtIDpro.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtPROName.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtPROPrice.Text = frm.dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtPROQNT.Focus();
         }
 
@@ -189,25 +196,29 @@ namespace Product_Management.PL
                 }
                 DataRow r = dt.NewRow();
 
-                r[0] = txtIDpro.Text;
-                r[1] = txtPROName.Text;
-                r[2] = txtPROPrice.Text;
-                r[3] = txtPROQNT.Text;
-                r[4] = txtPROAmount.Text;
-                r[5] = txtPRODES.Text;
-                r[6] = txtPROTotal.Text;
+                r[0] = txtId.Text;
+                r[1] = txtIDpro.Text;
+                r[2] = txtPROName.Text;
+                r[3] = txtPROPrice.Text;
+                r[4] = txtPROQNT.Text;
+                r[5] = txtPROAmount.Text;
+                r[6] = txtPRODES.Text;
+                r[7] = txtPaidAmount.Text;
+                r[8] = txtRemainingAmount.Text;
+                r[9] = txtPROTotal.Text;
+
                 dt.Rows.Add(r);
                 dataGridView1.DataSource = dt;
                 clearBoxes();
 
-                txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[6].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[6].FormattedValue)).Sum().ToString();
+                txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[9].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[9].FormattedValue)).Sum().ToString();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-            txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[6].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[6].FormattedValue)).Sum().ToString();
+            txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[9].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[9].FormattedValue)).Sum().ToString();
         }
 
         private void txtSumTotal_TextChanged(object sender, EventArgs e)
@@ -223,12 +234,13 @@ namespace Product_Management.PL
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             txtIDpro.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtPROName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtPROPrice.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtPROQNT.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtPROAmount.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtPRODES.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            txtPROTotal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            txtPROName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtPROPrice.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtPROQNT.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtPROAmount.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtPRODES.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+            txtPROTotal.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
             txtPROQNT.Focus();
            
@@ -267,13 +279,16 @@ namespace Product_Management.PL
             
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
-                order.Order_Det(dataGridView1.Rows[i].Cells[0].Value.ToString(),
+                order.Order_Det(dataGridView1.Rows[i].Cells[1].Value.ToString(),
                                 Convert.ToInt32(txtOrderID.Text),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value),
-                                dataGridView1.Rows[i].Cells[2].Value.ToString(),
-                                Convert.ToDouble(dataGridView1.Rows[i].Cells[5].Value),
-                                dataGridView1.Rows[i].Cells[4].Value.ToString(),
-                                dataGridView1.Rows[i].Cells[6].Value.ToString());
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value),
+                                dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                                Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value),
+                                dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                                dataGridView1.Rows[i].Cells[9].Value.ToString(),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value.ToString()),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value.ToString()),
+                                Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()));
             }
             
             MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -296,6 +311,28 @@ namespace Product_Management.PL
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPaidAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtPaidAmount_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtPaidAmount.Text) || !string.IsNullOrWhiteSpace(txtPaidAmount.Text))
+            {
+                txtRemainingAmount.Text = (Convert.ToInt32(txtPROTotal.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
+            }
+            else
+            {
+                txtRemainingAmount.Text = "0";
+            }
         }
     }
 }

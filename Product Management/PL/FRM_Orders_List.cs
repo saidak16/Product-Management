@@ -16,7 +16,7 @@ namespace Product_Management.PL
         public FRM_Orders_List()
         {
             InitializeComponent();
-            dataGridView1.DataSource = order.Order_Del("");
+            DGV();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -36,6 +36,33 @@ namespace Product_Management.PL
             RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
             frm.crystalReportViewer1.ReportSource = rep;
             frm.ShowDialog();
+        }
+
+        public void DGV()
+        {
+            dataGridView1.DataSource = order.Order_Del("");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("هل تريد استرجاع العنصر المحدد ؟؟", "عملية قيد عكسي", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                var isValid = order.DeleteOrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+
+                if (isValid)
+                {
+                    MessageBox.Show("تمت العملية بنجاح", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DGV();
+                }
+                else
+                {
+                    MessageBox.Show("تم إلغاء العملية", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
