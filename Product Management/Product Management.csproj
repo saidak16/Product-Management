@@ -371,6 +371,12 @@
       <DependentUpon>rpt_single_cal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_Suppliers_Receivables.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Suppliers_Receivables.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="PL\FRM_Add_Expensess.resx">
       <DependentUpon>FRM_Add_Expensess.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,6 +517,10 @@
     <EmbeddedResource Include="RPT\rpt_single_cal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_single_cal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_Suppliers_Receivables.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Suppliers_Receivables.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Product Management_TemporaryKey.pfx" />

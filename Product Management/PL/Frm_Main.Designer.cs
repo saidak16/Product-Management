@@ -73,6 +73,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.مستحقاتالموردينToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.مطلوباتالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.الموقفالماليToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -400,7 +405,12 @@
             // التقاريرToolStripMenuItem
             // 
             this.التقاريرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.قائمةالاسعارToolStripMenuItem});
+            this.قائمةالاسعارToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.مستحقاتالموردينToolStripMenuItem1,
+            this.مطلوباتالعملاءToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.الموقفالماليToolStripMenuItem});
             this.التقاريرToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Column_Chart_icon;
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
             this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
@@ -410,7 +420,7 @@
             // 
             this.قائمةالاسعارToolStripMenuItem.Image = global::Product_Management.Properties.Resources.money_icon;
             this.قائمةالاسعارToolStripMenuItem.Name = "قائمةالاسعارToolStripMenuItem";
-            this.قائمةالاسعارToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.قائمةالاسعارToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.قائمةالاسعارToolStripMenuItem.Text = "قائمة الاسعار";
             this.قائمةالاسعارToolStripMenuItem.Click += new System.EventHandler(this.قائمةالاسعارToolStripMenuItem_Click);
             // 
@@ -478,6 +488,38 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // مستحقاتالموردينToolStripMenuItem1
+            // 
+            this.مستحقاتالموردينToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.dollar_icon;
+            this.مستحقاتالموردينToolStripMenuItem1.Name = "مستحقاتالموردينToolStripMenuItem1";
+            this.مستحقاتالموردينToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.مستحقاتالموردينToolStripMenuItem1.Text = "مستحقات الموردين";
+            this.مستحقاتالموردينToolStripMenuItem1.Click += new System.EventHandler(this.مستحقاتالموردينToolStripMenuItem1_Click);
+            // 
+            // مطلوباتالعملاءToolStripMenuItem
+            // 
+            this.مطلوباتالعملاءToolStripMenuItem.Image = global::Product_Management.Properties.Resources.dollar_icon;
+            this.مطلوباتالعملاءToolStripMenuItem.Name = "مطلوباتالعملاءToolStripMenuItem";
+            this.مطلوباتالعملاءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.مطلوباتالعملاءToolStripMenuItem.Text = "مطلوبات العملاء";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // الموقفالماليToolStripMenuItem
+            // 
+            this.الموقفالماليToolStripMenuItem.Image = global::Product_Management.Properties.Resources.money_icon;
+            this.الموقفالماليToolStripMenuItem.Name = "الموقفالماليToolStripMenuItem";
+            this.الموقفالماليToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.الموقفالماليToolStripMenuItem.Text = "الموقف المالي";
             // 
             // Frm_Main
             // 
@@ -554,5 +596,10 @@
         private System.Windows.Forms.ToolStripMenuItem استخراجفاتورةمبدئيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem استخراجفاتورةمبدئيةToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ادارةالفواتيرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem مستحقاتالموردينToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem مطلوباتالعملاءToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem الموقفالماليToolStripMenuItem;
     }
 }

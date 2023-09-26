@@ -281,5 +281,13 @@ namespace Product_Management.PL
             FRM_Expensess frm = new FRM_Expensess();
             frm.ShowDialog();
         }
+
+        private void مستحقاتالموردينToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rpt_Suppliers_Receivables myrpt = new rpt_Suppliers_Receivables();
+            FRM_Single_Product myfrm = new FRM_Single_Product();
+            myfrm.crystalReportViewer1.ReportSource = myrpt;
+            myfrm.ShowDialog();
+        }
     }
 }
