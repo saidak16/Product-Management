@@ -12,10 +12,34 @@ namespace Product_Management.PL
 {
     public partial class FRM_Orders_List : Form
     {
+        private static FRM_Orders_List frm;
+
+        static void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frm = null;
+        }
+
+        public static FRM_Orders_List getMain
+        {
+            get
+            {
+                if (frm == null)
+                {
+                    frm = new FRM_Orders_List();
+                    frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                }
+                return frm;
+
+            }
+        }
+
+
         BL.CLS_ORDERS order = new BL.CLS_ORDERS();
         public FRM_Orders_List()
         {
             InitializeComponent();
+            if (frm == null)
+                frm = this;
             DGV();
         }
 
@@ -63,6 +87,24 @@ namespace Product_Management.PL
             {
                 MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[12].Value.ToString()) == 0)
+            {
+                MessageBox.Show("هذا الععنصر ليس لديه استحقاقات", " استحقاق العميل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            FRM_UpdateCustomersLiabilities frm = new FRM_UpdateCustomersLiabilities();
+
+            frm.txtId.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            frm.txtTotal.Text = this.dataGridView1.CurrentRow.Cells[13].Value.ToString();
+            frm.txtPaid.Text = this.dataGridView1.CurrentRow.Cells[11].Value.ToString();
+            frm.txtRemain.Text = this.dataGridView1.CurrentRow.Cells[12].Value.ToString();
+
+            frm.ShowDialog();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Product_Management.DAL;
 
 namespace Product_Management.BL
 {
@@ -142,6 +143,52 @@ namespace Product_Management.BL
             DataTable dt = new DataTable();
             dt = dal.SelectData("Det_Order", param);
             return dt;
+        }
+
+        public bool UpdateCustomersLiabilities(int id, int AmountPaid)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+
+                param[0] = new SqlParameter("@ID", SqlDbType.Int);
+                param[0].Value = id;
+                
+                param[1] = new SqlParameter("@AmountPaid", SqlDbType.Int);
+                param[1].Value = AmountPaid;
+
+                dal.Open();
+                dal.ExCommand("UpdateCustomersLiabilities", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        
+        public DataTable CustomersLiabilitiesById(int id)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@ID", SqlDbType.Int);
+                param[0].Value = id;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("CustomersLiabilitiesById", param);
+                
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public void Order_RPT(int id)
