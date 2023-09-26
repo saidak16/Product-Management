@@ -263,5 +263,11 @@ namespace Product_Management.PL
             FRM_Proforma_Invoice frm = new FRM_Proforma_Invoice();
             frm.ShowDialog();
         }
+
+        private void ادارةالفواتيرToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ProformaInvoice_List frm = new FRM_ProformaInvoice_List();
+            frm.ShowDialog();
+        }
     }
 }

@@ -350,6 +350,7 @@
             this.ادارةالفواتيرToolStripMenuItem.Name = "ادارةالفواتيرToolStripMenuItem";
             this.ادارةالفواتيرToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.ادارةالفواتيرToolStripMenuItem.Text = "ادارة الفواتير";
+            this.ادارةالفواتيرToolStripMenuItem.Click += new System.EventHandler(this.ادارةالفواتيرToolStripMenuItem_Click);
             // 
             // الاعداداتToolStripMenuItem
             // 

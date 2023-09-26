@@ -235,6 +235,12 @@
     <Compile Include="PL\FRM_PRODUCT_LIST.Designer.cs">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_ProformaInvoice_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ProformaInvoice_List.Designer.cs">
+      <DependentUpon>FRM_ProformaInvoice_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Proforma_Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Orders_RPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\ProformaInvoice_RPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProformaInvoice_RPT.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\rpd_prd_single.cs">
@@ -402,6 +414,9 @@
     <EmbeddedResource Include="PL\FRM_PRODUCT_LIST.resx">
       <DependentUpon>FRM_PRODUCT_LIST.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ProformaInvoice_List.resx">
+      <DependentUpon>FRM_ProformaInvoice_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Proforma_Invoice.resx">
       <DependentUpon>FRM_Proforma_Invoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +467,10 @@
     <EmbeddedResource Include="RPT\Orders_RPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Orders_RPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\ProformaInvoice_RPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProformaInvoice_RPT.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpd_prd_single.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

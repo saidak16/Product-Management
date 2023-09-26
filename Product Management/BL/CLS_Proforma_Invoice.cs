@@ -113,6 +113,31 @@ namespace Product_Management.BL
             }
         }
 
+        public DataTable Proforma_Invoice_Del(string cir)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@Cir", SqlDbType.NVarChar, 50);
+            param[0].Value = cir;
+
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("Proforma_Invoice_Del", param);
+            return dt;
+        }
+
+        public void Proforma_Invoice_RPT(int id)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            dal.Open();
+
+            param[0] = new SqlParameter("@ID", SqlDbType.Int);
+            param[0].Value = id;
+
+            dal.ExCommand("Proforma_Invoice_RPT", param);
+            dal.Close();
+        }
 
     }
 }
