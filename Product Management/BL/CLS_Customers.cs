@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Product_Management.DAL;
 
 namespace Product_Management.BL
 {
@@ -98,6 +99,39 @@ namespace Product_Management.BL
             dt = dal.SelectData("Serch", param);
             dal.Close();
             return dt;
+        }
+
+        public DataTable SearchCustomersLiabilities(string ser)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@seach", SqlDbType.NVarChar, 50);
+            param[0].Value = ser;
+            dal.Open();
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("SearchCustomersLiabilities", param);
+            dal.Close();
+            return dt;
+        }
+
+        public DataTable GetCustomersLiabilities()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomersLiabilities", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

@@ -289,5 +289,13 @@ namespace Product_Management.PL
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
         }
+
+        private void مطلوباتالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rpt_CustomersLiabilities myrpt = new rpt_CustomersLiabilities();
+            FRM_Single_Product myfrm = new FRM_Single_Product();
+            myfrm.crystalReportViewer1.ReportSource = myrpt;
+            myfrm.ShowDialog();
+        }
     }
 }

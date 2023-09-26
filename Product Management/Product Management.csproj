@@ -177,6 +177,12 @@
     <Compile Include="PL\Frm_Customers.Designer.cs">
       <DependentUpon>Frm_Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Customers_Liabilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Customers_Liabilities.Designer.cs">
+      <DependentUpon>FRM_Customers_Liabilities.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_CUST_LIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,12 @@
       <DependentUpon>rpt_all_pro.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_CustomersLiabilities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_CustomersLiabilities.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_Price_List.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -406,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Customers.resx">
       <DependentUpon>Frm_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Customers_Liabilities.resx">
+      <DependentUpon>FRM_Customers_Liabilities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CUST_LIST.resx">
       <DependentUpon>FRM_CUST_LIST.cs</DependentUpon>
@@ -509,6 +524,10 @@
     <EmbeddedResource Include="RPT\rpt_all_pro.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_all_pro.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_CustomersLiabilities.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_CustomersLiabilities.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_Price_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
