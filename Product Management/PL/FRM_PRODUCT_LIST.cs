@@ -16,7 +16,7 @@ namespace Product_Management.PL
         public FRM_PRODUCT_LIST()
         {
             InitializeComponent();
-            this.dataGridView1.DataSource = prd.Get_Pro();
+            this.dataGridView1.DataSource = prd.GetProductsList();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace Product_Management.PL
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = prd.Search_Pro(txtID.Text);
+            this.dataGridView1.DataSource = prd.Search_Product(txtID.Text);
         }
     }
 }

@@ -110,6 +110,17 @@ namespace Product_Management.BL
             dal.Close();
             return dt;
         }
+        
+        public DataTable GetProductsList()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("GetProductsList", null);
+            dal.Close();
+            return dt;
+        }
 
         public DataTable Search_Pro(string id)
         {
@@ -121,6 +132,20 @@ namespace Product_Management.BL
             dal.Open();
             DataTable dt = new DataTable();
             dt = dal.SelectData("Search_Prod", param);
+            dal.Close();
+            return dt;
+        }
+
+         public DataTable Search_Product(string id)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("ID", SqlDbType.NVarChar, 50);
+            param[0].Value = id;
+            dal.Open();
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("Search_Product", param);
             dal.Close();
             return dt;
         }

@@ -262,7 +262,9 @@ namespace Product_Management.PL
                 MessageBox.Show("بعض المعلومات الناقصة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+           
             order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text);
+            
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 order.Order_Det(dataGridView1.Rows[i].Cells[0].Value.ToString(),
@@ -273,6 +275,7 @@ namespace Product_Management.PL
                                 dataGridView1.Rows[i].Cells[4].Value.ToString(),
                                 dataGridView1.Rows[i].Cells[6].Value.ToString());
             }
+            
             MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btn_New.Enabled = true;
             btn_Save.Enabled = false;
