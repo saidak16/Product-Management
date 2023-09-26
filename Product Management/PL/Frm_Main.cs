@@ -269,5 +269,17 @@ namespace Product_Management.PL
             FRM_ProformaInvoice_List frm = new FRM_ProformaInvoice_List();
             frm.ShowDialog();
         }
+
+        private void اضافةمنصرفجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Add_Expensess frm = new FRM_Add_Expensess();
+            frm.ShowDialog();
+        }
+
+        private void ادارةالمنصرفاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Expensess frm = new FRM_Expensess();
+            frm.ShowDialog();
+        }
     }
 }

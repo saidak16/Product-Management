@@ -233,6 +233,7 @@
             this.اضافةمنصرفجديدToolStripMenuItem.Name = "اضافةمنصرفجديدToolStripMenuItem";
             this.اضافةمنصرفجديدToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
             this.اضافةمنصرفجديدToolStripMenuItem.Text = "اضافة منصرف جديد";
+            this.اضافةمنصرفجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمنصرفجديدToolStripMenuItem_Click);
             // 
             // ادارةالمنصرفاتToolStripMenuItem
             // 
@@ -240,6 +241,7 @@
             this.ادارةالمنصرفاتToolStripMenuItem.Name = "ادارةالمنصرفاتToolStripMenuItem";
             this.ادارةالمنصرفاتToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
             this.ادارةالمنصرفاتToolStripMenuItem.Text = "ادارة المنصرفات";
+            this.ادارةالمنصرفاتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمنصرفاتToolStripMenuItem_Click);
             // 
             // المنتجاتToolStripMenuItem
             // 
