@@ -1,4 +1,5 @@
 ﻿using Product_Management.BL;
+using Product_Management.RPT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,9 +104,9 @@ namespace Product_Management.PL
         {
             FRM_PRODUCT_LIST frm = new FRM_PRODUCT_LIST();
             frm.ShowDialog();
-            txtIDpro.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtPROName.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtPROPrice.Text = frm.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtIDpro.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtPROName.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtPROPrice.Text = frm.dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtPROQNT.Focus();
         }
 
@@ -250,6 +251,15 @@ namespace Product_Management.PL
             btn_Print.Enabled = true;
             btn_Print.Focus();
             return;
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            ProformaInvoice_RPT rep = new ProformaInvoice_RPT();
+            rep.SetParameterValue("@ID", Convert.ToInt32(txtOrderID.Text));
+            FRM_Single_Product frm = new FRM_Single_Product();
+            frm.crystalReportViewer1.ReportSource = rep;
+            frm.ShowDialog();
         }
     }
 }

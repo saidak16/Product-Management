@@ -310,8 +310,9 @@
             // 
             this.مطلوباتالعملاءToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.dollar_icon;
             this.مطلوباتالعملاءToolStripMenuItem1.Name = "مطلوباتالعملاءToolStripMenuItem1";
-            this.مطلوباتالعملاءToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
+            this.مطلوباتالعملاءToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.مطلوباتالعملاءToolStripMenuItem1.Text = "مطلوبات العملاء";
+            this.مطلوباتالعملاءToolStripMenuItem1.Click += new System.EventHandler(this.مطلوباتالعملاءToolStripMenuItem1_Click);
             // 
             // المبيعاتToolStripMenuItem
             // 

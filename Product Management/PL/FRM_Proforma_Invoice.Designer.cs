@@ -616,6 +616,7 @@
             this.btn_Print.Text = "طباعة الفاتورة";
             this.btn_Print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // btn_Save
             // 

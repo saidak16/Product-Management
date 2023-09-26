@@ -36,6 +36,7 @@ namespace Product_Management.PL
         {
             rpt_CustomersLiabilities myrpt = new rpt_CustomersLiabilities();
             FRM_Single_Product myfrm = new FRM_Single_Product();
+            myrpt.Refresh();
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
         }

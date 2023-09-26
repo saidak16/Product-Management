@@ -286,6 +286,7 @@ namespace Product_Management.PL
         {
             rpt_Suppliers_Receivables myrpt = new rpt_Suppliers_Receivables();
             FRM_Single_Product myfrm = new FRM_Single_Product();
+            myrpt.Refresh();
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
         }
@@ -294,8 +295,15 @@ namespace Product_Management.PL
         {
             rpt_CustomersLiabilities myrpt = new rpt_CustomersLiabilities();
             FRM_Single_Product myfrm = new FRM_Single_Product();
+            myrpt.Refresh();
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
+        }
+
+        private void مطلوباتالعملاءToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FRM_Customers_Liabilities frm = new FRM_Customers_Liabilities();
+            frm.ShowDialog();
         }
     }
 }
