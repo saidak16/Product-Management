@@ -105,8 +105,11 @@ namespace Product_Management.PL
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
             this.toolStripMenuItem1.Visible = false;
             this.toolStripMenuItem3.Visible = false;
-           
-            
+            this.المشترياتToolStripMenuItem.Enabled = false;
+            this.التقاريرToolStripMenuItem.Enabled = false;
+            this.المنصرفاتToolStripMenuItem.Enabled = false;
+            this.تسجيلالدخولToolStripMenuItem.Enabled = true;
+
             Frm_Login frm = new Frm_Login();
             frm.ShowDialog();
         }

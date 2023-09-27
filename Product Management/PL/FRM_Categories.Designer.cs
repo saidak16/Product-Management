@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnSavePDF = new System.Windows.Forms.Button();
             this.btnPrintCurrent = new System.Windows.Forms.Button();
             this.btnPraintAll = new System.Windows.Forms.Button();
@@ -234,14 +233,13 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnExit);
-            this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.btnSavePDF);
             this.groupBox2.Controls.Add(this.btnPrintCurrent);
             this.groupBox2.Controls.Add(this.btnPraintAll);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 230);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 120);
+            this.groupBox2.Size = new System.Drawing.Size(543, 85);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات المتاحة";
@@ -251,7 +249,7 @@
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(113, 66);
+            this.btnExit.Location = new System.Drawing.Point(6, 16);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(103, 48);
             this.btnExit.TabIndex = 12;
@@ -260,28 +258,14 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::Product_Management.Properties.Resources.icons8_pdf_262;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(273, 66);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(262, 48);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "حفظ الصنف الحالي بمنتجاته في ملف pdf";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnSavePDF
             // 
             this.btnSavePDF.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavePDF.Image = global::Product_Management.Properties.Resources.icons8_pdf_261;
             this.btnSavePDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSavePDF.Location = new System.Drawing.Point(113, 21);
+            this.btnSavePDF.Location = new System.Drawing.Point(115, 21);
             this.btnSavePDF.Name = "btnSavePDF";
-            this.btnSavePDF.Size = new System.Drawing.Size(214, 39);
+            this.btnSavePDF.Size = new System.Drawing.Size(202, 39);
             this.btnSavePDF.TabIndex = 10;
             this.btnSavePDF.Text = "حفظ اللائحة في ملف pdf";
             this.btnSavePDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -293,7 +277,7 @@
             this.btnPrintCurrent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintCurrent.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_241;
             this.btnPrintCurrent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintCurrent.Location = new System.Drawing.Point(6, 71);
+            this.btnPrintCurrent.Location = new System.Drawing.Point(102, 66);
             this.btnPrintCurrent.Name = "btnPrintCurrent";
             this.btnPrintCurrent.Size = new System.Drawing.Size(107, 39);
             this.btnPrintCurrent.TabIndex = 9;
@@ -308,9 +292,9 @@
             this.btnPraintAll.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPraintAll.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24;
             this.btnPraintAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPraintAll.Location = new System.Drawing.Point(352, 21);
+            this.btnPraintAll.Location = new System.Drawing.Point(323, 21);
             this.btnPraintAll.Name = "btnPraintAll";
-            this.btnPraintAll.Size = new System.Drawing.Size(183, 39);
+            this.btnPraintAll.Size = new System.Drawing.Size(212, 39);
             this.btnPraintAll.TabIndex = 8;
             this.btnPraintAll.Text = "طباعة كل الأصناف";
             this.btnPraintAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -338,12 +322,12 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(3, -32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(534, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(540, 200);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -391,7 +375,6 @@
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSavePDF;
         private System.Windows.Forms.Button btnPrintCurrent;
         private System.Windows.Forms.Button btnPraintAll;
