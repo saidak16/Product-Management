@@ -45,6 +45,11 @@ namespace Product_Management.PL
             this.الخروجToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
             this.الاعداداتToolStripMenuItem.Enabled = false;
+            this.المنصرفاتToolStripMenuItem.Enabled = false;
+            this.المشترياتToolStripMenuItem.Enabled = false;
+            this.التقاريرToolStripMenuItem.Enabled = false;
+            this.toolStripMenuItem1.Enabled = false;
+            this.toolStripMenuItem3.Enabled = false;
 
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();

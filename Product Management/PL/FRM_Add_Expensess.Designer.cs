@@ -164,6 +164,7 @@
             this.lblID.Size = new System.Drawing.Size(35, 13);
             this.lblID.TabIndex = 19;
             this.lblID.Text = "label1";
+            this.lblID.Visible = false;
             // 
             // FRM_Add_Expensess
             // 

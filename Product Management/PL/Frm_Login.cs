@@ -54,6 +54,11 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Visible = true;
                     Frm_Main.getMain.اعداداتالاتصالبالسيرفرToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.الاعداداتToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.المنصرفاتToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.المشترياتToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.التقاريرToolStripMenuItem.Enabled = true;
+                    Frm_Main.getMain.toolStripMenuItem1.Enabled = true;
+                    Frm_Main.getMain.toolStripMenuItem3.Enabled = true;
 
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
