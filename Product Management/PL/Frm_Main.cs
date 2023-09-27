@@ -305,5 +305,11 @@ namespace Product_Management.PL
             FRM_Customers_Liabilities frm = new FRM_Customers_Liabilities();
             frm.ShowDialog();
         }
+
+        private void الموقفالماليToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_FinancialPosition frm = new FRM_FinancialPosition();
+            frm.ShowDialog();
+        }
     }
 }

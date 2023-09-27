@@ -21,9 +21,6 @@ namespace Product_Management.PL
             cmb_Cat.DisplayMember = "Description_CAT";
             cmb_Cat.ValueMember = "ID_CAT";
 
-            cmb_supplier.DataSource = supplier.GetAllSuppliers();
-            cmb_supplier.DisplayMember = "اسم المورد";
-            cmb_supplier.ValueMember = "المعرف";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,12 +50,10 @@ namespace Product_Management.PL
 
                 byte[] img = ms.ToArray();
 
-                cat.Add_Product(Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue),Convert.ToInt32(cmb_supplier.SelectedValue),dtp_ExpDate.Value);
+                cat.Add_Product(txt_Des.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue));
 
                 MessageBox.Show("تمت الاضافة بنجاح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtID.Clear();
-                txtPrice.Clear();
-                txtQnt.Clear();
                 txt_Des.Clear();
                 txtID.Focus();
                 pictureBox1.Image = Product_Management.Properties.Resources.Save_icon;
@@ -73,7 +68,7 @@ namespace Product_Management.PL
 
                 byte[] img = ms.ToArray();
 
-                cat.Update_Product(Convert.ToInt32(txtID.Text), Convert.ToInt32(txtQnt.Text), txt_Des.Text, txtPrice.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue),Convert.ToInt32(cmb_supplier.SelectedValue),dtp_ExpDate.Value);
+                cat.Update_Product(Convert.ToInt32(txtID.Text), txt_Des.Text, img, Convert.ToInt32(cmb_Cat.SelectedValue));
 
                 MessageBox.Show("تم التحديث بنجاح", "عملية التحديث", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtID.Focus();

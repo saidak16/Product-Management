@@ -87,10 +87,7 @@ namespace Product_Management.PL
             Frm_Add_Product frm = new Frm_Add_Product();
             frm.txtID.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             frm.txt_Des.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            frm.txtQnt.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            frm.txtPrice.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            frm.cmb_Cat.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            frm.dtp_ExpDate.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            frm.cmb_Cat.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             frm.Text = "تحديث المنتج :" + this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             frm.btnAdd.Text = "تحديث";
             frm.Flag = "Update";

@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\CLS_Customers.cs" />
+    <Compile Include="BL\CLS_Dashboard.cs" />
     <Compile Include="BL\CLS_Expensess.cs" />
     <Compile Include="BL\CLS_Helper.cs" />
     <Compile Include="BL\ClS_Login.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="BL\FillDropDownList.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Models\Expensess.cs" />
+    <Compile Include="Models\FinancialPosition.cs" />
     <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="PL\FRM_Add_Expensess.cs">
@@ -206,6 +208,12 @@
     </Compile>
     <Compile Include="PL\Frm_Expiry_Date.Designer.cs">
       <DependentUpon>Frm_Expiry_Date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_FinancialPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_FinancialPosition.Designer.cs">
+      <DependentUpon>FRM_FinancialPosition.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Login.cs">
       <SubType>Form</SubType>
@@ -436,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Expiry_Date.resx">
       <DependentUpon>Frm_Expiry_Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_FinancialPosition.resx">
+      <DependentUpon>FRM_FinancialPosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
