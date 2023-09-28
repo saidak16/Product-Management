@@ -40,6 +40,9 @@
             this.اضافةموردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الموردينToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.مستحقاتالموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.مناديبالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافةمندوبجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ادارةالمناديبToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمنتججديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.إدارةالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +92,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ملفToolStripMenuItem,
             this.الموردينToolStripMenuItem,
+            this.مناديبالمبيعاتToolStripMenuItem,
             this.المنتجاتToolStripMenuItem,
             this.المشترياتToolStripMenuItem,
             this.المنصرفاتToolStripMenuItem,
@@ -194,6 +198,32 @@
             this.مستحقاتالموردينToolStripMenuItem.Text = "مستحقات الموردين";
             this.مستحقاتالموردينToolStripMenuItem.Click += new System.EventHandler(this.مستحقاتالموردينToolStripMenuItem_Click);
             // 
+            // مناديبالمبيعاتToolStripMenuItem
+            // 
+            this.مناديبالمبيعاتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اضافةمندوبجديدToolStripMenuItem,
+            this.ادارةالمناديبToolStripMenuItem});
+            this.مناديبالمبيعاتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.images__2_;
+            this.مناديبالمبيعاتToolStripMenuItem.Name = "مناديبالمبيعاتToolStripMenuItem";
+            this.مناديبالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(118, 23);
+            this.مناديبالمبيعاتToolStripMenuItem.Text = "مناديب المبيعات";
+            // 
+            // اضافةمندوبجديدToolStripMenuItem
+            // 
+            this.اضافةمندوبجديدToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325183_contact_new;
+            this.اضافةمندوبجديدToolStripMenuItem.Name = "اضافةمندوبجديدToolStripMenuItem";
+            this.اضافةمندوبجديدToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اضافةمندوبجديدToolStripMenuItem.Text = "اضافة مندوب جديد";
+            this.اضافةمندوبجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمندوبجديدToolStripMenuItem_Click);
+            // 
+            // ادارةالمناديبToolStripMenuItem
+            // 
+            this.ادارةالمناديبToolStripMenuItem.Image = global::Product_Management.Properties.Resources.images__1_;
+            this.ادارةالمناديبToolStripMenuItem.Name = "ادارةالمناديبToolStripMenuItem";
+            this.ادارةالمناديبToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.ادارةالمناديبToolStripMenuItem.Text = "ادارة المناديب";
+            this.ادارةالمناديبToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمناديبToolStripMenuItem_Click);
+            // 
             // المنتجاتToolStripMenuItem
             // 
             this.المنتجاتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -250,7 +280,7 @@
             // 
             this.اضافةعمليةشراءToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_add_24;
             this.اضافةعمليةشراءToolStripMenuItem.Name = "اضافةعمليةشراءToolStripMenuItem";
-            this.اضافةعمليةشراءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اضافةعمليةشراءToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
             this.اضافةعمليةشراءToolStripMenuItem.Text = "اضافة عملية شراء";
             this.اضافةعمليةشراءToolStripMenuItem.Click += new System.EventHandler(this.اضافةعمليةشراءToolStripMenuItem_Click);
             // 
@@ -258,7 +288,7 @@
             // 
             this.ادارةالمشترياتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_shopping_bag_501;
             this.ادارةالمشترياتToolStripMenuItem.Name = "ادارةالمشترياتToolStripMenuItem";
-            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
             this.ادارةالمشترياتToolStripMenuItem.Text = "ادارة المشتريات";
             this.ادارةالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمشترياتToolStripMenuItem_Click);
             // 
@@ -606,5 +636,8 @@
         public System.Windows.Forms.ToolStripMenuItem المشترياتToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem المنصرفاتToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem التقاريرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem مناديبالمبيعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اضافةمندوبجديدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ادارةالمناديبToolStripMenuItem;
     }
 }

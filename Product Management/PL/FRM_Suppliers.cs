@@ -39,7 +39,8 @@ namespace Product_Management.PL
         public FRM_Suppliers()
         {
             InitializeComponent();
-
+            if (frm == null)
+                frm = this;
             dataGridView1.DataSource = supplier.GetAllSuppliers();
         }
 
@@ -71,7 +72,7 @@ namespace Product_Management.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل تريد حذف المورج المحدد ؟؟", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("هل تريد حذف المورد المحدد ؟؟", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 supplier.DeleteSupplier(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 MessageBox.Show("تمت عملية الحذف بنجاح", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

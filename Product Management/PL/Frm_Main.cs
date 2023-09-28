@@ -319,5 +319,17 @@ namespace Product_Management.PL
             FRM_FinancialPosition frm = new FRM_FinancialPosition();
             frm.ShowDialog();
         }
+
+        private void اضافةمندوبجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Add_SalesRepresentative frm = new FRM_Add_SalesRepresentative();
+            frm.ShowDialog();
+        }
+
+        private void ادارةالمناديبToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Sales_Representative frm = new FRM_Sales_Representative();
+            frm.ShowDialog();
+        }
     }
 }

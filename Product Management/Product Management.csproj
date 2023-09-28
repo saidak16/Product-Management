@@ -109,6 +109,7 @@
     <Compile Include="BL\CLS_Proforma_Invoice.cs" />
     <Compile Include="BL\CLS_Purchases.cs" />
     <Compile Include="BL\CLS_Reporting.cs" />
+    <Compile Include="BL\CLS_Sales_Representative.cs" />
     <Compile Include="BL\CLS_Setting.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
     <Compile Include="BL\CLS_Suppliers.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Models\Expensess.cs" />
     <Compile Include="Models\FinancialPosition.cs" />
     <Compile Include="Models\Purchases.cs" />
+    <Compile Include="Models\SalesRepresentative.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="PL\FRM_Add_Expensess.cs">
       <SubType>Form</SubType>
@@ -136,6 +138,12 @@
     </Compile>
     <Compile Include="PL\FRM_Add_Purchases.Designer.cs">
       <DependentUpon>FRM_Add_Purchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Add_SalesRepresentative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_SalesRepresentative.Designer.cs">
+      <DependentUpon>FRM_Add_SalesRepresentative.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Add_Supplier.cs">
       <SubType>Form</SubType>
@@ -287,6 +295,12 @@
     <Compile Include="PL\FRM_RESTORE.Designer.cs">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Sales_Representative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Sales_Representative.Designer.cs">
+      <DependentUpon>FRM_Sales_Representative.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +426,9 @@
     <EmbeddedResource Include="PL\FRM_Add_Purchases.resx">
       <DependentUpon>FRM_Add_Purchases.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add_SalesRepresentative.resx">
+      <DependentUpon>FRM_Add_SalesRepresentative.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_Supplier.resx">
       <DependentUpon>FRM_Add_Supplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_RESTORE.resx">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Sales_Representative.resx">
+      <DependentUpon>FRM_Sales_Representative.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Stock.resx">
       <DependentUpon>FRM_Stock.cs</DependentUpon>
@@ -1020,6 +1040,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\healthcare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
