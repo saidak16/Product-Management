@@ -331,5 +331,11 @@ namespace Product_Management.PL
             FRM_Sales_Representative frm = new FRM_Sales_Representative();
             frm.ShowDialog();
         }
+
+        private void نسبمناديبالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_SalesRepresentativePercentage frm = new FRM_SalesRepresentativePercentage();
+            frm.ShowDialog();
+        }
     }
 }

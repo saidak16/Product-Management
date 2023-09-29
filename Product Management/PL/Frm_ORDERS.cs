@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Product_Management.BL;
+using Product_Management.Models;
 
 namespace Product_Management.PL
 {
     public partial class Frm_ORDERS : Form
     {
         CLS_ORDERS order = new CLS_ORDERS();
+        CLS_Sales_Representative cLS_Sales = new CLS_Sales_Representative();
+        FillDropDownList fill = new FillDropDownList();
         DataTable dt = new DataTable();
 
         void cal()
@@ -67,6 +70,7 @@ namespace Product_Management.PL
 
         void clearBoxes()
         {
+            txtId.Clear();
             txtIDpro.Clear();
             txtPROName.Clear();
             txtPROPrice.Clear();
@@ -74,6 +78,8 @@ namespace Product_Management.PL
             txtPROAmount.Clear();
             txtPRODES.Clear();
             txtPROTotal.Clear();
+            txtPaidAmount.Clear();
+            txtRemainingAmount.Text = "0";
             btnBrows.Focus();
         }
         public Frm_ORDERS()
@@ -82,6 +88,8 @@ namespace Product_Management.PL
             CreateColumns();
             ResizeDGV();
             txtSalesMan.Text = Program.SalesMan;
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -269,34 +277,65 @@ namespace Product_Management.PL
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (txtOrderID.Text == string.Empty || txtOrderDes.Text == string.Empty || txt_CUS_ID.Text == string.Empty || dataGridView1.Rows.Count < 1)
+            try
             {
-                MessageBox.Show("بعض المعلومات الناقصة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (cbSalesRepresentative.Checked && !string.IsNullOrEmpty(txtSaleId.Text))
+                {
+                    CLS_SalesRepresentativePercentage percentage = new CLS_SalesRepresentativePercentage();
+                    double per = Convert.ToDouble(txtPercentage.Text) / 100;
+                    int amoun = Convert.ToInt32(Convert.ToInt32(txtSumTotal.Text) * per);
+
+                    SalesRepresentativePercentage sales = new SalesRepresentativePercentage()
+                    {
+                        Id = 0,
+                        Amount = amoun,
+                        DateOfInvoice = DateTime.Now,
+                        orderId = Convert.ToInt32(txtOrderID.Text),
+                        SalesRepresentativeId = Convert.ToInt32(txtSaleId.Text)
+                    };
+
+                    var isValid = percentage.Add(sales);
+
+                    if (!isValid)
+                    {
+                        MessageBox.Show("يجب اختيار مندوب مبيعات ", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                if (txtOrderID.Text == string.Empty || txtOrderDes.Text == string.Empty || txt_CUS_ID.Text == string.Empty || dataGridView1.Rows.Count < 1)
+                {
+                    MessageBox.Show("بعض المعلومات الناقصة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text);
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    order.Order_Det(dataGridView1.Rows[i].Cells[1].Value.ToString(),
+                                    Convert.ToInt32(txtOrderID.Text),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value),
+                                    dataGridView1.Rows[i].Cells[3].Value.ToString(),
+                                    Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value),
+                                    dataGridView1.Rows[i].Cells[5].Value.ToString(),
+                                    dataGridView1.Rows[i].Cells[9].Value.ToString(),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value.ToString()),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value.ToString()),
+                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()));
+                }
+
+                MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btn_New.Enabled = true;
+                btn_Save.Enabled = false;
+                btn_Print.Enabled = true;
+                btn_Print.Focus();
                 return;
             }
-           
-            order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text);
-            
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            catch (Exception ex)
             {
-                order.Order_Det(dataGridView1.Rows[i].Cells[1].Value.ToString(),
-                                Convert.ToInt32(txtOrderID.Text),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value),
-                                dataGridView1.Rows[i].Cells[3].Value.ToString(),
-                                Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value),
-                                dataGridView1.Rows[i].Cells[5].Value.ToString(),
-                                dataGridView1.Rows[i].Cells[9].Value.ToString(),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value.ToString()),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value.ToString()),
-                                Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()));
+                MessageBox.Show(ex.Message);
             }
-            
-            MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btn_New.Enabled = true;
-            btn_Save.Enabled = false;
-            btn_Print.Enabled = true;
-            btn_Print.Focus();
-            return;
         }
 
         private void btn_Print_Click(object sender, EventArgs e)
@@ -333,6 +372,61 @@ namespace Product_Management.PL
             {
                 txtRemainingAmount.Text = "0";
             }
+        }
+
+        private void cbSalesRepresentative_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSalesRepresentative.Checked)
+            {
+                lblSaleId.Visible = true;
+                txtSaleId.Visible = true;
+                btnSalesList.Enabled = true;
+                txtName.Visible = true;
+                lblAddress.Visible = true;
+                lblPercentage.Visible = true;
+                lblPhone.Visible = true;
+
+                txtAddress.Visible = true;
+                txtPhone.Visible = true;
+                txtPercentage.Visible = true;
+            }
+            else
+            {
+                txtSaleId.Clear();
+                txtName.Clear();
+                txtPhone.Clear();
+                txtAddress.Clear();
+                txtPercentage.Clear();
+
+                lblSaleId.Visible = false;
+                txtSaleId.Visible = false;
+                btnSalesList.Enabled = false;
+                txtName.Visible = false;
+                lblAddress.Visible = false;
+                lblPercentage.Visible = false;
+                lblPhone.Visible = false;
+
+                txtAddress.Visible = false;
+                txtPhone.Visible = false;
+                txtPercentage.Visible = false;
+            }
+        }
+
+        private void cmbSalesRepresentative_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FRM_SalesRepresentative_List frm = new FRM_SalesRepresentative_List();
+            frm.ShowDialog();
+
+            txtSaleId.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtPhone.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtAddress.Text = frm.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtPercentage.Text = frm.dataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

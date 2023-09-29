@@ -22,6 +22,28 @@ namespace Product_Management.BL
             dal.Close();
             return dt;
         }
+
+        public DataTable GetById(int id)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@ID", SqlDbType.NVarChar, 50);
+                param[0].Value = id;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSalesRepresentativeById", null);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         
         public DataTable Search(string search)
         {

@@ -109,6 +109,7 @@
     <Compile Include="BL\CLS_Proforma_Invoice.cs" />
     <Compile Include="BL\CLS_Purchases.cs" />
     <Compile Include="BL\CLS_Reporting.cs" />
+    <Compile Include="BL\CLS_SalesRepresentativePercentage.cs" />
     <Compile Include="BL\CLS_Sales_Representative.cs" />
     <Compile Include="BL\CLS_Setting.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Models\FinancialPosition.cs" />
     <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\SalesRepresentative.cs" />
+    <Compile Include="Models\SalesRepresentativePercentage.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="PL\FRM_Add_Expensess.cs">
       <SubType>Form</SubType>
@@ -294,6 +296,18 @@
     </Compile>
     <Compile Include="PL\FRM_RESTORE.Designer.cs">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_SalesRepresentativePercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SalesRepresentativePercentage.Designer.cs">
+      <DependentUpon>FRM_SalesRepresentativePercentage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_SalesRepresentative_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SalesRepresentative_List.Designer.cs">
+      <DependentUpon>FRM_SalesRepresentative_List.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Sales_Representative.cs">
       <SubType>Form</SubType>
@@ -500,6 +514,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_RESTORE.resx">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SalesRepresentativePercentage.resx">
+      <DependentUpon>FRM_SalesRepresentativePercentage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SalesRepresentative_List.resx">
+      <DependentUpon>FRM_SalesRepresentative_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Sales_Representative.resx">
       <DependentUpon>FRM_Sales_Representative.cs</DependentUpon>
