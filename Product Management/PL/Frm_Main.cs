@@ -48,6 +48,7 @@ namespace Product_Management.PL
             this.المنصرفاتToolStripMenuItem.Enabled = false;
             this.المشترياتToolStripMenuItem.Enabled = false;
             this.التقاريرToolStripMenuItem.Enabled = false;
+            this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
             this.toolStripMenuItem1.Enabled = false;
             this.toolStripMenuItem3.Enabled = false;
 
@@ -108,6 +109,7 @@ namespace Product_Management.PL
             this.المشترياتToolStripMenuItem.Enabled = false;
             this.التقاريرToolStripMenuItem.Enabled = false;
             this.المنصرفاتToolStripMenuItem.Enabled = false;
+            this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
             this.تسجيلالدخولToolStripMenuItem.Enabled = true;
 
             Frm_Login frm = new Frm_Login();

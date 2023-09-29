@@ -18,6 +18,7 @@ namespace Product_Management.PL
         public FRM_SalesRepresentativePercentage()
         {
             InitializeComponent();
+            DGV();
         }
 
         void DGV()
