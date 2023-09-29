@@ -110,6 +110,8 @@ namespace Product_Management.PL
             this.التقاريرToolStripMenuItem.Enabled = false;
             this.المنصرفاتToolStripMenuItem.Enabled = false;
             this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
+            this.lblUser.Visible = false;
+            this.picUser.Visible = false;
             this.تسجيلالدخولToolStripMenuItem.Enabled = true;
 
             Frm_Login frm = new Frm_Login();

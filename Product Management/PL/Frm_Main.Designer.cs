@@ -42,8 +42,8 @@
             this.مستحقاتالموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مناديبالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمندوبجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.نسبمناديبالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ادارةالمناديبToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.نسبمناديبالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمنتججديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.إدارةالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,9 +82,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
+            this.lblUser = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -218,14 +221,6 @@
             this.اضافةمندوبجديدToolStripMenuItem.Text = "اضافة مندوب جديد";
             this.اضافةمندوبجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمندوبجديدToolStripMenuItem_Click);
             // 
-            // نسبمناديبالمبيعاتToolStripMenuItem
-            // 
-            this.نسبمناديبالمبيعاتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.dollar_icon;
-            this.نسبمناديبالمبيعاتToolStripMenuItem.Name = "نسبمناديبالمبيعاتToolStripMenuItem";
-            this.نسبمناديبالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.نسبمناديبالمبيعاتToolStripMenuItem.Text = "نسب مناديب المبيعات";
-            this.نسبمناديبالمبيعاتToolStripMenuItem.Click += new System.EventHandler(this.نسبمناديبالمبيعاتToolStripMenuItem_Click);
-            // 
             // ادارةالمناديبToolStripMenuItem
             // 
             this.ادارةالمناديبToolStripMenuItem.Image = global::Product_Management.Properties.Resources.images__1_;
@@ -233,6 +228,14 @@
             this.ادارةالمناديبToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.ادارةالمناديبToolStripMenuItem.Text = "ادارة المناديب";
             this.ادارةالمناديبToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمناديبToolStripMenuItem_Click);
+            // 
+            // نسبمناديبالمبيعاتToolStripMenuItem
+            // 
+            this.نسبمناديبالمبيعاتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.dollar_icon;
+            this.نسبمناديبالمبيعاتToolStripMenuItem.Name = "نسبمناديبالمبيعاتToolStripMenuItem";
+            this.نسبمناديبالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.نسبمناديبالمبيعاتToolStripMenuItem.Text = "نسب مناديب المبيعات";
+            this.نسبمناديبالمبيعاتToolStripMenuItem.Click += new System.EventHandler(this.نسبمناديبالمبيعاتToolStripMenuItem_Click);
             // 
             // المنتجاتToolStripMenuItem
             // 
@@ -250,7 +253,7 @@
             // 
             this.اضافةمنتججديدToolStripMenuItem.Image = global::Product_Management.Properties.Resources.icons8_product_50;
             this.اضافةمنتججديدToolStripMenuItem.Name = "اضافةمنتججديدToolStripMenuItem";
-            this.اضافةمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.اضافةمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.اضافةمنتججديدToolStripMenuItem.Text = "اضافة منتج جديد";
             this.اضافةمنتججديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمنتججديدToolStripMenuItem_Click);
             // 
@@ -258,20 +261,20 @@
             // 
             this.إدارةالمنتجاتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Column_Chart_icon;
             this.إدارةالمنتجاتToolStripMenuItem.Name = "إدارةالمنتجاتToolStripMenuItem";
-            this.إدارةالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.إدارةالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.إدارةالمنتجاتToolStripMenuItem.Text = "إدارة المنتجات";
             this.إدارةالمنتجاتToolStripMenuItem.Click += new System.EventHandler(this.إدارةالمنتجاتToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
             // 
             // إدارةالأصنافToolStripMenuItem
             // 
             this.إدارةالأصنافToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Mayosoft_Azullustre_Admin_min;
             this.إدارةالأصنافToolStripMenuItem.Name = "إدارةالأصنافToolStripMenuItem";
-            this.إدارةالأصنافToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.إدارةالأصنافToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.إدارةالأصنافToolStripMenuItem.Text = "إدارة الأصناف";
             this.إدارةالأصنافToolStripMenuItem.Click += new System.EventHandler(this.إدارةالأصنافToolStripMenuItem_Click);
             // 
@@ -566,11 +569,39 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // picUser
+            // 
+            this.picUser.Image = ((System.Drawing.Image)(resources.GetObject("picUser.Image")));
+            this.picUser.Location = new System.Drawing.Point(1331, 0);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(41, 27);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUser.TabIndex = 10;
+            this.picUser.TabStop = false;
+            this.picUser.Visible = false;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUser.Location = new System.Drawing.Point(1372, 8);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(39, 16);
+            this.lblUser.TabIndex = 9;
+            this.lblUser.Text = "RooT";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUser.Visible = false;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1476, 557);
+            this.Controls.Add(this.picUser);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -590,6 +621,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,5 +682,7 @@
         private System.Windows.Forms.ToolStripMenuItem ادارةالمناديبToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem نسبمناديبالمبيعاتToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem مناديبالمبيعاتToolStripMenuItem;
+        public System.Windows.Forms.PictureBox picUser;
+        public System.Windows.Forms.Label lblUser;
     }
 }

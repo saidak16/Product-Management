@@ -57,9 +57,12 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المنصرفاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المشترياتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.التقاريرToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
+                    Frm_Main.getMain.مناديبالمبيعاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.toolStripMenuItem1.Enabled = true;
                     Frm_Main.getMain.toolStripMenuItem3.Enabled = true;
+                    Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Visible = true;
+                    Frm_Main.getMain.picUser.Visible = true;
 
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
@@ -80,6 +83,9 @@ namespace Product_Management.PL
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;
                     Program.SalesMan = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Visible = true;
+                    Frm_Main.getMain.picUser.Visible = true;
                 }
                 else if (dt.Rows[0][2].ToString() == "Storekeeper")
                 {
@@ -96,6 +102,9 @@ namespace Product_Management.PL
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;
                     Program.SalesMan = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Visible = true;
+                    Frm_Main.getMain.picUser.Visible = true;
                 }
                 else if (dt.Rows[0][2].ToString() == "Sales Officer")
                 {
@@ -112,6 +121,9 @@ namespace Product_Management.PL
                     Frm_Main.getMain.تسجيلالدخولToolStripMenuItem.Enabled = false;
                     Frm_Main.getMain.الخروجToolStripMenuItem.Enabled = true;
                     Program.SalesMan = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
+                    Frm_Main.getMain.lblUser.Visible = true;
+                    Frm_Main.getMain.picUser.Visible = true;
                 }
                 this.Close();
             }
