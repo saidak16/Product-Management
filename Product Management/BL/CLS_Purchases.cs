@@ -39,7 +39,6 @@ namespace Product_Management.BL
             }
         }
         
-
         public DataTable GetPurchasesById(int id)
         {
             try
@@ -53,6 +52,64 @@ namespace Product_Management.BL
                 dal.Open();
                 DataTable dt = new DataTable();
                 dt = dal.SelectData("GetPurchasesById", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+         
+        public DataTable GetPurchaseOrderById(int id)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
+                param[0].Value = id;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurchaseOrderById", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+        
+        public DataTable GetPurchaseDetails(int id)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
+                param[0].Value = id;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurchaseDetails", param);
                 dal.Close();
 
                 return dt;
@@ -294,6 +351,35 @@ namespace Product_Management.BL
             }
         }
 
+
+        public bool DeletePurchasDetails(int id)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("id", SqlDbType.Int);
+                param[0].Value = id;
+
+                dal.Open();
+                dal.ExCommand("DeletePurchasDetails", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return false;
+            }
+        }
+
         public bool UpdatePurchases(Purchases purchases)
         {
             try
@@ -339,6 +425,35 @@ namespace Product_Management.BL
                 string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
                 File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return false;
+            }
+        }
+
+        public bool UpdateSupplierReceivables(int Id, int PaidAmount, int RemainingAmount)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[3];
+
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
+                param[0].Value = Id;
+                
+                param[1] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+                param[1].Value = PaidAmount;
+                
+                param[2] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+                param[2].Value = RemainingAmount;
+
+
+                dal.Open();
+                dal.ExCommand("UpdateSupplierReceivables", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
                 return false;
             }
         }

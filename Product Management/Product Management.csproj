@@ -292,6 +292,12 @@
     <Compile Include="PL\FRM_Proforma_Invoice.Designer.cs">
       <DependentUpon>FRM_Proforma_Invoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_PurchaseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_PurchaseDetails.Designer.cs">
+      <DependentUpon>FRM_PurchaseDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Purchases.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,12 @@
     </Compile>
     <Compile Include="PL\FRM_UpdateCustomersLiabilities.Designer.cs">
       <DependentUpon>FRM_UpdateCustomersLiabilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Update_SupplierReceivables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Update_SupplierReceivables.Designer.cs">
+      <DependentUpon>FRM_Update_SupplierReceivables.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_User_List.cs">
       <SubType>Form</SubType>
@@ -525,6 +537,9 @@
     <EmbeddedResource Include="PL\FRM_Proforma_Invoice.resx">
       <DependentUpon>FRM_Proforma_Invoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_PurchaseDetails.resx">
+      <DependentUpon>FRM_PurchaseDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Purchases.resx">
       <DependentUpon>FRM_Purchases.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_UpdateCustomersLiabilities.resx">
       <DependentUpon>FRM_UpdateCustomersLiabilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Update_SupplierReceivables.resx">
+      <DependentUpon>FRM_Update_SupplierReceivables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_User_List.resx">
       <DependentUpon>FRM_User_List.cs</DependentUpon>

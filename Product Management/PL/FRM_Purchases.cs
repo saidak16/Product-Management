@@ -68,7 +68,7 @@ namespace Product_Management.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FRM_Add_Purchases _Purchases = new FRM_Add_Purchases();
+            FRM_Add_MultiPurchase _Purchases = new FRM_Add_MultiPurchase();
             _Purchases.ShowDialog();
         }
 
@@ -88,26 +88,49 @@ namespace Product_Management.PL
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FRM_Add_Purchases frm = new FRM_Add_Purchases();
-            frm.txtId.Text = this.dvgPurchases.CurrentRow.Cells[0].Value.ToString();
-            frm.cmbSuppiers.Text = this.dvgPurchases.CurrentRow.Cells[1].Value.ToString();
-            frm.cmbProducts.Text = this.dvgPurchases.CurrentRow.Cells[2].Value.ToString();
-            frm.dtpPurchaseDate.Text = this.dvgPurchases.CurrentRow.Cells[3].Value.ToString();
-            frm.dtpExpDate.Text = this.dvgPurchases.CurrentRow.Cells[4].Value.ToString();
-            frm.txtQTY.Text = this.dvgPurchases.CurrentRow.Cells[5].Value.ToString();
-            frm.txtPurchasingPrice.Text = this.dvgPurchases.CurrentRow.Cells[6].Value.ToString();
-            frm.txtSellingPrice.Text = this.dvgPurchases.CurrentRow.Cells[7].Value.ToString();
-            frm.txtPrice.Text = this.dvgPurchases.CurrentRow.Cells[8].Value.ToString();
-            frm.txtPaidAmount.Text = this.dvgPurchases.CurrentRow.Cells[9].Value.ToString();
-            frm.txtRemainingAmount.Text = this.dvgPurchases.CurrentRow.Cells[10].Value.ToString();
-            frm.cmbPaymentMethod.Text = this.dvgPurchases.CurrentRow.Cells[11].Value.ToString();
-            frm.txtInvoiceNumber.Text = this.dvgPurchases.CurrentRow.Cells[12].Value.ToString();
-            frm.txtBatchNumber.Text = this.dvgPurchases.CurrentRow.Cells[13].Value.ToString();
-            frm.Text = "تحديث البيانات";
-            frm.btnAdd.Text = "تحديث";
-            frm.Flag = "Update";
+            FRM_PurchaseDetails frm = new FRM_PurchaseDetails(Convert.ToInt32(this.dvgPurchases.CurrentRow.Cells[0].Value.ToString()));
+            //frm.txtId.Text = this.dvgPurchases.CurrentRow.Cells[0].Value.ToString();
+            //frm.cmbSuppiers.Text = this.dvgPurchases.CurrentRow.Cells[1].Value.ToString();
+            //frm.cmbProducts.Text = this.dvgPurchases.CurrentRow.Cells[2].Value.ToString();
+            //frm.dtpPurchaseDate.Text = this.dvgPurchases.CurrentRow.Cells[3].Value.ToString();
+            //frm.dtpExpDate.Text = this.dvgPurchases.CurrentRow.Cells[4].Value.ToString();
+            //frm.txtQTY.Text = this.dvgPurchases.CurrentRow.Cells[5].Value.ToString();
+            //frm.txtPurchasingPrice.Text = this.dvgPurchases.CurrentRow.Cells[6].Value.ToString();
+            //frm.txtSellingPrice.Text = this.dvgPurchases.CurrentRow.Cells[7].Value.ToString();
+            //frm.txtPrice.Text = this.dvgPurchases.CurrentRow.Cells[8].Value.ToString();
+            //frm.txtPaidAmount.Text = this.dvgPurchases.CurrentRow.Cells[9].Value.ToString();
+            //frm.txtRemainingAmount.Text = this.dvgPurchases.CurrentRow.Cells[10].Value.ToString();
+            //frm.cmbPaymentMethod.Text = this.dvgPurchases.CurrentRow.Cells[11].Value.ToString();
+            //frm.txtInvoiceNumber.Text = this.dvgPurchases.CurrentRow.Cells[12].Value.ToString();
+            //frm.txtBatchNumber.Text = this.dvgPurchases.CurrentRow.Cells[13].Value.ToString();
+            //frm.Text = "تحديث البيانات";
+            //frm.btnAdd.Text = "تحديث";
+            //frm.Flag = "Update";
 
             frm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FRM_Update_SupplierReceivables frm = new FRM_Update_SupplierReceivables();
+
+            DataTable dt = purchases.GetPurchaseOrderById(Convert.ToInt32(this.dvgPurchases.CurrentRow.Cells[0].Value.ToString()));
+
+            if(dt.Rows.Count > 0)
+            {
+                frm.txtId.Text = dt.Rows[0][0].ToString();
+                frm.txtName.Text = dt.Rows[0][1].ToString();
+                frm.txtInvoiceDate.Text = dt.Rows[0][2].ToString();
+                frm.txtTotalAmount.Text = dt.Rows[0][3].ToString();
+                frm.txtPaidAmount.Text = dt.Rows[0][4].ToString();
+                frm.txtRemainingAmount.Text = dt.Rows[0][5].ToString();
+
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ ما", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

@@ -234,8 +234,9 @@ namespace Product_Management.PL
                 }
 
                 MessageBox.Show("تمت الاضافة بنجاح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FRM_Purchases.getMain.DVG();
                 this.Close();
-                //clear();
+                
             }
             else
             {
