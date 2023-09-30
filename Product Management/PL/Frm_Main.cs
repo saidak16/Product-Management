@@ -248,7 +248,8 @@ namespace Product_Management.PL
 
         private void اضافةعمليةشراءToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Add_Purchases frm = new FRM_Add_Purchases();
+            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            //FRM_Add_Purchases frm = new FRM_Add_Purchases();
             frm.ShowDialog();
         }
 

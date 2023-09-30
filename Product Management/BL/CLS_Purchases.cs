@@ -69,6 +69,85 @@ namespace Product_Management.BL
             }
         }
 
+        public string GetBatchNo(int productId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("productId", SqlDbType.Int);
+                param[0].Value = productId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetBatchNo", param);
+                dal.Close();
+
+                return dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
+        public string GetPurchasesId()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurchaseId", null);
+                dal.Close();
+
+                return dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+        
+        public string GetPurOrderId()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurOrderId", null);
+                dal.Close();
+
+                return dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
         public DataTable SearchPurchases(string search)
         {
             try
@@ -103,46 +182,28 @@ namespace Product_Management.BL
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[13];
+                SqlParameter[] param = new SqlParameter[7];
 
                 param[0] = new SqlParameter("@SupplierId", SqlDbType.Int);
                 param[0].Value = purchases.SupplierId;
 
-                param[1] = new SqlParameter("@ProductId", SqlDbType.Int);
-                param[1].Value = purchases.ProductId;
+                param[1] = new SqlParameter("@DateOfPurchase", SqlDbType.Date);
+                param[1].Value = purchases.DateOfPurchase;
 
-                param[2] = new SqlParameter("@DateOfPurchase", SqlDbType.Date);
-                param[2].Value = purchases.DateOfPurchase;
+                param[2] = new SqlParameter("@price", SqlDbType.BigInt);
+                param[2].Value = purchases.price;
 
-                param[3] = new SqlParameter("@ExpirationDate", SqlDbType.Date);
-                param[3].Value = purchases.ExpirationDate;
+                param[3] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+                param[3].Value = purchases.PaidAmount;
 
-                param[4] = new SqlParameter("@QTY", SqlDbType.Int);
-                param[4].Value = purchases.QTY;
+                param[4] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+                param[4].Value = purchases.RemainingAmount;
 
-                param[5] = new SqlParameter("@PurchasingPrice", SqlDbType.BigInt);
-                param[5].Value = purchases.PurchasingPrice;
+                param[5] = new SqlParameter("@PaymentMethodId", SqlDbType.Int);
+                param[5].Value = purchases.PaymentMethodId;
 
-                param[6] = new SqlParameter("@SellingPrice", SqlDbType.BigInt);
-                param[6].Value = purchases.SellingPrice;
-
-                param[7] = new SqlParameter("@price", SqlDbType.BigInt);
-                param[7].Value = purchases.price;
-
-                param[8] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
-                param[8].Value = purchases.PaidAmount;
-
-                param[9] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
-                param[9].Value = purchases.RemainingAmount;
-
-                param[10] = new SqlParameter("@PaymentMethodId", SqlDbType.Int);
-                param[10].Value = purchases.PaymentMethodId;
-
-                param[11] = new SqlParameter("@InvoiceNumber", SqlDbType.NVarChar, 50);
-                param[11].Value = purchases.InvoiceNumber;
-
-                param[12] = new SqlParameter("@BatchNumber", SqlDbType.Int);
-                param[12].Value = purchases.BatchNumber;
+                param[6] = new SqlParameter("@InvoiceNumber", SqlDbType.NVarChar, 50);
+                param[6].Value = purchases.InvoiceNumber;
 
                 dal.Open();
                 dal.ExCommand("AddPurchases", param);
@@ -158,6 +219,49 @@ namespace Product_Management.BL
                 string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
                 File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return false;
+            }
+        }
+
+        public bool AddPurchaseDetails(PurchaseDetails details)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[8];
+
+                param[0] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+                param[0].Value = details.PurchaseId;
+                
+                param[1] = new SqlParameter("@BatchNumber", SqlDbType.Int);
+                param[1].Value = details.BatchNumber;
+                
+                param[2] = new SqlParameter("@ExpDate", SqlDbType.Date);
+                param[2].Value = details.ExpDate;
+                
+                param[3] = new SqlParameter("@QTY", SqlDbType.Int);
+                param[3].Value = details.QTY;
+                
+                param[4] = new SqlParameter("@PurchasePrice", SqlDbType.Int);
+                param[4].Value = details.PurchasePrice;
+                
+                param[5] = new SqlParameter("@SellingPrice", SqlDbType.Int);
+                param[5].Value = details.SellingPrice;
+                
+                param[6] = new SqlParameter("@TotalPrice", SqlDbType.Int);
+                param[6].Value = details.TotalPrice;
+                
+                param[7] = new SqlParameter("@ProductId", SqlDbType.Int);
+                param[7].Value = details.productId;
+
+                dal.Open();
+                dal.ExCommand("AddPurchaseDetails", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
                 return false;
             }
         }
@@ -195,49 +299,31 @@ namespace Product_Management.BL
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[14];
+                SqlParameter[] param = new SqlParameter[8];
 
                 param[0] = new SqlParameter("@SupplierId", SqlDbType.Int);
                 param[0].Value = purchases.SupplierId;
 
-                param[1] = new SqlParameter("@ProductId", SqlDbType.Int);
-                param[1].Value = purchases.ProductId;
+                param[1] = new SqlParameter("@DateOfPurchase", SqlDbType.Date);
+                param[1].Value = purchases.DateOfPurchase;
 
-                param[2] = new SqlParameter("@DateOfPurchase", SqlDbType.Date);
-                param[2].Value = purchases.DateOfPurchase;
+                param[2] = new SqlParameter("@price", SqlDbType.BigInt);
+                param[2].Value = purchases.price;
 
-                param[3] = new SqlParameter("@ExpirationDate", SqlDbType.Date);
-                param[3].Value = purchases.ExpirationDate;
+                param[3] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+                param[3].Value = purchases.PaidAmount;
 
-                param[4] = new SqlParameter("@QTY", SqlDbType.Int);
-                param[4].Value = purchases.QTY;
+                param[4] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+                param[4].Value = purchases.RemainingAmount;
 
-                param[5] = new SqlParameter("@PurchasingPrice", SqlDbType.BigInt);
-                param[5].Value = purchases.PurchasingPrice;
+                param[5] = new SqlParameter("@PaymentMethodId", SqlDbType.Int);
+                param[5].Value = purchases.PaymentMethodId;
 
-                param[6] = new SqlParameter("@SellingPrice", SqlDbType.BigInt);
-                param[6].Value = purchases.SellingPrice;
+                param[6] = new SqlParameter("@InvoiceNumber", SqlDbType.NVarChar, 50);
+                param[6].Value = purchases.InvoiceNumber;
 
-                param[7] = new SqlParameter("@price", SqlDbType.BigInt);
-                param[7].Value = purchases.price;
-
-                param[8] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
-                param[8].Value = purchases.PaidAmount;
-
-                param[9] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
-                param[9].Value = purchases.RemainingAmount;
-
-                param[10] = new SqlParameter("@PaymentMethodId", SqlDbType.Int);
-                param[10].Value = purchases.PaymentMethodId;
-
-                param[11] = new SqlParameter("@InvoiceNumber", SqlDbType.NVarChar, 50);
-                param[11].Value = purchases.InvoiceNumber;
-
-                param[12] = new SqlParameter("@BatchNumber", SqlDbType.Int);
-                param[12].Value = purchases.BatchNumber;
-
-                param[13] = new SqlParameter("@Id", SqlDbType.Int);
-                param[13].Value = purchases.Id;
+                param[7] = new SqlParameter("@Id", SqlDbType.Int);
+                param[7].Value = purchases.Id;
 
                 dal.Open();
                 dal.ExCommand("UpdatePurchases", param);

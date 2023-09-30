@@ -55,18 +55,12 @@ namespace Product_Management.PL
                 {
                     Purchases pur = new Purchases()
                     {
-                        BatchNumber = Convert.ToInt32(txtBatchNumber.Text),
                         DateOfPurchase = dtpPurchaseDate.Value,
-                        ExpirationDate = dtpExpDate.Value, 
                         InvoiceNumber = Convert.ToInt32(txtInvoiceNumber.Text),
                         PaidAmount = Convert.ToInt32(txtPaidAmount.Text),
                         PaymentMethodId = Convert.ToInt32(cmbPaymentMethod.SelectedValue),
                         price = Convert.ToInt32(txtPrice.Text),
-                        ProductId = Convert.ToInt32(cmbProducts.SelectedValue),
-                        PurchasingPrice = Convert.ToInt32(txtPurchasingPrice.Text),
-                        QTY = Convert.ToInt32(txtQTY.Text),
                         RemainingAmount = Convert.ToInt32(txtRemainingAmount.Text),
-                        SellingPrice = Convert.ToInt32(txtSellingPrice.Text),
                         SupplierId = Convert.ToInt32(cmbSuppiers.SelectedValue)
                     };
 
@@ -87,18 +81,12 @@ namespace Product_Management.PL
                     Purchases pur = new Purchases()
                     {
                         Id = Convert.ToInt32(txtId.Text),
-                        BatchNumber = Convert.ToInt32(txtBatchNumber.Text),
                         DateOfPurchase = dtpPurchaseDate.Value,
-                        ExpirationDate = dtpExpDate.Value,
                         InvoiceNumber = Convert.ToInt32(txtInvoiceNumber.Text),
                         PaidAmount = Convert.ToInt32(txtPaidAmount.Text),
                         PaymentMethodId = Convert.ToInt32(cmbPaymentMethod.SelectedValue),
                         price = Convert.ToInt32(txtPrice.Text),
-                        ProductId = Convert.ToInt32(cmbProducts.SelectedValue),
-                        PurchasingPrice = Convert.ToInt32(txtPurchasingPrice.Text),
-                        QTY = Convert.ToInt32(txtQTY.Text),
                         RemainingAmount = Convert.ToInt32(txtRemainingAmount.Text),
-                        SellingPrice = Convert.ToInt32(txtSellingPrice.Text),
                         SupplierId = Convert.ToInt32(cmbSuppiers.SelectedValue)
                     };
 

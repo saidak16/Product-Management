@@ -119,6 +119,7 @@
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Models\Expensess.cs" />
     <Compile Include="Models\FinancialPosition.cs" />
+    <Compile Include="Models\PurchaseDetails.cs" />
     <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\SalesRepresentative.cs" />
     <Compile Include="Models\SalesRepresentativePercentage.cs" />
@@ -128,6 +129,12 @@
     </Compile>
     <Compile Include="PL\FRM_Add_Expensess.Designer.cs">
       <DependentUpon>FRM_Add_Expensess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Add_MultiPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_MultiPurchase.Designer.cs">
+      <DependentUpon>FRM_Add_MultiPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Add_Product.cs">
       <SubType>Form</SubType>
@@ -321,6 +328,12 @@
     <Compile Include="PL\FRM_Stock.Designer.cs">
       <DependentUpon>FRM_Stock.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_SupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_SupList.Designer.cs">
+      <DependentUpon>FRM_SupList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +447,9 @@
     <EmbeddedResource Include="PL\FRM_Add_Expensess.resx">
       <DependentUpon>FRM_Add_Expensess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add_MultiPurchase.resx">
+      <DependentUpon>FRM_Add_MultiPurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Add_Product.resx">
       <DependentUpon>Frm_Add_Product.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Stock.resx">
       <DependentUpon>FRM_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_SupList.resx">
+      <DependentUpon>FRM_SupList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Suppliers.resx">
       <DependentUpon>FRM_Suppliers.cs</DependentUpon>
