@@ -54,7 +54,7 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 

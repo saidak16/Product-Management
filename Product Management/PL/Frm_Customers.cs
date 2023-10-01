@@ -125,7 +125,7 @@ namespace Product_Management.PL
             {
                 if (id == 0)
                 {
-                    MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("حدث خطأ ما", "تحديد المعرف", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 id = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -146,6 +146,7 @@ namespace Product_Management.PL
             txtTel.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txtEmail.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             byte[] img = (byte[])dataGridView1.CurrentRow.Cells[5].Value;
+            id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             MemoryStream ms = new MemoryStream(img);
             pictureBox1.Image = Image.FromStream(ms);
             btnAdd.Enabled = false;

@@ -113,6 +113,8 @@
             this.txtPur.Name = "txtPur";
             this.txtPur.Size = new System.Drawing.Size(264, 23);
             this.txtPur.TabIndex = 11;
+            this.txtPur.Text = "0";
+            this.txtPur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSeal
             // 
@@ -121,6 +123,8 @@
             this.txtSeal.Name = "txtSeal";
             this.txtSeal.Size = new System.Drawing.Size(264, 23);
             this.txtSeal.TabIndex = 10;
+            this.txtSeal.Text = "0";
+            this.txtSeal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtExp
             // 
@@ -129,6 +133,8 @@
             this.txtExp.Name = "txtExp";
             this.txtExp.Size = new System.Drawing.Size(264, 23);
             this.txtExp.TabIndex = 9;
+            this.txtExp.Text = "0";
+            this.txtExp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -206,6 +212,8 @@
             this.txtCust.Name = "txtCust";
             this.txtCust.Size = new System.Drawing.Size(264, 23);
             this.txtCust.TabIndex = 14;
+            this.txtCust.Text = "0";
+            this.txtCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSup
             // 
@@ -214,6 +222,8 @@
             this.txtSup.Name = "txtSup";
             this.txtSup.Size = new System.Drawing.Size(264, 23);
             this.txtSup.TabIndex = 12;
+            this.txtSup.Text = "0";
+            this.txtSup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 

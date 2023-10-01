@@ -24,32 +24,40 @@ namespace Product_Management.PL
 
             var Financial = dashboard.FinancialPosition();
             
-            txtExp.Text = Financial.TotalExp.ToString();
-            txtPur.Text = Financial.TotalPur.ToString();
-            txtSeal.Text = Financial.TotalSeals.ToString();
-            txtSup.Text = Financial.TotalSuplierRemainingAmount.ToString();
-            txtCust.Text = Financial.TotalCustomerRemainingAmount.ToString();
-            try
+            if(Financial != null)
             {
 
-                SeriesCollection series = new SeriesCollection();
+                txtExp.Text = Financial.TotalExp.ToString();
+                txtPur.Text = Financial.TotalPur.ToString();
+                txtSeal.Text = Financial.TotalSeals.ToString();
+                txtSup.Text = Financial.TotalSuplierRemainingAmount.ToString();
+                txtCust.Text = Financial.TotalCustomerRemainingAmount.ToString();
+                try
+                {
 
-                series.Add(new PieSeries() { Title = "اجمالي المنصرفات", Values = new ChartValues<int> { Convert.ToInt32(txtExp.Text) }, DataLabels = true });
-                series.Add(new PieSeries() { Title = "اجمالي المشتريات", Values = new ChartValues<int> { Convert.ToInt32(txtPur.Text) }, DataLabels = true });
-                series.Add(new PieSeries() { Title = "اجمالي المبيعات", Values = new ChartValues<int> { Convert.ToInt32(txtSeal.Text) }, DataLabels = true });
+                    SeriesCollection series = new SeriesCollection();
 
-                pieChart1.Series = series;
+                    series.Add(new PieSeries() { Title = "اجمالي المنصرفات", Values = new ChartValues<int> { Convert.ToInt32(txtExp.Text) }, DataLabels = true });
+                    series.Add(new PieSeries() { Title = "اجمالي المشتريات", Values = new ChartValues<int> { Convert.ToInt32(txtPur.Text) }, DataLabels = true });
+                    series.Add(new PieSeries() { Title = "اجمالي المبيعات", Values = new ChartValues<int> { Convert.ToInt32(txtSeal.Text) }, DataLabels = true });
 
-                SeriesCollection series2 = new SeriesCollection();
+                    pieChart1.Series = series;
 
-                series2.Add(new PieSeries() { Title = "اجمالي استحقاقات الوردين", Values = new ChartValues<int> { Convert.ToInt32(txtSup.Text) }, DataLabels = true });
-                series2.Add(new PieSeries() { Title = "اجمالي مطلوبات العملاء", Values = new ChartValues<int> { Convert.ToInt32(txtCust.Text) }, DataLabels = true });
+                    SeriesCollection series2 = new SeriesCollection();
 
-                pieChart2.Series = series2;
+                    series2.Add(new PieSeries() { Title = "اجمالي استحقاقات الوردين", Values = new ChartValues<int> { Convert.ToInt32(txtSup.Text) }, DataLabels = true });
+                    series2.Add(new PieSeries() { Title = "اجمالي مطلوبات العملاء", Values = new ChartValues<int> { Convert.ToInt32(txtCust.Text) }, DataLabels = true });
+
+                    pieChart2.Series = series2;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("عذراً, لا توجد حركة مالية حتي الان", "الموقف المالي", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
