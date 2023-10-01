@@ -30,5 +30,10 @@ namespace Product_Management.PL
         {
             this.Close();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

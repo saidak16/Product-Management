@@ -38,6 +38,32 @@ namespace Product_Management.BL
             }
         }
         
+        public DataTable GetStockStatus()
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetStockStatus", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+        
         public DataTable SearchPriceList(string search)
         {
             try

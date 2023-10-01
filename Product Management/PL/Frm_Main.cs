@@ -342,5 +342,17 @@ namespace Product_Management.PL
             FRM_SalesRepresentativePercentage frm = new FRM_SalesRepresentativePercentage();
             frm.ShowDialog();
         }
+
+        private void جردعامToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ٍStockStatus frm = new FRM_ٍStockStatus();
+            frm.ShowDialog();
+        }
+
+        private void جردمفصلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_PRODUCT_LIST frm = new FRM_PRODUCT_LIST();
+            frm.ShowDialog();
+        }
     }
 }

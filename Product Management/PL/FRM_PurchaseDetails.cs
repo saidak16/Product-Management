@@ -41,6 +41,7 @@ namespace Product_Management.PL
                 if (isValid)
                 {
                     MessageBox.Show("تمت عملية الحذف بنجاح", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FRM_Purchases.getMain.DVG();
                     this.Close();
                 }
                 else

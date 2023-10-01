@@ -382,6 +382,12 @@
     <Compile Include="PL\FRM_User_List.Designer.cs">
       <DependentUpon>FRM_User_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_ٍStockStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ٍStockStatus.Designer.cs">
+      <DependentUpon>FRM_ٍStockStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PL\AboutBox1.cs">
@@ -581,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_User_List.resx">
       <DependentUpon>FRM_User_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ٍStockStatus.resx">
+      <DependentUpon>FRM_ٍStockStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
