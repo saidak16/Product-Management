@@ -93,6 +93,7 @@ namespace Product_Management.PL
             this.العملاءToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
             this.toolStripMenuItem1.Enabled = false;
+            this.toolStripMenuItem3.Enabled = false;
             this.الاعداداتToolStripMenuItem.Enabled = false;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
@@ -104,8 +105,8 @@ namespace Product_Management.PL
             this.العملاءToolStripMenuItem.Visible = true;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
-            this.toolStripMenuItem1.Visible = false;
-            this.toolStripMenuItem3.Visible = false;
+            //this.toolStripMenuItem1.Visible = false;
+            //this.toolStripMenuItem3.Visible = false;
             this.المشترياتToolStripMenuItem.Enabled = false;
             this.التقاريرToolStripMenuItem.Enabled = false;
             this.المنصرفاتToolStripMenuItem.Enabled = false;
