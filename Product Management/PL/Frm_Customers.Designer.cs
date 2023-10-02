@@ -216,6 +216,7 @@
             this.txtTel.Size = new System.Drawing.Size(193, 26);
             this.txtTel.TabIndex = 2;
             this.txtTel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTel_KeyDown);
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // txtLname
             // 

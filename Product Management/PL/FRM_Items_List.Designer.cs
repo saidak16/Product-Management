@@ -1,6 +1,6 @@
 ﻿namespace Product_Management.PL
 {
-    partial class FRM_PRODUCT_LIST
+    partial class FRM_Items_List
     {
         /// <summary>
         /// Required designer variable.
@@ -28,74 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_PRODUCT_LIST));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Items_List));
+            this.dgvItemsList = new System.Windows.Forms.DataGridView();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemsList)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvItemsList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(895, 295);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.dgvItemsList.AllowUserToAddRows = false;
+            this.dgvItemsList.AllowUserToDeleteRows = false;
+            this.dgvItemsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItemsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItemsList.Location = new System.Drawing.Point(0, 41);
+            this.dgvItemsList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvItemsList.Name = "dgvItemsList";
+            this.dgvItemsList.ReadOnly = true;
+            this.dgvItemsList.Size = new System.Drawing.Size(1078, 470);
+            this.dgvItemsList.TabIndex = 0;
+            this.dgvItemsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsList_CellContentClick);
+            this.dgvItemsList.DoubleClick += new System.EventHandler(this.dgvItemsList_DoubleClick);
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(342, 9);
+            this.txtID.Location = new System.Drawing.Point(434, 11);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(282, 22);
-            this.txtID.TabIndex = 16;
+            this.txtID.Size = new System.Drawing.Size(281, 22);
+            this.txtID.TabIndex = 18;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 12);
+            this.label1.Location = new System.Drawing.Point(367, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 14);
-            this.label1.TabIndex = 17;
+            this.label1.TabIndex = 19;
             this.label1.Text = "ابحث هنا :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // FRM_PRODUCT_LIST
+            // FRM_Items_List
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 336);
+            this.ClientSize = new System.Drawing.Size(1082, 524);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvItemsList);
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FRM_PRODUCT_LIST";
+            this.Name = "FRM_Items_List";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قائمة المنتجات";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView dgvItemsList;
     }
 }

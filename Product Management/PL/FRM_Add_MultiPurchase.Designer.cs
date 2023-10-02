@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_MultiPurchase));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRemainingAmount = new System.Windows.Forms.TextBox();
+            this.txtPaidAmount = new System.Windows.Forms.TextBox();
+            this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,7 +55,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.dgvPurchase = new System.Windows.Forms.DataGridView();
-            this.cmbProducts = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpExpDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -74,9 +76,10 @@
             this.txtSellingPrice = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtTotalAmount = new System.Windows.Forms.TextBox();
-            this.txtPaidAmount = new System.Windows.Forms.TextBox();
-            this.txtRemainingAmount = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtItmeName = new System.Windows.Forms.TextBox();
+            this.txtItemId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
@@ -107,6 +110,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تفاصيل الفاتورة";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtRemainingAmount
+            // 
+            this.txtRemainingAmount.Enabled = false;
+            this.txtRemainingAmount.Location = new System.Drawing.Point(6, 161);
+            this.txtRemainingAmount.Name = "txtRemainingAmount";
+            this.txtRemainingAmount.Size = new System.Drawing.Size(258, 23);
+            this.txtRemainingAmount.TabIndex = 35;
+            this.txtRemainingAmount.Text = "0";
+            this.txtRemainingAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPaidAmount
+            // 
+            this.txtPaidAmount.Location = new System.Drawing.Point(6, 125);
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.Size = new System.Drawing.Size(259, 23);
+            this.txtPaidAmount.TabIndex = 34;
+            this.txtPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
+            // 
+            // txtTotalAmount
+            // 
+            this.txtTotalAmount.Enabled = false;
+            this.txtTotalAmount.Location = new System.Drawing.Point(6, 93);
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.Size = new System.Drawing.Size(259, 23);
+            this.txtTotalAmount.TabIndex = 33;
+            this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalAmount.TextChanged += new System.EventHandler(this.txtTotalAmount_TextChanged);
             // 
             // cmbPaymentMethod
             // 
@@ -336,28 +368,14 @@
             this.dgvPurchase.Location = new System.Drawing.Point(0, 281);
             this.dgvPurchase.Name = "dgvPurchase";
             this.dgvPurchase.ReadOnly = true;
-            this.dgvPurchase.Size = new System.Drawing.Size(1029, 203);
+            this.dgvPurchase.Size = new System.Drawing.Size(1068, 203);
             this.dgvPurchase.TabIndex = 2;
-            // 
-            // cmbProducts
-            // 
-            this.cmbProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbProducts.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProducts.FormattingEnabled = true;
-            this.cmbProducts.Location = new System.Drawing.Point(5, 255);
-            this.cmbProducts.Name = "cmbProducts";
-            this.cmbProducts.Size = new System.Drawing.Size(176, 22);
-            this.cmbProducts.TabIndex = 33;
-            this.cmbProducts.SelectedIndexChanged += new System.EventHandler(this.cmbProducts_SelectedIndexChanged);
-            this.cmbProducts.SelectedValueChanged += new System.EventHandler(this.cmbProducts_SelectedValueChanged);
-            this.cmbProducts.TextChanged += new System.EventHandler(this.cmbProducts_TextChanged);
-            this.cmbProducts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbProducts_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(59, 232);
+            this.label7.Location = new System.Drawing.Point(150, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 19);
             this.label7.TabIndex = 33;
@@ -365,7 +383,7 @@
             // 
             // dtpExpDate
             // 
-            this.dtpExpDate.Location = new System.Drawing.Point(413, 255);
+            this.dtpExpDate.Location = new System.Drawing.Point(452, 255);
             this.dtpExpDate.Name = "dtpExpDate";
             this.dtpExpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpExpDate.TabIndex = 34;
@@ -375,7 +393,7 @@
             this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Location = new System.Drawing.Point(756, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(273, 225);
+            this.groupBox4.Size = new System.Drawing.Size(308, 225);
             this.groupBox4.TabIndex = 37;
             this.groupBox4.TabStop = false;
             // 
@@ -385,7 +403,7 @@
             this.pictureBox1.Image = global::Product_Management.Properties.Resources.shop_cart_add_icon;
             this.pictureBox1.Location = new System.Drawing.Point(3, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -394,7 +412,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(211, 232);
+            this.label8.Location = new System.Drawing.Point(250, 232);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 19);
             this.label8.TabIndex = 38;
@@ -404,7 +422,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(337, 232);
+            this.label9.Location = new System.Drawing.Point(376, 232);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 19);
             this.label9.TabIndex = 39;
@@ -414,7 +432,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(465, 233);
+            this.label10.Location = new System.Drawing.Point(504, 233);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 19);
             this.label10.TabIndex = 40;
@@ -424,7 +442,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(639, 233);
+            this.label11.Location = new System.Drawing.Point(678, 233);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 19);
             this.label11.TabIndex = 42;
@@ -434,7 +452,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(757, 233);
+            this.label12.Location = new System.Drawing.Point(796, 233);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(60, 19);
             this.label12.TabIndex = 44;
@@ -444,7 +462,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(887, 233);
+            this.label13.Location = new System.Drawing.Point(926, 233);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 19);
             this.label13.TabIndex = 46;
@@ -453,7 +471,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(962, 255);
+            this.btnAdd.Location = new System.Drawing.Point(1001, 255);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(67, 23);
             this.btnAdd.TabIndex = 47;
@@ -521,7 +539,7 @@
             // 
             this.txtBatch.Enabled = false;
             this.txtBatch.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBatch.Location = new System.Drawing.Point(182, 255);
+            this.txtBatch.Location = new System.Drawing.Point(221, 255);
             this.txtBatch.Name = "txtBatch";
             this.txtBatch.Size = new System.Drawing.Size(115, 22);
             this.txtBatch.TabIndex = 49;
@@ -529,7 +547,7 @@
             // txtQTY
             // 
             this.txtQTY.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQTY.Location = new System.Drawing.Point(298, 255);
+            this.txtQTY.Location = new System.Drawing.Point(337, 255);
             this.txtQTY.Name = "txtQTY";
             this.txtQTY.Size = new System.Drawing.Size(115, 22);
             this.txtQTY.TabIndex = 50;
@@ -538,7 +556,7 @@
             // txtPurPrice
             // 
             this.txtPurPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurPrice.Location = new System.Drawing.Point(614, 255);
+            this.txtPurPrice.Location = new System.Drawing.Point(653, 255);
             this.txtPurPrice.Name = "txtPurPrice";
             this.txtPurPrice.Size = new System.Drawing.Size(115, 22);
             this.txtPurPrice.TabIndex = 51;
@@ -547,7 +565,7 @@
             // txtSellingPrice
             // 
             this.txtSellingPrice.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSellingPrice.Location = new System.Drawing.Point(729, 256);
+            this.txtSellingPrice.Location = new System.Drawing.Point(768, 256);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.Size = new System.Drawing.Size(115, 22);
             this.txtSellingPrice.TabIndex = 52;
@@ -555,7 +573,7 @@
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(846, 256);
+            this.txtAmount.Location = new System.Drawing.Point(885, 256);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(115, 22);
             this.txtAmount.TabIndex = 53;
@@ -568,7 +586,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(861, 490);
+            this.button1.Location = new System.Drawing.Point(899, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 32);
             this.button1.TabIndex = 54;
@@ -577,40 +595,55 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtTotalAmount
+            // button2
             // 
-            this.txtTotalAmount.Enabled = false;
-            this.txtTotalAmount.Location = new System.Drawing.Point(6, 93);
-            this.txtTotalAmount.Name = "txtTotalAmount";
-            this.txtTotalAmount.Size = new System.Drawing.Size(259, 23);
-            this.txtTotalAmount.TabIndex = 33;
-            this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTotalAmount.TextChanged += new System.EventHandler(this.txtTotalAmount_TextChanged);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(2, 247);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 31);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "...";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtPaidAmount
+            // label14
             // 
-            this.txtPaidAmount.Location = new System.Drawing.Point(6, 125);
-            this.txtPaidAmount.Name = "txtPaidAmount";
-            this.txtPaidAmount.Size = new System.Drawing.Size(259, 23);
-            this.txtPaidAmount.TabIndex = 34;
-            this.txtPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(34, 232);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 19);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "المعرف ";
             // 
-            // txtRemainingAmount
+            // txtItmeName
             // 
-            this.txtRemainingAmount.Enabled = false;
-            this.txtRemainingAmount.Location = new System.Drawing.Point(6, 161);
-            this.txtRemainingAmount.Name = "txtRemainingAmount";
-            this.txtRemainingAmount.Size = new System.Drawing.Size(258, 23);
-            this.txtRemainingAmount.TabIndex = 35;
-            this.txtRemainingAmount.Text = "0";
-            this.txtRemainingAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtItmeName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItmeName.Location = new System.Drawing.Point(88, 255);
+            this.txtItmeName.Name = "txtItmeName";
+            this.txtItmeName.Size = new System.Drawing.Size(132, 22);
+            this.txtItmeName.TabIndex = 56;
+            // 
+            // txtItemId
+            // 
+            this.txtItemId.Enabled = false;
+            this.txtItemId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemId.Location = new System.Drawing.Point(30, 255);
+            this.txtItemId.Name = "txtItemId";
+            this.txtItemId.Size = new System.Drawing.Size(57, 22);
+            this.txtItemId.TabIndex = 57;
+            this.txtItemId.TextChanged += new System.EventHandler(this.txtItemId_TextChanged);
             // 
             // FRM_Add_MultiPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 590);
+            this.ClientSize = new System.Drawing.Size(1067, 590);
+            this.Controls.Add(this.txtItemId);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtItmeName);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtSellingPrice);
@@ -628,7 +661,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.dtpExpDate);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cmbProducts);
             this.Controls.Add(this.dgvPurchase);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -677,7 +709,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbPaymentMethod;
         private System.Windows.Forms.DataGridView dgvPurchase;
-        private System.Windows.Forms.ComboBox cmbProducts;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpExpDate;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -702,5 +733,9 @@
         private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.TextBox txtRemainingAmount;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtItmeName;
+        private System.Windows.Forms.TextBox txtItemId;
     }
 }

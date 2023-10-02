@@ -232,6 +232,12 @@
     <Compile Include="PL\FRM_FinancialPosition.Designer.cs">
       <DependentUpon>FRM_FinancialPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Items_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Items_List.Designer.cs">
+      <DependentUpon>FRM_Items_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,6 +450,12 @@
       <DependentUpon>rpt_CustomersLiabilities.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_Expensess.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Expensess.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_Price_List.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -512,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_FinancialPosition.resx">
       <DependentUpon>FRM_FinancialPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Items_List.resx">
+      <DependentUpon>FRM_Items_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -634,6 +649,10 @@
     <EmbeddedResource Include="RPT\rpt_CustomersLiabilities.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_CustomersLiabilities.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_Expensess.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Expensess.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_Price_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

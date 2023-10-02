@@ -39,6 +39,7 @@ namespace Product_Management.PL
             txtId.Clear();
             txtName.Clear();
             txtPhone.Clear();
+            txtPercentageOfSales.Clear();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

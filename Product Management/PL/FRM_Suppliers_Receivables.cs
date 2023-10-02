@@ -39,9 +39,22 @@ namespace Product_Management.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int SupplierId = Convert.ToInt32(this.dgvSuppliersReceivables.CurrentRow.Cells[0].Value.ToString());
-            FRM_SuppliersReceivables_Details frm = new FRM_SuppliersReceivables_Details(SupplierId);
-            frm.ShowDialog();
+            try
+            {
+                if (dgvSuppliersReceivables.Rows.Count == 0)
+                {
+                    MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int SupplierId = Convert.ToInt32(this.dgvSuppliersReceivables.CurrentRow.Cells[0].Value.ToString());
+                FRM_SuppliersReceivables_Details frm = new FRM_SuppliersReceivables_Details(SupplierId);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FRM_Suppliers_Receivables_Load(object sender, EventArgs e)

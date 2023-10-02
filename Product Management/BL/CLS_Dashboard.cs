@@ -43,11 +43,11 @@ namespace Product_Management.BL
 
                 Models.FinancialPosition financial = new Models.FinancialPosition()
                 {
-                    TotalExp = Convert.ToDouble(dtExpensee.Rows[0][0].ToString()),
-                    TotalPur = Convert.ToDouble(dtPur.Rows[0][0].ToString()),
-                    TotalSeals = Convert.ToDouble(dtSeals.Rows[0][0].ToString()),
-                    TotalCustomerRemainingAmount = Convert.ToDouble(dtCustomerRemainingAmount.Rows[0][0].ToString()),
-                    TotalSuplierRemainingAmount = Convert.ToDouble(dtSuplierRemainingAmount.Rows[0][0].ToString())
+                    TotalExp = Convert.ToDouble(string.IsNullOrEmpty(dtExpensee.Rows[0][0].ToString()) ? "0" : dtExpensee.Rows[0][0].ToString()),
+                    TotalPur = Convert.ToDouble(string.IsNullOrEmpty(dtPur.Rows[0][0].ToString()) ? "0": dtPur.Rows[0][0].ToString()),
+                    TotalSeals = Convert.ToDouble(string.IsNullOrEmpty(dtSeals.Rows[0][0].ToString()) ? "0" : dtSeals.Rows[0][0].ToString()),
+                    TotalCustomerRemainingAmount = Convert.ToDouble(string.IsNullOrEmpty(dtCustomerRemainingAmount.Rows[0][0].ToString()) ? "0" : dtCustomerRemainingAmount.Rows[0][0].ToString()),
+                    TotalSuplierRemainingAmount = Convert.ToDouble(string.IsNullOrEmpty(dtSuplierRemainingAmount.Rows[0][0].ToString()) ? "0" : dtSuplierRemainingAmount.Rows[0][0].ToString())
                 };
 
                 return financial;

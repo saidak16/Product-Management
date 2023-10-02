@@ -153,5 +153,26 @@ namespace Product_Management.BL
             dal.Close();
         }
 
+        public DataTable GetItemsList(string search)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetItemsList", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

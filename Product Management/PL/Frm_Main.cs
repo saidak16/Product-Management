@@ -355,5 +355,14 @@ namespace Product_Management.PL
             FRM_PRODUCT_LIST frm = new FRM_PRODUCT_LIST();
             frm.ShowDialog();
         }
+
+        private void تقريرالمنصرفانToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rpt_Expensess myrpt = new rpt_Expensess();
+            FRM_Single_Product myfrm = new FRM_Single_Product();
+            myrpt.Refresh();
+            myfrm.crystalReportViewer1.ReportSource = myrpt;
+            myfrm.ShowDialog();
+        }
     }
 }

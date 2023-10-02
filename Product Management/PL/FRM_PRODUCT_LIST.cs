@@ -17,6 +17,8 @@ namespace Product_Management.PL
         {
             InitializeComponent();
             this.dataGridView1.DataSource = prd.GetProductsList();
+
+
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -27,6 +29,11 @@ namespace Product_Management.PL
         private void txtID_TextChanged(object sender, EventArgs e)
         {
             this.dataGridView1.DataSource = prd.Search_Product(txtID.Text);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

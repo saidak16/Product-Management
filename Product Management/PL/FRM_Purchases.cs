@@ -132,5 +132,15 @@ namespace Product_Management.PL
                 MessageBox.Show("حدث خطأ ما", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void FRM_Purchases_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

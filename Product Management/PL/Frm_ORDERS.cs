@@ -110,6 +110,13 @@ namespace Product_Management.PL
         {
             FRM_CUST_LIST frm = new FRM_CUST_LIST();
             frm.ShowDialog();
+
+            if(frm.dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             txt_CUS_ID.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtCUS_Fname.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtCUS_Lname.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -129,6 +136,13 @@ namespace Product_Management.PL
         {
             FRM_PRODUCT_LIST frm = new FRM_PRODUCT_LIST();
             frm.ShowDialog();
+
+            if (frm.dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             txtId.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtIDpro.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtPROName.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -422,6 +436,12 @@ namespace Product_Management.PL
         {
             FRM_SalesRepresentative_List frm = new FRM_SalesRepresentative_List();
             frm.ShowDialog();
+
+            if (frm.dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             txtSaleId.Text = frm.dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtName.Text = frm.dataGridView1.CurrentRow.Cells[1].Value.ToString();

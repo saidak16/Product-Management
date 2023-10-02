@@ -243,6 +243,14 @@ namespace Product_Management.PL
             lblPos.Text = pos.ToString();
         }
 
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
 

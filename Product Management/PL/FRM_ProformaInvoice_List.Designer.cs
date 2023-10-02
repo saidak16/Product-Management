@@ -39,7 +39,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(479, 9);
+            this.txtID.Location = new System.Drawing.Point(682, 9);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(282, 20);
             this.txtID.TabIndex = 14;
@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(407, 11);
+            this.label1.Location = new System.Drawing.Point(610, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 14);
             this.label1.TabIndex = 16;
@@ -70,7 +70,7 @@
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1233, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(1570, 534);
             this.dataGridView1.TabIndex = 15;
             // 
             // btnExit
@@ -78,7 +78,7 @@
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit4;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(632, 404);
+            this.btnExit.Location = new System.Drawing.Point(838, 583);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(109, 41);
             this.btnExit.TabIndex = 18;
@@ -92,7 +92,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_1;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(422, 404);
+            this.btnPrint.Location = new System.Drawing.Point(628, 583);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(174, 41);
             this.btnPrint.TabIndex = 17;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 455);
+            this.ClientSize = new System.Drawing.Size(1574, 626);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);

@@ -30,9 +30,6 @@ namespace Product_Management.PL
             cmbPaymentMethod.ValueMember = "Id";
             cmbPaymentMethod.DisplayMember = "Name";
 
-            cmbProducts.DataSource = fill.FillProducts();
-            cmbProducts.DisplayMember = "Product_Name";
-            cmbProducts.ValueMember = "ID_Product";
         }
 
         void CreateColumns()
@@ -95,7 +92,7 @@ namespace Product_Management.PL
             {
                 for (int i = 0; i < dgvPurchase.Rows.Count - 1; i++)
                 {
-                    if (Convert.ToInt32(dgvPurchase.Rows[i].Cells[0].Value.ToString()) == Convert.ToInt32(cmbProducts.SelectedValue.ToString()))
+                    if (Convert.ToInt32(dgvPurchase.Rows[i].Cells[0].Value.ToString()) == Convert.ToInt32(txtItemId.Text))
                     {
                         MessageBox.Show("هذا المنتج تم ادخاله مسبقاً", "التحقق من الادخال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         clearBoxes();
@@ -106,8 +103,8 @@ namespace Product_Management.PL
 
                 DataRow r = dt.NewRow();
 
-                r[0] = cmbProducts.SelectedValue ;
-                r[1] = cmbProducts.Text ;
+                r[0] = txtItemId.Text ;
+                r[1] = txtItmeName.Text ;
                 r[2] = txtBatch.Text;
                 r[3] = txtQTY.Text;
                 r[4] = Convert.ToDateTime(dtpExpDate.Text).ToShortDateString();
@@ -172,11 +169,11 @@ namespace Product_Management.PL
             btn_Save.Enabled = true;
             btn_New.Enabled = false;
 
-            if (!string.IsNullOrEmpty(cmbProducts.Text))
+            if (!string.IsNullOrEmpty(txtItemId.Text))
             {
-                if (Convert.ToInt32(cmbProducts.SelectedValue) != 0)
+                if (Convert.ToInt32(txtItemId.Text) != 0)
                 {
-                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(cmbProducts.SelectedValue));
+                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(txtItemId.Text));
                 }
             }
         }
@@ -246,11 +243,11 @@ namespace Product_Management.PL
 
         private void cmbProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbProducts.Text))
+            if (!string.IsNullOrEmpty(txtItemId.Text))
             {
-                if (Convert.ToInt32(cmbProducts.SelectedValue) != 0)
+                if (Convert.ToInt32(txtItemId.Text) != 0)
                 {
-                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(cmbProducts.SelectedValue));
+                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(txtItemId.Text));
                 }
             }
         }
@@ -268,11 +265,11 @@ namespace Product_Management.PL
 
         private void cmbProducts_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbProducts.Text))
+            if (!string.IsNullOrEmpty(txtItemId.Text))
             {
-                if (Convert.ToInt32(cmbProducts.SelectedValue) != 0)
+                if (Convert.ToInt32(txtItemId.Text) != 0)
                 {
-                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(cmbProducts.SelectedValue));
+                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(txtItemId.Text));
                 }
             }
         }
@@ -320,6 +317,26 @@ namespace Product_Management.PL
             else
             {
                 txtRemainingAmount.Text = "0";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FRM_Items_List frm = new FRM_Items_List();
+            frm.ShowDialog();
+
+            txtItemId.Text = frm.dgvItemsList.CurrentRow.Cells[0].Value.ToString();
+            txtItmeName.Text = frm.dgvItemsList.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void txtItemId_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtItemId.Text))
+            {
+                if (Convert.ToInt32(txtItemId.Text) != 0)
+                {
+                    txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(txtItemId.Text));
+                }
             }
         }
     }

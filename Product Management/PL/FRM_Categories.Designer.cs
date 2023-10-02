@@ -216,9 +216,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(431, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
+            this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "وصف الصنف :";
+            this.label2.Text = "اسم الصنف :";
             // 
             // label1
             // 
@@ -249,7 +249,7 @@
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(6, 16);
+            this.btnExit.Location = new System.Drawing.Point(41, 18);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(103, 48);
             this.btnExit.TabIndex = 12;
@@ -263,9 +263,9 @@
             this.btnSavePDF.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavePDF.Image = global::Product_Management.Properties.Resources.icons8_pdf_261;
             this.btnSavePDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSavePDF.Location = new System.Drawing.Point(115, 21);
+            this.btnSavePDF.Location = new System.Drawing.Point(151, 18);
             this.btnSavePDF.Name = "btnSavePDF";
-            this.btnSavePDF.Size = new System.Drawing.Size(202, 39);
+            this.btnSavePDF.Size = new System.Drawing.Size(202, 48);
             this.btnSavePDF.TabIndex = 10;
             this.btnSavePDF.Text = "حفظ اللائحة في ملف pdf";
             this.btnSavePDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -292,9 +292,9 @@
             this.btnPraintAll.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPraintAll.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24;
             this.btnPraintAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPraintAll.Location = new System.Drawing.Point(323, 21);
+            this.btnPraintAll.Location = new System.Drawing.Point(360, 18);
             this.btnPraintAll.Name = "btnPraintAll";
-            this.btnPraintAll.Size = new System.Drawing.Size(212, 39);
+            this.btnPraintAll.Size = new System.Drawing.Size(142, 48);
             this.btnPraintAll.TabIndex = 8;
             this.btnPraintAll.Text = "طباعة كل الأصناف";
             this.btnPraintAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -305,9 +305,9 @@
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 353);
+            this.groupBox3.Location = new System.Drawing.Point(12, 321);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(543, 170);
+            this.groupBox3.Size = new System.Drawing.Size(543, 202);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "لائحة الأصناف";
@@ -316,18 +316,17 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(3, -32);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(540, 184);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);

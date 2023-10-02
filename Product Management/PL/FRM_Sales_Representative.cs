@@ -68,6 +68,12 @@ namespace Product_Management.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (MessageBox.Show("هل تريد حذف المندوب المحدد ؟؟", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 representative.Delete(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
@@ -79,6 +85,12 @@ namespace Product_Management.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("عذراً لا يوجد عناصر", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             FRM_Add_SalesRepresentative frm = new FRM_Add_SalesRepresentative();
             frm.Text = "تحديث بيانات المندوب";
             frm.txtId.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();

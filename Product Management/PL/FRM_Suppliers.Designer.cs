@@ -49,7 +49,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(0, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(801, 366);
+            this.groupBox1.Size = new System.Drawing.Size(1041, 366);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "قائمة الموردين";
@@ -58,7 +58,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(238, 22);
+            this.txtID.Location = new System.Drawing.Point(345, 22);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(282, 22);
             this.txtID.TabIndex = 12;
@@ -68,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(523, 24);
+            this.label1.Location = new System.Drawing.Point(630, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 14);
             this.label1.TabIndex = 13;
@@ -80,10 +80,10 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-62, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(857, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(1035, 307);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox2
@@ -93,9 +93,9 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 371);
+            this.groupBox2.Location = new System.Drawing.Point(197, 371);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(795, 101);
+            this.groupBox2.Size = new System.Drawing.Size(646, 101);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات";
@@ -105,7 +105,7 @@
             this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(45, 25);
+            this.button8.Location = new System.Drawing.Point(32, 21);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(113, 53);
             this.button8.TabIndex = 8;
@@ -118,7 +118,7 @@
             // 
             this.button3.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(207, 25);
+            this.button3.Location = new System.Drawing.Point(158, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 53);
             this.button3.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             this.button2.Image = global::Product_Management.Properties.Resources.icons8_trash_321;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(433, 25);
+            this.button2.Location = new System.Drawing.Point(315, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 53);
             this.button2.TabIndex = 2;
@@ -144,7 +144,7 @@
             // 
             this.button1.Image = global::Product_Management.Properties.Resources.plus1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(631, 25);
+            this.button1.Location = new System.Drawing.Point(492, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 53);
             this.button1.TabIndex = 1;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 477);
+            this.ClientSize = new System.Drawing.Size(1041, 477);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
