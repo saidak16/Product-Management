@@ -32,6 +32,8 @@ namespace Product_Management.PL
                 txtSeal.Text = Financial.TotalSeals.ToString();
                 txtSup.Text = Financial.TotalSuplierRemainingAmount.ToString();
                 txtCust.Text = Financial.TotalCustomerRemainingAmount.ToString();
+
+                txtProfit.Text = (Convert.ToInt32(txtSeal.Text) - (Convert.ToInt32(txtExp.Text) + Convert.ToInt32(txtPur.Text))).ToString();
                 try
                 {
 

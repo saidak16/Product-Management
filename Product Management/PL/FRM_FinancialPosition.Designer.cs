@@ -48,12 +48,18 @@
             this.txtSup = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtProfit = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtProfit);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -66,7 +72,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(685, 390);
+            this.groupBox1.Size = new System.Drawing.Size(685, 420);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "حجم الاموال ";
@@ -174,7 +180,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(691, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 390);
+            this.groupBox2.Size = new System.Drawing.Size(539, 420);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "حركة الاموال";
@@ -182,7 +188,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 352);
+            this.label10.Location = new System.Drawing.Point(16, 389);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 16);
             this.label10.TabIndex = 17;
@@ -191,7 +197,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 310);
+            this.label9.Location = new System.Drawing.Point(16, 347);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 16);
             this.label9.TabIndex = 16;
@@ -201,14 +207,14 @@
             // 
             this.pieChart2.Location = new System.Drawing.Point(6, 22);
             this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(512, 256);
+            this.pieChart2.Size = new System.Drawing.Size(512, 288);
             this.pieChart2.TabIndex = 13;
             this.pieChart2.Text = "pieChart2";
             // 
             // txtCust
             // 
             this.txtCust.Enabled = false;
-            this.txtCust.Location = new System.Drawing.Point(57, 348);
+            this.txtCust.Location = new System.Drawing.Point(57, 386);
             this.txtCust.Name = "txtCust";
             this.txtCust.Size = new System.Drawing.Size(264, 23);
             this.txtCust.TabIndex = 14;
@@ -218,7 +224,7 @@
             // txtSup
             // 
             this.txtSup.Enabled = false;
-            this.txtSup.Location = new System.Drawing.Point(57, 307);
+            this.txtSup.Location = new System.Drawing.Point(57, 345);
             this.txtSup.Name = "txtSup";
             this.txtSup.Size = new System.Drawing.Size(264, 23);
             this.txtSup.TabIndex = 12;
@@ -228,7 +234,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(355, 348);
+            this.label5.Location = new System.Drawing.Point(355, 386);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 16);
             this.label5.TabIndex = 13;
@@ -237,17 +243,46 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(327, 307);
+            this.label4.Location = new System.Drawing.Point(327, 345);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "اجمالي استحقاقات الموردين";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(142, 381);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 16);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "ج.س";
+            // 
+            // txtProfit
+            // 
+            this.txtProfit.BackColor = System.Drawing.Color.LawnGreen;
+            this.txtProfit.Enabled = false;
+            this.txtProfit.Location = new System.Drawing.Point(183, 378);
+            this.txtProfit.Name = "txtProfit";
+            this.txtProfit.Size = new System.Drawing.Size(264, 23);
+            this.txtProfit.TabIndex = 17;
+            this.txtProfit.Text = "0";
+            this.txtProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(490, 378);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "الربح";
+            // 
             // FRM_FinancialPosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 395);
+            this.ClientSize = new System.Drawing.Size(1229, 424);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,5 +325,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtProfit;
+        private System.Windows.Forms.Label label12;
     }
 }
