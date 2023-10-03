@@ -93,5 +93,65 @@ namespace Product_Management.BL
                 return null;
             }
         }
+
+        public DataTable GetMovementOfItemsDetails(int productId)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@productId", SqlDbType.Int);
+                param[0].Value = productId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetMovementOfItemsDetails", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
+        public DataTable GetMovementOfItems(string search)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@seaarch", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetMovementOfItems", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
     }
 }

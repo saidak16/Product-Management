@@ -364,5 +364,11 @@ namespace Product_Management.PL
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
         }
+
+        private void حركةالاصنافToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_MovementOfItems frm = new FRM_MovementOfItems();
+            frm.ShowDialog();
+        }
     }
 }
