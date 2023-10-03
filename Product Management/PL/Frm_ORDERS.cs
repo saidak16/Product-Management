@@ -246,7 +246,10 @@ namespace Product_Management.PL
 
         private void txtSumTotal_TextChanged(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(txtSumTotal.Text))
+            {
+                txtTotalItems.Text = (dataGridView1.Rows.Count - 1).ToString();
+            }
         }
 
         private void txtPROQNT_TabIndexChanged(object sender, EventArgs e)

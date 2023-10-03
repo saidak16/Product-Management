@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCUS = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtCUS_Email = new System.Windows.Forms.TextBox();
             this.txtCUS_Tel = new System.Windows.Forms.TextBox();
             this.txtCUS_Lname = new System.Windows.Forms.TextBox();
@@ -76,6 +77,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSumTotal = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,31 +86,32 @@
             this.حذفالكلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBrows = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cbSalesRepresentative = new System.Windows.Forms.CheckBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblPercentage = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtPercentage = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.btnSalesList = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.txtSaleId = new System.Windows.Forms.TextBox();
+            this.lblSaleId = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btnSalesList = new System.Windows.Forms.Button();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPercentage = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblPercentage = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.cbSalesRepresentative = new System.Windows.Forms.CheckBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_New = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSaleId = new System.Windows.Forms.TextBox();
-            this.lblSaleId = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtTotalItems = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -237,6 +240,16 @@
             this.btnCUS.UseVisualStyleBackColor = true;
             this.btnCUS.Click += new System.EventHandler(this.btnCUS_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtCUS_Email
             // 
             this.txtCUS_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -335,6 +348,9 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.txtTotalItems);
             this.groupBox3.Controls.Add(this.txtId);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label21);
@@ -648,6 +664,20 @@
             this.txtSumTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSumTotal.TextChanged += new System.EventHandler(this.txtSumTotal_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(928, 247);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 32);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "حذف السطر المحدد";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -731,80 +761,47 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "بيانات المندوب";
             // 
-            // cbSalesRepresentative
+            // txtSaleId
             // 
-            this.cbSalesRepresentative.AutoSize = true;
-            this.cbSalesRepresentative.Location = new System.Drawing.Point(193, 18);
-            this.cbSalesRepresentative.Name = "cbSalesRepresentative";
-            this.cbSalesRepresentative.Size = new System.Drawing.Size(81, 19);
-            this.cbSalesRepresentative.TabIndex = 0;
-            this.cbSalesRepresentative.Text = "اضافة مندوب";
-            this.cbSalesRepresentative.UseVisualStyleBackColor = true;
-            this.cbSalesRepresentative.CheckedChanged += new System.EventHandler(this.cbSalesRepresentative_CheckedChanged);
+            this.txtSaleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSaleId.Location = new System.Drawing.Point(5, 66);
+            this.txtSaleId.Name = "txtSaleId";
+            this.txtSaleId.ReadOnly = true;
+            this.txtSaleId.Size = new System.Drawing.Size(189, 22);
+            this.txtSaleId.TabIndex = 20;
+            this.txtSaleId.Visible = false;
             // 
-            // lblPhone
+            // lblSaleId
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(201, 118);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(66, 19);
-            this.lblPhone.TabIndex = 11;
-            this.lblPhone.Text = "رقم الهاتف";
-            this.lblPhone.Visible = false;
+            this.lblSaleId.AutoSize = true;
+            this.lblSaleId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaleId.Location = new System.Drawing.Point(224, 69);
+            this.lblSaleId.Name = "lblSaleId";
+            this.lblSaleId.Size = new System.Drawing.Size(49, 19);
+            this.lblSaleId.TabIndex = 19;
+            this.lblSaleId.Text = "المعرف";
+            this.lblSaleId.Visible = false;
             // 
-            // lblPercentage
+            // txtName
             // 
-            this.lblPercentage.AutoSize = true;
-            this.lblPercentage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentage.Location = new System.Drawing.Point(225, 144);
-            this.lblPercentage.Name = "lblPercentage";
-            this.lblPercentage.Size = new System.Drawing.Size(42, 19);
-            this.lblPercentage.TabIndex = 12;
-            this.lblPercentage.Text = "النسبة";
-            this.lblPercentage.Visible = false;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Location = new System.Drawing.Point(6, 90);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(189, 22);
+            this.txtName.TabIndex = 18;
+            this.txtName.Visible = false;
             // 
-            // lblAddress
+            // label23
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(220, 172);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(47, 19);
-            this.lblAddress.TabIndex = 13;
-            this.lblAddress.Text = "العنوان";
-            this.lblAddress.Visible = false;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Location = new System.Drawing.Point(6, 117);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(189, 22);
-            this.txtPhone.TabIndex = 14;
-            this.txtPhone.Visible = false;
-            // 
-            // txtPercentage
-            // 
-            this.txtPercentage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPercentage.Location = new System.Drawing.Point(6, 144);
-            this.txtPercentage.Name = "txtPercentage";
-            this.txtPercentage.ReadOnly = true;
-            this.txtPercentage.Size = new System.Drawing.Size(189, 22);
-            this.txtPercentage.TabIndex = 15;
-            this.txtPercentage.Visible = false;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAddress.Location = new System.Drawing.Point(6, 172);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.ReadOnly = true;
-            this.txtAddress.Size = new System.Drawing.Size(189, 53);
-            this.txtAddress.TabIndex = 16;
-            this.txtAddress.Visible = false;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(225, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 19);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "الاسم\r\n";
+            this.label23.Visible = false;
             // 
             // btnSalesList
             // 
@@ -818,26 +815,80 @@
             this.btnSalesList.UseVisualStyleBackColor = true;
             this.btnSalesList.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // label23
+            // txtAddress
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(225, 93);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 19);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "الاسم\r\n";
-            this.label23.Visible = false;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Location = new System.Drawing.Point(6, 172);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(189, 53);
+            this.txtAddress.TabIndex = 16;
+            this.txtAddress.Visible = false;
             // 
-            // txtName
+            // txtPercentage
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(6, 90);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(189, 22);
-            this.txtName.TabIndex = 18;
-            this.txtName.Visible = false;
+            this.txtPercentage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPercentage.Location = new System.Drawing.Point(6, 144);
+            this.txtPercentage.Name = "txtPercentage";
+            this.txtPercentage.ReadOnly = true;
+            this.txtPercentage.Size = new System.Drawing.Size(189, 22);
+            this.txtPercentage.TabIndex = 15;
+            this.txtPercentage.Visible = false;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.Location = new System.Drawing.Point(6, 117);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
+            this.txtPhone.Size = new System.Drawing.Size(189, 22);
+            this.txtPhone.TabIndex = 14;
+            this.txtPhone.Visible = false;
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(220, 172);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(47, 19);
+            this.lblAddress.TabIndex = 13;
+            this.lblAddress.Text = "العنوان";
+            this.lblAddress.Visible = false;
+            // 
+            // lblPercentage
+            // 
+            this.lblPercentage.AutoSize = true;
+            this.lblPercentage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentage.Location = new System.Drawing.Point(225, 144);
+            this.lblPercentage.Name = "lblPercentage";
+            this.lblPercentage.Size = new System.Drawing.Size(42, 19);
+            this.lblPercentage.TabIndex = 12;
+            this.lblPercentage.Text = "النسبة";
+            this.lblPercentage.Visible = false;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(201, 118);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(66, 19);
+            this.lblPhone.TabIndex = 11;
+            this.lblPhone.Text = "رقم الهاتف";
+            this.lblPhone.Visible = false;
+            // 
+            // cbSalesRepresentative
+            // 
+            this.cbSalesRepresentative.AutoSize = true;
+            this.cbSalesRepresentative.Location = new System.Drawing.Point(193, 18);
+            this.cbSalesRepresentative.Name = "cbSalesRepresentative";
+            this.cbSalesRepresentative.Size = new System.Drawing.Size(81, 19);
+            this.cbSalesRepresentative.TabIndex = 0;
+            this.cbSalesRepresentative.Text = "اضافة مندوب";
+            this.cbSalesRepresentative.UseVisualStyleBackColor = true;
+            this.cbSalesRepresentative.CheckedChanged += new System.EventHandler(this.cbSalesRepresentative_CheckedChanged);
             // 
             // btn_Exit
             // 
@@ -897,50 +948,35 @@
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
-            // button1
+            // label24
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(928, 247);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 32);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "حذف السطر المحدد";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(437, 253);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 19);
+            this.label24.TabIndex = 33;
+            this.label24.Text = "عنصر";
             // 
-            // pictureBox1
+            // label25
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 185);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(578, 252);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(104, 22);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "عناصر الفاتورة";
             // 
-            // txtSaleId
+            // txtTotalItems
             // 
-            this.txtSaleId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSaleId.Location = new System.Drawing.Point(5, 66);
-            this.txtSaleId.Name = "txtSaleId";
-            this.txtSaleId.ReadOnly = true;
-            this.txtSaleId.Size = new System.Drawing.Size(189, 22);
-            this.txtSaleId.TabIndex = 20;
-            this.txtSaleId.Visible = false;
-            // 
-            // lblSaleId
-            // 
-            this.lblSaleId.AutoSize = true;
-            this.lblSaleId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaleId.Location = new System.Drawing.Point(224, 69);
-            this.lblSaleId.Name = "lblSaleId";
-            this.lblSaleId.Size = new System.Drawing.Size(49, 19);
-            this.lblSaleId.TabIndex = 19;
-            this.lblSaleId.Text = "المعرف";
-            this.lblSaleId.Visible = false;
+            this.txtTotalItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalItems.Location = new System.Drawing.Point(482, 252);
+            this.txtTotalItems.Name = "txtTotalItems";
+            this.txtTotalItems.ReadOnly = true;
+            this.txtTotalItems.Size = new System.Drawing.Size(93, 22);
+            this.txtTotalItems.TabIndex = 31;
+            this.txtTotalItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Frm_ORDERS
             // 
@@ -970,13 +1006,13 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1055,5 +1091,8 @@
         private System.Windows.Forms.Button btnSalesList;
         private System.Windows.Forms.TextBox txtSaleId;
         private System.Windows.Forms.Label lblSaleId;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtTotalItems;
     }
 }

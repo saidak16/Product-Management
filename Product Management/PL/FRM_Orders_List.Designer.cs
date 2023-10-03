@@ -44,7 +44,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(454, 9);
+            this.txtID.Location = new System.Drawing.Point(517, 9);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(524, 23);
             this.txtID.TabIndex = 9;
@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 9);
+            this.label1.Location = new System.Drawing.Point(431, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
             this.label1.TabIndex = 11;
@@ -75,7 +75,7 @@
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1502, 594);
+            this.dataGridView1.Size = new System.Drawing.Size(1468, 531);
             this.dataGridView1.TabIndex = 10;
             // 
             // groupBox1
@@ -85,7 +85,7 @@
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(326, 635);
+            this.groupBox1.Location = new System.Drawing.Point(392, 571);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(689, 89);
             this.groupBox1.TabIndex = 14;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1516, 727);
+            this.ClientSize = new System.Drawing.Size(1472, 665);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
