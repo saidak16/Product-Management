@@ -232,6 +232,12 @@
     <Compile Include="PL\FRM_FinancialPosition.Designer.cs">
       <DependentUpon>FRM_FinancialPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_GetOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_GetOrders.Designer.cs">
+      <DependentUpon>FRM_GetOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Items_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,12 @@
     </Compile>
     <Compile Include="PL\Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_OrderDetails.Designer.cs">
+      <DependentUpon>FRM_OrderDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_ORDERS.cs">
       <SubType>Form</SubType>
@@ -533,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_OrderDetails.resx">
+      <DependentUpon>FRM_OrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_ORDERS.resx">
       <DependentUpon>Frm_ORDERS.cs</DependentUpon>

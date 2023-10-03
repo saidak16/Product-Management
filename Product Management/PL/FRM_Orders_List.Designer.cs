@@ -34,9 +34,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(392, 571);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(689, 89);
+            this.groupBox1.Size = new System.Drawing.Size(630, 89);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "العمليات";
@@ -105,20 +105,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(298, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 41);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "عملية استرجاع العنصر المحدد";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExit
             // 
@@ -139,7 +125,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_1;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(505, 37);
+            this.btnPrint.Location = new System.Drawing.Point(437, 37);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(174, 41);
             this.btnPrint.TabIndex = 12;
@@ -147,6 +133,20 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(297, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 41);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "تفاصيل الفاتورة";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FRM_Orders_List
             // 

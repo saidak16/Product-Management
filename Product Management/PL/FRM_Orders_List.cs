@@ -50,7 +50,7 @@ namespace Product_Management.PL
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = order.Order_Del(txtID.Text);
+            dataGridView1.DataSource = order.GetAllOrders(txtID.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -64,45 +64,51 @@ namespace Product_Management.PL
 
         public void DGV()
         {
-            dataGridView1.DataSource = order.Order_Del("");
+            dataGridView1.DataSource = order.GetAllOrders("");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("هل تريد استرجاع العنصر المحدد ؟؟", "عملية قيد عكسي", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                var isValid = order.DeleteOrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+            FRM_OrderDetails frm = new FRM_OrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
 
-                if (isValid)
-                {
-                    MessageBox.Show("تمت العملية بنجاح", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DGV();
-                }
-                else
-                {
-                    MessageBox.Show("تم إلغاء العملية", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            frm.ShowDialog();
+
+            //if (MessageBox.Show("هل تريد استرجاع العنصر المحدد ؟؟", "عملية قيد عكسي", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            //{
+            //    var isValid = order.DeleteOrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+
+            //    if (isValid)
+            //    {
+            //        MessageBox.Show("تمت العملية بنجاح", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        DGV();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("تم إلغاء العملية", "عملية قيد عكسي", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[12].Value.ToString()) == 0)
+            if(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[5].Value.ToString()) == 0)
             {
                 MessageBox.Show("هذا الععنصر ليس لديه استحقاقات", " استحقاق العميل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            DataTable dt = order.GetCustomersLiabilities(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+
             FRM_UpdateCustomersLiabilities frm = new FRM_UpdateCustomersLiabilities();
 
-            frm.txtId.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            frm.txtTotal.Text = this.dataGridView1.CurrentRow.Cells[13].Value.ToString();
-            frm.txtPaid.Text = this.dataGridView1.CurrentRow.Cells[11].Value.ToString();
-            frm.txtRemain.Text = this.dataGridView1.CurrentRow.Cells[12].Value.ToString();
+            frm.txtId.Text = dt.Rows[0][0].ToString();
+            frm.txtTotal.Text = dt.Rows[0][2].ToString();
+            frm.txtPaid.Text = dt.Rows[0][3].ToString();
+            frm.txtRemain.Text = dt.Rows[0][4].ToString();
 
             frm.ShowDialog();
         }

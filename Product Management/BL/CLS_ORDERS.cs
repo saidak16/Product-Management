@@ -47,10 +47,10 @@ namespace Product_Management.BL
             }
         }
 
-        public void Add_Order(int id,DateTime Order_Date,int Cust_ID,string des,string SalesMan)
+        public void Add_Order(int id,DateTime Order_Date,int Cust_ID,string des,string SalesMan, int TotalAmount, int PaidAmount, int RemainingAmount)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[8];
             dal.Open();
 
             param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
@@ -67,16 +67,25 @@ namespace Product_Management.BL
 
             param[4] = new SqlParameter("@SalesMan", SqlDbType.NVarChar, 75);
             param[4].Value = SalesMan;
+            
+            param[5] = new SqlParameter("@TotalAmount", SqlDbType.BigInt);
+            param[5].Value = TotalAmount;
+            
+            param[6] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+            param[6].Value = PaidAmount;
+            
+            param[7] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+            param[7].Value = RemainingAmount;
 
             dal.ExCommand("Add_Order", param);
             dal.Close();
         }
 
 
-        public void Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total, int PaidAmount, int RemainingAmount, int PurchaseId)
+        public void Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total, int PurchaseId)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[10];
+            SqlParameter[] param = new SqlParameter[8];
             dal.Open();
 
             param[0] = new SqlParameter("@ID_Product", SqlDbType.NVarChar , 30);
@@ -100,14 +109,8 @@ namespace Product_Management.BL
             param[6] = new SqlParameter("@total", SqlDbType.NVarChar, 50);
             param[6].Value = total;
             
-            param[7] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
-            param[7].Value = PaidAmount;
-            
-            param[8] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
-            param[8].Value = RemainingAmount;
-            
-            param[9] = new SqlParameter("@PurchaseId", SqlDbType.Int);
-            param[9].Value = PurchaseId;
+            param[7] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+            param[7].Value = PurchaseId;
 
             dal.ExCommand("Order_Det", param);
             dal.Close();
@@ -191,6 +194,27 @@ namespace Product_Management.BL
             }
         }
 
+        public DataTable GetCustomersLiabilities(int ID)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
+                param[0].Value = ID;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomersLiabilities", param);
+                
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public void Order_RPT(int id)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
@@ -204,6 +228,50 @@ namespace Product_Management.BL
             dal.Close();
         }
 
+        public DataTable GetAllOrders(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
 
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetAllOrders", param);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public DataTable GetOrderDetails(string search, int orderId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+
+                param[0] = new SqlParameter("@orderId", SqlDbType.Int);
+                param[0].Value = orderId;
+                
+                param[1] = new SqlParameter("@cr", SqlDbType.NVarChar, 50);
+                param[1].Value = search;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetOrderDetails", param);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

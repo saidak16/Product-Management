@@ -46,8 +46,6 @@ namespace Product_Management.PL
             dt.Columns.Add("الكمية");
             dt.Columns.Add("المبلغ");
             dt.Columns.Add("الخصم (%)");
-            dt.Columns.Add("المبلغ المدفوع");
-            dt.Columns.Add("المبلغ المتبقي");
             dt.Columns.Add("المبلغ الاجمالي");
 
             dataGridView1.DataSource = dt;
@@ -62,10 +60,10 @@ namespace Product_Management.PL
                 this.dataGridView1.Columns[3].Width = 96;
                 this.dataGridView1.Columns[4].Width = 87;
                 this.dataGridView1.Columns[5].Width = 80;
-                this.dataGridView1.Columns[6].Width = 134;
-                this.dataGridView1.Columns[7].Width = 80;
-                this.dataGridView1.Columns[8].Width = 80;
-                this.dataGridView1.Columns[9].Width = 134;
+                //this.dataGridView1.Columns[6].Width = 134;
+                //this.dataGridView1.Columns[7].Width = 80;
+                //this.dataGridView1.Columns[8].Width = 80;
+                //this.dataGridView1.Columns[9].Width = 134;
         }
 
         void clearBoxes()
@@ -78,15 +76,13 @@ namespace Product_Management.PL
             txtPROAmount.Clear();
             txtPRODES.Clear();
             txtPROTotal.Clear();
-            txtPaidAmount.Clear();
-            txtRemainingAmount.Text = "0";
             btnBrows.Focus();
         }
         public Frm_ORDERS()
         {
             InitializeComponent();
             CreateColumns();
-            ResizeDGV();
+            //ResizeDGV();
             txtSalesMan.Text = Program.SalesMan;
 
 
@@ -226,22 +222,20 @@ namespace Product_Management.PL
                 r[4] = txtPROQNT.Text;
                 r[5] = txtPROAmount.Text;
                 r[6] = txtPRODES.Text;
-                r[7] = txtPaidAmount.Text;
-                r[8] = txtRemainingAmount.Text;
-                r[9] = txtPROTotal.Text;
+                r[7] = txtPROTotal.Text;
 
                 dt.Rows.Add(r);
                 dataGridView1.DataSource = dt;
                 clearBoxes();
 
-                txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[9].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[9].FormattedValue)).Sum().ToString();
+                txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[7].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[7].FormattedValue)).Sum().ToString();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-            txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[9].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[9].FormattedValue)).Sum().ToString();
+            txtSumTotal.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[7].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[7].FormattedValue)).Sum().ToString();
         }
 
         private void txtSumTotal_TextChanged(object sender, EventArgs e)
@@ -249,6 +243,7 @@ namespace Product_Management.PL
             if (!string.IsNullOrEmpty(txtSumTotal.Text))
             {
                 txtTotalItems.Text = (dataGridView1.Rows.Count - 1).ToString();
+                txtTotalAmount.Text = txtSumTotal.Text;
             }
         }
 
@@ -321,13 +316,13 @@ namespace Product_Management.PL
                     }
                 }
 
-                if (txtOrderID.Text == string.Empty || txtOrderDes.Text == string.Empty || txt_CUS_ID.Text == string.Empty || dataGridView1.Rows.Count < 1)
+                if (txtOrderID.Text == string.Empty || txtTotalAmount.Text == string.Empty || txtOrderDes.Text == string.Empty || txt_CUS_ID.Text == string.Empty || dataGridView1.Rows.Count < 1)
                 {
                     MessageBox.Show("بعض المعلومات الناقصة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text);
+                order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text, Convert.ToInt32(txtTotalAmount.Text), Convert.ToInt32(txtPaidAmont.Text), Convert.ToInt32(txtRemAmount.Text));
 
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
@@ -337,9 +332,7 @@ namespace Product_Management.PL
                                     dataGridView1.Rows[i].Cells[3].Value.ToString(),
                                     Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value),
                                     dataGridView1.Rows[i].Cells[5].Value.ToString(),
-                                    dataGridView1.Rows[i].Cells[9].Value.ToString(),
-                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value.ToString()),
-                                    Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value.ToString()),
+                                    dataGridView1.Rows[i].Cells[7].Value.ToString(),
                                     Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()));
                 }
 
@@ -382,14 +375,14 @@ namespace Product_Management.PL
 
         private void txtPaidAmount_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPaidAmount.Text) || !string.IsNullOrWhiteSpace(txtPaidAmount.Text))
-            {
-                txtRemainingAmount.Text = (Convert.ToInt32(txtPROTotal.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
-            }
-            else
-            {
-                txtRemainingAmount.Text = "0";
-            }
+            //if (!string.IsNullOrEmpty(txtPaidAmount.Text) || !string.IsNullOrWhiteSpace(txtPaidAmount.Text))
+            //{
+            //    txtRemainingAmount.Text = (Convert.ToInt32(txtPROTotal.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
+            //}
+            //else
+            //{
+            //    txtRemainingAmount.Text = "0";
+            //}
         }
 
         private void cbSalesRepresentative_CheckedChanged(object sender, EventArgs e)
@@ -451,6 +444,14 @@ namespace Product_Management.PL
             txtPhone.Text = frm.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txtAddress.Text = frm.dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txtPercentage.Text = frm.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void txtPaidAmont_TextChanged(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtTotalAmount.Text) && !string.IsNullOrEmpty(txtPaidAmont.Text))
+            {
+                txtRemAmount.Text = (Convert.ToInt32(txtTotalAmount.Text) - Convert.ToInt32(txtPaidAmont.Text)).ToString();
+            }
         }
     }
 }

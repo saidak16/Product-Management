@@ -101,6 +101,20 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public DataTable GetCustomersLiabilities(int Id)
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("Id", SqlDbType.Int);
+            param[0].Value = Id;
+            dal.Open();
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("GetCustomersLiabilities", param);
+            dal.Close();
+            return dt;
+        }
+
         public DataTable SearchCustomersLiabilities(string ser)
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();

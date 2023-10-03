@@ -40,7 +40,7 @@ namespace Product_Management.PL
                 {
                     MessageBox.Show("تمت العملية بنجاح", "التحديث", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    FRM_Orders_List.getMain.dataGridView1.DataSource = order.Order_Del("");
+                    FRM_Orders_List.getMain.dataGridView1.DataSource = order.GetAllOrders("");
                 }
                 else
                 {
