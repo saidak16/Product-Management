@@ -42,8 +42,8 @@
             this.txtPurPrice = new System.Windows.Forms.TextBox();
             this.txtSealPrice = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,6 +161,7 @@
             this.txtSealPrice.Size = new System.Drawing.Size(255, 23);
             this.txtSealPrice.TabIndex = 11;
             this.txtSealPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSealPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSealPrice_KeyPress);
             // 
             // groupBox1
             // 
@@ -172,19 +173,6 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "العمليات";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(201, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "تحديث";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -199,6 +187,20 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(201, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "تحديث";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FRM_ProductPrice
             // 

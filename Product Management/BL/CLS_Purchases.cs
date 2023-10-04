@@ -296,6 +296,19 @@ namespace Product_Management.BL
         {
             try
             {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+
+                param[0] = new SqlParameter("@orderDetId", SqlDbType.Int);
+                param[0].Value = orderDetId;
+                
+                param[1] = new SqlParameter("@SellingPrice", SqlDbType.Int);
+                param[1].Value = SellingPrice;
+
+                dal.Open();
+                dal.ExCommand("UpdateProductPrice", param);
+                dal.Close();
+
                 return true;
             }
             catch (Exception ex)
