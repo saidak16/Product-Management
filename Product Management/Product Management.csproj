@@ -298,6 +298,18 @@
     <Compile Include="PL\FRM_Price_List.Designer.cs">
       <DependentUpon>FRM_Price_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_ProductPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ProductPrice.Designer.cs">
+      <DependentUpon>FRM_ProductPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_ProductPriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ProductPriceList.Designer.cs">
+      <DependentUpon>FRM_ProductPriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +590,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Price_List.resx">
       <DependentUpon>FRM_Price_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ProductPrice.resx">
+      <DependentUpon>FRM_ProductPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ProductPriceList.resx">
+      <DependentUpon>FRM_ProductPriceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Products.resx">
       <DependentUpon>Frm_Products.cs</DependentUpon>

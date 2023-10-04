@@ -370,5 +370,11 @@ namespace Product_Management.PL
             FRM_MovementOfItems frm = new FRM_MovementOfItems();
             frm.ShowDialog();
         }
+
+        private void تسعيرالمنتجاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ProductPriceList frm = new FRM_ProductPriceList();
+            frm.ShowDialog();
+        }
     }
 }

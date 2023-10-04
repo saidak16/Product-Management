@@ -234,6 +234,76 @@ namespace Product_Management.BL
             }
         }
 
+        public DataTable GetProductPrice(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetProductPrice", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
+        public DataTable GetProductPriceById(int orderDetId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@orderDetId", SqlDbType.Int);
+                param[0].Value = orderDetId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetProductPriceById", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+
+                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+
+                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                return null;
+            }
+        }
+
+        public bool UpdateProductPrice(int orderDetId, int SellingPrice)
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool AddPurchases(Purchases purchases)
         {
             try
@@ -350,7 +420,6 @@ namespace Product_Management.BL
                 return false;
             }
         }
-
 
         public bool DeletePurchasDetails(int id)
         {
