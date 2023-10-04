@@ -292,6 +292,13 @@ namespace Product_Management.PL
         {
             try
             {
+                if(Convert.ToInt32(txtPaidAmont.Text) == Convert.ToInt32(txtRemAmount.Text))
+                {
+                    MessageBox.Show("عذراً ... الرجاء التحقق من الدفعيات", "دفعيات الطلبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPaidAmont.Focus();
+                    return;
+                }
+
                 if (cbSalesRepresentative.Checked && !string.IsNullOrEmpty(txtSaleId.Text))
                 {
                     CLS_SalesRepresentativePercentage percentage = new CLS_SalesRepresentativePercentage();
