@@ -256,7 +256,7 @@
             // txtSalesMan
             // 
             this.txtSalesMan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSalesMan.Location = new System.Drawing.Point(730, 537);
+            this.txtSalesMan.Location = new System.Drawing.Point(353, 252);
             this.txtSalesMan.Name = "txtSalesMan";
             this.txtSalesMan.ReadOnly = true;
             this.txtSalesMan.Size = new System.Drawing.Size(236, 22);
@@ -266,7 +266,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(979, 540);
+            this.label5.Location = new System.Drawing.Point(595, 254);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 3;
@@ -417,9 +417,11 @@
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.txtTotalItems);
+            this.groupBox3.Controls.Add(this.txtSalesMan);
             this.groupBox3.Controls.Add(this.txtId);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.txtPROTotal);
             this.groupBox3.Controls.Add(this.label17);
@@ -452,7 +454,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(437, 253);
+            this.label24.Location = new System.Drawing.Point(678, 255);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 19);
             this.label24.TabIndex = 33;
@@ -462,7 +464,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(578, 252);
+            this.label25.Location = new System.Drawing.Point(819, 254);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(104, 22);
             this.label25.TabIndex = 32;
@@ -471,7 +473,7 @@
             // txtTotalItems
             // 
             this.txtTotalItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalItems.Location = new System.Drawing.Point(482, 252);
+            this.txtTotalItems.Location = new System.Drawing.Point(723, 254);
             this.txtTotalItems.Name = "txtTotalItems";
             this.txtTotalItems.ReadOnly = true;
             this.txtTotalItems.Size = new System.Drawing.Size(93, 22);
@@ -1003,10 +1005,8 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
-            this.Controls.Add(this.txtSalesMan);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_New);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1032,7 +1032,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

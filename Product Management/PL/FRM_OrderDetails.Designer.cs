@@ -47,7 +47,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(5, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1491, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(1404, 352);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -67,7 +67,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(628, 12);
+            this.txtID.Location = new System.Drawing.Point(586, 12);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(331, 23);
             this.txtID.TabIndex = 16;
@@ -77,7 +77,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(542, 12);
+            this.label1.Location = new System.Drawing.Point(500, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
             this.label1.TabIndex = 17;
@@ -88,7 +88,7 @@
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(559, 399);
+            this.groupBox1.Location = new System.Drawing.Point(517, 399);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 74);
             this.groupBox1.TabIndex = 18;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 475);
+            this.ClientSize = new System.Drawing.Size(1416, 475);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
