@@ -44,7 +44,7 @@ namespace Product_Management.PL
                     
                     if(dataGridView1.Rows.Count > 0)
                     {
-                        dataGridView1.DataSource = orders.GetOrderDetails("", Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                        dataGridView1.DataSource = orders.GetOrderDetails("", Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()));
                     }
                     else
                     {

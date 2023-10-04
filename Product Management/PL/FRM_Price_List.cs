@@ -20,6 +20,7 @@ namespace Product_Management.PL
         {
             InitializeComponent();
             dgvPriceList.DataSource = reporting.GetPriceList();
+            txtID.Focus();
         }
 
         private void button8_Click(object sender, EventArgs e)
