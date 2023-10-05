@@ -137,7 +137,7 @@ namespace Product_Management.BL
 
                 dal.Open();
                 DataTable dt = new DataTable();
-                dt = dal.SelectData("GetCustomersLiabilities", null);
+                dt = dal.SelectData("GetAllCustomersLiabilities", null);
                 dal.Close();
 
                 return dt;
