@@ -22,12 +22,12 @@ namespace Product_Management.BL
             return dt;
         }
 
-        public bool DeleteOrderDetails(int id, int purchaseId)
+        public bool DeleteOrderDetails(int id, int purchaseId, int orderId)
         {
             try
             {
                 DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[2];
+                SqlParameter[] param = new SqlParameter[3];
                 dal.Open();
 
                 param[0] = new SqlParameter("@ID", SqlDbType.Int);
@@ -35,6 +35,9 @@ namespace Product_Management.BL
 
                 param[1] = new SqlParameter("@PurchaseId", SqlDbType.Int);
                 param[1].Value = purchaseId;
+                
+                param[2] = new SqlParameter("@orderId", SqlDbType.Int);
+                param[2].Value = orderId;
 
                 dal.ExCommand("DeleteOrderDetails", param);
                 dal.Close();

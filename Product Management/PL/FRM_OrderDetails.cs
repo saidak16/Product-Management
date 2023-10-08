@@ -45,7 +45,8 @@ namespace Product_Management.PL
             {
                 if (MessageBox.Show("هل تريد استرجاع العنصر المحدد ؟؟", "عملية قيد عكسي", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    var isValid = orders.DeleteOrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[1].Value.ToString()));
+                    var isValid = orders.DeleteOrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[1].Value.ToString()),
+                                                            Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()));
 
                     if (isValid)
                     {
@@ -69,6 +70,8 @@ namespace Product_Management.PL
                 {
                     MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                FRM_Orders_List.getMain.DGV();
             }
             else
             {
