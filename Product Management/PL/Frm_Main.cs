@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Product_Management.PL
@@ -31,9 +32,18 @@ namespace Product_Management.PL
             }
         }
 
+        public void StartForm()
+        {
+            Application.Run(new FRM_SplashScreen());
+        }
+
         public Frm_Main()
         {
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(6000);
             InitializeComponent();
+            t.Abort();
             if (frm == null)
                 frm = this;
             this.المستخدمينToolStripMenuItem.Enabled = false;

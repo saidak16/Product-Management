@@ -1063,6 +1063,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap INTELLIGENT_ANALYTICS {
+            get {
+                object obj = ResourceManager.GetObject("INTELLIGENT ANALYTICS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jj_ico {
             get {
                 object obj = ResourceManager.GetObject("jj.ico", resourceCulture);
@@ -1096,6 +1106,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap LOGO_8 {
             get {
                 object obj = ResourceManager.GetObject("LOGO-8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_81 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-81", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
