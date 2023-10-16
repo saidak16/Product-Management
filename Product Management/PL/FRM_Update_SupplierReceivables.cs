@@ -32,6 +32,24 @@ namespace Product_Management.PL
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtReceivedAmount.Text))
+            {
+                MessageBox.Show("يجب ادخال المبلغ الصحيح", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtReceivedAmount.Focus();
+                return;
+            }
+
+
+            if (!string.IsNullOrEmpty(txtReceivedAmount.Text))
+            {
+                if (Convert.ToInt32(txtReceivedAmount.Text) > Convert.ToInt32(txtRemainingAmount.Text))
+                {
+                    MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtReceivedAmount.Text = "0";
+                    return;
+                }
+            }
+
             var isValid = purchases.UpdateSupplierReceivables(Convert.ToInt32(txtId.Text), Convert.ToInt32(txtReceivedAmount.Text));
 
             if (isValid)
@@ -57,10 +75,23 @@ namespace Product_Management.PL
             //    txtRemainingAmount.Text = "0";
             //}
 
-            if(Convert.ToInt32(txtReceivedAmount.Text) > Convert.ToInt32(txtReceivedAmount))
+            if (!string.IsNullOrEmpty(txtReceivedAmount.Text))
             {
-                MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (Convert.ToInt32(txtReceivedAmount.Text) > Convert.ToInt32(txtRemainingAmount.Text))
+                {
+                    MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtReceivedAmount.Text = "0";
+                    txtReceivedAmount.Focus();
+                    return;
+                }
+            }
+        }
+
+        private void txtReceivedAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
             }
         }
     }

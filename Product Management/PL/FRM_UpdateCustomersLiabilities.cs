@@ -34,6 +34,20 @@ namespace Product_Management.PL
         {
             try
             {
+                if (string.IsNullOrEmpty(txtAmount.Text))
+                {
+                    MessageBox.Show("يجب ادخال المبلغ الصحيح", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAmount.Focus();
+                    return;
+                }
+
+                if (Convert.ToInt32(txtAmount.Text) > Convert.ToInt32(txtRemain.Text))
+                {
+                    MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAmount.Text = "0";
+                    return;
+                }
+
                 var isValid = order.UpdateCustomersLiabilities(Convert.ToInt32(txtId.Text), Convert.ToInt32(txtAmount.Text));
 
                 if (isValid)
@@ -55,10 +69,20 @@ namespace Product_Management.PL
 
         private void txtAmount_TextChanged(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(txtAmount.Text) > Convert.ToInt32(txtRemain.Text))
+
+            if (Convert.ToInt32(txtAmount.Text) > Convert.ToInt32(txtRemain.Text))
             {
                 MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAmount.Text = "0";
                 return;
+            }
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
             }
         }
     }

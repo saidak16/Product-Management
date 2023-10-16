@@ -39,13 +39,16 @@ namespace Product_Management.PL
 
         public Frm_Main()
         {
-            Thread t = new Thread(new ThreadStart(StartForm));
-            t.Start();
-            Thread.Sleep(6000);
+            //Thread t = new Thread(new ThreadStart(StartForm));
+            //t.Start();
+            //Thread.Sleep(2000);
+          
             InitializeComponent();
-            t.Abort();
+            //t.Abort();
+
             if (frm == null)
                 frm = this;
+
             this.المستخدمينToolStripMenuItem.Enabled = false;
             this.المنتجاتToolStripMenuItem.Enabled = false;
             this.المبيعاتToolStripMenuItem.Enabled = false;

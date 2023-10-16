@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Update_SupplierReceivables));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtReceivedAmount = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtRemainingAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtReceivedAmount = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الاستحقاق";
+            // 
+            // txtReceivedAmount
+            // 
+            this.txtReceivedAmount.Location = new System.Drawing.Point(3, 239);
+            this.txtReceivedAmount.Name = "txtReceivedAmount";
+            this.txtReceivedAmount.Size = new System.Drawing.Size(221, 23);
+            this.txtReceivedAmount.TabIndex = 14;
+            this.txtReceivedAmount.Text = "0";
+            this.txtReceivedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtReceivedAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtReceivedAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceivedAmount_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(233, 242);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "السداد الحالي";
             // 
             // txtRemainingAmount
             // 
@@ -208,25 +228,6 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtReceivedAmount
-            // 
-            this.txtReceivedAmount.Location = new System.Drawing.Point(3, 239);
-            this.txtReceivedAmount.Name = "txtReceivedAmount";
-            this.txtReceivedAmount.Size = new System.Drawing.Size(221, 23);
-            this.txtReceivedAmount.TabIndex = 14;
-            this.txtReceivedAmount.Text = "0";
-            this.txtReceivedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtReceivedAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(233, 242);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "السداد الحالي";
             // 
             // FRM_Update_SupplierReceivables
             // 
