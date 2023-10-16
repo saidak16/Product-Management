@@ -424,12 +424,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return false;
             }
         }
@@ -511,21 +511,18 @@ namespace Product_Management.BL
             }
         }
 
-        public bool UpdateSupplierReceivables(int Id, int PaidAmount, int RemainingAmount)
+        public bool UpdateSupplierReceivables(int Id, int ReceivedAmount)
         {
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[3];
+                SqlParameter[] param = new SqlParameter[2];
 
                 param[0] = new SqlParameter("@Id", SqlDbType.Int);
                 param[0].Value = Id;
                 
-                param[1] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
-                param[1].Value = PaidAmount;
-                
-                param[2] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
-                param[2].Value = RemainingAmount;
+                param[1] = new SqlParameter("@ReceivedAmount", SqlDbType.BigInt);
+                param[1].Value = ReceivedAmount;
 
 
                 dal.Open();

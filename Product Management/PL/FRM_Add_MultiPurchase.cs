@@ -90,6 +90,15 @@ namespace Product_Management.PL
         {
             try
             {
+                if(string.IsNullOrEmpty(txtItmeName.Text) || string.IsNullOrEmpty(txtQTY.Text) || string.IsNullOrEmpty(txtSellingPrice.Text)
+                    || string.IsNullOrEmpty(txtPurPrice.Text) || string.IsNullOrEmpty(txtAmount.Text) || string.IsNullOrEmpty(txtPurchaseDate.Text)
+                    || string.IsNullOrEmpty(txtBatch.Text))
+                {
+                    MessageBox.Show("الرجاء ادخال الحقول كاملة", "التحقق من الادخال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    button2.Focus();
+                    return;
+                }
+
                 for (int i = 0; i < dgvPurchase.Rows.Count - 1; i++)
                 {
                     if (Convert.ToInt32(dgvPurchase.Rows[i].Cells[0].Value.ToString()) == Convert.ToInt32(txtItemId.Text))
@@ -126,6 +135,7 @@ namespace Product_Management.PL
 
         void clearBoxes()
         {
+            txtItmeName.Clear();
             txtBatch.Clear();
             txtQTY.Clear();
             txtPurPrice.Clear();

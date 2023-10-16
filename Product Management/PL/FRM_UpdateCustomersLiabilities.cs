@@ -52,5 +52,14 @@ namespace Product_Management.PL
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(txtAmount.Text) > Convert.ToInt32(txtRemain.Text))
+            {
+                MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
     }
 }

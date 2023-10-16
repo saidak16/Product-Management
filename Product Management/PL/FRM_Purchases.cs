@@ -142,5 +142,10 @@ namespace Product_Management.PL
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

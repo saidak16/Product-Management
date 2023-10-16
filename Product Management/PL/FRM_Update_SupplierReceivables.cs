@@ -27,19 +27,12 @@ namespace Product_Management.PL
 
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtTotalAmount.Text) && !string.IsNullOrEmpty(txtPaidAmount.Text))
-            {
-                txtRemainingAmount.Text = (Convert.ToInt32(txtTotalAmount.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
-            }
-            else
-            {
-                txtRemainingAmount.Text = "0";
-            }
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var isValid = purchases.UpdateSupplierReceivables(Convert.ToInt32(txtId.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
+            var isValid = purchases.UpdateSupplierReceivables(Convert.ToInt32(txtId.Text), Convert.ToInt32(txtReceivedAmount.Text));
 
             if (isValid)
             {
@@ -50,6 +43,24 @@ namespace Product_Management.PL
             else
             {
                 MessageBox.Show("حدث خطأ ما", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(txtTotalAmount.Text) && !string.IsNullOrEmpty(txtPaidAmount.Text))
+            //{
+            //    txtRemainingAmount.Text = (Convert.ToInt32(txtTotalAmount.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
+            //}
+            //else
+            //{
+            //    txtRemainingAmount.Text = "0";
+            //}
+
+            if(Convert.ToInt32(txtReceivedAmount.Text) > Convert.ToInt32(txtReceivedAmount))
+            {
+                MessageBox.Show("المبلغ المدخل اكبر من المبلغ المطلوب", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
     }
