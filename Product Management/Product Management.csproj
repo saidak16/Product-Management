@@ -114,6 +114,7 @@
     <Compile Include="BL\CLS_Setting.cs" />
     <Compile Include="BL\CLS_Stock.cs" />
     <Compile Include="BL\CLS_Suppliers.cs" />
+    <Compile Include="BL\CLS_Supplier_Profile.cs" />
     <Compile Include="BL\CLS_USERS.cs" />
     <Compile Include="BL\FillDropDownList.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
@@ -424,6 +425,12 @@
     <Compile Include="PL\FRM_Suppliers_Receivables.Designer.cs">
       <DependentUpon>FRM_Suppliers_Receivables.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Supplier_Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Supplier_Products.Designer.cs">
+      <DependentUpon>FRM_Supplier_Products.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Supplier_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,6 +690,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Suppliers_Receivables.resx">
       <DependentUpon>FRM_Suppliers_Receivables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Supplier_Products.resx">
+      <DependentUpon>FRM_Supplier_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Supplier_Profile.resx">
+      <DependentUpon>FRM_Supplier_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_System_Alerts.resx">
       <DependentUpon>FRM_System_Alerts.cs</DependentUpon>
@@ -1356,6 +1369,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_person_people_61001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4003665.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2825867.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -192,6 +192,7 @@ namespace Product_Management.BL
                 throw ex;
             }
         }
+
          public DataTable GetSupplierByName(string name)
         {
             try

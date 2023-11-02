@@ -354,6 +354,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2825867 {
+            get {
+                object obj = ResourceManager.GetObject("2825867", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _353323data_analyst_pc {
             get {
                 object obj = ResourceManager.GetObject("353323data-analyst_pc", resourceCulture);
@@ -377,6 +387,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap _353323data_analyst_pc2 {
             get {
                 object obj = ResourceManager.GetObject("353323data-analyst_pc2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4003665 {
+            get {
+                object obj = ResourceManager.GetObject("4003665", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1899,6 +1919,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap user_person_people_6100 {
             get {
                 object obj = ResourceManager.GetObject("user_person_people_6100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_person_people_61001 {
+            get {
+                object obj = ResourceManager.GetObject("user_person_people_61001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

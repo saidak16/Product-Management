@@ -29,7 +29,13 @@ namespace Product_Management.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FRM_Supplier_Profile frm = new FRM_Supplier_Profile();
+            if (dgvSuppliers.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
+            FRM_Supplier_Profile frm = new FRM_Supplier_Profile(Convert.ToInt32(dgvSuppliers.CurrentRow.Cells[0].Value));
             frm.ShowDialog();
         }
 

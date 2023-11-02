@@ -20,11 +20,11 @@ namespace Product_Management.PL
             InitializeComponent();
 
             dgvSuppliersReceivablesDetails.DataSource = suppliers.GetSuppliersReceivablesById(SupplierId);
-            this.dgvSuppliersReceivablesDetails.Columns[10].DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvSuppliersReceivablesDetails.Columns[10].DefaultCellStyle.BackColor = Color.Gray;
-            this.dgvSuppliersReceivablesDetails.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgvSuppliersReceivablesDetails.Columns[6].DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvSuppliersReceivablesDetails.Columns[6].DefaultCellStyle.BackColor = Color.Gray;
+            this.dgvSuppliersReceivablesDetails.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             var myBoldFont = new Font("Tahoma", 9.75F, FontStyle.Bold);
-            this.dgvSuppliersReceivablesDetails.Columns[10].DefaultCellStyle.Font = myBoldFont;
+            this.dgvSuppliersReceivablesDetails.Columns[6].DefaultCellStyle.Font = myBoldFont;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
