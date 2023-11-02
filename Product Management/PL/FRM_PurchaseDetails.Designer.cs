@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_PurchaseDetails));
             this.dgvPurchaseDetails = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,20 +62,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "العمليات";
             // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(6, 32);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(113, 53);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "الخروج";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,6 +75,20 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(6, 32);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(113, 53);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "الخروج";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // FRM_PurchaseDetails
             // 
@@ -115,8 +115,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPurchaseDetails;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.GroupBox groupBox1;
     }
 }
