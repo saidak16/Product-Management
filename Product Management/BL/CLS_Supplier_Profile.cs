@@ -34,5 +34,29 @@ namespace Product_Management.BL
                 return null;
             }
         }
+        
+        public DataTable GetSupplierProducts(int supplierId)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@supplierId", SqlDbType.Int);
+                param[0].Value = supplierId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSupplierProducts", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

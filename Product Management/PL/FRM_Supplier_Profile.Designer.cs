@@ -312,7 +312,7 @@
             // 
             this.pieChart1.Location = new System.Drawing.Point(6, 22);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(501, 195);
+            this.pieChart1.Size = new System.Drawing.Size(501, 167);
             this.pieChart1.TabIndex = 26;
             this.pieChart1.Text = "pieChart1";
             // 

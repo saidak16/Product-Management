@@ -44,14 +44,14 @@
             this.dgvSupplierProducts.Location = new System.Drawing.Point(0, 0);
             this.dgvSupplierProducts.Name = "dgvSupplierProducts";
             this.dgvSupplierProducts.ReadOnly = true;
-            this.dgvSupplierProducts.Size = new System.Drawing.Size(1288, 606);
+            this.dgvSupplierProducts.Size = new System.Drawing.Size(704, 647);
             this.dgvSupplierProducts.TabIndex = 0;
             // 
             // FRM_Supplier_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 606);
+            this.ClientSize = new System.Drawing.Size(704, 647);
             this.Controls.Add(this.dgvSupplierProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

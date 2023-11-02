@@ -58,7 +58,7 @@ namespace Product_Management.PL
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FRM_Supplier_Products frm = new FRM_Supplier_Products();
+            FRM_Supplier_Products frm = new FRM_Supplier_Products(supId);
             frm.ShowDialog();
         }
     }
