@@ -190,6 +190,12 @@
     <Compile Include="PL\FRM_CONFIG.Designer.cs">
       <DependentUpon>FRM_CONFIG.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Contact.Designer.cs">
+      <DependentUpon>FRM_Contact.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,12 @@
     </Compile>
     <Compile Include="PL\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Frm_Login_BMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Frm_Login_BMS.Designer.cs">
+      <DependentUpon>Frm_Login_BMS.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Main.cs">
       <SubType>Form</SubType>
@@ -549,6 +561,9 @@
     <EmbeddedResource Include="PL\FRM_CONFIG.resx">
       <DependentUpon>FRM_CONFIG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Contact.resx">
+      <DependentUpon>FRM_Contact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Customers.resx">
       <DependentUpon>Frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -572,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Frm_Login_BMS.resx">
+      <DependentUpon>Frm_Login_BMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
@@ -1200,6 +1218,111 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LOGO-81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_person_people_6100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-lukas-669616.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-lukas-669621.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Write-a-business-plan-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grammarly-Business-Case-tips-and-tricks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-mikael-blomkvist-6483619.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-laptop-illustration-computer-icons-dashboard-inventory-management-software-sales-phone-case-miscellaneous-text-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\building_business_case_customer_success-940x400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-pixabay-265087.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\353323data-analyst_pc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1679029450953.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\353323data-analyst_pc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\136584637-business-planing-human-hands-holding-proposal-business-plan-flat-design-illustration-concepts-for.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-lukas-590016.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Business-Case-Writing-Service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-lukas-6696161.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\353323data-analyst_pc2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2596839.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7283494.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_report_calculator_chart_pie_icon_205131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2649263.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-staff-of-hermes-caduceus-as-a-symbol-of-medicine-p-cancer-astrology-5ad7472b8c2e18.1307642115240578995742.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_presentation_graphs_dollar_person_man_icon_205127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-customer-service-agent_89777.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,12 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.picExpDate = new System.Windows.Forms.PictureBox();
+            this.picStock = new System.Windows.Forms.PictureBox();
+            this.picContact = new System.Windows.Forms.PictureBox();
+            this.picSystem = new System.Windows.Forms.PictureBox();
+            this.picLogout = new System.Windows.Forms.PictureBox();
+            this.picPurchase = new System.Windows.Forms.PictureBox();
+            this.picSales = new System.Windows.Forms.PictureBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.اعمالسالمينالطبيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ملفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تسجيلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.انشاءنسخةاحتياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.استعادةنسخةمحفوظةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اعداداتالاتصالبالسيرفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمنتججديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.إدارةالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,21 +106,27 @@
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picUser = new System.Windows.Forms.PictureBox();
-            this.lblUser = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSystem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPurchase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اعمالسالمينالطبيةToolStripMenuItem,
             this.ملفToolStripMenuItem,
             this.المنتجاتToolStripMenuItem,
             this.الموردينToolStripMenuItem,
@@ -113,33 +140,304 @@
             this.التقاريرToolStripMenuItem,
             this.عنالبرنامجToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1476, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1508, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(12, 23);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 676);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1508, 27);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUser.Location = new System.Drawing.Point(4, 122);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(39, 16);
+            this.lblUser.TabIndex = 9;
+            this.lblUser.Text = "RooT";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.picLogout);
+            this.groupBox1.Controls.Add(this.picPurchase);
+            this.groupBox1.Controls.Add(this.picSales);
+            this.groupBox1.Controls.Add(this.lblUser);
+            this.groupBox1.Controls.Add(this.picUser);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(119, 649);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Location = new System.Drawing.Point(21, 536);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "تسجيل خروج";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Location = new System.Drawing.Point(14, 400);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "فاتورة مشتريات";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Location = new System.Drawing.Point(19, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 19);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "فاتورة مبيعات";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.picExpDate);
+            this.groupBox2.Controls.Add(this.picStock);
+            this.groupBox2.Controls.Add(this.picContact);
+            this.groupBox2.Controls.Add(this.picSystem);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(1386, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(122, 649);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Location = new System.Drawing.Point(26, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 19);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "لوحة التحكم";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Location = new System.Drawing.Point(27, 258);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "تواصل معنا";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Location = new System.Drawing.Point(23, 397);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 19);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "المخزون : 0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Location = new System.Drawing.Point(27, 536);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 19);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "التوالف : 0";
+            // 
+            // picExpDate
+            // 
+            this.picExpDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picExpDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picExpDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picExpDate.Image = global::Product_Management.Properties.Resources.expiryDate;
+            this.picExpDate.Location = new System.Drawing.Point(5, 427);
+            this.picExpDate.Name = "picExpDate";
+            this.picExpDate.Size = new System.Drawing.Size(110, 105);
+            this.picExpDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExpDate.TabIndex = 20;
+            this.picExpDate.TabStop = false;
+            // 
+            // picStock
+            // 
+            this.picStock.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picStock.Image = global::Product_Management.Properties.Resources.icons8_general_warning_sign_100;
+            this.picStock.Location = new System.Drawing.Point(6, 289);
+            this.picStock.Name = "picStock";
+            this.picStock.Size = new System.Drawing.Size(110, 105);
+            this.picStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStock.TabIndex = 19;
+            this.picStock.TabStop = false;
+            // 
+            // picContact
+            // 
+            this.picContact.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picContact.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picContact.Image = global::Product_Management.Properties.Resources._customer_service_agent_89777;
+            this.picContact.Location = new System.Drawing.Point(6, 150);
+            this.picContact.Name = "picContact";
+            this.picContact.Size = new System.Drawing.Size(110, 105);
+            this.picContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picContact.TabIndex = 18;
+            this.picContact.TabStop = false;
+            this.picContact.Click += new System.EventHandler(this.picContact_Click);
+            // 
+            // picSystem
+            // 
+            this.picSystem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picSystem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picSystem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSystem.Image = global::Product_Management.Properties.Resources.financial_presentation_graphs_dollar_person_man_icon_205127;
+            this.picSystem.Location = new System.Drawing.Point(6, 14);
+            this.picSystem.Name = "picSystem";
+            this.picSystem.Size = new System.Drawing.Size(110, 105);
+            this.picSystem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSystem.TabIndex = 17;
+            this.picSystem.TabStop = false;
+            // 
+            // picLogout
+            // 
+            this.picLogout.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogout.Image = global::Product_Management.Properties.Resources.images;
+            this.picLogout.Location = new System.Drawing.Point(4, 427);
+            this.picLogout.Name = "picLogout";
+            this.picLogout.Size = new System.Drawing.Size(110, 105);
+            this.picLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogout.TabIndex = 13;
+            this.picLogout.TabStop = false;
+            this.picLogout.Click += new System.EventHandler(this.picLogout_Click);
+            // 
+            // picPurchase
+            // 
+            this.picPurchase.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picPurchase.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPurchase.Image = global::Product_Management.Properties.Resources._2649263;
+            this.picPurchase.Location = new System.Drawing.Point(4, 289);
+            this.picPurchase.Name = "picPurchase";
+            this.picPurchase.Size = new System.Drawing.Size(110, 105);
+            this.picPurchase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPurchase.TabIndex = 12;
+            this.picPurchase.TabStop = false;
+            this.picPurchase.Click += new System.EventHandler(this.picPurchase_Click);
+            // 
+            // picSales
+            // 
+            this.picSales.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.picSales.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSales.Image = global::Product_Management.Properties.Resources.financial_report_calculator_chart_pie_icon_205131;
+            this.picSales.Location = new System.Drawing.Point(4, 150);
+            this.picSales.Name = "picSales";
+            this.picSales.Size = new System.Drawing.Size(110, 105);
+            this.picSales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSales.TabIndex = 11;
+            this.picSales.TabStop = false;
+            this.picSales.Click += new System.EventHandler(this.picSales_Click);
+            // 
+            // picUser
+            // 
+            this.picUser.Image = global::Product_Management.Properties.Resources.employee;
+            this.picUser.Location = new System.Drawing.Point(4, 14);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(110, 105);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUser.TabIndex = 10;
+            this.picUser.TabStop = false;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
+            this.toolStripStatusLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(447, 22);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "This System is Developed By Intelligent Analytics Team";
+            this.toolStripStatusLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Product_Management.Properties.Resources._353323data_analyst_pc2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1517, 673);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // اعمالسالمينالطبيةToolStripMenuItem
+            // 
+            this.اعمالسالمينالطبيةToolStripMenuItem.Enabled = false;
+            this.اعمالسالمينالطبيةToolStripMenuItem.Image = global::Product_Management.Properties.Resources.download;
+            this.اعمالسالمينالطبيةToolStripMenuItem.Name = "اعمالسالمينالطبيةToolStripMenuItem";
+            this.اعمالسالمينالطبيةToolStripMenuItem.Size = new System.Drawing.Size(145, 23);
+            this.اعمالسالمينالطبيةToolStripMenuItem.Text = "اعمال سالمين الطبية";
             // 
             // ملفToolStripMenuItem
             // 
             this.ملفToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.تسجيلالدخولToolStripMenuItem,
             this.انشاءنسخةاحتياطيةToolStripMenuItem,
             this.استعادةنسخةمحفوظةToolStripMenuItem,
-            this.اعداداتالاتصالبالسيرفرToolStripMenuItem,
-            this.الخروجToolStripMenuItem});
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem});
             this.ملفToolStripMenuItem.Image = global::Product_Management.Properties.Resources.Control_Panel_icon;
             this.ملفToolStripMenuItem.Name = "ملفToolStripMenuItem";
             this.ملفToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
             this.ملفToolStripMenuItem.Text = "التحكم";
-            // 
-            // تسجيلالدخولToolStripMenuItem
-            // 
-            this.تسجيلالدخولToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325056_application_pgp_signature;
-            this.تسجيلالدخولToolStripMenuItem.Name = "تسجيلالدخولToolStripMenuItem";
-            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
-            this.تسجيلالدخولToolStripMenuItem.Text = "تسجيل الدخول";
-            this.تسجيلالدخولToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem_Click);
             // 
             // انشاءنسخةاحتياطيةToolStripMenuItem
             // 
@@ -164,14 +462,6 @@
             this.اعداداتالاتصالبالسيرفرToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
             this.اعداداتالاتصالبالسيرفرToolStripMenuItem.Text = "اعدادات الاتصال بالسيرفر";
             this.اعداداتالاتصالبالسيرفرToolStripMenuItem.Click += new System.EventHandler(this.اعداداتالاتصالبالسيرفرToolStripMenuItem_Click);
-            // 
-            // الخروجToolStripMenuItem
-            // 
-            this.الخروجToolStripMenuItem.Image = global::Product_Management.Properties.Resources.exit1;
-            this.الخروجToolStripMenuItem.Name = "الخروجToolStripMenuItem";
-            this.الخروجToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
-            this.الخروجToolStripMenuItem.Text = "تسجيل الخروج";
-            this.الخروجToolStripMenuItem.Click += new System.EventHandler(this.الخروجToolStripMenuItem_Click);
             // 
             // المنتجاتToolStripMenuItem
             // 
@@ -593,75 +883,14 @@
             this.toolStripMenuItem3.Text = "تنبيه التوالف";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 530);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1476, 27);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
-            this.toolStripStatusLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(1461, 22);
-            this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "This System is Developed By Intelligent Analytics Team";
-            this.toolStripStatusLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Product_Management.Properties.Resources.pexels_fauxels_3183153;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1485, 527);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // picUser
-            // 
-            this.picUser.Image = ((System.Drawing.Image)(resources.GetObject("picUser.Image")));
-            this.picUser.Location = new System.Drawing.Point(1376, 0);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(41, 27);
-            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picUser.TabIndex = 10;
-            this.picUser.TabStop = false;
-            this.picUser.Visible = false;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUser.Location = new System.Drawing.Point(1421, 8);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(39, 16);
-            this.lblUser.TabIndex = 9;
-            this.lblUser.Text = "RooT";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUser.Visible = false;
-            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 557);
-            this.Controls.Add(this.picUser);
-            this.Controls.Add(this.lblUser);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1508, 703);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -680,8 +909,19 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSystem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPurchase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,8 +947,6 @@
         public System.Windows.Forms.ToolStripMenuItem المبيعاتToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
         public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.ToolStripMenuItem تسجيلالدخولToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem الخروجToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem اعداداتالاتصالبالسيرفرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةموردToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem1;
@@ -750,5 +988,23 @@
         private System.Windows.Forms.ToolStripMenuItem تقريرالمنصرفانToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حركةالاصنافToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تسعيرالمنتجاتToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.PictureBox picLogout;
+        public System.Windows.Forms.PictureBox picPurchase;
+        public System.Windows.Forms.PictureBox picSales;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem اعمالسالمينالطبيةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.PictureBox picSystem;
+        public System.Windows.Forms.PictureBox picContact;
+        public System.Windows.Forms.PictureBox picExpDate;
+        public System.Windows.Forms.PictureBox picStock;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

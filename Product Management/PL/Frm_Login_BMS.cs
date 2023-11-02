@@ -10,34 +10,34 @@ using System.Windows.Forms;
 
 namespace Product_Management.PL
 {
-    public partial class Frm_Login : Form
+    public partial class Frm_Login_BMS : Form
     {
         int Try;
         BL.ClS_Login lgn = new BL.ClS_Login();
-        
-        public Frm_Login()
+
+        public Frm_Login_BMS()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_Main.getMain.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Frm_Main frm = new Frm_Main();
             DataTable dt = new DataTable();
 
-            dt = lgn.LOGIN(txtID.Text , txtPWD.Text);
+            dt = lgn.LOGIN(txtID.Text, txtPWD.Text);
 
             if (dt.Rows.Count > 0)
             {
                 if (dt.Rows[0][2].ToString() == "Admin")
                 {
                     MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Enabled = true;
@@ -59,11 +59,13 @@ namespace Product_Management.PL
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;
+                    Frm_Main.getMain.ShowDialog();
 
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
                 {
                     MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.الموردينToolStripMenuItem.Visible = true;
@@ -80,10 +82,12 @@ namespace Product_Management.PL
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;
+                    Frm_Main.getMain.ShowDialog();
                 }
                 else if (dt.Rows[0][2].ToString() == "Storekeeper")
                 {
                     MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.الموردينToolStripMenuItem.Visible = false;
@@ -97,6 +101,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;
+                    Frm_Main.getMain.ShowDialog();
                 }
                 else if (dt.Rows[0][2].ToString() == "Sales Officer")
                 {
@@ -114,10 +119,11 @@ namespace Product_Management.PL
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;
+                    Frm_Main.getMain.ShowDialog();
                 }
                 this.Close();
             }
-            else 
+            else
             {
                 if (Try >= 3)
                 {
@@ -134,15 +140,21 @@ namespace Product_Management.PL
                 }
                 Try++;
             }
-            
-            
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
 
         private void txtPWD_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(sender, e);
+                btnLogin_Click(sender, e);
             }
         }
     }

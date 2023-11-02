@@ -19,7 +19,7 @@ namespace Product_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PL.Frm_Main());
+            Application.Run(new PL.Frm_Login_BMS());
         }
     }
 }

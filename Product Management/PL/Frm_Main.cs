@@ -49,21 +49,21 @@ namespace Product_Management.PL
             if (frm == null)
                 frm = this;
 
-            this.المستخدمينToolStripMenuItem.Enabled = false;
-            this.المنتجاتToolStripMenuItem.Enabled = false;
-            this.المبيعاتToolStripMenuItem.Enabled = false;
-            this.العملاءToolStripMenuItem.Enabled = false;
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
-            this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
-            this.الخروجToolStripMenuItem.Enabled = false;
-            this.الموردينToolStripMenuItem.Enabled = false;
-            this.الاعداداتToolStripMenuItem.Enabled = false;
-            this.المنصرفاتToolStripMenuItem.Enabled = false;
-            this.المشترياتToolStripMenuItem.Enabled = false;
-            this.التقاريرToolStripMenuItem.Enabled = false;
-            this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
-            this.toolStripMenuItem1.Enabled = false;
-            this.toolStripMenuItem3.Enabled = false;
+            //this.المستخدمينToolStripMenuItem.Enabled = false;
+            //this.المنتجاتToolStripMenuItem.Enabled = false;
+            //this.المبيعاتToolStripMenuItem.Enabled = false;
+            //this.العملاءToolStripMenuItem.Enabled = false;
+            //this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
+            //this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
+            //this.الخروجToolStripMenuItem.Enabled = false;
+            //this.الموردينToolStripMenuItem.Enabled = false;
+            //this.الاعداداتToolStripMenuItem.Enabled = false;
+            //this.المنصرفاتToolStripMenuItem.Enabled = false;
+            //this.المشترياتToolStripMenuItem.Enabled = false;
+            //this.التقاريرToolStripMenuItem.Enabled = false;
+            //this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
+            //this.toolStripMenuItem1.Enabled = false;
+            //this.toolStripMenuItem3.Enabled = false;
 
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();
@@ -72,7 +72,7 @@ namespace Product_Management.PL
             {
                 this.toolStripMenuItem1.Visible = true;
                 this.toolStripMenuItem1.BackColor = Color.Yellow;
-                this.toolStripMenuItem1.Text = "تنبيه المخزون : " + dt.Rows.Count.ToString();
+                this.toolStripMenuItem1.Text = " المخزون : " + dt.Rows.Count.ToString();
                 SystemSounds.Asterisk.Play();
                 
             }
@@ -88,7 +88,7 @@ namespace Product_Management.PL
             {
                 this.toolStripMenuItem3.Visible = true;
                 this.toolStripMenuItem3.BackColor = Color.Red;
-                this.toolStripMenuItem3.Text = "تنبيه التوالف : " + dt2.Rows.Count.ToString();
+                this.toolStripMenuItem3.Text = " التوالف : " + dt2.Rows.Count.ToString();
                 SystemSounds.Asterisk.Play();
 
             }
@@ -126,7 +126,6 @@ namespace Product_Management.PL
             this.مناديبالمبيعاتToolStripMenuItem.Enabled = false;
             this.lblUser.Visible = false;
             this.picUser.Visible = false;
-            this.تسجيلالدخولToolStripMenuItem.Enabled = true;
 
             Frm_Login frm = new Frm_Login();
             frm.ShowDialog();
@@ -387,6 +386,52 @@ namespace Product_Management.PL
         private void تسعيرالمنتجاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_ProductPriceList frm = new FRM_ProductPriceList();
+            frm.ShowDialog();
+        }
+
+        private void picSales_Click(object sender, EventArgs e)
+        {
+            Frm_ORDERS frm = new Frm_ORDERS();
+            frm.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Frm_ORDERS frm = new Frm_ORDERS();
+            frm.ShowDialog();
+        }
+
+        private void picPurchase_Click(object sender, EventArgs e)
+        {
+            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            frm.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            frm.ShowDialog();
+        }
+
+        private void picLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void picContact_Click(object sender, EventArgs e)
+        {
+            FRM_Contact frm = new FRM_Contact();
+            frm.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            FRM_Contact frm = new FRM_Contact();
             frm.ShowDialog();
         }
     }

@@ -28,12 +28,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
@@ -54,12 +54,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
@@ -84,12 +84,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
@@ -114,12 +114,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
@@ -144,12 +144,12 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
+                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
