@@ -943,7 +943,7 @@
             this.btn_Exit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Image = global::Product_Management.Properties.Resources.icon_Exit3;
             this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Exit.Location = new System.Drawing.Point(612, 528);
+            this.btn_Exit.Location = new System.Drawing.Point(716, 528);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(91, 43);
             this.btn_Exit.TabIndex = 8;
@@ -958,7 +958,7 @@
             this.btn_Print.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_;
             this.btn_Print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Print.Location = new System.Drawing.Point(489, 528);
+            this.btn_Print.Location = new System.Drawing.Point(593, 528);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(117, 43);
             this.btn_Print.TabIndex = 3;
@@ -973,7 +973,7 @@
             this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Image = global::Product_Management.Properties.Resources.save1;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Save.Location = new System.Drawing.Point(347, 528);
+            this.btn_Save.Location = new System.Drawing.Point(451, 528);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(136, 43);
             this.btn_Save.TabIndex = 1;
@@ -987,7 +987,7 @@
             this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New.Image = global::Product_Management.Properties.Resources.plus6;
             this.btn_New.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_New.Location = new System.Drawing.Point(209, 528);
+            this.btn_New.Location = new System.Drawing.Point(313, 528);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(132, 43);
             this.btn_New.TabIndex = 0;
@@ -1000,7 +1000,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1121, 571);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_Exit);

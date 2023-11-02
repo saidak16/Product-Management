@@ -70,15 +70,12 @@ namespace Product_Management.PL
 
             if(dt.Rows.Count > 0)
             {
-                this.toolStripMenuItem1.Visible = true;
-                this.toolStripMenuItem1.BackColor = Color.Yellow;
-                this.toolStripMenuItem1.Text = " المخزون : " + dt.Rows.Count.ToString();
+                this.lblStock.Visible = true;
+                this.lblStock.BackColor = Color.Yellow;
+                this.lblStock.Text = " المخزون : " + dt.Rows.Count.ToString();
+                picStock.Visible = true;
                 SystemSounds.Asterisk.Play();
                 
-            }
-            else
-            {
-                this.toolStripMenuItem1.Visible = false;
             }
 
             DataTable dt2 = new DataTable();
@@ -86,15 +83,12 @@ namespace Product_Management.PL
 
             if (dt2.Rows.Count > 0)
             {
-                this.toolStripMenuItem3.Visible = true;
-                this.toolStripMenuItem3.BackColor = Color.Red;
-                this.toolStripMenuItem3.Text = " التوالف : " + dt2.Rows.Count.ToString();
+                this.lblExpDate.Visible = true;
+                this.lblExpDate.BackColor = Color.Red;
+                this.lblExpDate.Text = " التوالف : " + dt2.Rows.Count.ToString();
+                picExpDate.Visible = true;
                 SystemSounds.Asterisk.Play();
 
-            }
-            else
-            {
-                this.toolStripMenuItem3.Visible = false;
             }
         }
 
@@ -105,8 +99,6 @@ namespace Product_Management.PL
             this.المبيعاتToolStripMenuItem.Enabled = false;
             this.العملاءToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
-            this.toolStripMenuItem1.Enabled = false;
-            this.toolStripMenuItem3.Enabled = false;
             this.الاعداداتToolStripMenuItem.Enabled = false;
             this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
             this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
@@ -416,6 +408,7 @@ namespace Product_Management.PL
         private void picLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -432,6 +425,36 @@ namespace Product_Management.PL
         private void label5_Click(object sender, EventArgs e)
         {
             FRM_Contact frm = new FRM_Contact();
+            frm.ShowDialog();
+        }
+
+        private void picStock_Click(object sender, EventArgs e)
+        {
+            FRM_Stock frm = new FRM_Stock();
+            frm.ShowDialog();
+        }
+
+        private void lblStock_Click(object sender, EventArgs e)
+        {
+            FRM_Stock frm = new FRM_Stock();
+            frm.ShowDialog();
+        }
+
+        private void picExpDate_Click(object sender, EventArgs e)
+        {
+            Frm_Expiry_Date frm = new Frm_Expiry_Date();
+            frm.ShowDialog();
+        }
+
+        private void lblExpDate_Click(object sender, EventArgs e)
+        {
+            Frm_Expiry_Date frm = new Frm_Expiry_Date();
+            frm.ShowDialog();
+        }
+
+        private void قائمةالموردينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Suppliers_List frm = new FRM_Suppliers_List();
             frm.ShowDialog();
         }
     }

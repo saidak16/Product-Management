@@ -53,9 +53,7 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المنصرفاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المشترياتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.التقاريرToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.مناديبالمبيعاتToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.toolStripMenuItem1.Enabled = true;
-                    Frm_Main.getMain.toolStripMenuItem3.Enabled = true;
+                    Frm_Main.getMain.مناديبالمبيعاتToolStripMenuItem.Enabled = true; 
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;

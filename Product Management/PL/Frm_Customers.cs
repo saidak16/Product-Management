@@ -179,7 +179,7 @@ namespace Product_Management.PL
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = bu.Search_Customers(txtSearch.Text);
+            
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -249,6 +249,11 @@ namespace Product_Management.PL
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = bu.Search_Customers(txtSearch.Text);
         }
 
         private void label5_Click(object sender, EventArgs e)

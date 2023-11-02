@@ -36,7 +36,7 @@ namespace Product_Management.PL
             {
                 if (dt.Rows[0][2].ToString() == "Admin")
                 {
-                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "(V 2.0.1) نظام ادارة الاعمال ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                    
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
@@ -54,8 +54,6 @@ namespace Product_Management.PL
                     Frm_Main.getMain.المشترياتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.التقاريرToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.مناديبالمبيعاتToolStripMenuItem.Enabled = true;
-                    Frm_Main.getMain.toolStripMenuItem1.Enabled = true;
-                    Frm_Main.getMain.toolStripMenuItem3.Enabled = true;
                     Frm_Main.getMain.lblUser.Text = dt.Rows[0]["FullName"].ToString();
                     Frm_Main.getMain.lblUser.Visible = true;
                     Frm_Main.getMain.picUser.Visible = true;
@@ -64,7 +62,7 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Store Manager")
                 {
-                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), " (V 2.0.1) نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.المستخدمينToolStripMenuItem.Enabled = true;
@@ -86,7 +84,7 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Storekeeper")
                 {
-                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), " (V 2.0.1) نظام ادارة الاعمال ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     Frm_Main.getMain.المنتجاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.العملاءToolStripMenuItem.Enabled = true;
@@ -105,7 +103,7 @@ namespace Product_Management.PL
                 }
                 else if (dt.Rows[0][2].ToString() == "Sales Officer")
                 {
-                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "نظام ادارة الاعمال", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" \n مرحباً بك يا:  " + dt.Rows[0]["FullName"].ToString(), "(V 2.0.1) نظام ادارة الاعمال ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Frm_Main.getMain.المبيعاتToolStripMenuItem.Enabled = true;
                     Frm_Main.getMain.استعادةنسخةمحفوظةToolStripMenuItem.Visible = false;
                     Frm_Main.getMain.الموردينToolStripMenuItem.Visible = false;
@@ -127,13 +125,13 @@ namespace Product_Management.PL
             {
                 if (Try >= 3)
                 {
-                    MessageBox.Show("اسم المستخدم أو كلمة المرور خطأ \n الرجاء المحاولة لاحقاً", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("اسم المستخدم أو كلمة المرور خطأ \n الرجاء المحاولة لاحقاً", "نظام ادارة الاعمال (V 2.0.1)", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Close();
                     Frm_Main.getMain.Close();
                 }
                 else
                 {
-                    MessageBox.Show("تحقق من اسم المستخدم او كلمة المرور", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("تحقق من اسم المستخدم او كلمة المرور", "نظام ادارة الاعمال (V 2.0.1)", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtID.Clear();
                     txtPWD.Clear();
                     txtID.Focus();

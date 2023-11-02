@@ -324,6 +324,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16790294509531 {
+            get {
+                object obj = ResourceManager.GetObject("16790294509531", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2596839 {
             get {
                 object obj = ResourceManager.GetObject("2596839", resourceCulture);
@@ -367,6 +377,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap _353323data_analyst_pc2 {
             get {
                 object obj = ResourceManager.GetObject("353323data-analyst_pc2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4320287 {
+            get {
+                object obj = ResourceManager.GetObject("4320287", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -647,6 +667,26 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap Capture5 {
             get {
                 object obj = ResourceManager.GetObject("Capture5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Capture51 {
+            get {
+                object obj = ResourceManager.GetObject("Capture51", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap client {
+            get {
+                object obj = ResourceManager.GetObject("client", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1314,6 +1354,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("images (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap INTELLIGENT_ANALYTICS {
             get {
                 object obj = ResourceManager.GetObject("INTELLIGENT ANALYTICS", resourceCulture);
@@ -1358,6 +1408,16 @@ namespace Product_Management.Properties {
             get {
                 object obj = ResourceManager.GetObject("kisspng-staff-of-hermes-caduceus-as-a-symbol-of-medicine-p-cancer-astrology-5ad74" +
                         "72b8c2e18.1307642115240578995742", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laptop_analytics_charts_analysis_graph_icon_143366 {
+            get {
+                object obj = ResourceManager.GetObject("laptop_analytics_charts_analysis_graph_icon_143366", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
