@@ -45,7 +45,14 @@ namespace Product_Management
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            FRM_Customer_Profile frm = new FRM_Customer_Profile();
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
+            int customerId = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
+            FRM_Customer_Profile frm = new FRM_Customer_Profile(customerId);
             frm.ShowDialog();
         }
     }
