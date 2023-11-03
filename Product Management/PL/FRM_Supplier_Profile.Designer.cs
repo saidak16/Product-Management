@@ -30,34 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Supplier_Profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtCompany = new System.Windows.Forms.TextBox();
-            this.txtCreationDate = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtLastOrder = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtCreationDate = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtCompany = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvReturnInvoices = new System.Windows.Forms.DataGridView();
-            this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCountOfReturnInvoices = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtInvoiceSearch = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCountOfSaleInvoices = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtRemainAmount = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -70,19 +58,31 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnSaleInvoice = new System.Windows.Forms.Button();
+            this.pieChart1 = new LiveCharts.WinForms.PieChart();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvInvoices = new System.Windows.Forms.DataGridView();
+            this.txtCountOfSaleInvoices = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtInvoiceSearch = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCountOfReturnInvoices = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtReturnSearch = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnSaleInvoice = new System.Windows.Forms.Button();
+            this.dgvReturnInvoices = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -111,90 +111,40 @@
             this.groupBox1.Text = "بيانات المورد";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(428, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "الاسم";
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Product_Management.Properties.Resources.save;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(169, 228);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 37);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "اصناف المورد";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
+            // txtLastOrder
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(424, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "الهاتف";
+            this.txtLastOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtLastOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastOrder.Location = new System.Drawing.Point(161, 186);
+            this.txtLastOrder.Name = "txtLastOrder";
+            this.txtLastOrder.ReadOnly = true;
+            this.txtLastOrder.Size = new System.Drawing.Size(261, 26);
+            this.txtLastOrder.TabIndex = 13;
+            this.txtLastOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(421, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "البريد الالكتروني";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(428, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "الشركة";
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(161, 23);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(261, 26);
-            this.txtName.TabIndex = 5;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(161, 58);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(261, 26);
-            this.txtPhone.TabIndex = 6;
-            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(161, 90);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(261, 26);
-            this.txtEmail.TabIndex = 7;
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtCompany.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompany.Location = new System.Drawing.Point(161, 122);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.ReadOnly = true;
-            this.txtCompany.Size = new System.Drawing.Size(261, 26);
-            this.txtCompany.TabIndex = 8;
-            this.txtCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(428, 189);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "اخر معاملة";
             // 
             // txtCreationDate
             // 
@@ -217,26 +167,114 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "بداية التعامل";
             // 
-            // txtLastOrder
+            // button1
             // 
-            this.txtLastOrder.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtLastOrder.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastOrder.Location = new System.Drawing.Point(161, 186);
-            this.txtLastOrder.Name = "txtLastOrder";
-            this.txtLastOrder.ReadOnly = true;
-            this.txtLastOrder.Size = new System.Drawing.Size(261, 26);
-            this.txtLastOrder.TabIndex = 13;
-            this.txtLastOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(300, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 37);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "الاستحقاقات";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label6
+            // txtCompany
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(428, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "اخر معاملة";
+            this.txtCompany.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCompany.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompany.Location = new System.Drawing.Point(161, 122);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.ReadOnly = true;
+            this.txtCompany.Size = new System.Drawing.Size(261, 26);
+            this.txtCompany.TabIndex = 8;
+            this.txtCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(161, 90);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(261, 26);
+            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(161, 58);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
+            this.txtPhone.Size = new System.Drawing.Size(261, 26);
+            this.txtPhone.TabIndex = 6;
+            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(161, 23);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(261, 26);
+            this.txtName.TabIndex = 5;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(428, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 19);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "الشركة";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(421, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "البريد الالكتروني";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(424, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "الهاتف";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(428, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "الاسم";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Product_Management.Properties.Resources._2825867;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -260,167 +298,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الموقف المالي";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.dgvInvoices);
-            this.groupBox3.Controls.Add(this.txtCountOfSaleInvoices);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(532, 289);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(928, 348);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "الفواتير و الاقساط";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.txtCountOfReturnInvoices);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.txtInvoiceSearch);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.btnSaleInvoice);
-            this.groupBox4.Controls.Add(this.dgvReturnInvoices);
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(532, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(928, 271);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "الفواتير المرتجعة";
-            // 
-            // dgvReturnInvoices
-            // 
-            this.dgvReturnInvoices.AllowUserToAddRows = false;
-            this.dgvReturnInvoices.AllowUserToDeleteRows = false;
-            this.dgvReturnInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReturnInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvReturnInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReturnInvoices.Location = new System.Drawing.Point(6, 52);
-            this.dgvReturnInvoices.Name = "dgvReturnInvoices";
-            this.dgvReturnInvoices.ReadOnly = true;
-            this.dgvReturnInvoices.Size = new System.Drawing.Size(910, 160);
-            this.dgvReturnInvoices.TabIndex = 0;
-            // 
-            // dgvInvoices
-            // 
-            this.dgvInvoices.AllowUserToAddRows = false;
-            this.dgvInvoices.AllowUserToDeleteRows = false;
-            this.dgvInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoices.Location = new System.Drawing.Point(6, 50);
-            this.dgvInvoices.Name = "dgvInvoices";
-            this.dgvInvoices.ReadOnly = true;
-            this.dgvInvoices.Size = new System.Drawing.Size(910, 244);
-            this.dgvInvoices.TabIndex = 1;
-            // 
-            // pieChart1
-            // 
-            this.pieChart1.Location = new System.Drawing.Point(6, 22);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(501, 185);
-            this.pieChart1.TabIndex = 26;
-            this.pieChart1.Text = "pieChart1";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 230);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 19);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "(فاتورة)";
-            // 
-            // txtCountOfReturnInvoices
-            // 
-            this.txtCountOfReturnInvoices.Location = new System.Drawing.Point(83, 227);
-            this.txtCountOfReturnInvoices.Name = "txtCountOfReturnInvoices";
-            this.txtCountOfReturnInvoices.ReadOnly = true;
-            this.txtCountOfReturnInvoices.Size = new System.Drawing.Size(137, 26);
-            this.txtCountOfReturnInvoices.TabIndex = 36;
-            this.txtCountOfReturnInvoices.Text = "0";
-            this.txtCountOfReturnInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(225, 232);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(122, 19);
-            this.label17.TabIndex = 35;
-            this.label17.Text = "عدد الفواتير المرتجعة";
-            // 
-            // txtInvoiceSearch
-            // 
-            this.txtInvoiceSearch.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceSearch.Location = new System.Drawing.Point(287, 21);
-            this.txtInvoiceSearch.Name = "txtInvoiceSearch";
-            this.txtInvoiceSearch.Size = new System.Drawing.Size(282, 22);
-            this.txtInvoiceSearch.TabIndex = 33;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(575, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 14);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "ابحث هنا :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 311);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 19);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "(فاتورة)";
-            // 
-            // txtCountOfSaleInvoices
-            // 
-            this.txtCountOfSaleInvoices.Location = new System.Drawing.Point(83, 308);
-            this.txtCountOfSaleInvoices.Name = "txtCountOfSaleInvoices";
-            this.txtCountOfSaleInvoices.ReadOnly = true;
-            this.txtCountOfSaleInvoices.Size = new System.Drawing.Size(137, 26);
-            this.txtCountOfSaleInvoices.TabIndex = 43;
-            this.txtCountOfSaleInvoices.Text = "0";
-            this.txtCountOfSaleInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(225, 313);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 19);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "عدد المعاملات";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(287, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 22);
-            this.textBox2.TabIndex = 40;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(575, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 14);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "ابحث هنا :";
             // 
             // label11
             // 
@@ -537,18 +414,63 @@
             this.label20.TabIndex = 32;
             this.label20.Text = "اجمالي المعاملات";
             // 
-            // btnSaleInvoice
+            // pieChart1
             // 
-            this.btnSaleInvoice.Image = global::Product_Management.Properties.Resources._11081942421898;
-            this.btnSaleInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaleInvoice.Location = new System.Drawing.Point(778, 220);
-            this.btnSaleInvoice.Name = "btnSaleInvoice";
-            this.btnSaleInvoice.Size = new System.Drawing.Size(138, 42);
-            this.btnSaleInvoice.TabIndex = 31;
-            this.btnSaleInvoice.Text = "تفاصيل الفاتورة";
-            this.btnSaleInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaleInvoice.UseVisualStyleBackColor = true;
-            this.btnSaleInvoice.Click += new System.EventHandler(this.btnSaleInvoice_Click);
+            this.pieChart1.Location = new System.Drawing.Point(6, 22);
+            this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Size = new System.Drawing.Size(501, 185);
+            this.pieChart1.TabIndex = 26;
+            this.pieChart1.Text = "pieChart1";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.dgvInvoices);
+            this.groupBox3.Controls.Add(this.txtCountOfSaleInvoices);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.txtInvoiceSearch);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(532, 289);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(928, 348);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "الفواتير و الاقساط";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 311);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 19);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "(فاتورة)";
+            // 
+            // dgvInvoices
+            // 
+            this.dgvInvoices.AllowUserToAddRows = false;
+            this.dgvInvoices.AllowUserToDeleteRows = false;
+            this.dgvInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoices.Location = new System.Drawing.Point(6, 50);
+            this.dgvInvoices.Name = "dgvInvoices";
+            this.dgvInvoices.ReadOnly = true;
+            this.dgvInvoices.Size = new System.Drawing.Size(910, 244);
+            this.dgvInvoices.TabIndex = 1;
+            // 
+            // txtCountOfSaleInvoices
+            // 
+            this.txtCountOfSaleInvoices.Location = new System.Drawing.Point(83, 308);
+            this.txtCountOfSaleInvoices.Name = "txtCountOfSaleInvoices";
+            this.txtCountOfSaleInvoices.ReadOnly = true;
+            this.txtCountOfSaleInvoices.Size = new System.Drawing.Size(137, 26);
+            this.txtCountOfSaleInvoices.TabIndex = 43;
+            this.txtCountOfSaleInvoices.Text = "0";
+            this.txtCountOfSaleInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button3
             // 
@@ -563,6 +485,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(225, 313);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 19);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "عدد المعاملات";
+            // 
             // button4
             // 
             this.button4.Image = global::Product_Management.Properties.Resources._11081942421898;
@@ -576,43 +507,114 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
+            // txtInvoiceSearch
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Product_Management.Properties.Resources.save;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(169, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 37);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "اصناف المورد";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txtInvoiceSearch.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceSearch.Location = new System.Drawing.Point(287, 22);
+            this.txtInvoiceSearch.Name = "txtInvoiceSearch";
+            this.txtInvoiceSearch.Size = new System.Drawing.Size(282, 22);
+            this.txtInvoiceSearch.TabIndex = 40;
+            this.txtInvoiceSearch.TextChanged += new System.EventHandler(this.txtInvoiceSearch_TextChanged);
             // 
-            // button1
+            // label9
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(300, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 37);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "الاستحقاقات";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(575, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 14);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "ابحث هنا :";
             // 
-            // pictureBox1
+            // groupBox4
             // 
-            this.pictureBox1.Image = global::Product_Management.Properties.Resources._2825867;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.txtCountOfReturnInvoices);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtReturnSearch);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.btnSaleInvoice);
+            this.groupBox4.Controls.Add(this.dgvReturnInvoices);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(532, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(928, 271);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "الفواتير المرتجعة";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(24, 230);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 19);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "(فاتورة)";
+            // 
+            // txtCountOfReturnInvoices
+            // 
+            this.txtCountOfReturnInvoices.Location = new System.Drawing.Point(83, 227);
+            this.txtCountOfReturnInvoices.Name = "txtCountOfReturnInvoices";
+            this.txtCountOfReturnInvoices.ReadOnly = true;
+            this.txtCountOfReturnInvoices.Size = new System.Drawing.Size(137, 26);
+            this.txtCountOfReturnInvoices.TabIndex = 36;
+            this.txtCountOfReturnInvoices.Text = "0";
+            this.txtCountOfReturnInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(225, 232);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(122, 19);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "عدد الفواتير المرتجعة";
+            // 
+            // txtReturnSearch
+            // 
+            this.txtReturnSearch.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnSearch.Location = new System.Drawing.Point(287, 21);
+            this.txtReturnSearch.Name = "txtReturnSearch";
+            this.txtReturnSearch.Size = new System.Drawing.Size(282, 22);
+            this.txtReturnSearch.TabIndex = 33;
+            this.txtReturnSearch.TextChanged += new System.EventHandler(this.txtReturnSearch_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(575, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 14);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "ابحث هنا :";
+            // 
+            // btnSaleInvoice
+            // 
+            this.btnSaleInvoice.Image = global::Product_Management.Properties.Resources._11081942421898;
+            this.btnSaleInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaleInvoice.Location = new System.Drawing.Point(778, 220);
+            this.btnSaleInvoice.Name = "btnSaleInvoice";
+            this.btnSaleInvoice.Size = new System.Drawing.Size(138, 42);
+            this.btnSaleInvoice.TabIndex = 31;
+            this.btnSaleInvoice.Text = "تفاصيل الفاتورة";
+            this.btnSaleInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaleInvoice.UseVisualStyleBackColor = true;
+            this.btnSaleInvoice.Click += new System.EventHandler(this.btnSaleInvoice_Click);
+            // 
+            // dgvReturnInvoices
+            // 
+            this.dgvReturnInvoices.AllowUserToAddRows = false;
+            this.dgvReturnInvoices.AllowUserToDeleteRows = false;
+            this.dgvReturnInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReturnInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvReturnInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReturnInvoices.Location = new System.Drawing.Point(6, 52);
+            this.dgvReturnInvoices.Name = "dgvReturnInvoices";
+            this.dgvReturnInvoices.ReadOnly = true;
+            this.dgvReturnInvoices.Size = new System.Drawing.Size(910, 160);
+            this.dgvReturnInvoices.TabIndex = 0;
             // 
             // FRM_Supplier_Profile
             // 
@@ -635,15 +637,15 @@
             this.Load += new System.EventHandler(this.FRM_Supplier_Profile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -677,12 +679,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtInvoiceSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtCountOfReturnInvoices;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtInvoiceSearch;
+        private System.Windows.Forms.TextBox txtReturnSearch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnSaleInvoice;
         private System.Windows.Forms.Label label11;

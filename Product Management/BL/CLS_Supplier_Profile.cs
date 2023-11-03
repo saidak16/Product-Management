@@ -59,16 +59,19 @@ namespace Product_Management.BL
             }
         }
 
-        public DataTable GetReturnPurchases(int supplerId)
+        public DataTable GetReturnPurchases(int supplerId, string search)
         {
             try
             {
 
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[1];
+                SqlParameter[] param = new SqlParameter[2];
 
                 param[0] = new SqlParameter("@supplerId", SqlDbType.Int);
                 param[0].Value = supplerId;
+                
+                param[1] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[1].Value = search;
 
                 dal.Open();
                 DataTable dt = new DataTable();
@@ -83,16 +86,19 @@ namespace Product_Management.BL
             }
         }
 
-        public DataTable GetSupplierInvoices(int supplierId)
+        public DataTable GetSupplierInvoices(int supplierId, string search)
         {
             try
             {
 
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[1];
+                SqlParameter[] param = new SqlParameter[2];
 
                 param[0] = new SqlParameter("@supplierId", SqlDbType.Int);
                 param[0].Value = supplierId;
+                
+                param[1] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[1].Value = search;
 
                 dal.Open();
                 DataTable dt = new DataTable();
@@ -121,6 +127,31 @@ namespace Product_Management.BL
                 dal.Open();
                 DataTable dt = new DataTable();
                 dt = dal.SelectData("GetReturnPurchaseDetails", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public DataTable GetPurchasesInstallment(int orderId)
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@orderId", SqlDbType.Int);
+                param[0].Value = orderId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurchasesInstallment", param);
                 dal.Close();
 
                 return dt;

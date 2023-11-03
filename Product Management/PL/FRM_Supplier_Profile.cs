@@ -47,11 +47,11 @@ namespace Product_Management.PL
 
 
             ///////////////////////////////////////// Return Invoices /////////////////////////////////////////////////////////////////////
-            dgvReturnInvoices.DataSource = profile.GetReturnPurchases(supId);
+            dgvReturnInvoices.DataSource = profile.GetReturnPurchases(supId, "");
             txtCountOfReturnInvoices.Text = dgvReturnInvoices.Rows.Count.ToString();
 
             ////////////////////////////////////////// Supplier Invoices /////////////////////////////////////////////////////////////////
-            dgvInvoices.DataSource = profile.GetSupplierInvoices(supId);
+            dgvInvoices.DataSource = profile.GetSupplierInvoices(supId, "");
             txtCountOfSaleInvoices.Text = dgvInvoices.Rows.Count.ToString();
 
         }
@@ -118,7 +118,21 @@ namespace Product_Management.PL
                 return;
             }
 
-           
+            int orderId = Convert.ToInt32(dgvInvoices.CurrentRow.Cells[0].Value);
+            FRM_PurchasesInstallment frm = new FRM_PurchasesInstallment(orderId);
+            frm.ShowDialog();
+
+
+        }
+
+        private void txtReturnSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvReturnInvoices.DataSource = profile.GetReturnPurchases(supId, txtReturnSearch.Text);
+        }
+
+        private void txtInvoiceSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvInvoices.DataSource = profile.GetSupplierInvoices(supId, txtInvoiceSearch.Text);
         }
     }
 }
