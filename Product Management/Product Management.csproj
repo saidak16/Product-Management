@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\CLS_Customers.cs" />
+    <Compile Include="BL\CLS_Customer_Profile.cs" />
     <Compile Include="BL\CLS_Dashboard.cs" />
     <Compile Include="BL\CLS_Expensess.cs" />
     <Compile Include="BL\CLS_Helper.cs" />
@@ -118,6 +119,12 @@
     <Compile Include="BL\CLS_USERS.cs" />
     <Compile Include="BL\FillDropDownList.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="PL\FRM_Customers_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Customers_List.Designer.cs">
+      <DependentUpon>FRM_Customers_List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Expensess.cs" />
     <Compile Include="Models\FinancialPosition.cs" />
     <Compile Include="Models\PurchaseDetails.cs" />
@@ -208,6 +215,12 @@
     </Compile>
     <Compile Include="PL\FRM_Customers_Liabilities.Designer.cs">
       <DependentUpon>FRM_Customers_Liabilities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Customer_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Customer_Profile.Designer.cs">
+      <DependentUpon>FRM_Customer_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_CUST_LIST.cs">
       <SubType>Form</SubType>
@@ -559,6 +572,9 @@
       <DependentUpon>rpt_Suppliers_Receivables.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="PL\FRM_Customers_List.resx">
+      <DependentUpon>FRM_Customers_List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_Expensess.resx">
       <DependentUpon>FRM_Add_Expensess.cs</DependentUpon>
     </EmbeddedResource>
@@ -600,6 +616,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Customers_Liabilities.resx">
       <DependentUpon>FRM_Customers_Liabilities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Customer_Profile.resx">
+      <DependentUpon>FRM_Customer_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CUST_LIST.resx">
       <DependentUpon>FRM_CUST_LIST.cs</DependentUpon>

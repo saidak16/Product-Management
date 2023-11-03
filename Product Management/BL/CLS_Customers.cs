@@ -147,5 +147,26 @@ namespace Product_Management.BL
                 throw ex;
             }
         }
+
+        public DataTable GetCustomerList(string search)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerList", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

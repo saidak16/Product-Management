@@ -457,5 +457,11 @@ namespace Product_Management.PL
             FRM_Suppliers_List frm = new FRM_Suppliers_List();
             frm.ShowDialog();
         }
+
+        private void قائمةالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Customers_List frm = new FRM_Customers_List();
+            frm.ShowDialog();
+        }
     }
 }
