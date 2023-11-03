@@ -38,9 +38,9 @@ namespace Product_Management.PL
             /////////////////////////////////////customer chart/////////////////////////////////////
             SeriesCollection series = new SeriesCollection();
 
-            series.Add(new PieSeries() { Title = " جملة المعاملات", Values = new ChartValues<int> { 3000 }, DataLabels = true });
-            series.Add(new PieSeries() { Title = "اجمالي الدفعيات", Values = new ChartValues<int> { 2000 }, DataLabels = true });
-            series.Add(new PieSeries() { Title = "اجمالي الاستحفافات", Values = new ChartValues<int> { 3000 }, DataLabels = true });
+            series.Add(new PieSeries() { Title = " جملة المعاملات", Values = new ChartValues<int> { profile.GetTotalAmount(supId) }, DataLabels = true });
+            series.Add(new PieSeries() { Title = "اجمالي الدفعيات", Values = new ChartValues<int> { profile.GetPaidAmount(supId) }, DataLabels = true });
+            series.Add(new PieSeries() { Title = "اجمالي الاستحفافات", Values = new ChartValues<int> { profile.GetRemainingAmount(supId) }, DataLabels = true });
 
             pieChart1.Series = series;
 
@@ -53,6 +53,12 @@ namespace Product_Management.PL
             ////////////////////////////////////////// Supplier Invoices /////////////////////////////////////////////////////////////////
             dgvInvoices.DataSource = profile.GetSupplierInvoices(supId, "");
             txtCountOfSaleInvoices.Text = dgvInvoices.Rows.Count.ToString();
+
+            ////////////////////////////////////////// Counters /////////////////////////////////////////////////////////////////////////////
+            txtTotalInvoices.Text = profile.GetTotalInvoices(supId).ToString();
+            txtTotalAmount.Text = profile.GetTotalAmount(supId).ToString("C");
+            txtPaid.Text = profile.GetPaidAmount(supId).ToString("C");
+            txtRemainAmount.Text = profile.GetRemainingAmount(supId).ToString("C");
 
         }
 

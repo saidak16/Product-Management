@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Supplier_Profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtLastOrder = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCreationDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -44,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtRemainAmount = new System.Windows.Forms.TextBox();
@@ -63,9 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
             this.txtCountOfSaleInvoices = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtInvoiceSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -74,15 +69,20 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtReturnSearch = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnSaleInvoice = new System.Windows.Forms.Button();
             this.dgvReturnInvoices = new System.Windows.Forms.DataGridView();
+            this.btnSaleInvoice = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,20 +110,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات المورد";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Product_Management.Properties.Resources.save;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(169, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 37);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "اصناف المورد";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtLastOrder
             // 
@@ -166,20 +152,6 @@
             this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 10;
             this.label5.Text = "بداية التعامل";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(300, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 37);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "الاستحقاقات";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCompany
             // 
@@ -266,16 +238,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "الاسم";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Product_Management.Properties.Resources._2825867;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 244);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label11);
@@ -310,10 +272,10 @@
             // 
             // txtRemainAmount
             // 
-            this.txtRemainAmount.BackColor = System.Drawing.Color.Red;
-            this.txtRemainAmount.Enabled = false;
+            this.txtRemainAmount.BackColor = System.Drawing.SystemColors.Control;
             this.txtRemainAmount.Location = new System.Drawing.Point(100, 314);
             this.txtRemainAmount.Name = "txtRemainAmount";
+            this.txtRemainAmount.ReadOnly = true;
             this.txtRemainAmount.Size = new System.Drawing.Size(264, 26);
             this.txtRemainAmount.TabIndex = 42;
             this.txtRemainAmount.Text = "0";
@@ -357,10 +319,10 @@
             // 
             // txtTotalAmount
             // 
-            this.txtTotalAmount.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtTotalAmount.Enabled = false;
+            this.txtTotalAmount.BackColor = System.Drawing.SystemColors.Control;
             this.txtTotalAmount.Location = new System.Drawing.Point(101, 246);
             this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.Size = new System.Drawing.Size(264, 26);
             this.txtTotalAmount.TabIndex = 37;
             this.txtTotalAmount.Text = "0";
@@ -368,10 +330,10 @@
             // 
             // txtPaid
             // 
-            this.txtPaid.BackColor = System.Drawing.Color.Chartreuse;
-            this.txtPaid.Enabled = false;
+            this.txtPaid.BackColor = System.Drawing.SystemColors.Control;
             this.txtPaid.Location = new System.Drawing.Point(101, 281);
             this.txtPaid.Name = "txtPaid";
+            this.txtPaid.ReadOnly = true;
             this.txtPaid.Size = new System.Drawing.Size(264, 26);
             this.txtPaid.TabIndex = 36;
             this.txtPaid.Text = "0";
@@ -379,9 +341,9 @@
             // 
             // txtTotalInvoices
             // 
-            this.txtTotalInvoices.Enabled = false;
             this.txtTotalInvoices.Location = new System.Drawing.Point(101, 213);
             this.txtTotalInvoices.Name = "txtTotalInvoices";
+            this.txtTotalInvoices.ReadOnly = true;
             this.txtTotalInvoices.Size = new System.Drawing.Size(264, 26);
             this.txtTotalInvoices.TabIndex = 35;
             this.txtTotalInvoices.Text = "0";
@@ -472,19 +434,6 @@
             this.txtCountOfSaleInvoices.Text = "0";
             this.txtCountOfSaleInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button3
-            // 
-            this.button3.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(639, 300);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 42);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "تفاصيل الاقساط";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -493,19 +442,6 @@
             this.label8.Size = new System.Drawing.Size(83, 19);
             this.label8.TabIndex = 42;
             this.label8.Text = "عدد المعاملات";
-            // 
-            // button4
-            // 
-            this.button4.Image = global::Product_Management.Properties.Resources._11081942421898;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(778, 300);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 42);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "تفاصيل الفاتورة";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtInvoiceSearch
             // 
@@ -590,6 +526,19 @@
             this.label13.TabIndex = 34;
             this.label13.Text = "ابحث هنا :";
             // 
+            // dgvReturnInvoices
+            // 
+            this.dgvReturnInvoices.AllowUserToAddRows = false;
+            this.dgvReturnInvoices.AllowUserToDeleteRows = false;
+            this.dgvReturnInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReturnInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvReturnInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReturnInvoices.Location = new System.Drawing.Point(6, 52);
+            this.dgvReturnInvoices.Name = "dgvReturnInvoices";
+            this.dgvReturnInvoices.ReadOnly = true;
+            this.dgvReturnInvoices.Size = new System.Drawing.Size(910, 160);
+            this.dgvReturnInvoices.TabIndex = 0;
+            // 
             // btnSaleInvoice
             // 
             this.btnSaleInvoice.Image = global::Product_Management.Properties.Resources._11081942421898;
@@ -603,18 +552,69 @@
             this.btnSaleInvoice.UseVisualStyleBackColor = true;
             this.btnSaleInvoice.Click += new System.EventHandler(this.btnSaleInvoice_Click);
             // 
-            // dgvReturnInvoices
+            // button3
             // 
-            this.dgvReturnInvoices.AllowUserToAddRows = false;
-            this.dgvReturnInvoices.AllowUserToDeleteRows = false;
-            this.dgvReturnInvoices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReturnInvoices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvReturnInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReturnInvoices.Location = new System.Drawing.Point(6, 52);
-            this.dgvReturnInvoices.Name = "dgvReturnInvoices";
-            this.dgvReturnInvoices.ReadOnly = true;
-            this.dgvReturnInvoices.Size = new System.Drawing.Size(910, 160);
-            this.dgvReturnInvoices.TabIndex = 0;
+            this.button3.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue1;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(639, 300);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 42);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "تفاصيل الاقساط";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = global::Product_Management.Properties.Resources._11081942421898;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(778, 300);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(138, 42);
+            this.button4.TabIndex = 38;
+            this.button4.Text = "تفاصيل الفاتورة";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Product_Management.Properties.Resources.save;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(169, 228);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 37);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "اصناف المورد";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(300, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 37);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "الاستحقاقات";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Product_Management.Properties.Resources._2825867;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 244);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FRM_Supplier_Profile
             // 
@@ -637,7 +637,6 @@
             this.Load += new System.EventHandler(this.FRM_Supplier_Profile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -646,6 +645,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

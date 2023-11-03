@@ -137,7 +137,6 @@ namespace Product_Management.BL
             }
         }
 
-
         public DataTable GetPurchasesInstallment(int orderId)
         {
             try
@@ -161,5 +160,98 @@ namespace Product_Management.BL
                 return null;
             }
         }
+
+        public int GetTotalAmount(int supplerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@supplerId", SqlDbType.Int);
+                param[0].Value = supplerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetTotalAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        
+        public int GetPaidAmount(int supplerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@supplerId", SqlDbType.Int);
+                param[0].Value = supplerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPaidAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        
+        public int GetRemainingAmount(int supplerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@supplerId", SqlDbType.Int);
+                param[0].Value = supplerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetRemainingAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        
+        public int GetTotalInvoices(int supplerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@supplerId", SqlDbType.Int);
+                param[0].Value = supplerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetTotalInvoices", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
     }
 }
