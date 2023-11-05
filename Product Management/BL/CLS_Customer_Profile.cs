@@ -132,6 +132,97 @@ namespace Product_Management.BL
             }
         }
 
+        public int GetCustomerTotalAmount(int customerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerTotalAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int GetCustomerPaidAmount(int customerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerPaidAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int GetCustomerRemainingAmount(int customerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerRemainingAmount", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int GetCustomerTotalInvoices(int customerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerTotalInvoices", param);
+                dal.Close();
+
+                return Convert.ToInt32(dt.Rows[0][0]);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
 
     }
 }

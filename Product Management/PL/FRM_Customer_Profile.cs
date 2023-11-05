@@ -1,4 +1,6 @@
-﻿using Product_Management.BL;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using Product_Management.BL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,8 +42,23 @@ namespace Product_Management.PL
             dgvReturnInvoices.DataSource = profile.GetCustomerReturnOrder(customerId, "");
             txtCountOfReturnInvoices.Text = dgvReturnInvoices.Rows.Count.ToString();
 
+            /////////////////////////////////////customer chart/////////////////////////////////////
+            SeriesCollection series = new SeriesCollection();
+
+            series.Add(new PieSeries() { Title = " جملة المعاملات", Values = new ChartValues<int> { profile.GetCustomerTotalAmount(customerId) }, DataLabels = true });
+            series.Add(new PieSeries() { Title = "اجمالي الدفعيات", Values = new ChartValues<int> { profile.GetCustomerPaidAmount(customerId) }, DataLabels = true });
+            series.Add(new PieSeries() { Title = "اجمالي الاستحفافات", Values = new ChartValues<int> { profile.GetCustomerRemainingAmount(customerId) }, DataLabels = true });
+
+            pieChart1.Series = series;
+
+
             ///////////////////////////////////////////////////Customer Counter///////////////////////////////////////////////////////////////////////////////////////////
-            
+            txtTotalInvoices.Text = profile.GetCustomerTotalInvoices(customerId).ToString();
+            txtTotalAmount.Text = profile.GetCustomerTotalAmount(customerId).ToString("C");
+            txtPaid.Text = profile.GetCustomerPaidAmount(customerId).ToString("C");
+            txtRemainAmount.Text = profile.GetCustomerRemainingAmount(customerId).ToString("C");
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
