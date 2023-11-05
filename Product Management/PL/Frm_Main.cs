@@ -463,5 +463,29 @@ namespace Product_Management.PL
             FRM_Customers_List frm = new FRM_Customers_List();
             frm.ShowDialog();
         }
+
+        private void انشاءنسخةاحتياطيةToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FRM_BACKUP frm = new FRM_BACKUP();
+            frm.ShowDialog();
+        }
+
+        private void استعادةنسخةمحفوظةToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FRM_RESTORE frm = new FRM_RESTORE();
+            frm.ShowDialog();
+        }
+
+        private void اعداداتالاتصالبالسيرفرToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FRM_CHECK frm = new FRM_CHECK();
+            frm.ShowDialog();
+        }
+
+        private void مردوداتالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Return_Orders frm = new FRM_Return_Orders();
+            frm.ShowDialog();
+        }
     }
 }

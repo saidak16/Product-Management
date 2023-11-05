@@ -112,6 +112,11 @@
             this.picContact = new System.Windows.Forms.PictureBox();
             this.picSystem = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.المواردالبشريةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.استعادةنسخةمحفوظةToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -139,6 +144,7 @@
             this.العملاءToolStripMenuItem,
             this.مناديبالمبيعاتToolStripMenuItem,
             this.المنصرفاتToolStripMenuItem,
+            this.المواردالبشريةToolStripMenuItem,
             this.المشترياتToolStripMenuItem,
             this.المبيعاتToolStripMenuItem,
             this.الاعداداتToolStripMenuItem,
@@ -301,7 +307,7 @@
             // 
             this.إدارةالعملاءToolStripMenuItem.Image = global::Product_Management.Properties.Resources._1473325492_User1;
             this.إدارةالعملاءToolStripMenuItem.Name = "إدارةالعملاءToolStripMenuItem";
-            this.إدارةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.إدارةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.إدارةالعملاءToolStripMenuItem.Text = "إدارة العملاء";
             this.إدارةالعملاءToolStripMenuItem.Click += new System.EventHandler(this.إدارةالعملاءToolStripMenuItem_Click);
             // 
@@ -309,20 +315,20 @@
             // 
             this.مطلوباتالعملاءToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.dollar_icon;
             this.مطلوباتالعملاءToolStripMenuItem1.Name = "مطلوباتالعملاءToolStripMenuItem1";
-            this.مطلوباتالعملاءToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.مطلوباتالعملاءToolStripMenuItem1.Size = new System.Drawing.Size(164, 24);
             this.مطلوباتالعملاءToolStripMenuItem1.Text = "مطلوبات العملاء";
             this.مطلوباتالعملاءToolStripMenuItem1.Click += new System.EventHandler(this.مطلوباتالعملاءToolStripMenuItem1_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(161, 6);
             // 
             // قائمةالعملاءToolStripMenuItem
             // 
             this.قائمةالعملاءToolStripMenuItem.Image = global::Product_Management.Properties.Resources.PD_Icons_06;
             this.قائمةالعملاءToolStripMenuItem.Name = "قائمةالعملاءToolStripMenuItem";
-            this.قائمةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.قائمةالعملاءToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.قائمةالعملاءToolStripMenuItem.Text = "قائمة العملاء";
             this.قائمةالعملاءToolStripMenuItem.Click += new System.EventHandler(this.قائمةالعملاءToolStripMenuItem_Click);
             // 
@@ -331,6 +337,7 @@
             this.مناديبالمبيعاتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اضافةمندوبجديدToolStripMenuItem,
             this.ادارةالمناديبToolStripMenuItem,
+            this.toolStripSeparator8,
             this.نسبمناديبالمبيعاتToolStripMenuItem});
             this.مناديبالمبيعاتToolStripMenuItem.Image = global::Product_Management.Properties.Resources.images__2_;
             this.مناديبالمبيعاتToolStripMenuItem.Name = "مناديبالمبيعاتToolStripMenuItem";
@@ -436,6 +443,7 @@
             this.مردوداتالمشترياتToolStripMenuItem.Name = "مردوداتالمشترياتToolStripMenuItem";
             this.مردوداتالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.مردوداتالمشترياتToolStripMenuItem.Text = "مردودات المشتريات";
+            this.مردوداتالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.مردوداتالمشترياتToolStripMenuItem_Click);
             // 
             // المبيعاتToolStripMenuItem
             // 
@@ -524,10 +532,14 @@
             // 
             // اعداداتالنظامToolStripMenuItem
             // 
+            this.اعداداتالنظامToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1,
+            this.استعادةنسخةمحفوظةToolStripMenuItem1,
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1});
             this.اعداداتالنظامToolStripMenuItem.Image = global::Product_Management.Properties.Resources.laptop_analytics_charts_analysis_graph_icon_143366;
             this.اعداداتالنظامToolStripMenuItem.Name = "اعداداتالنظامToolStripMenuItem";
-            this.اعداداتالنظامToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
-            this.اعداداتالنظامToolStripMenuItem.Text = "اعدادات النظام";
+            this.اعداداتالنظامToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
+            this.اعداداتالنظامToolStripMenuItem.Text = "اعدادات قواعد البيانات";
             // 
             // المستخدمينToolStripMenuItem
             // 
@@ -938,6 +950,43 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(184, 6);
+            // 
+            // المواردالبشريةToolStripMenuItem
+            // 
+            this.المواردالبشريةToolStripMenuItem.Enabled = false;
+            this.المواردالبشريةToolStripMenuItem.Image = global::Product_Management.Properties.Resources.PD_Icons_06;
+            this.المواردالبشريةToolStripMenuItem.Name = "المواردالبشريةToolStripMenuItem";
+            this.المواردالبشريةToolStripMenuItem.Size = new System.Drawing.Size(119, 23);
+            this.المواردالبشريةToolStripMenuItem.Text = "الموارد البشرية";
+            // 
+            // انشاءنسخةاحتياطيةToolStripMenuItem1
+            // 
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1.Image = global::Product_Management.Properties.Resources._1473325755_add_to_database;
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1.Name = "انشاءنسخةاحتياطيةToolStripMenuItem1";
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1.Size = new System.Drawing.Size(211, 24);
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1.Text = "انشاء نسخة احتياطية";
+            this.انشاءنسخةاحتياطيةToolStripMenuItem1.Click += new System.EventHandler(this.انشاءنسخةاحتياطيةToolStripMenuItem1_Click);
+            // 
+            // استعادةنسخةمحفوظةToolStripMenuItem1
+            // 
+            this.استعادةنسخةمحفوظةToolStripMenuItem1.Image = global::Product_Management.Properties.Resources.Actions_document_save_icon1;
+            this.استعادةنسخةمحفوظةToolStripMenuItem1.Name = "استعادةنسخةمحفوظةToolStripMenuItem1";
+            this.استعادةنسخةمحفوظةToolStripMenuItem1.Size = new System.Drawing.Size(211, 24);
+            this.استعادةنسخةمحفوظةToolStripMenuItem1.Text = "استعادة نسخة محفوظة";
+            this.استعادةنسخةمحفوظةToolStripMenuItem1.Click += new System.EventHandler(this.استعادةنسخةمحفوظةToolStripMenuItem1_Click);
+            // 
+            // اعداداتالاتصالبالسيرفرToolStripMenuItem1
+            // 
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1.Image = global::Product_Management.Properties.Resources._1473325670_Password_Vault1;
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1.Name = "اعداداتالاتصالبالسيرفرToolStripMenuItem1";
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1.Size = new System.Drawing.Size(211, 24);
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1.Text = "اعدادات الاتصال بالسيرفر";
+            this.اعداداتالاتصالبالسيرفرToolStripMenuItem1.Click += new System.EventHandler(this.اعداداتالاتصالبالسيرفرToolStripMenuItem1_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1067,5 +1116,10 @@
         private System.Windows.Forms.ToolStripMenuItem مردوداتالمشترياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem مردوداتالمبيعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem المواردالبشريةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem انشاءنسخةاحتياطيةToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem استعادةنسخةمحفوظةToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem اعداداتالاتصالبالسيرفرToolStripMenuItem1;
     }
 }

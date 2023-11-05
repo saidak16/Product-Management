@@ -396,6 +396,12 @@
     <Compile Include="PL\FRM_RESTORE.Designer.cs">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Return_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Return_Orders.Designer.cs">
+      <DependentUpon>FRM_Return_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Return_Purchase_Details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_RESTORE.resx">
       <DependentUpon>FRM_RESTORE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Return_Orders.resx">
+      <DependentUpon>FRM_Return_Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Return_Purchase_Details.resx">
       <DependentUpon>FRM_Return_Purchase_Details.cs</DependentUpon>

@@ -29,16 +29,35 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
-
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
-
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+               
                 return null;
             }
         }
-        
+
+        public DataTable GetAllReturnPurchases(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetAllReturnPurchases", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
         public DataTable GetPurchasesById(int id)
         {
             try
