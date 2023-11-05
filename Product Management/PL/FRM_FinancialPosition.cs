@@ -22,44 +22,60 @@ namespace Product_Management.PL
         {
             InitializeComponent();
 
-            var Financial = dashboard.FinancialPosition();
-            
-            if(Financial != null)
+            try
             {
+                var Financial = dashboard.FinancialPosition();
 
-                txtExp.Text = Convert.ToInt32(Financial.TotalExp).ToString("C");
-                txtPur.Text = Convert.ToInt32(Financial.TotalPur).ToString("C");
-                txtSeal.Text = Convert.ToInt32(Financial.TotalSeals).ToString("C");
-                txtSup.Text = Convert.ToInt32(Financial.TotalSuplierRemainingAmount).ToString("C");
-                txtCust.Text = Convert.ToInt32(Financial.TotalCustomerRemainingAmount).ToString("C");
-
-                txtProfit.Text = (Convert.ToInt32(txtSeal.Text) - (Convert.ToInt32(txtExp.Text) + Convert.ToInt32(txtPur.Text))).ToString("C");
-                try
+                if (Financial != null)
                 {
 
-                    SeriesCollection series = new SeriesCollection();
+                    txtExp.Text = Convert.ToInt32(Financial.TotalExp).ToString("C");
+                    txtPur.Text = Convert.ToInt32(Financial.TotalPur).ToString("C");
+                    txtSeal.Text = Convert.ToInt32(Financial.TotalSeals).ToString("C");
+                    txtSup.Text = Convert.ToInt32(Financial.TotalSuplierRemainingAmount).ToString("C");
+                    txtCust.Text = Convert.ToInt32(Financial.TotalCustomerRemainingAmount).ToString("C");
 
-                    series.Add(new PieSeries() { Title = "اجمالي المنصرفات", Values = new ChartValues<int> { Convert.ToInt32(txtExp.Text) }, DataLabels = true });
-                    series.Add(new PieSeries() { Title = "اجمالي المشتريات", Values = new ChartValues<int> { Convert.ToInt32(txtPur.Text) }, DataLabels = true });
-                    series.Add(new PieSeries() { Title = "اجمالي المبيعات", Values = new ChartValues<int> { Convert.ToInt32(txtSeal.Text) }, DataLabels = true });
+                    string sale, exp, pur,sup,cust;
+                    sale = Convert.ToInt32(Financial.TotalSeals).ToString();
+                    exp = Convert.ToInt32(Financial.TotalExp).ToString();
+                    pur = Convert.ToInt32(Financial.TotalPur).ToString();
+                    sup = Convert.ToInt32(Financial.TotalSuplierRemainingAmount).ToString();
+                    cust = Convert.ToInt32(Financial.TotalCustomerRemainingAmount).ToString();
 
-                    pieChart1.Series = series;
+                    txtProfit.Text = (Convert.ToInt32(sale) - (Convert.ToInt32(exp) + Convert.ToInt32(pur))).ToString("C");
 
-                    SeriesCollection series2 = new SeriesCollection();
+                    try
+                    {
 
-                    series2.Add(new PieSeries() { Title = "اجمالي استحقاقات الوردين", Values = new ChartValues<int> { Convert.ToInt32(txtSup.Text) }, DataLabels = true });
-                    series2.Add(new PieSeries() { Title = "اجمالي مطلوبات العملاء", Values = new ChartValues<int> { Convert.ToInt32(txtCust.Text) }, DataLabels = true });
+                        SeriesCollection series = new SeriesCollection();
 
-                    pieChart2.Series = series2;
+                        series.Add(new PieSeries() { Title = "اجمالي المنصرفات", Values = new ChartValues<int> { Convert.ToInt32(exp) }, DataLabels = true });
+                        series.Add(new PieSeries() { Title = "اجمالي المشتريات", Values = new ChartValues<int> { Convert.ToInt32(pur) }, DataLabels = true });
+                        series.Add(new PieSeries() { Title = "اجمالي المبيعات", Values = new ChartValues<int> { Convert.ToInt32(sale) }, DataLabels = true });
+
+                        pieChart1.Series = series;
+
+                        SeriesCollection series2 = new SeriesCollection();
+
+                        series2.Add(new PieSeries() { Title = "اجمالي استحقاقات الوردين", Values = new ChartValues<int> { Convert.ToInt32(sup) }, DataLabels = true });
+                        series2.Add(new PieSeries() { Title = "اجمالي مطلوبات العملاء", Values = new ChartValues<int> { Convert.ToInt32(cust) }, DataLabels = true });
+
+                        pieChart2.Series = series2;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("عذراً, لا توجد حركة مالية حتي الان", "الموقف المالي", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("عذراً, لا توجد حركة مالية حتي الان", "الموقف المالي", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+
+                throw;
             }
         }
 
