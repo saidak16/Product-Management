@@ -647,6 +647,9 @@
     <EmbeddedResource Include="PL\FRM_CUST_LIST.resx">
       <DependentUpon>FRM_CUST_LIST.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Dashboard.resx">
+      <DependentUpon>FRM_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Expensess.resx">
       <DependentUpon>FRM_Expensess.cs</DependentUpon>
     </EmbeddedResource>
@@ -1454,6 +1457,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\client1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_icon-icons.com_68891.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financial_presentation_graphs_dollar_person_man_icon_2051271.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

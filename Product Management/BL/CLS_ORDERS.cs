@@ -276,5 +276,28 @@ namespace Product_Management.BL
                 return null;
             }
         }
+
+        public DataTable GetSaleReturn(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSaleReturn", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

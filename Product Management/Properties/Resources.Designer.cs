@@ -414,6 +414,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6_icon_icons_com_68891 {
+            get {
+                object obj = ResourceManager.GetObject("6_icon-icons.com_68891", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7283494 {
             get {
                 object obj = ResourceManager.GetObject("7283494", resourceCulture);
@@ -847,6 +857,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap financial_presentation_graphs_dollar_person_man_icon_205127 {
             get {
                 object obj = ResourceManager.GetObject("financial_presentation_graphs_dollar_person_man_icon_205127", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap financial_presentation_graphs_dollar_person_man_icon_2051271 {
+            get {
+                object obj = ResourceManager.GetObject("financial_presentation_graphs_dollar_person_man_icon_2051271", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

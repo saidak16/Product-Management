@@ -27,13 +27,13 @@ namespace Product_Management.PL
             if(Financial != null)
             {
 
-                txtExp.Text = Financial.TotalExp.ToString();
-                txtPur.Text = Financial.TotalPur.ToString();
-                txtSeal.Text = Financial.TotalSeals.ToString();
-                txtSup.Text = Financial.TotalSuplierRemainingAmount.ToString();
-                txtCust.Text = Financial.TotalCustomerRemainingAmount.ToString();
+                txtExp.Text = Convert.ToInt32(Financial.TotalExp).ToString("C");
+                txtPur.Text = Convert.ToInt32(Financial.TotalPur).ToString("C");
+                txtSeal.Text = Convert.ToInt32(Financial.TotalSeals).ToString("C");
+                txtSup.Text = Convert.ToInt32(Financial.TotalSuplierRemainingAmount).ToString("C");
+                txtCust.Text = Convert.ToInt32(Financial.TotalCustomerRemainingAmount).ToString("C");
 
-                txtProfit.Text = (Convert.ToInt32(txtSeal.Text) - (Convert.ToInt32(txtExp.Text) + Convert.ToInt32(txtPur.Text))).ToString();
+                txtProfit.Text = (Convert.ToInt32(txtSeal.Text) - (Convert.ToInt32(txtExp.Text) + Convert.ToInt32(txtPur.Text))).ToString("C");
                 try
                 {
 

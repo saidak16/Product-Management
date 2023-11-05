@@ -100,16 +100,10 @@ namespace Product_Management.PL
             this.العملاءToolStripMenuItem.Enabled = false;
             this.الموردينToolStripMenuItem.Enabled = false;
             this.الاعداداتToolStripMenuItem.Enabled = false;
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Enabled = false;
-            this.استعادةنسخةمحفوظةToolStripMenuItem.Enabled = false;
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
-            this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
             this.المستخدمينToolStripMenuItem.Visible = true;
             this.المنتجاتToolStripMenuItem.Visible = true;
             this.المبيعاتToolStripMenuItem.Visible = true;
             this.العملاءToolStripMenuItem.Visible = true;
-            this.انشاءنسخةاحتياطيةToolStripMenuItem.Visible = true;
-            this.استعادةنسخةمحفوظةToolStripMenuItem.Visible = true;
             //this.toolStripMenuItem1.Visible = false;
             //this.toolStripMenuItem3.Visible = false;
             this.المشترياتToolStripMenuItem.Enabled = false;
@@ -491,6 +485,12 @@ namespace Product_Management.PL
         private void مردوداتالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRM_Sales_Return frm = new FRM_Sales_Return();
+            frm.ShowDialog();
+        }
+
+        private void picSystem_Click(object sender, EventArgs e)
+        {
+            FRM_Dashboard frm = new FRM_Dashboard();
             frm.ShowDialog();
         }
     }
