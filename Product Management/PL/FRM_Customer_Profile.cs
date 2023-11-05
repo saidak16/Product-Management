@@ -35,6 +35,13 @@ namespace Product_Management.PL
             ///////////////////////////////////////////////////Customer Invoices//////////////////////////////////////////////////////////////////////////////////////////
             dgvInvoices.DataSource = profile.GetCustomerInvoices(customerId, "");
             txtCountOfSaleInvoices.Text = dgvInvoices.Rows.Count.ToString();
+
+            ///////////////////////////////////////////////////Customer Return Invoices/////////////////////////////////////////////////////////////////////////////////////
+            dgvReturnInvoices.DataSource = profile.GetCustomerReturnOrder(customerId, "");
+            txtCountOfReturnInvoices.Text = dgvReturnInvoices.Rows.Count.ToString();
+
+            ///////////////////////////////////////////////////Customer Counter///////////////////////////////////////////////////////////////////////////////////////////
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +75,29 @@ namespace Product_Management.PL
         private void button3_Click(object sender, EventArgs e)
         {
             FRM_Order_Installment frm = new FRM_Order_Installment(Convert.ToInt32(this.dgvInvoices.CurrentRow.Cells[0].Value.ToString()));
+            frm.ShowDialog();
+        }
+
+        private void FRM_Customer_Profile_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtReturnSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvReturnInvoices.DataSource = profile.GetCustomerReturnOrder(customerId, txtReturnSearch.Text);
+        }
+
+        private void btnSaleInvoice_Click(object sender, EventArgs e)
+        {
+            if (dgvReturnInvoices.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
+            int orderId = Convert.ToInt32(this.dgvReturnInvoices.CurrentRow.Cells[2].Value);
+            FRM_Order_Return_Items frm = new FRM_Order_Return_Items(orderId);
             frm.ShowDialog();
         }
     }

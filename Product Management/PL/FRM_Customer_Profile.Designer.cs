@@ -429,6 +429,7 @@
             this.txtReturnSearch.Name = "txtReturnSearch";
             this.txtReturnSearch.Size = new System.Drawing.Size(282, 22);
             this.txtReturnSearch.TabIndex = 33;
+            this.txtReturnSearch.TextChanged += new System.EventHandler(this.txtReturnSearch_TextChanged);
             // 
             // label13
             // 
@@ -568,6 +569,7 @@
             this.btnSaleInvoice.Text = "تفاصيل الفاتورة";
             this.btnSaleInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaleInvoice.UseVisualStyleBackColor = true;
+            this.btnSaleInvoice.Click += new System.EventHandler(this.btnSaleInvoice_Click);
             // 
             // pictureBox1
             // 
@@ -599,6 +601,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ملف العميل";
+            this.Load += new System.EventHandler(this.FRM_Customer_Profile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

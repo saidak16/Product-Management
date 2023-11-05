@@ -33,7 +33,34 @@ namespace Product_Management.BL
                 return null;
             }
         }
-         public DataTable GetOrderInstallment(int orderId)
+        
+        public DataTable GetCustomerReturnOrder(int customerId, string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[2];
+
+                dal.Open();
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+                
+                param[1] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[1].Value = customerId;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetCustomerReturnOrder", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+       
+        public DataTable GetOrderInstallment(int orderId)
         {
             try
             {
@@ -81,5 +108,30 @@ namespace Product_Management.BL
                 return null;
             }
         }
+
+        public DataTable GetOrderReturnItems(int orderId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                dal.Open();
+
+                param[0] = new SqlParameter("@orderId", SqlDbType.Int);
+                param[0].Value = orderId;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetOrderReturnItems", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
     }
 }
