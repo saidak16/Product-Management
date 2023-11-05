@@ -30,6 +30,45 @@ namespace Product_Management.PL
             txtEmail.Text = dt.Rows[0]["E_Mail"].ToString();
             txtCreationDate.Text = Convert.ToDateTime(dt.Rows[0]["Creation_Date"]).ToShortDateString();
             txtLastOrder.Text = Convert.ToDateTime(dt.Rows[0]["LastOrder"]).ToShortDateString();
+            txtTotalRemaining.Text = Convert.ToInt32(dt.Rows[0]["TotalRemaining"]).ToString("C");
+
+            ///////////////////////////////////////////////////Customer Invoices//////////////////////////////////////////////////////////////////////////////////////////
+            dgvInvoices.DataSource = profile.GetCustomerInvoices(customerId, "");
+            txtCountOfSaleInvoices.Text = dgvInvoices.Rows.Count.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInvoiceSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvInvoices.DataSource = profile.GetCustomerInvoices(customerId, txtInvoiceSearch.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dgvInvoices.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
+            FRM_OrderDetails frm = new FRM_OrderDetails(Convert.ToInt32(this.dgvInvoices.CurrentRow.Cells[0].Value.ToString()));
+            frm.groupBox1.Visible = false;
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FRM_Order_Installment frm = new FRM_Order_Installment(Convert.ToInt32(this.dgvInvoices.CurrentRow.Cells[0].Value.ToString()));
+            frm.ShowDialog();
         }
     }
 }

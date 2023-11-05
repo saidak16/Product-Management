@@ -13,13 +13,16 @@ namespace Product_Management.PL
 {
     public partial class FRM_OrderDetails : Form
     {
+        int orderId = 0;
         CLS_ORDERS orders = new CLS_ORDERS();
 
         public FRM_OrderDetails(int orderId)
         {
+            this.orderId = orderId;
             InitializeComponent();
 
             dataGridView1.DataSource = orders.GetOrderDetails("", orderId);
+            txtCount.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -29,14 +32,7 @@ namespace Product_Management.PL
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1.DataSource = orders.GetOrderDetails(txtID.Text, Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()));
-            }
-            else
-            {
-                MessageBox.Show("لا يوجد عناصر", "");
-            }
+            dataGridView1.DataSource = orders.GetOrderDetails(txtID.Text, orderId);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +73,11 @@ namespace Product_Management.PL
             {
                 MessageBox.Show("لا يوجد عناصر", "");
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

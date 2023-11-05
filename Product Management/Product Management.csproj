@@ -312,6 +312,12 @@
     <Compile Include="PL\FRM_Orders_List.Designer.cs">
       <DependentUpon>FRM_Orders_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Order_Installment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Order_Installment.Designer.cs">
+      <DependentUpon>FRM_Order_Installment.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Frm_Preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -658,6 +664,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Orders_List.resx">
       <DependentUpon>FRM_Orders_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Order_Installment.resx">
+      <DependentUpon>FRM_Order_Installment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Preview.resx">
       <DependentUpon>Frm_Preview.cs</DependentUpon>

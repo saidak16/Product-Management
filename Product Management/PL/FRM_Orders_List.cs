@@ -70,7 +70,6 @@ namespace Product_Management.PL
         private void button1_Click(object sender, EventArgs e)
         {
             FRM_OrderDetails frm = new FRM_OrderDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
-
             frm.ShowDialog();
 
             //if (MessageBox.Show("هل تريد استرجاع العنصر المحدد ؟؟", "عملية قيد عكسي", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
