@@ -426,6 +426,12 @@
     <Compile Include="PL\FRM_Sales_Representative.Designer.cs">
       <DependentUpon>FRM_Sales_Representative.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Sales_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Sales_Return.Designer.cs">
+      <DependentUpon>FRM_Sales_Return.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -733,6 +739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Sales_Representative.resx">
       <DependentUpon>FRM_Sales_Representative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Sales_Return.resx">
+      <DependentUpon>FRM_Sales_Return.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_SplashScreen.resx">
       <DependentUpon>FRM_SplashScreen.cs</DependentUpon>

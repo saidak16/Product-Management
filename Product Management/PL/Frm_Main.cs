@@ -487,5 +487,11 @@ namespace Product_Management.PL
             FRM_Return_Orders frm = new FRM_Return_Orders();
             frm.ShowDialog();
         }
+
+        private void مردوداتالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Sales_Return frm = new FRM_Sales_Return();
+            frm.ShowDialog();
+        }
     }
 }
