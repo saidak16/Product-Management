@@ -517,6 +517,9 @@
   <data name="printer-tool1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer-tool1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="financial_presentation_graphs_dollar_person_man_icon_2051271" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financial_presentation_graphs_dollar_person_man_icon_2051271.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Mayosoft-Azullustre-Admin-min" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mayosoft-Azullustre-Admin-min.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -567,6 +570,9 @@
   </data>
   <data name="Save-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deliverybox-115847_115821" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deliverybox-115847_115821.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Capture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Capture.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -691,7 +697,7 @@
   <data name="Actions-edit-clear-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-clear-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="financial_presentation_graphs_dollar_person_man_icon_2051271" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\financial_presentation_graphs_dollar_person_man_icon_2051271.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="box_search_product_ean_barcode_icon_148907" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_search_product_ean_barcode_icon_148907.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

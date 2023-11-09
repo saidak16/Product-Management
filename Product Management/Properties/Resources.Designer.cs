@@ -584,6 +584,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box_search_product_ean_barcode_icon_148907 {
+            get {
+                object obj = ResourceManager.GetObject("box_search_product_ean_barcode_icon_148907", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap building_business_case_customer_success_940x400 {
             get {
                 object obj = ResourceManager.GetObject("building_business_case_customer_success-940x400", resourceCulture);
@@ -747,6 +757,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap Control_Panel_icon {
             get {
                 object obj = ResourceManager.GetObject("Control-Panel-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deliverybox_115847_115821 {
+            get {
+                object obj = ResourceManager.GetObject("deliverybox-115847_115821", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
