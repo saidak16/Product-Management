@@ -1,0 +1,1214 @@
+USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[Order_Details_Returned_Items]    Script Date: 2023-11-02 9:57:18 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Order_Details_Returned_Items](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ID_Product] [int] NULL,
+	[ID_Order] [int] NULL,
+	[QTE] [int] NULL,
+	[Price] [nvarchar](50) NULL,
+	[Discount] [float] NULL,
+	[Amount] [nvarchar](50) NULL,
+	[Total] [nvarchar](50) NULL,
+	[PurchaseId] [int] NULL,
+	[ReturnDate] [date] NOT NULL,
+ CONSTRAINT [PK_Order_Details_Returned_Items] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Order_Details_Returned_Items]  WITH CHECK ADD  CONSTRAINT [FK_Order_Details_Returned_Items_Order] FOREIGN KEY([ID_Order])
+REFERENCES [dbo].[Order] ([ID_Order])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Order_Details_Returned_Items] CHECK CONSTRAINT [FK_Order_Details_Returned_Items_Order]
+GO
+
+ALTER TABLE [dbo].[Order_Details_Returned_Items]  WITH CHECK ADD  CONSTRAINT [FK_Order_Details_Returned_Items_Product] FOREIGN KEY([ID_Product])
+REFERENCES [dbo].[Product] ([ID_Product])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Order_Details_Returned_Items] CHECK CONSTRAINT [FK_Order_Details_Returned_Items_Product]
+GO
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[ProformaInvoice_Details]    Script Date: 2023-11-02 9:57:46 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ProformaInvoice_Details](
+	[ProductId] [int] NULL,
+	[ProformaInvoiceId] [int] NULL,
+	[QTE] [int] NULL,
+	[Price] [nvarchar](50) NULL,
+	[Discount] [float] NULL,
+	[Amount] [nvarchar](50) NULL,
+	[Total] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[ProformaInvoice_Details]  WITH CHECK ADD  CONSTRAINT [FK_ProformaInvoice_Details_Product] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Product] ([ID_Product])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[ProformaInvoice_Details] CHECK CONSTRAINT [FK_ProformaInvoice_Details_Product]
+GO
+
+ALTER TABLE [dbo].[ProformaInvoice_Details]  WITH CHECK ADD  CONSTRAINT [FK_ProformaInvoice_Details_ProformaInvoice] FOREIGN KEY([ProformaInvoiceId])
+REFERENCES [dbo].[ProformaInvoice] ([ID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[ProformaInvoice_Details] CHECK CONSTRAINT [FK_ProformaInvoice_Details_ProformaInvoice]
+GO
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[PRM_Stock_Statuse]    Script Date: 2023-11-02 12:05:21 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[PRM_Stock_Statuse]
+as
+select distinct
+       t.Product_Name as 'اسم المنتج'
+       , SUM(p.QTY) as 'الكمية'
+	   from PurchaseDetails p 
+join Product t
+on
+t.ID_Product = p.ProductId
+group by p.ProductId, t.Product_Name
+having SUM(p.QTY) <= (select QtyAlerts from SystemAlerts)
+--select t.Product_Name as 'اسم المنتج'
+--       , SUM(p.QTY) as 'الكمية'
+--	   , p.SellingPrice as 'السعر'
+--	   , s.Name as 'المورد'
+--	   , p.BatchNumber as 'رقم الدفعة'
+--	   from PurchaseDetails p 
+--join Product t
+--on
+--t.ID_Product = p.ProductId
+--join Purchases u
+--on u.Id = p.PurchaseId
+--join Suppliers s
+--on
+--s.ID = u.SupplierId
+--where p.QTY < (select QtyAlerts from SystemAlerts)
+--group by t.Product_Name, s.Name, p.BatchNumber, p.SellingPrice
+
+--SELECT [Product_Name] as 'اسم المنتج'
+--      ,[QTE_Stock] as 'الكمية'
+--      ,[Price] as 'السعر'
+--      ,c.Description_CAT as 'الصنف'
+--      ,[expiryDate] as 'تاريخ الصلاحية'
+--      ,s.Name as 'المورد'
+--  FROM [dbo].[Product] p 
+--  join Suppliers s
+--  on
+--  s.ID = p.SupplierId
+--  join Category c
+--  on
+--  c.ID_CAT = p.ID_CAT
+-- where QTE_Stock < (select QtyAlerts from SystemAlerts)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[OrderInstallment]    Script Date: 2023-11-02 2:40:00 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[OrderInstallment](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PaymentDate] [date] NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[TotalAmount] [int] NOT NULL,
+	[PaidAmount] [int] NOT NULL,
+	[Remainamont] [int] NOT NULL,
+	[CurrentPayment] [int] NOT NULL,
+ CONSTRAINT [PK_OrderInstallment] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[PurchasesInstallment]    Script Date: 2023-11-02 2:40:33 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PurchasesInstallment](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PaymentDate] [date] NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[TotalAmount] [int] NOT NULL,
+	[PaidAmount] [int] NOT NULL,
+	[Remainamont] [int] NOT NULL,
+	[CurrentPayment] [int] NOT NULL,
+ CONSTRAINT [PK_PurchasesInstallment] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeletePurchasDetails]    Script Date: 2023-11-02 2:39:03 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[DeletePurchasDetails]
+@Id int
+as
+INSERT INTO [dbo].[PurchaseReturnedItems]
+           ([PurchaseId]
+           ,[ProductId]
+           ,[BatchNumber]
+           ,[ExpDate]
+           ,[QTY]
+           ,[PurchasePrice]
+           ,[SellingPrice]
+           ,[TotalPrice]
+           ,[PosPrice]
+           ,[TotalQuantity]
+		   ,[ReturnDate])
+           SELECT [PurchaseId]
+      ,[ProductId]
+      ,[BatchNumber]
+      ,[ExpDate]
+      ,[QTY]
+      ,[PurchasePrice]
+      ,[SellingPrice]
+      ,[TotalPrice]
+      ,[PosPrice]
+      ,[TotalQuantity]
+	  ,GETDATE()
+  FROM [Pharmacy_DB].[dbo].[PurchaseDetails]
+  where Id = @Id;
+
+DELETE FROM [dbo].[PurchaseDetails]
+      WHERE Id = @Id
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeletePurchaseDetails]    Script Date: 2023-11-02 2:39:17 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[DeletePurchaseDetails]
+@Id int
+as
+INSERT INTO [dbo].[PurchaseReturnedItems]
+           ([PurchaseId]
+           ,[ProductId]
+           ,[BatchNumber]
+           ,[ExpDate]
+           ,[QTY]
+           ,[PurchasePrice]
+           ,[SellingPrice]
+           ,[TotalPrice]
+           ,[PosPrice]
+           ,[TotalQuantity]
+		   ,[ReturnDate])
+           SELECT [PurchaseId]
+      ,[ProductId]
+      ,[BatchNumber]
+      ,[ExpDate]
+      ,[QTY]
+      ,[PurchasePrice]
+      ,[SellingPrice]
+      ,[TotalPrice]
+      ,[PosPrice]
+      ,[TotalQuantity]
+	  ,GETDATE()
+  FROM [Pharmacy_DB].[dbo].[PurchaseDetails]
+  where Id = @Id;
+
+DELETE FROM [dbo].[PurchaseDetails]
+      WHERE @Id = Id
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER proc [dbo].[DeleteOrderDetails]
+@ID int,
+@orderId int,
+@PurchaseId int
+as
+update PurchaseDetails set qty = qty + (select QTE from Order_Details WHERE ID = @ID) where Id = @PurchaseId
+
+update [Order] set TotalAmount = TotalAmount - (select TotalAmount from [Order_Details] where ID = @ID) where ID_Order = @orderId
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+if((select PaidAmount from [Order] where ID_Order = @orderId) > (select TotalAmount from [Order] where ID_Order = @orderId))
+BEGIN
+update [Order] set RemainingAmount = TotalAmount - PaidAmount  where ID_Order = @orderId
+update [Order] set PaidAmount = TotalAmount where ID_Order = @orderId
+END
+
+else
+
+BEGIN
+--update [Order] set PaidAmount = TotalAmount - RemainingAmount where ID_Order = @ID
+
+update [Order] set RemainingAmount = TotalAmount - PaidAmount  where ID_Order = @orderId
+
+END
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+if((select RemainingAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+ update [Order] set RemainingAmount = 0
+END
+
+
+if((select PaidAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+   update [Order] set PaidAmount = 0
+END
+
+
+if((select TotalAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+  update [Order] set TotalAmount = 0
+END
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO [dbo].[Order_Details_Returned_Items]
+           ([ID_Product]
+           ,[ID_Order]
+           ,[QTE]
+           ,[Price]
+           ,[Discount]
+           ,[Amount]
+           ,[Total]
+           ,[PurchaseId]
+		   ,[ReturnDate])
+
+SELECT [ID_Product]
+      ,[ID_Order]
+      ,[QTE]
+      ,[Price]
+      ,[Discount]
+      ,[Amount]
+      ,[Total]
+      ,[PurchaseId]
+	  ,GETDATE()
+  FROM [dbo].[Order_Details]
+  where [ID] = @ID
+
+------------------------------------------------------------------------------------------
+
+DELETE FROM [dbo].[Order_Details]
+      WHERE ID = @ID
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[Add_Order]    Script Date: 2023-11-02 3:27:53 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Add_Order]
+@ID_Order int,
+@Date_Order date,
+@Customer_ID int,
+@Des_Order nvarchar(250),
+@SalesMan nvarchar(50),
+@TotalAmount bigint,
+@PaidAmount bigint,
+@RemainingAmount bigint
+as
+INSERT INTO [Order]
+           ([ID_Order]
+           ,[Date_Order]
+           ,[Customer_ID]
+           ,[Des_Order]
+           ,[SalesMan]
+		   ,[TotalAmount]
+		   ,[PaidAmount]
+		   ,[RemainingAmount])
+     VALUES
+           (@ID_Order
+           ,@Date_Order
+           ,@Customer_ID
+           ,@Des_Order
+           ,@SalesMan
+		   ,@TotalAmount
+		   ,@PaidAmount
+		   ,@RemainingAmount)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO [dbo].[OrderInstallment]
+           ([PaymentDate]
+           ,[OrderId]
+           ,[TotalAmount]
+           ,[PaidAmount]
+           ,[Remainamont]
+           ,[CurrentPayment])
+     VALUES
+           (GETDATE()
+           ,@ID_Order
+           ,@TotalAmount
+           ,@PaidAmount
+           ,@RemainingAmount
+           ,@PaidAmount)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateCustomersLiabilities]    Script Date: 2023-11-02 3:33:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[UpdateCustomersLiabilities]
+@ID int,
+@AmountPaid int
+as
+if((select RemainingAmount from [Order] where ID_Order = @ID) > 0)
+BEGIN
+  UPDATE [dbo].[Order]
+  SET [PaidAmount] = PaidAmount + @AmountPaid
+      ,[RemainingAmount] = RemainingAmount - @AmountPaid
+ WHERE ID_Order = @ID
+END
+
+ELSE
+
+BEGIN
+UPDATE [dbo].[Order]
+   SET [RemainingAmount] = RemainingAmount - @AmountPaid
+ WHERE ID_Order = @ID
+END
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO [dbo].[OrderInstallment]
+           ([PaymentDate]
+           ,[OrderId]
+           ,[TotalAmount]
+           ,[PaidAmount]
+           ,[Remainamont]
+           ,[CurrentPayment])
+          (
+		  
+SELECT GETDATE() as 'PaymentDate'
+      ,ID_Order
+      ,[TotalAmount]
+      ,[PaidAmount]
+      ,[RemainingAmount]
+	  ,[PaidAmount]
+  FROM [dbo].[Order]
+  where TotalAmount is not null
+		  )
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetSupplierById
+@Id int
+as
+SELECT [ID]
+      ,[Name]
+      ,[Phone]
+      ,[Email]
+      ,[CompanyName]
+  FROM [dbo].[Suppliers]
+where ID = @Id
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Add CreationDate To Suppliers Table
+
+------------------------------------------------------------------------------------------------------------------
+
+UPDATE Suppliers 
+   SET [CreationDate] = (select MIN(DateOfPurchase) from Purchases p where p.SupplierId = Suppliers.ID)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[AddSupplier]    Script Date: 2023-11-02 5:04:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[AddSupplier]
+--@id int
+@Name nvarchar(max),
+@Phone nvarchar(max),
+@Email nvarchar(max),
+@CompanyName nvarchar(max)
+as
+INSERT INTO Suppliers
+           ([Name]
+           ,[Phone]
+           ,[Email]
+           ,[CompanyName]
+		   ,[CreationDate])
+     VALUES
+           (@Name
+           ,@Phone
+           ,@Email
+           ,@CompanyName
+		   ,GETDATE())
+
+-------------------------------------------------------------------------------------------------------------------
+
+Make CreationDate Not Null in Suppliers Table
+
+--------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetSupplierById]    Script Date: 2023-11-02 5:08:59 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetSupplierById]
+@Id int
+as
+SELECT [ID]
+      ,[Name]
+      ,[Phone]
+      ,[Email]
+      ,[CompanyName]
+	  ,[CreationDate]
+	  ,(select MAX(DateOfPurchase) from Purchases where SupplierId = @Id) as 'LastOrder'
+  FROM [dbo].[Suppliers]
+where ID = @Id
+
+-----------------------------------------------------------------------------------------------------------------------
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetSuppliersReceivablesById]    Script Date: 2023-11-02 5:21:24 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetSuppliersReceivablesById]
+@Id int
+as
+SELECT p.[Id] as 'المعرف'
+      ,p.[InvoiceNumber] as 'رقم الفاتورة'
+      ,s.[Name] as 'المورد'
+      ,p.[DateOfPurchase] as 'تاريخ الشراء'
+      ,p.[price] as 'قيمة الفاتورة'
+      ,p.[PaidAmount] as 'المبلغ المدفوع'
+      ,p.[RemainingAmount] as 'المبلغ المتبقي'
+      ,m.[Name] as 'طريقة الدفع'
+  FROM [dbo].[Purchases] p
+  join Suppliers s
+  on 
+  p.SupplierId = s.ID
+  join PaymentMethod m
+  on
+  m.Id = p.PaymentMethodId
+  where s.ID = @id and p.RemainingAmount > 0
+
+--SELECT p.[Id] as 'المعرف'
+--      ,s.[Name] as 'المورد'
+--      ,t.Product_Name as 'المنتج'
+--      ,p.[DateOfPurchase] as 'تاريخ الشراء'
+--      ,d.[ExpDate] as 'تاريخ الصلاحية'
+--      ,d.[QTY] as 'الكمية'
+--      ,d.[PurchasePrice] as 'سعر الشراء'
+--      ,d.[SellingPrice] as 'سعر البيع'
+--      ,p.[price] as 'السعر'
+--      ,p.[PaidAmount] as 'المبلغ المدفوع'
+--      ,p.[RemainingAmount] as 'المبلغ المتبقي'
+--      ,m.[Name] as 'طريقة الدفع'
+--      ,p.[InvoiceNumber] as 'رقم الفاتورة'
+--      ,d.[BatchNumber] as 'رقم الدفعة'
+--  FROM [dbo].[Purchases] p
+--  join Suppliers s
+--  on 
+--  p.SupplierId = s.ID
+--  join PurchaseDetails d
+--  on d.PurchaseId = p.Id
+--  join Product t
+--  on
+--  d.ProductId = t.ID_Product
+--  join PaymentMethod m
+--  on
+--  m.Id = p.PaymentMethodId
+--  where s.ID = @id and p.RemainingAmount > 0
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetSupplierProducts
+@supplierId int
+as
+select t.Product_Name,
+       SUM(d.QTY)
+from Product t
+join PurchaseDetails d
+on d.ProductId = t.ID_Product
+join Purchases u
+on u.Id = d.PurchaseId
+where u.SupplierId = @supplierId
+group by t.Product_Name, u.SupplierId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+alter proc GetSupplierProducts
+@supplierId int
+as
+select t.Product_Name as 'المنتج',
+       SUM(d.QTY) as 'الكمية الحالية'
+from Product t
+join PurchaseDetails d
+on d.ProductId = t.ID_Product
+join Purchases u
+on u.Id = d.PurchaseId
+where u.SupplierId = @supplierId
+group by t.Product_Name, u.SupplierId
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create proc GetReturnPurchases
+@supplerId int
+as
+SELECT distinct p.[Id] as 'معرف الفاتورة'
+      ,[SupplierId] as 'المورد'
+      ,[DateOfPurchase] as 'تاريخ الفاتورة'
+	  ,re.ReturnDate as 'تاريخ الارجاع'
+      ,[price] as 'قيمة الفاتورة'
+      ,sum(re.PurchasePrice) as 'قيمة المرتجع'
+  FROM [dbo].[Purchases] p
+  join PurchaseReturnedItems re
+  on re.PurchaseId = p.Id
+  where p.SupplierId = @supplerId
+  group by p.Id, p.SupplierId, p.DateOfPurchase, re.ReturnDate, p.price
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetReturnPurchaseDetails
+@orderId int
+as
+SELECT [Id] as 'المعرف'
+      ,[PurchaseId] as 'رقم الفاتورة'
+      ,p.Product_Name as 'المنتج'
+      ,[BatchNumber] as 'رقم الدفعة'
+      ,[ExpDate] as 'تاريخ الصلاحية'
+      ,[QTY] as 'الكمية الحالية'
+      ,[PurchasePrice] as 'سعر الشراء'
+      ,[SellingPrice] as 'سعر البيع'
+      ,[TotalPrice] as 'المبلغ'
+      ,[TotalQuantity] as 'الكمية عند الشراء'
+      ,[ReturnDate] as 'تاريخ الارجاع'
+  FROM [dbo].[PurchaseReturnedItems] re
+  join Product p
+  on p.ID_Product = re.ProductId
+  where re.PurchaseId = @orderId
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetSupplierInvoices
+@supplierId int
+as
+SELECT distinct p.[Id] as 'معرف الفاتورة'
+      ,s.[Name] as 'المورد'
+      ,[DateOfPurchase] as 'تاريخ الفاتورة'
+      ,[price] as 'مبلغ الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع'
+      ,[RemainingAmount] as 'المبلغ المتبقي'
+      ,pm.[Name] as 'طريقة الدفع'
+  FROM [dbo].[Purchases] p
+  join Suppliers s
+  on s.ID = p.SupplierId
+  join PaymentMethod pm
+  on pm.Id = p.PaymentMethodId
+  join PurchaseDetails dt
+  on dt.PurchaseId = p.Id
+  where p.SupplierId = @supplierId
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Add [PurchaseQty] to [PurchaseDetails] Table
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetPurchaseDetails]    Script Date: 2023-11-02 11:38:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetPurchaseDetails]
+@Id int
+as
+SELECT d.[Id] as 'المعرف'
+      ,[PurchaseId] as 'معرف الفاتورة'
+      ,t.[Product_Name] as 'المنتج'
+      ,[BatchNumber] as 'رقم الدفعة'
+      ,[ExpDate] as 'تاريخ الصلاحية'
+	  ,[PurchaseQty] as 'الكمية عند الشراء'
+      ,[QTY] as 'الكمية الحالية'
+      ,[PurchasePrice] as 'سعر الشراء'
+      ,[SellingPrice] as 'سعر البيع'
+      ,[TotalPrice] as 'الاجمالي'
+  FROM [dbo].[PurchaseDetails] d
+  join Purchases p
+  on p.Id = d.PurchaseId
+  join Product t
+  on t.ID_Product = d.ProductId
+  where p.Id = @Id
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+UPDATE [dbo].[PurchaseDetails]
+   SET [PurchaseQty] = (PurchaseDetails.TotalPrice / PurchaseDetails.PurchasePrice)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Make [PurchaseQty]  Not Null
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[AddPurchaseDetails]    Script Date: 2023-11-02 11:59:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[AddPurchaseDetails]
+@PurchaseId int
+           ,@ProductId int
+           ,@BatchNumber int
+           ,@ExpDate date
+           ,@QTY int
+           ,@PurchasePrice int
+           ,@SellingPrice int
+           ,@TotalPrice int
+as
+INSERT INTO [dbo].[PurchaseDetails]
+           ([PurchaseId]
+           ,[ProductId]
+           ,[BatchNumber]
+           ,[ExpDate]
+           ,[QTY]
+           ,[PurchasePrice]
+           ,[SellingPrice]
+           ,[TotalPrice]
+		   ,[PurchaseQty])
+     VALUES
+           (@PurchaseId
+           ,@ProductId
+           ,@BatchNumber
+           ,@ExpDate
+           ,@QTY
+           ,@PurchasePrice
+           ,@SellingPrice
+           ,@TotalPrice
+		   ,@QTY)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetReturnPurchases]    Script Date: 2023-11-03 11:18:33 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetReturnPurchases]
+@supplerId int,
+@search nvarchar(50)
+as
+SELECT distinct p.[Id] as 'معرف الفاتورة'
+      ,s.[Name] as 'المورد'
+      ,[DateOfPurchase] as 'تاريخ الفاتورة'
+	  ,re.ReturnDate as 'تاريخ الارجاع'
+      ,[price] as 'قيمة الفاتورة'
+      ,sum(re.PurchasePrice) as 'قيمة المرتجع'
+  FROM [dbo].[Purchases] p
+  join PurchaseReturnedItems re
+  on re.PurchaseId = p.Id
+  join Suppliers s
+  on s.ID = p.SupplierId
+  where p.SupplierId = @supplerId
+  and s.[Name] + CONVERT(nvarchar(50), p.DateOfPurchase) + CONVERT(nvarchar(50), re.ReturnDate) + CONVERT(nvarchar(50), p.price) like '%' +@search+ '%'
+  group by p.Id, p.SupplierId, p.DateOfPurchase, re.ReturnDate, p.price, s.[Name]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetSupplierInvoices]    Script Date: 2023-11-03 11:25:26 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetSupplierInvoices]
+@supplierId int,
+@search nvarchar(50)
+as
+SELECT distinct p.[Id] as 'معرف الفاتورة'
+      ,s.[Name] as 'المورد'
+      ,[DateOfPurchase] as 'تاريخ الفاتورة'
+      ,[price] as 'مبلغ الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع'
+      ,[RemainingAmount] as 'المبلغ المتبقي'
+      ,pm.[Name] as 'طريقة الدفع'
+  FROM [dbo].[Purchases] p
+  join Suppliers s
+  on s.ID = p.SupplierId
+  join PaymentMethod pm
+  on pm.Id = p.PaymentMethodId
+  join PurchaseDetails dt
+  on dt.PurchaseId = p.Id
+  where p.SupplierId = @supplierId
+  and s.[Name] + CONVERT(nvarchar(50), p.DateOfPurchase) + CONVERT(nvarchar(50), p.price) + CONVERT(nvarchar(50), p.PaidAmount) + CONVERT(nvarchar(50), p.RemainingAmount) + pm.[Name] like '%' +@search+ '%'
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetPurchasesInstallment
+@orderId int
+as
+SELECT [Id] as 'المعرف'
+      ,[PaymentDate] as 'تاريخ القسط'
+      ,[OrderId] as 'رقم الفاتورة'
+      ,[TotalAmount] as 'اجمالي الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع'
+      ,[Remainamont] as 'المبلغ المتبقي'
+      ,[CurrentPayment] as 'قيمة الدفعية'
+  FROM [dbo].[PurchasesInstallment]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTotalAmount
+@supplerId int
+as
+select SUM(p.price) from Purchases p
+where SupplierId = @supplerId
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetPaidAmount
+@supplerId int
+as
+select SUM(p.PaidAmount) from Purchases p
+where SupplierId = @supplerId
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetRemainingAmount
+@supplerId int
+as
+select SUM(p.RemainingAmount) from Purchases p
+where SupplierId = @supplerId
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTotalInvoices
+@supplerId int
+as
+select COUNT(*) from Purchases
+where SupplierId = @supplerId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerList
+@search nvarchar(50)
+as
+SELECT [ID_Customer] as 'المعرف'
+      ,[First_Name] + ' - ' + [Last_Name] as 'العميل'
+      ,[TEL] as 'رقم الهاتف'
+      ,[E_Mail] as 'البريد الالكتروني'
+  FROM [dbo].[Customer]
+  where First_Name + Last_Name + CONVERT(nvarchar(50), TEL) + E_Mail like '%' +@search+ '%'
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Add [Creation_Date] to Customer Table
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create proc GetCustomerInfo
+@customerId int
+as
+SELECT [ID_Customer]
+      ,[First_Name] + ' - ' + [Last_Name] as 'customerName'
+      ,[TEL]
+      ,[E_Mail]
+	  ,[Creation_Date]
+  FROM [dbo].[Customer]
+  where ID_Customer = @customerId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[Add_CUST]    Script Date: 2023-11-03 10:15:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Add_CUST]
+@F_Name nvarchar(50),
+@L_Name nvarchar(50),
+@Tel nchar(15),
+@E_Mail nvarchar(25),
+@img image
+as
+INSERT INTO [Customer]
+           ([First_Name]
+           ,[Last_Name]
+           ,[TEL]
+           ,[E_Mail]
+           ,[Image_CUS],
+		   [Creation_Date])
+     VALUES
+           (@F_Name
+           ,@L_Name
+           ,@Tel
+           ,@E_Mail
+           ,@img
+		   ,GETDATE())
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+UPDATE Customer 
+   SET [Creation_Date] = (select MIN(Date_Order) from [Order] o where o.Customer_ID = Customer.ID_Customer)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetCustomerInfo]    Script Date: 2023-11-03 10:30:43 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetCustomerInfo]
+@customerId int
+as
+SELECT [ID_Customer]
+      ,[First_Name] + ' - ' + [Last_Name] as 'customerName'
+      ,[TEL]
+      ,[E_Mail]
+	  ,[Creation_Date]
+	  ,(select MAX(Date_Order) from [Order] where Customer_ID = @customerId) as 'LastOrder'
+  FROM [dbo].[Customer]
+  where ID_Customer = @customerId
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetCustomerInfo]    Script Date: 2023-11-05 3:10:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetCustomerInfo]
+@customerId int
+as
+SELECT [ID_Customer]
+      ,[First_Name] + ' - ' + [Last_Name] as 'customerName'
+      ,[TEL]
+      ,[E_Mail]
+	  ,[Creation_Date]
+	  ,(select MAX(Date_Order) from [Order] where Customer_ID = @customerId) as 'LastOrder'
+	  ,(SELECT SUM(o.RemainingAmount) FROM [dbo].[Order] o join Customer c on o.Customer_ID = c.ID_Customer where c.ID_Customer = @customerId) as 'TotalRemaining'
+  FROM [dbo].[Customer]
+  where ID_Customer = @customerId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create  proc GetCustomerInvoices
+@customerId int,
+@search nvarchar(50)
+as
+SELECT distinct o.[ID_Order] as 'معرف الفاتورة'
+      ,[Date_Order] as 'تاريخ الفاتورة'
+      ,[Des_Order] as 'وصف الفاتورة'
+      ,[SalesMan] as 'مستخرج الفاتورة'
+      ,[TotalAmount] as 'اجمالي مبلغ الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع'
+      ,[RemainingAmount] as 'الملبغ المتبقي'
+  FROM [dbo].[Order] o
+  join [Order_Details] dt
+  on o.ID_Order = dt.ID_Order
+  where o.Customer_ID = @customerId
+  and CONVERT(nvarchar(50), o.ID_Order) + CONVERT(nvarchar(50), o.Date_Order) + CONVERT(nvarchar(50), o.Des_Order) + CONVERT(nvarchar(50), o.TotalAmount)
+  + CONVERT(nvarchar(50), o.PaidAmount) + CONVERT(nvarchar(50), o.RemainingAmount) like '%' +@search+ '%'
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetOrderInstallment
+@orderId int
+as
+SELECT [Id] as 'المعرف'
+      ,[PaymentDate] as 'تاريخ القسط'
+      ,[OrderId] as 'رقم الفاتورة'
+      ,[TotalAmount] as 'اجمالي مبلغ الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع عند السداد'
+      ,[Remainamont] as 'المبغ المتبقي عند السداد'
+      ,[CurrentPayment] as 'قيمة القسط'
+  FROM [dbo].[OrderInstallment]
+  where OrderId = @orderId
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerReturnOrder
+@customerId int,
+@search nvarchar(50)
+as
+SELECT distinct o.[ID_Order] as 'معرف الفاتورة'
+      ,[Date_Order] as 'تاريخ الفاتورة'
+	  ,re.[ReturnDate] as 'تاريخ الارجاع'
+      ,[Des_Order] as 'وصف الفاتورة'
+      ,[SalesMan] as 'مستخرج الفاتورة'
+	  ,SUM(CONVERT(int,re.[Total])) as 'قيمة الفاتورة المرتجعة'
+  FROM [dbo].[Order] o
+  join Order_Details_Returned_Items re
+  on o.ID_Order = re.ID_Order
+ where o.Customer_ID = @customerId
+ and CONVERT(nvarchar(50), o.ID_Order) + CONVERT(nvarchar(50), re.ReturnDate) + CONVERT(nvarchar(50), o.Des_Order) + CONVERT(nvarchar(50), o.Date_Order) + CONVERT(nvarchar(50), o.SalesMan) like '%' +@search+ '%'
+ group by o.ID_Order, Date_Order,Des_Order,SalesMan, re.ReturnDate
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetOrderReturnItems
+@orderId int
+as
+SELECT [ID] as 'المعرف'
+      ,t.Product_Name as 'الصنف'
+      ,[ID_Order] as 'رقم الفاتورة'
+      ,[QTE] as 'الكمية'
+      ,[Price] as 'السعر'
+      ,[Discount] as 'التخفيض'
+      ,[Amount] as 'المبلغ'
+      ,[Total] as 'اجمالي المبلغ'
+      ,[ReturnDate] as 'تاريخ الارجاع'
+  FROM [dbo].[Order_Details_Returned_Items] re
+  join Product t
+  on t.ID_Product = re.ID_Product
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerTotalAmount
+@customerId int
+as
+select SUM(TotalAmount) from [Order]
+where Customer_ID = @customerId
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerPaidAmount
+@customerId int
+as
+select SUM(PaidAmount) from [Order]
+where Customer_ID = @customerId
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerRemainingAmount
+@customerId int
+as
+select SUM(RemainingAmount) from [Order]
+where Customer_ID = @customerId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetCustomerTotalInvoices
+@customerId int
+as
+select COUNT(ID_Order) from [Order]
+where Customer_ID = @customerId
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetAllReturnPurchases
+@search nvarchar(50)
+as
+SELECT distinct p.[Id] as 'معرف الفاتورة'
+      ,s.[Name] as 'المورد'
+      ,[DateOfPurchase] as 'تاريخ الفاتورة'
+	  ,re.ReturnDate as 'تاريخ الارجاع'
+      ,[price] as 'قيمة الفاتورة'
+      ,sum(re.PurchasePrice) as 'قيمة المرتجع'
+  FROM [dbo].[Purchases] p
+  join PurchaseReturnedItems re
+  on re.PurchaseId = p.Id
+  join Suppliers s
+  on s.ID = p.SupplierId
+  where s.[Name] + CONVERT(nvarchar(50), p.DateOfPurchase) + CONVERT(nvarchar(50), re.ReturnDate) + CONVERT(nvarchar(50), p.price) like '%' +@search+ '%'
+  group by p.Id, p.SupplierId, p.DateOfPurchase, re.ReturnDate, p.price, s.[Name]
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetSaleReturn
+@search nvarchar(50)
+as
+SELECT distinct o.[ID_Order] as 'معرف الفاتورة'
+      ,[Date_Order] as 'تاريخ الفاتورة'
+	  ,re.[ReturnDate] as 'تاريخ الارجاع'
+      ,[Des_Order] as 'وصف الفاتورة'
+      ,[SalesMan] as 'مستخرج الفاتورة'
+	  ,SUM(CONVERT(int,re.[Total])) as 'قيمة الفاتورة المرتجعة'
+  FROM [dbo].[Order] o
+  join Order_Details_Returned_Items re
+  on o.ID_Order = re.ID_Order
+ where  CONVERT(nvarchar(50), o.ID_Order) + CONVERT(nvarchar(50), re.ReturnDate) + CONVERT(nvarchar(50), o.Des_Order) + CONVERT(nvarchar(50), o.Date_Order) + CONVERT(nvarchar(50), o.SalesMan) like '%' +@search+ '%'
+ group by o.ID_Order, Date_Order,Des_Order,SalesMan, re.ReturnDate
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTopSaleItems
+as
+select top(5)
+t.Product_Name as 'الصنف'
+,SUM(o.QTE) as 'الكمية المباعة'
+from Order_Details o
+join Product t
+on o.ID_Product = t.ID_Product
+group by t.Product_Name
+order by SUM(o.QTE) desc
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTopPurchaseItems
+as
+select top(5)
+t.Product_Name as 'الصنف'
+,SUM(p.PurchaseQty) as 'كمية الشراء'
+from PurchaseDetails p
+join Product t
+on p.ProductId = t.ID_Product
+group by t.Product_Name
+order by SUM(p.QTY) desc
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetsalesChars
+as
+select sum(o.TotalAmount) as 'TotaleSales'
+      ,MONTH(CONVERT(date,o.Date_Order))  as 'Month'
+	  from [Order] o
+	  group by MONTH(CONVERT(date,o.Date_Order))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc PurchaseChars
+as
+select sum(p.price) as 'TotalePurchase'
+      ,MONTH(CONVERT(date,p.DateOfPurchase))  as 'Month'
+	  from Purchases p
+	  group by MONTH(CONVERT(date,p.DateOfPurchase))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTopCustomers
+as
+SELECT top(5) c.First_Name + ' ' + c.Last_Name as 'العميل'
+      ,FORMAT(SUM(o.TotalAmount),'c') as 'اجمالي المبيعات للعميل'
+  FROM [Product_DB].[dbo].[Order] o
+  join Customer c
+  on c.ID_Customer = o.Customer_ID
+  join Order_Details dt
+  on dt.ID_Order = o.ID_Order
+  where TotalAmount is not null and TotalAmount <> 0
+  group by c.First_Name, c.Last_Name
+  order by SUM(o.TotalAmount) desc
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetPieChartSales
+as
+select 
+ SUM(o.PaidAmount) as 'اجمالي المدفوعات'
+,SUM(o.RemainingAmount) as 'اجمالي المستحقات'
+from [Order] o
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetPieChartPurchase
+as
+select 
+ SUM(p.PaidAmount) as 'اجمالي المدفوعات'
+,SUM(p.RemainingAmount) as 'اجمالي المستحقات'
+from Purchases p
+
+----------------------------------------------------------------------------------------------------------------------------------------
