@@ -37,5 +37,19 @@ namespace Product_Management.PL
             FRM_MovementOfItemsDetails frm = new FRM_MovementOfItemsDetails(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
             frm.ShowDialog();
         }
+
+        private void FRM_MovementOfItems_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_MovementOfItems_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

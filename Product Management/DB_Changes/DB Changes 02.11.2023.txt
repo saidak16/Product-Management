@@ -1212,3 +1212,37 @@ select
 from Purchases p
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+
+create proc [dbo].[GetLowPaidCustomer]
+as
+select top(5)
+ c.First_Name + ' ' + c.Last_Name as 'العميل'
+,format(SUM(o.TotalAmount), 'c') as 'اجمالي المعاملات'
+,format(SUM(o.PaidAmount), 'c') as 'اجمالي المدفوع'
+,format(SUM(o.RemainingAmount), 'c') as 'اجمالي المتبقي'
+,convert(nvarchar(50), (SUM(o.RemainingAmount) * 100 / SUM(o.TotalAmount))) + '%' as 'نسبة السداد'
+from [Order] o
+join Customer c
+on c.ID_Customer = o.Customer_ID
+where o.RemainingAmount > 0
+group by c.First_Name, c.Last_Name, o.RemainingAmount, o.TotalAmount
+order by (SUM(o.RemainingAmount) * 100 / SUM(o.TotalAmount))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetHightRemainingSuppliers
+as
+select top(5)
+ s.Name as 'المورد'
+,FORMAT(SUM(p.price), 'c') as 'اجمالي المعاملات'
+,FORMAT(SUM(p.PaidAmount), 'c') as 'اجمالي المدفوع'
+,FORMAT(SUM(p.RemainingAmount), 'c')as 'اجمالي المتبقي'
+,convert(nvarchar(50), (SUM(p.RemainingAmount) * 100 / SUM(p.price))) + '%' as 'نسبة السداد'
+from Purchases p
+join Suppliers s
+on s.ID = p.SupplierId
+group by s.Name
+order by (SUM(p.RemainingAmount) * 100 / SUM(p.price))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+

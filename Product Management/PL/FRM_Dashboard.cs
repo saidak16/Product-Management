@@ -26,6 +26,8 @@ namespace Product_Management.PL
             dgvTopSale.DataSource = dashboard.GetTopSaleItems();
             dgvTopPurchaseItems.DataSource = dashboard.GetTopPurchaseItems();
             dgvTopCustomers.DataSource = dashboard.GetTopCustomers();
+            dgvLowPaidCustomers.DataSource = dashboard.GetLowPaidCustomer();
+            dgvHightRemainingSuppliers.DataSource = dashboard.GetHightRemainingSuppliers();
 
             /////////////////////////////////////Dashboard chart/////////////////////////////////////
             LiveCharts.SeriesCollection seriesSales = new LiveCharts.SeriesCollection();
@@ -87,6 +89,35 @@ namespace Product_Management.PL
         {
             FRM_MovementOfItems frm = new FRM_MovementOfItems();
             frm.ShowDialog();
+        }
+
+        private void FRM_Dashboard_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Dashboard_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                button2_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
+
+        private void dgvLowPaidCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

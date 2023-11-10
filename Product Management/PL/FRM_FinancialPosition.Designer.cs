@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_FinancialPosition));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtProfit = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,9 +51,6 @@
             this.txtSup = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtProfit = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,35 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "حجم الاموال ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(142, 381);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 16);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "ج.س";
+            // 
+            // txtProfit
+            // 
+            this.txtProfit.BackColor = System.Drawing.Color.LawnGreen;
+            this.txtProfit.Enabled = false;
+            this.txtProfit.Location = new System.Drawing.Point(183, 378);
+            this.txtProfit.Name = "txtProfit";
+            this.txtProfit.Size = new System.Drawing.Size(264, 23);
+            this.txtProfit.TabIndex = 17;
+            this.txtProfit.Text = "0";
+            this.txtProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(490, 378);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "الربح";
             // 
             // label8
             // 
@@ -249,35 +278,6 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "اجمالي استحقاقات الموردين";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(142, 381);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 16);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "ج.س";
-            // 
-            // txtProfit
-            // 
-            this.txtProfit.BackColor = System.Drawing.Color.LawnGreen;
-            this.txtProfit.Enabled = false;
-            this.txtProfit.Location = new System.Drawing.Point(183, 378);
-            this.txtProfit.Name = "txtProfit";
-            this.txtProfit.Size = new System.Drawing.Size(264, 23);
-            this.txtProfit.TabIndex = 17;
-            this.txtProfit.Text = "0";
-            this.txtProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(490, 378);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "الربح";
-            // 
             // FRM_FinancialPosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,6 +296,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الموقف المالي";
+            this.Load += new System.EventHandler(this.FRM_FinancialPosition_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_FinancialPosition_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

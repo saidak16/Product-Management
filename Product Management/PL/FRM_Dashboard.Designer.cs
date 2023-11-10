@@ -45,9 +45,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pieChartPurchase = new LiveCharts.WinForms.PieChart();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLowPaidCustomers = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvHightRemainingSuppliers = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -60,9 +60,9 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLowPaidCustomers)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHightRemainingSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -207,7 +207,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dataGridView1);
+            this.groupBox6.Controls.Add(this.dgvLowPaidCustomers);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(15, 463);
             this.groupBox6.Name = "groupBox6";
@@ -216,23 +216,24 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "العملاء الاقل سداداً";
             // 
-            // dataGridView1
+            // dgvLowPaidCustomers
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(466, 159);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvLowPaidCustomers.AllowUserToAddRows = false;
+            this.dgvLowPaidCustomers.AllowUserToDeleteRows = false;
+            this.dgvLowPaidCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLowPaidCustomers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvLowPaidCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLowPaidCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLowPaidCustomers.Location = new System.Drawing.Point(3, 22);
+            this.dgvLowPaidCustomers.Name = "dgvLowPaidCustomers";
+            this.dgvLowPaidCustomers.ReadOnly = true;
+            this.dgvLowPaidCustomers.Size = new System.Drawing.Size(466, 159);
+            this.dgvLowPaidCustomers.TabIndex = 0;
+            this.dgvLowPaidCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLowPaidCustomers_CellContentClick);
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.dataGridView2);
+            this.groupBox7.Controls.Add(this.dgvHightRemainingSuppliers);
             this.groupBox7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(1006, 463);
             this.groupBox7.Name = "groupBox7";
@@ -241,31 +242,31 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "الموردين الاكثر استحقاقاً";
             // 
-            // dataGridView2
+            // dgvHightRemainingSuppliers
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 22);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(469, 159);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvHightRemainingSuppliers.AllowUserToAddRows = false;
+            this.dgvHightRemainingSuppliers.AllowUserToDeleteRows = false;
+            this.dgvHightRemainingSuppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHightRemainingSuppliers.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvHightRemainingSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHightRemainingSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHightRemainingSuppliers.Location = new System.Drawing.Point(3, 22);
+            this.dgvHightRemainingSuppliers.Name = "dgvHightRemainingSuppliers";
+            this.dgvHightRemainingSuppliers.ReadOnly = true;
+            this.dgvHightRemainingSuppliers.Size = new System.Drawing.Size(469, 159);
+            this.dgvHightRemainingSuppliers.TabIndex = 0;
             // 
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::Product_Management.Properties.Resources.box_search_product_ean_barcode_icon_148907;
             this.button2.Location = new System.Drawing.Point(746, 476);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(229, 168);
             this.button2.TabIndex = 37;
-            this.button2.Text = "استعراض حركة الاصناف";
+            this.button2.Text = "استعراض حركة الاصناف (F2)";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -274,14 +275,14 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.money_icon;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(511, 476);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 168);
             this.button1.TabIndex = 36;
-            this.button1.Text = "استعراض الموقف المالي";
+            this.button1.Text = "استعراض الموقف المالي (F1)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -311,6 +312,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "لوحة التحكم";
+            this.Load += new System.EventHandler(this.FRM_Dashboard_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Dashboard_KeyDown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopSale)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -321,9 +324,9 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLowPaidCustomers)).EndInit();
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHightRemainingSuppliers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,9 +345,9 @@
         private LiveCharts.WinForms.PieChart pieChartPurchase;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLowPaidCustomers;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvHightRemainingSuppliers;
         private System.Windows.Forms.Button button2;
     }
 }

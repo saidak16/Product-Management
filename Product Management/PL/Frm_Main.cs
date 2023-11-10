@@ -191,7 +191,8 @@ namespace Product_Management.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -489,6 +490,44 @@ namespace Product_Management.PL
         }
 
         private void picSystem_Click(object sender, EventArgs e)
+        {
+            FRM_Dashboard frm = new FRM_Dashboard();
+            frm.ShowDialog();
+        }
+
+        private void Frm_Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Frm_ORDERS frm = new Frm_ORDERS();
+                frm.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+                frm.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                FRM_Dashboard frm = new FRM_Dashboard();
+                frm.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                FRM_Contact frm = new FRM_Contact();
+                frm.ShowDialog();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
             FRM_Dashboard frm = new FRM_Dashboard();
             frm.ShowDialog();

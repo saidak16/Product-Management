@@ -111,6 +111,42 @@ namespace Product_Management.BL
                 return null;
             }
         }
+        
+        public DataTable GetLowPaidCustomer()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetLowPaidCustomer", null);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+         
+        public DataTable GetHightRemainingSuppliers()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetHightRemainingSuppliers", null);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         public DataTable GetPieChartPurchase()
         {

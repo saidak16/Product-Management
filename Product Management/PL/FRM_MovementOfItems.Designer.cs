@@ -130,6 +130,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "حركة الاصناف";
+            this.Load += new System.EventHandler(this.FRM_MovementOfItems_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_MovementOfItems_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

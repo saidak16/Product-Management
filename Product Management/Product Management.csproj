@@ -1471,6 +1471,9 @@
   <ItemGroup>
     <None Include="Resources\box_search_product_ean_barcode_icon_148907.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB_Changes\DB Changes 02.11.2023.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

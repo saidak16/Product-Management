@@ -83,5 +83,19 @@ namespace Product_Management.PL
         {
 
         }
+
+        private void FRM_FinancialPosition_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_FinancialPosition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }
