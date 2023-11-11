@@ -103,6 +103,7 @@
     <Compile Include="BL\CLS_Customers.cs" />
     <Compile Include="BL\CLS_Customer_Profile.cs" />
     <Compile Include="BL\CLS_Dashboard.cs" />
+    <Compile Include="BL\CLS_Employee.cs" />
     <Compile Include="BL\CLS_Expensess.cs" />
     <Compile Include="BL\CLS_Helper.cs" />
     <Compile Include="BL\ClS_Login.cs" />
@@ -120,6 +121,13 @@
     <Compile Include="BL\CLS_USERS.cs" />
     <Compile Include="BL\FillDropDownList.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="PL\FRM_Add_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_Employee.Designer.cs">
+      <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Customers_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -597,6 +605,9 @@
       <DependentUpon>rpt_Suppliers_Receivables.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="PL\FRM_Add_Employee.resx">
+      <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Customers_List.resx">
       <DependentUpon>FRM_Customers_List.cs</DependentUpon>
     </EmbeddedResource>
@@ -1473,6 +1484,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB_Changes\DB Changes 02.11.2023.txt" />
+    <None Include="Resources\deliverybox-115847_1158211.png" />
+    <None Include="Resources\401182.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

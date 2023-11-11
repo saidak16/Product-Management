@@ -85,5 +85,24 @@ namespace Product_Management.PL
                 e.Handled = true;
             }
         }
+
+        private void FRM_UpdateCustomersLiabilities_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_UpdateCustomersLiabilities_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                btnUpdate_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

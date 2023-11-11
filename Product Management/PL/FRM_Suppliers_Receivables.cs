@@ -59,7 +59,8 @@ namespace Product_Management.PL
 
         private void FRM_Suppliers_Receivables_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
@@ -72,6 +73,19 @@ namespace Product_Management.PL
             int SupplierId = Convert.ToInt32(this.dgvSuppliersReceivables.CurrentRow.Cells[0].Value.ToString());
             FRM_SuppliersReceivables_Details frm = new FRM_SuppliersReceivables_Details(SupplierId);
             frm.ShowDialog();
+        }
+
+        private void FRM_Suppliers_Receivables_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
         }
     }
 }

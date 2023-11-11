@@ -58,7 +58,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtpExpDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,25 +66,29 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_New = new System.Windows.Forms.Button();
             this.txtBatch = new System.Windows.Forms.TextBox();
             this.txtQTY = new System.Windows.Forms.TextBox();
             this.txtPurPrice = new System.Windows.Forms.TextBox();
             this.txtSellingPrice = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtItmeName = new System.Windows.Forms.TextBox();
             this.txtItemId = new System.Windows.Forms.TextBox();
+            this.txtItemsCount = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_New = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -256,7 +259,7 @@
             // txtSupId
             // 
             this.txtSupId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSupId.Location = new System.Drawing.Point(6, 81);
+            this.txtSupId.Location = new System.Drawing.Point(6, 76);
             this.txtSupId.Name = "txtSupId";
             this.txtSupId.ReadOnly = true;
             this.txtSupId.Size = new System.Drawing.Size(256, 23);
@@ -266,7 +269,7 @@
             // 
             this.lblSaleId.AutoSize = true;
             this.lblSaleId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaleId.Location = new System.Drawing.Point(325, 84);
+            this.lblSaleId.Location = new System.Drawing.Point(273, 79);
             this.lblSaleId.Name = "lblSaleId";
             this.lblSaleId.Size = new System.Drawing.Size(49, 19);
             this.lblSaleId.TabIndex = 30;
@@ -275,7 +278,7 @@
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Location = new System.Drawing.Point(7, 105);
+            this.txtName.Location = new System.Drawing.Point(7, 100);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(256, 23);
@@ -285,7 +288,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(331, 105);
+            this.label23.Location = new System.Drawing.Point(273, 100);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 19);
             this.label23.TabIndex = 28;
@@ -294,18 +297,18 @@
             // btnSupList
             // 
             this.btnSupList.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupList.Location = new System.Drawing.Point(6, 33);
+            this.btnSupList.Location = new System.Drawing.Point(6, 23);
             this.btnSupList.Name = "btnSupList";
             this.btnSupList.Size = new System.Drawing.Size(75, 31);
             this.btnSupList.TabIndex = 23;
-            this.btnSupList.Text = "...";
+            this.btnSupList.Text = "F3";
             this.btnSupList.UseVisualStyleBackColor = true;
             this.btnSupList.Click += new System.EventHandler(this.btnSupList_Click);
             // 
             // txtCompany
             // 
             this.txtCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCompany.Location = new System.Drawing.Point(7, 187);
+            this.txtCompany.Location = new System.Drawing.Point(7, 182);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.ReadOnly = true;
             this.txtCompany.Size = new System.Drawing.Size(256, 23);
@@ -314,7 +317,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(7, 159);
+            this.txtEmail.Location = new System.Drawing.Point(7, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(256, 23);
@@ -323,7 +326,7 @@
             // txtPhone
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Location = new System.Drawing.Point(7, 132);
+            this.txtPhone.Location = new System.Drawing.Point(7, 127);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(256, 23);
@@ -333,7 +336,7 @@
             // 
             this.lblCompany.AutoSize = true;
             this.lblCompany.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.Location = new System.Drawing.Point(321, 187);
+            this.lblCompany.Location = new System.Drawing.Point(273, 182);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(47, 19);
             this.lblCompany.TabIndex = 24;
@@ -343,7 +346,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(278, 159);
+            this.lblEmail.Location = new System.Drawing.Point(273, 154);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(94, 19);
             this.lblEmail.TabIndex = 22;
@@ -353,7 +356,7 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(308, 132);
+            this.lblPhone.Location = new System.Drawing.Point(273, 127);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(66, 19);
             this.lblPhone.TabIndex = 21;
@@ -396,17 +399,6 @@
             this.groupBox4.Size = new System.Drawing.Size(308, 225);
             this.groupBox4.TabIndex = 37;
             this.groupBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Product_Management.Properties.Resources.shop_cart_add_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 206);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
             // 
             // label8
             // 
@@ -487,53 +479,10 @@
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(341, 490);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(388, 100);
+            this.groupBox3.Size = new System.Drawing.Size(462, 100);
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "العمليات";
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Image = global::Product_Management.Properties.Resources.icon_Exit3;
-            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Exit.Location = new System.Drawing.Point(10, 29);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(91, 43);
-            this.btn_Exit.TabIndex = 12;
-            this.btn_Exit.Text = "خروج";
-            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Enabled = false;
-            this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Image = global::Product_Management.Properties.Resources.save1;
-            this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Save.Location = new System.Drawing.Point(106, 29);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(120, 43);
-            this.btn_Save.TabIndex = 10;
-            this.btn_Save.Text = "حفظ العملية";
-            this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // btn_New
-            // 
-            this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New.Image = global::Product_Management.Properties.Resources.plus6;
-            this.btn_New.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_New.Location = new System.Drawing.Point(232, 29);
-            this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(145, 43);
-            this.btn_New.TabIndex = 9;
-            this.btn_New.Text = "عملية شراء جديدة";
-            this.btn_New.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_New.UseVisualStyleBackColor = true;
-            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
             // txtBatch
             // 
@@ -581,20 +530,6 @@
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(899, 490);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 32);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "حذف السطر المحدد";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -635,11 +570,113 @@
             this.txtItemId.TabIndex = 57;
             this.txtItemId.TextChanged += new System.EventHandler(this.txtItemId_TextChanged);
             // 
+            // txtItemsCount
+            // 
+            this.txtItemsCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemsCount.Location = new System.Drawing.Point(957, 490);
+            this.txtItemsCount.Name = "txtItemsCount";
+            this.txtItemsCount.ReadOnly = true;
+            this.txtItemsCount.Size = new System.Drawing.Size(55, 26);
+            this.txtItemsCount.TabIndex = 58;
+            this.txtItemsCount.Text = "0";
+            this.txtItemsCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(865, 494);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 19);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "اصناف الفاتورة";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1016, 493);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(47, 19);
+            this.label16.TabIndex = 60;
+            this.label16.Text = "(صنف)";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(2, 490);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 32);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "حذف السطر المحدد";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Image = global::Product_Management.Properties.Resources.icon_Exit3;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Exit.Location = new System.Drawing.Point(10, 29);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(110, 43);
+            this.btn_Exit.TabIndex = 12;
+            this.btn_Exit.Text = "خروج (F4)";
+            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Enabled = false;
+            this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.Image = global::Product_Management.Properties.Resources.save1;
+            this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Save.Location = new System.Drawing.Point(126, 29);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(142, 43);
+            this.btn_Save.TabIndex = 10;
+            this.btn_Save.Text = "حفظ العملية (F2)";
+            this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_New
+            // 
+            this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_New.Image = global::Product_Management.Properties.Resources.plus6;
+            this.btn_New.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_New.Location = new System.Drawing.Point(274, 29);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(177, 43);
+            this.btn_New.TabIndex = 9;
+            this.btn_New.Text = "عملية شراء جديدة (F1)";
+            this.btn_New.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_New.UseVisualStyleBackColor = true;
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Product_Management.Properties.Resources._401182;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(302, 206);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // FRM_Add_MultiPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 590);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtItemsCount);
             this.Controls.Add(this.txtItemId);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtItmeName);
@@ -671,14 +708,16 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فاتورة شراء";
+            this.Load += new System.EventHandler(this.FRM_Add_MultiPurchase_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Add_MultiPurchase_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchase)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,5 +776,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtItmeName;
         private System.Windows.Forms.TextBox txtItemId;
+        private System.Windows.Forms.TextBox txtItemsCount;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

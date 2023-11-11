@@ -126,6 +126,7 @@ namespace Product_Management.PL
                 clearBoxes();
 
                 txtTotalAmount.Text = (from DataGridViewRow row in dgvPurchase.Rows where row.Cells[7].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[7].FormattedValue)).Sum().ToString();
+                txtItemsCount.Text = dgvPurchase.Rows.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -171,6 +172,7 @@ namespace Product_Management.PL
         {
             dgvPurchase.Rows.RemoveAt(dgvPurchase.CurrentRow.Index);
             txtTotalAmount.Text = (from DataGridViewRow row in dgvPurchase.Rows where row.Cells[7].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[7].FormattedValue)).Sum().ToString();
+            txtItemsCount.Text = dgvPurchase.Rows.Count.ToString();
         }
 
         private void btn_New_Click(object sender, EventArgs e)
@@ -347,6 +349,35 @@ namespace Product_Management.PL
                 {
                     txtBatch.Text = purchases.GetBatchNo(Convert.ToInt32(txtItemId.Text));
                 }
+            }
+        }
+
+        private void FRM_Add_MultiPurchase_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Add_MultiPurchase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btn_New_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2 && btn_Save.Enabled == true)
+            {
+                btn_Save_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                btnSupList_Click( sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
             }
         }
     }

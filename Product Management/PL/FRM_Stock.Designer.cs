@@ -38,6 +38,7 @@
             this.dgvStock.AllowUserToAddRows = false;
             this.dgvStock.AllowUserToDeleteRows = false;
             this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStock.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvStock.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,6 +64,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نواقص المخزن";
             this.Load += new System.EventHandler(this.FRM_Stock_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Stock_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.ResumeLayout(false);
 

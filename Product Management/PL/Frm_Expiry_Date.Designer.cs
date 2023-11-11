@@ -39,6 +39,7 @@
             this.dgvStock.AllowUserToResizeColumns = false;
             this.dgvStock.AllowUserToResizeRows = false;
             this.dgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStock.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvStock.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -61,6 +62,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الادوية التالفة";
+            this.Load += new System.EventHandler(this.Frm_Expiry_Date_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_Expiry_Date_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.ResumeLayout(false);
 

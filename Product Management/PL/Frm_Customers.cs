@@ -256,6 +256,40 @@ namespace Product_Management.PL
             this.dataGridView1.DataSource = bu.Search_Customers(txtSearch.Text);
         }
 
+        private void Frm_Customers_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void Frm_Customers_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                button5_Click( sender,  e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                button6_Click( sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                btnDelete_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                btnEdit_Click(sender, e);
+            }
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
 

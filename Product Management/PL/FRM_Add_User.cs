@@ -67,5 +67,24 @@ namespace Product_Management.PL
                 return;
             }
         }
+
+        private void FRM_Add_User_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Add_User_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                btnADD_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

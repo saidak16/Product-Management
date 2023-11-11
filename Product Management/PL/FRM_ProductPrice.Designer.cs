@@ -176,28 +176,28 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Product_Management.Properties.Resources.icon_Exit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(77, 35);
+            this.button2.Location = new System.Drawing.Point(51, 20);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 35);
+            this.button2.Size = new System.Drawing.Size(134, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "الخروج";
+            this.button2.Text = "الخروج (F4)";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(201, 35);
+            this.button1.Location = new System.Drawing.Point(201, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 35);
+            this.button1.Size = new System.Drawing.Size(118, 50);
             this.button1.TabIndex = 0;
-            this.button1.Text = "تحديث";
+            this.button1.Text = "تحديث (F2)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -206,6 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(389, 386);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSealPrice);
@@ -231,6 +232,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسعير المنتج";
             this.Load += new System.EventHandler(this.FRM_ProductPrice_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_ProductPrice_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

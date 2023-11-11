@@ -40,5 +40,24 @@ namespace Product_Management.PL
             frm.crystalReportViewer1.ReportSource = rep;
             frm.ShowDialog();
         }
+
+        private void FRM_ProformaInvoice_List_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_ProformaInvoice_List_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                btnPrint_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

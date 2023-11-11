@@ -52,28 +52,28 @@
             // 
             // btnExit
             // 
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit5;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(63, 28);
+            this.btnExit.Location = new System.Drawing.Point(6, 28);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(91, 42);
+            this.btnExit.Size = new System.Drawing.Size(148, 42);
             this.btnExit.TabIndex = 40;
-            this.btnExit.Text = "الخروج";
+            this.btnExit.Text = "الخروج (F4)";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::Product_Management.Properties.Resources._11081942421898;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(160, 28);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 42);
+            this.button4.Size = new System.Drawing.Size(187, 42);
             this.button4.TabIndex = 39;
-            this.button4.Text = "تفاصيل الفاتورة";
+            this.button4.Text = "تفاصيل الفاتورة (F2)";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -128,6 +128,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فواتير المبيعات المرتجعة";
+            this.Load += new System.EventHandler(this.FRM_Sales_Return_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Sales_Return_KeyDown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).EndInit();
             this.ResumeLayout(false);

@@ -44,6 +44,7 @@
             this.dgvSuppliersReceivables.AllowUserToAddRows = false;
             this.dgvSuppliersReceivables.AllowUserToDeleteRows = false;
             this.dgvSuppliersReceivables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSuppliersReceivables.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvSuppliersReceivables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliersReceivables.Location = new System.Drawing.Point(5, 51);
             this.dgvSuppliersReceivables.Name = "dgvSuppliersReceivables";
@@ -87,28 +88,28 @@
             // 
             // button8
             // 
-            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::Product_Management.Properties.Resources.icon_Exit6;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(244, 22);
+            this.button8.Location = new System.Drawing.Point(223, 22);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(113, 53);
+            this.button8.Size = new System.Drawing.Size(141, 53);
             this.button8.TabIndex = 8;
-            this.button8.Text = "الخروج";
+            this.button8.Text = "الخروج (F4)";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources._11081942421898;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(401, 21);
+            this.button1.Location = new System.Drawing.Point(370, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 53);
+            this.button1.Size = new System.Drawing.Size(202, 53);
             this.button1.TabIndex = 1;
-            this.button1.Text = "تفاصيل الاستحقاق";
+            this.button1.Text = "تفاصيل الاستحقاق (F2)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -131,6 +132,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مستحقات الموردين";
             this.Load += new System.EventHandler(this.FRM_Suppliers_Receivables_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Suppliers_Receivables_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliersReceivables)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

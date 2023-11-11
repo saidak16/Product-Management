@@ -404,6 +404,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _401182 {
+            get {
+                object obj = ResourceManager.GetObject("401182", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4320287 {
             get {
                 object obj = ResourceManager.GetObject("4320287", resourceCulture);
@@ -767,6 +777,16 @@ namespace Product_Management.Properties {
         internal static System.Drawing.Bitmap deliverybox_115847_115821 {
             get {
                 object obj = ResourceManager.GetObject("deliverybox-115847_115821", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deliverybox_115847_1158211 {
+            get {
+                object obj = ResourceManager.GetObject("deliverybox-115847_1158211", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

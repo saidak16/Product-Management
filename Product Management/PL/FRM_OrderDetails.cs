@@ -51,6 +51,7 @@ namespace Product_Management.PL
                         if (dataGridView1.Rows.Count > 0)
                         {
                             dataGridView1.DataSource = orders.GetOrderDetails("", Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[2].Value.ToString()));
+                            txtCount.Text = dataGridView1.Rows.Count.ToString();
                         }
                         else
                         {
@@ -78,6 +79,25 @@ namespace Product_Management.PL
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FRM_OrderDetails_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_OrderDetails_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
         }
     }
 }

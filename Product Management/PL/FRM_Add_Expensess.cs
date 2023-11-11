@@ -98,5 +98,24 @@ namespace Product_Management.PL
             txtDiscription.Clear();
             dateTimePicker1.Text = DateTime.Now.ToString();
         }
+
+        private void FRM_Add_Expensess_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                btnAdd_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
+
+        private void FRM_Add_Expensess_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
     }
 }

@@ -47,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.cmdRole);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -172,9 +173,9 @@
             this.btnEXIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEXIT.Location = new System.Drawing.Point(226, 231);
             this.btnEXIT.Name = "btnEXIT";
-            this.btnEXIT.Size = new System.Drawing.Size(100, 39);
+            this.btnEXIT.Size = new System.Drawing.Size(129, 39);
             this.btnEXIT.TabIndex = 6;
-            this.btnEXIT.Text = "الخروج";
+            this.btnEXIT.Text = "الخروج (F4)";
             this.btnEXIT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEXIT.UseVisualStyleBackColor = true;
             this.btnEXIT.Click += new System.EventHandler(this.btnEXIT_Click);
@@ -186,9 +187,9 @@
             this.btnADD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnADD.Location = new System.Drawing.Point(59, 231);
             this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(135, 39);
+            this.btnADD.Size = new System.Drawing.Size(164, 39);
             this.btnADD.TabIndex = 5;
-            this.btnADD.Text = "اضافة المستخدم";
+            this.btnADD.Text = "اضافة المستخدم (F2)";
             this.btnADD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnADD.UseVisualStyleBackColor = true;
             this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
@@ -209,6 +210,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "اضافة مستخدم";
+            this.Load += new System.EventHandler(this.FRM_Add_User_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Add_User_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

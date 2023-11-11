@@ -188,5 +188,39 @@ namespace Product_Management.PL
             MessageBox.Show(" E تم تصدير الصنف بنجاح للقرص ", "لائحة الأصناف", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void FRM_Categories_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Categories_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnNew_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                btnAdd_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                btnDelete_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                btnUpdate_Click(sender, e);
+            }
+        }
     }
 }

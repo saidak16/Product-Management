@@ -33,5 +33,19 @@ namespace Product_Management.PL
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[5].Visible = false;
         }
+
+        private void FRM_CUST_LIST_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_CUST_LIST_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

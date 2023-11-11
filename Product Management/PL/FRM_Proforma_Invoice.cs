@@ -261,5 +261,39 @@ namespace Product_Management.PL
             frm.crystalReportViewer1.ReportSource = rep;
             frm.ShowDialog();
         }
+
+        private void FRM_Proforma_Invoice_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Proforma_Invoice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btn_New_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2 && btn_Save.Enabled == true)
+            {
+                btn_Save_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3 && btn_Print.Enabled == true)
+            {
+                btn_Print_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                btnCUS_Click(sender, e);
+            }
+        }
     }
 }

@@ -47,5 +47,19 @@ namespace Product_Management.PL
                 return;
             }
         }
+
+        private void Frm_Expiry_Date_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void Frm_Expiry_Date_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

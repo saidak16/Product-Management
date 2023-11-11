@@ -118,11 +118,11 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(109, 172);
+            this.button1.Location = new System.Drawing.Point(63, 172);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 33);
+            this.button1.Size = new System.Drawing.Size(123, 41);
             this.button1.TabIndex = 1;
-            this.button1.Text = "تحديث";
+            this.button1.Text = "تحديث (F2)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -132,11 +132,11 @@
             this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::Product_Management.Properties.Resources.icon_Exit5;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(214, 172);
+            this.button2.Location = new System.Drawing.Point(187, 172);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 33);
+            this.button2.Size = new System.Drawing.Size(131, 41);
             this.button2.TabIndex = 2;
-            this.button2.Text = "خروج";
+            this.button2.Text = "خروج (F4)";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -145,6 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(380, 225);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -159,6 +160,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تنبيهات النظام";
+            this.Load += new System.EventHandler(this.FRM_System_Alerts_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_System_Alerts_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

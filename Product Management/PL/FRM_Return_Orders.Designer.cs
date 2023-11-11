@@ -33,8 +33,8 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -81,33 +81,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "العمليات";
             // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit5;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(17, 28);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(137, 42);
+            this.btnExit.TabIndex = 40;
+            this.btnExit.Text = "الخروج (F4)";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::Product_Management.Properties.Resources._11081942421898;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(160, 28);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 42);
+            this.button4.Size = new System.Drawing.Size(187, 42);
             this.button4.TabIndex = 39;
-            this.button4.Text = "تفاصيل الفاتورة";
+            this.button4.Text = "تفاصيل الفاتورة (F2)";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit5;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(63, 28);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(91, 42);
-            this.btnExit.TabIndex = 40;
-            this.btnExit.Text = "الخروج";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FRM_Return_Orders
             // 
@@ -128,6 +128,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الفواتير المرتجعة";
+            this.Load += new System.EventHandler(this.FRM_Return_Orders_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Return_Orders_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnInvoices)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

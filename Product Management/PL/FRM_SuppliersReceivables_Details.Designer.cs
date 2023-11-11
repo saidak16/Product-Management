@@ -38,6 +38,7 @@
             this.dgvSuppliersReceivablesDetails.AllowUserToAddRows = false;
             this.dgvSuppliersReceivablesDetails.AllowUserToDeleteRows = false;
             this.dgvSuppliersReceivablesDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSuppliersReceivablesDetails.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvSuppliersReceivablesDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuppliersReceivablesDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSuppliersReceivablesDetails.Location = new System.Drawing.Point(0, 0);
@@ -62,6 +63,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تفاصيل الاستحقاق";
             this.Load += new System.EventHandler(this.FRM_SuppliersReceivables_Details_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_SuppliersReceivables_Details_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliersReceivablesDetails)).EndInit();
             this.ResumeLayout(false);
 

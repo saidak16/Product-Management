@@ -22,7 +22,8 @@ namespace Product_Management.PL
 
         private void FRM_ProductPrice_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,6 +68,19 @@ namespace Product_Management.PL
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void FRM_ProductPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
             }
         }
     }

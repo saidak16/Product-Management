@@ -328,6 +328,9 @@
   <data name="pexels-mikael-blomkvist-6483619" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-mikael-blomkvist-6483619.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="401182" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\401182.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1473325183_contact-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1473325183_contact-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -601,6 +604,9 @@
   <data name="icons8-compact-camera-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-compact-camera-501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="box_search_product_ean_barcode_icon_148907" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_search_product_ean_barcode_icon_148907.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -697,7 +703,7 @@
   <data name="Actions-edit-clear-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-edit-clear-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box_search_product_ean_barcode_icon_148907" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box_search_product_ean_barcode_icon_148907.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deliverybox-115847_1158211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deliverybox-115847_1158211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

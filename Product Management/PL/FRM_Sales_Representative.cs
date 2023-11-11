@@ -103,5 +103,34 @@ namespace Product_Management.PL
 
             frm.ShowDialog();
         }
+
+        private void FRM_Sales_Representative_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Sales_Representative_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnAdd_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                button2_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

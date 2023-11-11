@@ -25,7 +25,8 @@ namespace Product_Management
 
         private void FRM_Customers_List_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -54,6 +55,19 @@ namespace Product_Management
             int customerId = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
             FRM_Customer_Profile frm = new FRM_Customer_Profile(customerId);
             frm.ShowDialog();
+        }
+
+        private void FRM_Customers_List_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                btnProfile_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
         }
     }
 }

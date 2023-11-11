@@ -80,5 +80,24 @@ namespace Product_Management.PL
             txtQty.Text = dt.Rows[0]["QtyAlerts"].ToString();
             txtExp.Text = days.ToString();
         }
+
+        private void FRM_System_Alerts_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_System_Alerts_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

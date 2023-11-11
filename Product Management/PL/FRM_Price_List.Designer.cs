@@ -44,11 +44,12 @@
             this.dgvPriceList.AllowUserToAddRows = false;
             this.dgvPriceList.AllowUserToDeleteRows = false;
             this.dgvPriceList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPriceList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPriceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPriceList.Location = new System.Drawing.Point(0, 41);
             this.dgvPriceList.Name = "dgvPriceList";
             this.dgvPriceList.ReadOnly = true;
-            this.dgvPriceList.Size = new System.Drawing.Size(1187, 345);
+            this.dgvPriceList.Size = new System.Drawing.Size(1187, 364);
             this.dgvPriceList.TabIndex = 0;
             // 
             // groupBox2
@@ -56,37 +57,37 @@
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(197, 398);
+            this.groupBox2.Location = new System.Drawing.Point(416, 411);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(795, 101);
+            this.groupBox2.Size = new System.Drawing.Size(356, 101);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات";
             // 
             // button8
             // 
-            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::Product_Management.Properties.Resources.icon_Exit;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(244, 22);
+            this.button8.Location = new System.Drawing.Point(29, 30);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(113, 53);
+            this.button8.Size = new System.Drawing.Size(136, 53);
             this.button8.TabIndex = 8;
-            this.button8.Text = "الخروج";
+            this.button8.Text = "الخروج (F4)";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(425, 21);
+            this.button1.Location = new System.Drawing.Point(171, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 53);
             this.button1.TabIndex = 1;
-            this.button1.Text = "طباعة القائمة";
+            this.button1.Text = "طباعة القائمة (F2)";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -94,7 +95,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(477, 10);
+            this.txtID.Location = new System.Drawing.Point(488, 10);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(282, 22);
             this.txtID.TabIndex = 17;
@@ -104,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(407, 14);
+            this.label1.Location = new System.Drawing.Point(418, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 14);
             this.label1.TabIndex = 18;
@@ -128,6 +129,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قائمة الاسعار";
+            this.Load += new System.EventHandler(this.FRM_Price_List_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Price_List_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPriceList)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

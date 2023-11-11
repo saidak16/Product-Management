@@ -97,7 +97,8 @@ namespace Product_Management.PL
 
         private void FRM_Customer_Profile_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void txtReturnSearch_TextChanged(object sender, EventArgs e)
@@ -116,6 +117,14 @@ namespace Product_Management.PL
             int orderId = Convert.ToInt32(this.dgvReturnInvoices.CurrentRow.Cells[2].Value);
             FRM_Order_Return_Items frm = new FRM_Order_Return_Items(orderId);
             frm.ShowDialog();
+        }
+
+        private void FRM_Customer_Profile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
         }
     }
 }

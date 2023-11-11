@@ -111,5 +111,41 @@ namespace Product_Management.PL
 
             frm.ShowDialog();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRM_Orders_List_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Orders_List_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnPrint_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                button2_Click(sender, e);
+            }
+
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

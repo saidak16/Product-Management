@@ -74,7 +74,8 @@ namespace Product_Management.PL
 
         private void FRM_Supplier_Profile_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,6 +140,14 @@ namespace Product_Management.PL
         private void txtInvoiceSearch_TextChanged(object sender, EventArgs e)
         {
             dgvInvoices.DataSource = profile.GetSupplierInvoices(supId, txtInvoiceSearch.Text);
+        }
+
+        private void FRM_Supplier_Profile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
         }
     }
 }

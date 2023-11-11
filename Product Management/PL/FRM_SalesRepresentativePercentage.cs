@@ -25,5 +25,19 @@ namespace Product_Management.PL
         {
             this.dataGridView1.DataSource = representativePercentage.GetAll();
         }
+
+        private void FRM_SalesRepresentativePercentage_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_SalesRepresentativePercentage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

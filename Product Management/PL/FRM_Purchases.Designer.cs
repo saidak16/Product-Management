@@ -35,8 +35,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPurchases)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             this.dvgPurchases.AllowUserToResizeColumns = false;
             this.dvgPurchases.AllowUserToResizeRows = false;
             this.dvgPurchases.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgPurchases.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dvgPurchases.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dvgPurchases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgPurchases.Location = new System.Drawing.Point(2, 43);
@@ -94,45 +95,59 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::Product_Management.Properties.Resources.Admin_icon;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(424, 24);
+            this.button4.Location = new System.Drawing.Point(415, 26);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 53);
+            this.button4.Size = new System.Drawing.Size(230, 53);
             this.button4.TabIndex = 9;
-            this.button4.Text = "تعديل استحقاق المورد";
+            this.button4.Text = "تعديل استحقاق المورد (F2)";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button8
             // 
-            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::Product_Management.Properties.Resources.icons8_exit_50;
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::Product_Management.Properties.Resources.icon_Exit6;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(111, 22);
+            this.button8.Location = new System.Drawing.Point(21, 24);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(113, 53);
+            this.button8.Size = new System.Drawing.Size(149, 53);
             this.button8.TabIndex = 8;
-            this.button8.Text = "الخروج";
+            this.button8.Text = "الخروج (F4)";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::Product_Management.Properties.Resources.Address_Book_Alt_blue;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(230, 24);
+            this.button3.Location = new System.Drawing.Point(181, 26);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 53);
+            this.button3.Size = new System.Drawing.Size(224, 53);
             this.button3.TabIndex = 3;
-            this.button3.Text = "تفاصيل العملية المحددة";
+            this.button3.Text = "تفاصيل العملية المحددة (F3)";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.plus1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(651, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 53);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "اضافة عملية جديدة (F1)";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -148,20 +163,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.plus1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(618, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 53);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "اضافة عملية جديدة";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FRM_Purchases
             // 
@@ -181,6 +182,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قائمة عمليات الشراء";
             this.Load += new System.EventHandler(this.FRM_Purchases_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Purchases_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dvgPurchases)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

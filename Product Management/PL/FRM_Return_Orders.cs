@@ -44,5 +44,24 @@ namespace Product_Management.PL
             FRM_Return_Purchase_Details frm = new FRM_Return_Purchase_Details(orderId);
             frm.ShowDialog();
         }
+
+        private void FRM_Return_Orders_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Return_Orders_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button4_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

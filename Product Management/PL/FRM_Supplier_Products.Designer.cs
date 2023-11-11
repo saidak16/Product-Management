@@ -62,6 +62,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اصناف المورد";
+            this.Load += new System.EventHandler(this.FRM_Supplier_Products_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Supplier_Products_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplierProducts)).EndInit();
             this.ResumeLayout(false);
 

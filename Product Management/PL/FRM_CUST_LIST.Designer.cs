@@ -40,6 +40,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 42);
             this.dataGridView1.Name = "dataGridView1";
@@ -54,7 +55,7 @@
             this.txtID.Location = new System.Drawing.Point(322, 11);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(282, 22);
-            this.txtID.TabIndex = 14;
+            this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label1
@@ -84,6 +85,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "قائمة العملاء";
+            this.Load += new System.EventHandler(this.FRM_CUST_LIST_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_CUST_LIST_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -40,12 +40,13 @@
             this.dgvItemsList.AllowUserToAddRows = false;
             this.dgvItemsList.AllowUserToDeleteRows = false;
             this.dgvItemsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItemsList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvItemsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItemsList.Location = new System.Drawing.Point(0, 41);
-            this.dgvItemsList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvItemsList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvItemsList.Name = "dgvItemsList";
             this.dgvItemsList.ReadOnly = true;
-            this.dgvItemsList.Size = new System.Drawing.Size(1078, 470);
+            this.dgvItemsList.Size = new System.Drawing.Size(1078, 479);
             this.dgvItemsList.TabIndex = 0;
             this.dgvItemsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsList_CellContentClick);
             this.dgvItemsList.DoubleClick += new System.EventHandler(this.dgvItemsList_DoubleClick);
@@ -54,10 +55,10 @@
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(434, 11);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(281, 22);
-            this.txtID.TabIndex = 18;
+            this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label1
@@ -81,7 +82,7 @@
             this.Controls.Add(this.dgvItemsList);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRM_Items_List";
@@ -89,6 +90,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قائمة المنتجات";
+            this.Load += new System.EventHandler(this.FRM_Items_List_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Items_List_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

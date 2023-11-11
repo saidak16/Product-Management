@@ -325,6 +325,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Location = new System.Drawing.Point(6, 65);
@@ -374,7 +375,7 @@
             this.btnCUS.Name = "btnCUS";
             this.btnCUS.Size = new System.Drawing.Size(75, 31);
             this.btnCUS.TabIndex = 6;
-            this.btnCUS.Text = "...";
+            this.btnCUS.Text = "F5";
             this.btnCUS.UseVisualStyleBackColor = true;
             this.btnCUS.Click += new System.EventHandler(this.btnCUS_Click);
             // 
@@ -596,9 +597,9 @@
             this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Exit.Location = new System.Drawing.Point(18, 29);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(91, 43);
+            this.btn_Exit.Size = new System.Drawing.Size(116, 43);
             this.btn_Exit.TabIndex = 12;
-            this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Text = "خروج (F4)";
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
@@ -609,11 +610,11 @@
             this.btn_Print.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_;
             this.btn_Print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Print.Location = new System.Drawing.Point(130, 29);
+            this.btn_Print.Location = new System.Drawing.Point(136, 29);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(117, 43);
+            this.btn_Print.Size = new System.Drawing.Size(142, 43);
             this.btn_Print.TabIndex = 11;
-            this.btn_Print.Text = "طباعة الفاتورة";
+            this.btn_Print.Text = "طباعة الفاتورة (F3)";
             this.btn_Print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Print.UseVisualStyleBackColor = true;
             this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
@@ -624,11 +625,11 @@
             this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Image = global::Product_Management.Properties.Resources.save1;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Save.Location = new System.Drawing.Point(279, 29);
+            this.btn_Save.Location = new System.Drawing.Point(285, 29);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(136, 43);
+            this.btn_Save.Size = new System.Drawing.Size(161, 43);
             this.btn_Save.TabIndex = 10;
-            this.btn_Save.Text = "حفظ الفاتورة";
+            this.btn_Save.Text = "حفظ الفاتورة (F2)";
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -638,11 +639,11 @@
             this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New.Image = global::Product_Management.Properties.Resources.icons8_add_24;
             this.btn_New.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_New.Location = new System.Drawing.Point(437, 29);
+            this.btn_New.Location = new System.Drawing.Point(451, 29);
             this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(107, 43);
+            this.btn_New.Size = new System.Drawing.Size(132, 43);
             this.btn_New.TabIndex = 9;
-            this.btn_New.Text = "فاتورة جديدة";
+            this.btn_New.Text = "فاتورة جديدة (F1)";
             this.btn_New.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
@@ -664,6 +665,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الفواتير المبدئية";
+            this.Load += new System.EventHandler(this.FRM_Proforma_Invoice_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Proforma_Invoice_KeyDown);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

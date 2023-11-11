@@ -635,6 +635,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ملف المورد";
             this.Load += new System.EventHandler(this.FRM_Supplier_Profile_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Supplier_Profile_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

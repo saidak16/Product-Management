@@ -22,5 +22,19 @@ namespace Product_Management.PL
             dataGridView1.DataSource = profile.GetOrderReturnItems(orderId);
             this.Text = "الاصناف المرتجعة : " + dataGridView1.Rows.Count.ToString();
         }
+
+        private void FRM_Order_Return_Items_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Order_Return_Items_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

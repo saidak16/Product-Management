@@ -68,6 +68,12 @@ namespace Product_Management.PL
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
             FRM_Add_Expensess frm = new FRM_Add_Expensess();
             frm.Flag = "Update";
             frm.btnAdd.Text = "تحديث";
@@ -80,6 +86,12 @@ namespace Product_Management.PL
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+                return;
+            }
+
             if (MessageBox.Show("هل تريد حذف المنصرف المحدد ؟؟", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 expensess.DeleteExpensess(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
@@ -89,6 +101,35 @@ namespace Product_Management.PL
             else
             {
                 MessageBox.Show("تم إلغاء العملية", "عملية الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void FRM_Expensess_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Expensess_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnAdd_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                btnEdit_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                btnDelete_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
             }
         }
     }

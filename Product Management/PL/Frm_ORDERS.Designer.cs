@@ -302,7 +302,7 @@
             this.btnCUS.Name = "btnCUS";
             this.btnCUS.Size = new System.Drawing.Size(75, 31);
             this.btnCUS.TabIndex = 6;
-            this.btnCUS.Text = "...";
+            this.btnCUS.Text = "F6";
             this.btnCUS.UseVisualStyleBackColor = true;
             this.btnCUS.Click += new System.EventHandler(this.btnCUS_Click);
             // 
@@ -728,6 +728,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
@@ -859,7 +860,7 @@
             this.btnSalesList.Name = "btnSalesList";
             this.btnSalesList.Size = new System.Drawing.Size(75, 31);
             this.btnSalesList.TabIndex = 13;
-            this.btnSalesList.Text = "...";
+            this.btnSalesList.Text = "F5";
             this.btnSalesList.UseVisualStyleBackColor = true;
             this.btnSalesList.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -940,14 +941,14 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Image = global::Product_Management.Properties.Resources.icon_Exit3;
             this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Exit.Location = new System.Drawing.Point(716, 528);
+            this.btn_Exit.Location = new System.Drawing.Point(761, 541);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(91, 43);
+            this.btn_Exit.Size = new System.Drawing.Size(134, 43);
             this.btn_Exit.TabIndex = 8;
-            this.btn_Exit.Text = "خروج";
+            this.btn_Exit.Text = "خروج (F4)";
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.button6_Click);
@@ -955,14 +956,14 @@
             // btn_Print
             // 
             this.btn_Print.Enabled = false;
-            this.btn_Print.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_;
             this.btn_Print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Print.Location = new System.Drawing.Point(593, 528);
+            this.btn_Print.Location = new System.Drawing.Point(590, 541);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(117, 43);
+            this.btn_Print.Size = new System.Drawing.Size(169, 43);
             this.btn_Print.TabIndex = 3;
-            this.btn_Print.Text = "طباعة الفاتورة";
+            this.btn_Print.Text = "طباعة الفاتورة (F3)";
             this.btn_Print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Print.UseVisualStyleBackColor = true;
             this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
@@ -970,28 +971,28 @@
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
-            this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Image = global::Product_Management.Properties.Resources.save1;
             this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Save.Location = new System.Drawing.Point(451, 528);
+            this.btn_Save.Location = new System.Drawing.Point(416, 540);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(136, 43);
+            this.btn_Save.Size = new System.Drawing.Size(170, 43);
             this.btn_Save.TabIndex = 1;
-            this.btn_Save.Text = "حفظ الفاتورة";
+            this.btn_Save.Text = "حفظ الفاتورة (F2)";
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_New
             // 
-            this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_New.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New.Image = global::Product_Management.Properties.Resources.plus6;
             this.btn_New.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_New.Location = new System.Drawing.Point(313, 528);
+            this.btn_New.Location = new System.Drawing.Point(225, 539);
             this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(132, 43);
+            this.btn_New.Size = new System.Drawing.Size(187, 43);
             this.btn_New.TabIndex = 0;
-            this.btn_New.Text = "عملية بيع جديدة";
+            this.btn_New.Text = "عملية بيع جديدة (F1)";
             this.btn_New.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
@@ -1001,7 +1002,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1121, 571);
+            this.ClientSize = new System.Drawing.Size(1121, 595);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
@@ -1020,6 +1021,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة المبيعات";
+            this.Load += new System.EventHandler(this.Frm_ORDERS_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_ORDERS_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

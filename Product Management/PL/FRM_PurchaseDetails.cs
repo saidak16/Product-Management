@@ -55,5 +55,29 @@ namespace Product_Management.PL
         {
 
         }
+
+        private void FRM_PurchaseDetails_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_PurchaseDetails_InputLanguageChanging(object sender, InputLanguageChangingEventArgs e)
+        {
+
+        }
+
+        private void FRM_PurchaseDetails_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

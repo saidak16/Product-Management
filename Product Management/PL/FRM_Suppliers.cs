@@ -98,5 +98,34 @@ namespace Product_Management.PL
         {
             dataGridView1.DataSource = supplier.GetAllSuppliers(txtID.Text);
         }
+
+        private void FRM_Suppliers_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Suppliers_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                button1_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                button2_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                button3_Click(sender, e);
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

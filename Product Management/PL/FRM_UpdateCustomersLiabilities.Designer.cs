@@ -147,26 +147,28 @@
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::Product_Management.Properties.Resources.icon_Exit2;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(47, 32);
+            this.btnClose.Location = new System.Drawing.Point(57, 22);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 34);
+            this.btnClose.Size = new System.Drawing.Size(134, 44);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "الخروج";
+            this.btnClose.Text = "الخروج (F4)";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Product_Management.Properties.Resources.icons8_available_updates_24;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(162, 32);
+            this.btnUpdate.Location = new System.Drawing.Point(191, 22);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(87, 34);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 44);
             this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "تحديث";
+            this.btnUpdate.Text = "تحديث (F3)";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -175,6 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(371, 327);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAmount);
@@ -197,6 +200,8 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تحديث الاستحقاق";
+            this.Load += new System.EventHandler(this.FRM_UpdateCustomersLiabilities_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_UpdateCustomersLiabilities_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
