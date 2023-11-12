@@ -121,6 +121,11 @@
     <Compile Include="BL\CLS_USERS.cs" />
     <Compile Include="BL\FillDropDownList.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DBSet\ReportsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="PL\FRM_Add_Employee.cs">
       <SubType>Form</SubType>
@@ -587,6 +592,18 @@
       <DependentUpon>rpt_Expensess.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\RPT_Footer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Footer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\rpt_Header.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Header.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_Price_List.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -848,6 +865,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Expensess.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPT_Footer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_Footer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_Header.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Header.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_Price_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Price_List.cs</LastGenOutput>
@@ -860,6 +885,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Suppliers_Receivables.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DBSet\ReportsDataSet.xsc">
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBSet\ReportsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DBSet\ReportsDataSet.xss">
+      <DependentUpon>ReportsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Product Management_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

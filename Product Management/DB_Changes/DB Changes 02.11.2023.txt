@@ -1261,3 +1261,27 @@ SELECT [Id] as 'المعرف'
   where FullName + Phone + Email + [Address] + Job like '%' +@search+ '%'
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create proc GetOrder_RPT
+@ID int
+as
+SELECT [ID_Order] 
+      ,[Des_Order]
+      ,FORMAT([Date_Order], 'dd/MM/yyyy') as 'Date_Order' 
+      ,[SalesMan] 
+      ,[ID_Customer] 
+      ,[First_Name] +' '+[Last_Name] as 'CustomerName'
+      ,[TEL]
+      ,[E_Mail]
+      ,[ID_Product] 
+	  ,[Product_Name]
+      ,[QTE] 
+      ,FORMAT(convert(float,[Price]), 'C') as 'Price' 
+      ,FORMAT(CONVERT(float, [Amount]), 'C') as 'Amount' 
+      ,[Discount]
+	  ,FORMAT(CONVERT(float, [Total]), 'C') as 'Total' 
+      ,Format(TotalAmount,'C') as 'TotalAmount'
+  FROM [dbo].[Order_View]
+  where ID_Order = @ID
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

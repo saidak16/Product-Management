@@ -358,8 +358,11 @@ namespace Product_Management.PL
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             RPT.Orders_RPT rep = new RPT.Orders_RPT();
-            rep.SetParameterValue("@ID", Convert.ToInt32(txtOrderID.Text));
+            dt = order.GetOrder_RPT(Convert.ToInt32(txtOrderID.Text));
+            rep.SetDataSource(dt);
+            //rep.SetParameterValue("@ID", Convert.ToInt32(txtOrderID.Text));
             RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
             frm.crystalReportViewer1.ReportSource = rep;
             frm.ShowDialog();
@@ -489,7 +492,7 @@ namespace Product_Management.PL
                 this.Close();
             }
 
-            if (e.KeyCode == Keys.F5)
+            if (e.KeyCode == Keys.F5 && btnSalesList.Enabled == true)
             {
                 button2_Click_1(sender, e);
             }

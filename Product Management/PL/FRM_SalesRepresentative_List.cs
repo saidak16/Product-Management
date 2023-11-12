@@ -20,6 +20,7 @@ namespace Product_Management.PL
             InitializeComponent();
 
             dataGridView1.DataSource = sales_Representative.GetAll();
+            txtID.Focus();
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace Product_Management.PL
         {
             InitializeComponent();
             dataGridView1.DataSource = suppliers.GetSupList("");
+            txtID.Focus();
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)

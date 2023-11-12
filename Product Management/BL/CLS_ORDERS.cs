@@ -22,6 +22,27 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public DataTable GetOrder_RPT(int ID)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@ID", SqlDbType.Int);
+                param[0].Value = ID;
+               
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetOrder_RPT", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public bool DeleteOrderDetails(int id, int purchaseId, int orderId)
         {
             try

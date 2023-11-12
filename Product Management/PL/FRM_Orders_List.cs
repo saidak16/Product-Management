@@ -55,8 +55,11 @@ namespace Product_Management.PL
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             RPT.Orders_RPT rep = new RPT.Orders_RPT();
-            rep.SetParameterValue("@ID", Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+            dt = order.GetOrder_RPT(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+            //rep.SetParameterValue("@ID", Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+            rep.SetDataSource(dt);
             RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
             frm.crystalReportViewer1.ReportSource = rep;
             frm.ShowDialog();

@@ -19,7 +19,7 @@ namespace Product_Management.PL
             this.dataGridView1.DataSource = cust.Select_Customers();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[5].Visible = false;
-
+            txtID.Focus();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
