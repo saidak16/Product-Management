@@ -538,5 +538,11 @@ namespace Product_Management.PL
             FRM_Add_Employee frm = new FRM_Add_Employee();
             frm.ShowDialog();
         }
+
+        private void ادارةالموظفينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Employees frm = new FRM_Employees();
+            frm.ShowDialog();
+        }
     }
 }

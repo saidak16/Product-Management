@@ -248,6 +248,12 @@
     <Compile Include="PL\FRM_Dashboard.Designer.cs">
       <DependentUpon>FRM_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Employees.Designer.cs">
+      <DependentUpon>FRM_Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Expensess.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -678,6 +684,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Dashboard.resx">
       <DependentUpon>FRM_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Employees.resx">
+      <DependentUpon>FRM_Employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Expensess.resx">
       <DependentUpon>FRM_Expensess.cs</DependentUpon>

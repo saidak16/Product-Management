@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_Employee));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtHolidays = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,12 +46,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtJob = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSalary = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtHolidays = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -78,6 +78,54 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العميل";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(498, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 19);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "ايام الاجازة السنوية";
+            // 
+            // txtHolidays
+            // 
+            this.txtHolidays.Location = new System.Drawing.Point(237, 212);
+            this.txtHolidays.Name = "txtHolidays";
+            this.txtHolidays.Size = new System.Drawing.Size(255, 26);
+            this.txtHolidays.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(498, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 19);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "الراتب";
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(237, 182);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(255, 26);
+            this.txtSalary.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(498, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "العنوان";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(237, 152);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(255, 26);
+            this.txtAddress.TabIndex = 15;
             // 
             // label7
             // 
@@ -164,54 +212,6 @@
             this.txtName.Size = new System.Drawing.Size(255, 26);
             this.txtName.TabIndex = 0;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(498, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 19);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "العنوان";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(237, 152);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(255, 26);
-            this.txtAddress.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(498, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 19);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "الراتب";
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(237, 182);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(255, 26);
-            this.txtSalary.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(498, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 19);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "ايام الاجازة السنوية";
-            // 
-            // txtHolidays
-            // 
-            this.txtHolidays.Location = new System.Drawing.Point(237, 212);
-            this.txtHolidays.Name = "txtHolidays";
-            this.txtHolidays.Size = new System.Drawing.Size(255, 26);
-            this.txtHolidays.TabIndex = 21;
-            // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -285,7 +285,7 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtHolidays;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnAdd;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Product_Management.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Product_Management.PL
 {
     public partial class FRM_Add_Employee : Form
     {
+        public string Flag = "Add";
+        CLS_Employee employee = new CLS_Employee();
+
         public FRM_Add_Employee()
         {
             InitializeComponent();

@@ -100,7 +100,7 @@
             this.txtPWD.PasswordChar = '*';
             this.txtPWD.Size = new System.Drawing.Size(254, 27);
             this.txtPWD.TabIndex = 9;
-            this.txtPWD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPWD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPWD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPWD_KeyDown);
             // 
             // txtID
@@ -110,26 +110,26 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(254, 27);
             this.txtID.TabIndex = 0;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(285, 275);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(269, 281);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 19);
+            this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 7;
             this.label2.Text = "كلمة المرور";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 237);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(269, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 19);
+            this.label1.Size = new System.Drawing.Size(95, 22);
             this.label1.TabIndex = 6;
             this.label1.Text = "اسم المستخدم";
             // 
