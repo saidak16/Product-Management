@@ -41,6 +41,13 @@ namespace Product_Management.PL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(cmb_Cat.Text) || string.IsNullOrEmpty(txt_Des.Text))
+            {
+                MessageBox.Show("الرجاء التحقق من ادخال كافة البيانات");
+                txt_Des.Focus();
+                return;
+            }
+
             if (Flag == "Add")
             {
                 Frm_Products frm = new Frm_Products();

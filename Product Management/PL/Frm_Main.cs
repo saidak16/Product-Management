@@ -155,7 +155,7 @@ namespace Product_Management.PL
 
         private void اضافةعمليةبيعToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_ORDERS frm = new Frm_ORDERS();
+            FRM_Add_Sales_Invoice frm = new FRM_Add_Sales_Invoice();
             frm.ShowDialog();
         }
 
@@ -378,13 +378,13 @@ namespace Product_Management.PL
 
         private void picSales_Click(object sender, EventArgs e)
         {
-            Frm_ORDERS frm = new Frm_ORDERS();
+            FRM_Add_Sales_Invoice frm = new FRM_Add_Sales_Invoice();
             frm.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Frm_ORDERS frm = new Frm_ORDERS();
+            FRM_Add_Sales_Invoice frm = new FRM_Add_Sales_Invoice();
             frm.ShowDialog();
         }
 
@@ -402,13 +402,14 @@ namespace Product_Management.PL
 
         private void picLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            FRM_Customers_List frm = new FRM_Customers_List();
+            frm.ShowDialog();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FRM_Customers_List frm = new FRM_Customers_List();
+            frm.ShowDialog();
         }
 
         private void picContact_Click(object sender, EventArgs e)
@@ -499,7 +500,7 @@ namespace Product_Management.PL
         {
             if (e.KeyCode == Keys.F1)
             {
-                Frm_ORDERS frm = new Frm_ORDERS();
+                FRM_Add_Sales_Invoice frm = new FRM_Add_Sales_Invoice();
                 frm.ShowDialog();
             }
 
@@ -525,6 +526,12 @@ namespace Product_Management.PL
                 FRM_Contact frm = new FRM_Contact();
                 frm.ShowDialog();
             }
+
+            if (e.KeyCode == Keys.F6)
+            {
+                FRM_Customers_List frm = new FRM_Customers_List();
+                frm.ShowDialog();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -543,6 +550,11 @@ namespace Product_Management.PL
         {
             FRM_Employees frm = new FRM_Employees();
             frm.ShowDialog();
+        }
+
+        private void تسجيلالخروجF4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

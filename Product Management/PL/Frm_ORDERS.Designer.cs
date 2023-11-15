@@ -213,6 +213,7 @@
             this.txtOrderDes.Name = "txtOrderDes";
             this.txtOrderDes.Size = new System.Drawing.Size(236, 67);
             this.txtOrderDes.TabIndex = 4;
+            this.txtOrderDes.Text = "فاتورة مبيعات";
             // 
             // txtOrderID
             // 
@@ -727,6 +728,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1002,7 +1005,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1121, 595);
+            this.ClientSize = new System.Drawing.Size(1122, 595);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
@@ -1020,7 +1023,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "شاشة المبيعات";
+            this.Text = "فاتورة مبيعات";
             this.Load += new System.EventHandler(this.Frm_ORDERS_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_ORDERS_KeyDown);
             this.groupBox1.ResumeLayout(false);

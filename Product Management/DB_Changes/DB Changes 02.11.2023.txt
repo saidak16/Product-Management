@@ -1285,3 +1285,134 @@ SELECT [ID_Order]
 
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+  USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[Stock]    Script Date: 2023-11-15 9:02:13 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Stock](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ItemId] [int] NOT NULL,
+	[QTY] [int] NOT NULL,
+ CONSTRAINT [PK_Stock] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Stock]  WITH CHECK ADD  CONSTRAINT [FK_Stock_Product] FOREIGN KEY([ItemId])
+REFERENCES [dbo].[Product] ([ID_Product])
+GO
+
+ALTER TABLE [dbo].[Stock] CHECK CONSTRAINT [FK_Stock_Product]
+GO
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+
+INSERT INTO [dbo].[Stock]
+           ([ItemId]
+           ,[QTY])
+    ( select distinct
+ProductId
+,SUM(QTY)
+from PurchaseDetails
+group by ProductId)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+
+INSERT INTO [dbo].[Stock]
+           ([ItemId]
+           ,[QTY])
+    ( select ID_Product ,0 from Product
+where Product_Name <> '' and ID_Product not in 
+(select distinct
+ProductId
+--,SUM(QTY)
+from PurchaseDetails
+--group by ProductId
+))
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[Add_Pro]    Script Date: 2023-11-15 9:17:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Add_Pro]
+@ID_Cat int,
+@Pro_Name nvarchar(50),
+@Img image
+as
+INSERT INTO [Product]
+           ([Product_Name]
+           ,[Image_Product]
+           ,[ID_CAT])
+     VALUES
+           (@Pro_Name,
+           @Img,
+           @ID_Cat)
+
+------------------------Adding to stock----------------------
+
+INSERT INTO [dbo].[Stock]
+           ([ItemId]
+           ,[QTY])
+     VALUES
+           ((select MAX(ID_Product) from [Product])
+           ,0)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetOrderInstallment]    Script Date: 2023-11-15 9:32:56 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetOrderInstallment]
+@orderId int
+as
+SELECT [Id] as 'المعرف'
+      ,[PaymentDate] as 'تاريخ القسط'
+      ,[OrderId] as 'رقم الفاتورة'
+      ,[TotalAmount] as 'اجمالي مبلغ الفاتورة'
+      ,[PaidAmount] as 'المبلغ المدفوع عند السداد'
+      ,[Remainamont] as 'المبغ المتبقي عند السداد'
+      ,[CurrentPayment] as 'قيمة الدفعية'
+  FROM [dbo].[OrderInstallment]
+  where OrderId = @orderId
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  create  proc GetItems
+@search nvarchar(50)
+as
+SELECT [ItemId]
+	  ,t.Product_Name
+      ,[QTY]
+  FROM [Product_DB].[dbo].[Stock] s
+  join Product t
+  on t.ID_Product = s.ItemId
+  where t.Product_Name like '%' +@search + '%'
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

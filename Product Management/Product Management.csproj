@@ -133,6 +133,12 @@
     <Compile Include="PL\FRM_Add_Employee.Designer.cs">
       <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Add_Sales_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_Sales_Invoice.Designer.cs">
+      <DependentUpon>FRM_Add_Sales_Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Customers_List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +636,9 @@
     </Compile>
     <EmbeddedResource Include="PL\FRM_Add_Employee.resx">
       <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add_Sales_Invoice.resx">
+      <DependentUpon>FRM_Add_Sales_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Customers_List.resx">
       <DependentUpon>FRM_Customers_List.cs</DependentUpon>

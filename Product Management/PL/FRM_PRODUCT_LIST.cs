@@ -18,11 +18,16 @@ namespace Product_Management.PL
             InitializeComponent();
             this.dataGridView1.DataSource = prd.GetProductsList();
 
-
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(dataGridView1.CurrentRow.Cells["الكمية"].Value) <= 0)
+            {
+                MessageBox.Show("الكمية غير متوفرة في المخزن");
+                return;
+            }
+
             this.Close();
         }
 
@@ -48,6 +53,27 @@ namespace Product_Management.PL
             {
                 this.Close();
             }
+        }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            if (Convert.ToInt32(row.Cells["الكمية"].Value) <= 0)
+            {
+                row.DefaultCellStyle.BackColor = Color.Red;
+                var myBoldFont = new Font("Tahoma", 9.75F, FontStyle.Bold);
+                row.DefaultCellStyle.Font = myBoldFont;
+            }
+            //else
+            //{
+            //    row.DefaultCellStyle.BackColor = Color.White;
+            //}
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

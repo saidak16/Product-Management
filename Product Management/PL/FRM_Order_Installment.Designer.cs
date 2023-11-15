@@ -63,7 +63,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تفاصيل الاقساط";
+            this.Text = "تفاصيل الدفعيات";
             this.Load += new System.EventHandler(this.FRM_Order_Installment_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Order_Installment_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
