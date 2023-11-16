@@ -33,6 +33,27 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public DataTable GetItemData(int ItemId)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@ItemId", SqlDbType.Int);
+                param[0].Value = ItemId;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetItemData", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public DataTable GetOrder_RPT(int ID)
         {
             try

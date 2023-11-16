@@ -503,5 +503,10 @@ namespace Product_Management.PL
                 btnCUS_Click(sender, e);
             }
         }
+
+        private void txtPRODES_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

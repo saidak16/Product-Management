@@ -47,7 +47,7 @@
             this.cmbItems = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSalesRepresentativeId = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSaleName = new System.Windows.Forms.TextBox();
             this.lblSaleName = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtInvoiceDesc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtInvoiceId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -77,11 +77,11 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRemainingAmount = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtInvoiceAmount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.cmbCustomers = new System.Windows.Forms.ComboBox();
@@ -93,6 +93,9 @@
             this.txtSumTotal = new System.Windows.Forms.TextBox();
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.dgvInvoiceItems = new System.Windows.Forms.DataGridView();
+            this.txtItemId = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblCustomerId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,6 +108,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtItemId);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.txtAmount);
             this.groupBox1.Controls.Add(this.label6);
@@ -179,12 +184,15 @@
             this.txtDiscount.TabIndex = 32;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
+            this.txtDiscount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDiscount_KeyDown);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 79);
+            this.label4.Location = new System.Drawing.Point(312, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 19);
             this.label4.TabIndex = 31;
@@ -194,17 +202,20 @@
             // 
             this.txtQty.Location = new System.Drawing.Point(290, 101);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(127, 25);
+            this.txtQty.Size = new System.Drawing.Size(90, 25);
             this.txtQty.TabIndex = 30;
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
+            this.txtQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyDown);
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(417, 101);
+            this.txtPrice.Location = new System.Drawing.Point(383, 101);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(150, 25);
+            this.txtPrice.Size = new System.Drawing.Size(108, 25);
             this.txtPrice.TabIndex = 29;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -212,7 +223,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(448, 77);
+            this.label3.Location = new System.Drawing.Point(400, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 28;
@@ -223,9 +234,9 @@
             // 
             this.txtStockQty.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtStockQty.Enabled = false;
-            this.txtStockQty.Location = new System.Drawing.Point(566, 101);
+            this.txtStockQty.Location = new System.Drawing.Point(491, 101);
             this.txtStockQty.Name = "txtStockQty";
-            this.txtStockQty.Size = new System.Drawing.Size(150, 25);
+            this.txtStockQty.Size = new System.Drawing.Size(127, 25);
             this.txtStockQty.TabIndex = 27;
             this.txtStockQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -233,7 +244,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 77);
+            this.label2.Location = new System.Drawing.Point(495, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 19);
             this.label2.TabIndex = 26;
@@ -243,7 +254,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(839, 79);
+            this.label1.Location = new System.Drawing.Point(743, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 25;
@@ -254,7 +265,7 @@
             // 
             this.txtItemName.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtItemName.Enabled = false;
-            this.txtItemName.Location = new System.Drawing.Point(716, 101);
+            this.txtItemName.Location = new System.Drawing.Point(620, 101);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(293, 25);
             this.txtItemName.TabIndex = 24;
@@ -267,6 +278,7 @@
             this.cmbItems.Name = "cmbItems";
             this.cmbItems.Size = new System.Drawing.Size(305, 25);
             this.cmbItems.TabIndex = 23;
+            this.cmbItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbItems_KeyDown);
             // 
             // label10
             // 
@@ -280,7 +292,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtSalesRepresentativeId);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtSaleName);
             this.groupBox2.Controls.Add(this.lblSaleName);
@@ -291,7 +303,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtDate);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtInvoiceDesc);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtInvoiceId);
             this.groupBox2.Controls.Add(this.label7);
@@ -303,22 +315,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "بيانات الفاتورة";
             // 
-            // textBox1
+            // txtSalesRepresentativeId
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(8, 475);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(203, 25);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Visible = false;
+            this.txtSalesRepresentativeId.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtSalesRepresentativeId.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalesRepresentativeId.Location = new System.Drawing.Point(8, 468);
+            this.txtSalesRepresentativeId.Name = "txtSalesRepresentativeId";
+            this.txtSalesRepresentativeId.ReadOnly = true;
+            this.txtSalesRepresentativeId.Size = new System.Drawing.Size(203, 22);
+            this.txtSalesRepresentativeId.TabIndex = 49;
+            this.txtSalesRepresentativeId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSalesRepresentativeId.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(66, 452);
+            this.label13.Location = new System.Drawing.Point(66, 445);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 19);
             this.label13.TabIndex = 48;
@@ -328,10 +341,11 @@
             // txtSaleName
             // 
             this.txtSaleName.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtSaleName.Location = new System.Drawing.Point(8, 525);
+            this.txtSaleName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaleName.Location = new System.Drawing.Point(8, 518);
             this.txtSaleName.Name = "txtSaleName";
             this.txtSaleName.ReadOnly = true;
-            this.txtSaleName.Size = new System.Drawing.Size(203, 25);
+            this.txtSaleName.Size = new System.Drawing.Size(203, 22);
             this.txtSaleName.TabIndex = 47;
             this.txtSaleName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSaleName.Visible = false;
@@ -340,7 +354,7 @@
             // 
             this.lblSaleName.AutoSize = true;
             this.lblSaleName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaleName.Location = new System.Drawing.Point(72, 502);
+            this.lblSaleName.Location = new System.Drawing.Point(72, 495);
             this.lblSaleName.Name = "lblSaleName";
             this.lblSaleName.Size = new System.Drawing.Size(74, 19);
             this.lblSaleName.TabIndex = 46;
@@ -363,10 +377,11 @@
             // txtSalePer
             // 
             this.txtSalePer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtSalePer.Location = new System.Drawing.Point(0, 255);
+            this.txtSalePer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalePer.Location = new System.Drawing.Point(0, 248);
             this.txtSalePer.Name = "txtSalePer";
             this.txtSalePer.ReadOnly = true;
-            this.txtSalePer.Size = new System.Drawing.Size(203, 25);
+            this.txtSalePer.Size = new System.Drawing.Size(203, 22);
             this.txtSalePer.TabIndex = 49;
             this.txtSalePer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSalePer.Visible = false;
@@ -386,7 +401,7 @@
             // 
             this.lblSalePer.AutoSize = true;
             this.lblSalePer.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalePer.Location = new System.Drawing.Point(66, 232);
+            this.lblSalePer.Location = new System.Drawing.Point(66, 225);
             this.lblSalePer.Name = "lblSalePer";
             this.lblSalePer.Size = new System.Drawing.Size(79, 19);
             this.lblSalePer.TabIndex = 48;
@@ -401,6 +416,7 @@
             this.cmbSalesRepresentative.Size = new System.Drawing.Size(195, 25);
             this.cmbSalesRepresentative.TabIndex = 3;
             this.cmbSalesRepresentative.Visible = false;
+            this.cmbSalesRepresentative.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbSalesRepresentative_KeyDown);
             // 
             // cbSalesRepresentative
             // 
@@ -473,15 +489,15 @@
             this.label9.TabIndex = 39;
             this.label9.Text = "تاريخ الفاتورة";
             // 
-            // textBox2
+            // txtInvoiceDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 93);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(203, 65);
-            this.textBox2.TabIndex = 37;
-            this.textBox2.Text = "مبيعات";
+            this.txtInvoiceDesc.Location = new System.Drawing.Point(6, 93);
+            this.txtInvoiceDesc.Multiline = true;
+            this.txtInvoiceDesc.Name = "txtInvoiceDesc";
+            this.txtInvoiceDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtInvoiceDesc.Size = new System.Drawing.Size(203, 65);
+            this.txtInvoiceDesc.TabIndex = 37;
+            this.txtInvoiceDesc.Text = "مبيعات";
             // 
             // label8
             // 
@@ -521,6 +537,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblCustomerId);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.groupBox5);
             this.groupBox4.Controls.Add(this.txtCustomerName);
@@ -545,7 +562,7 @@
             this.groupBox6.Controls.Add(this.btnSave);
             this.groupBox6.Location = new System.Drawing.Point(6, 327);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(205, 285);
+            this.groupBox6.Size = new System.Drawing.Size(205, 276);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "العمليات";
@@ -637,11 +654,11 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.txtRemainingAmount);
             this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.txtPaidAmount);
             this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.txtInvoiceAmount);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Location = new System.Drawing.Point(6, 135);
             this.groupBox5.Name = "groupBox5";
@@ -650,15 +667,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "الدفعية";
             // 
-            // textBox5
+            // txtRemainingAmount
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox5.Location = new System.Drawing.Point(5, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(195, 25);
-            this.textBox5.TabIndex = 57;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRemainingAmount.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtRemainingAmount.Location = new System.Drawing.Point(5, 148);
+            this.txtRemainingAmount.Name = "txtRemainingAmount";
+            this.txtRemainingAmount.ReadOnly = true;
+            this.txtRemainingAmount.Size = new System.Drawing.Size(195, 25);
+            this.txtRemainingAmount.TabIndex = 57;
+            this.txtRemainingAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -670,15 +687,17 @@
             this.label18.TabIndex = 56;
             this.label18.Text = "المبلغ المتبقي";
             // 
-            // textBox4
+            // txtPaidAmount
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(5, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 25);
-            this.textBox4.TabIndex = 55;
-            this.textBox4.Text = "0";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPaidAmount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPaidAmount.Location = new System.Drawing.Point(5, 94);
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.Size = new System.Drawing.Size(195, 25);
+            this.txtPaidAmount.TabIndex = 55;
+            this.txtPaidAmount.Text = "0";
+            this.txtPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
+            this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaidAmount_KeyPress);
             // 
             // label17
             // 
@@ -690,15 +709,16 @@
             this.label17.TabIndex = 54;
             this.label17.Text = "المبلغ المدفوع";
             // 
-            // textBox3
+            // txtInvoiceAmount
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox3.Location = new System.Drawing.Point(4, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(195, 25);
-            this.textBox3.TabIndex = 53;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInvoiceAmount.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtInvoiceAmount.Location = new System.Drawing.Point(4, 40);
+            this.txtInvoiceAmount.Name = "txtInvoiceAmount";
+            this.txtInvoiceAmount.ReadOnly = true;
+            this.txtInvoiceAmount.Size = new System.Drawing.Size(195, 25);
+            this.txtInvoiceAmount.TabIndex = 53;
+            this.txtInvoiceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInvoiceAmount.TextChanged += new System.EventHandler(this.txtInvoiceAmount_TextChanged);
             // 
             // label16
             // 
@@ -727,6 +747,7 @@
             this.cmbCustomers.Name = "cmbCustomers";
             this.cmbCustomers.Size = new System.Drawing.Size(207, 25);
             this.cmbCustomers.TabIndex = 37;
+            this.cmbCustomers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCustomers_KeyDown);
             // 
             // label15
             // 
@@ -808,6 +829,7 @@
             this.btnDeleteItem.Text = "حذف الصنف المحدد";
             this.btnDeleteItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteItem.UseVisualStyleBackColor = true;
+            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
             // 
             // dgvInvoiceItems
             // 
@@ -821,6 +843,38 @@
             this.dgvInvoiceItems.ReadOnly = true;
             this.dgvInvoiceItems.Size = new System.Drawing.Size(568, 556);
             this.dgvInvoiceItems.TabIndex = 0;
+            // 
+            // txtItemId
+            // 
+            this.txtItemId.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtItemId.Enabled = false;
+            this.txtItemId.Location = new System.Drawing.Point(912, 101);
+            this.txtItemId.Name = "txtItemId";
+            this.txtItemId.Size = new System.Drawing.Size(99, 25);
+            this.txtItemId.TabIndex = 38;
+            this.txtItemId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(921, 77);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(81, 19);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "معرف الصنف";
+            // 
+            // lblCustomerId
+            // 
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerId.Location = new System.Drawing.Point(30, 129);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(104, 19);
+            this.lblCustomerId.TabIndex = 52;
+            this.lblCustomerId.Text = "lblCustomerId";
+            this.lblCustomerId.Visible = false;
+            this.lblCustomerId.Click += new System.EventHandler(this.lblCustomerId_Click);
             // 
             // FRM_Add_Sales_Invoice
             // 
@@ -884,7 +938,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtInvoiceDesc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtInvoiceId;
         private System.Windows.Forms.Label label7;
@@ -899,7 +953,7 @@
         private System.Windows.Forms.Label lblSaleName;
         private System.Windows.Forms.TextBox txtSalePer;
         private System.Windows.Forms.Label lblSalePer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSalesRepresentativeId;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox cmbCustomers;
@@ -907,11 +961,11 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRemainingAmount;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtInvoiceAmount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnSave;
@@ -926,5 +980,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtSumTotal;
+        private System.Windows.Forms.TextBox txtItemId;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblCustomerId;
     }
 }

@@ -559,6 +559,7 @@
             this.txtPRODES.TabIndex = 16;
             this.txtPRODES.Text = "0";
             this.txtPRODES.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPRODES.TextChanged += new System.EventHandler(this.txtPRODES_TextChanged);
             this.txtPRODES.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPRODES_KeyDown);
             this.txtPRODES.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPRODES_KeyPress);
             this.txtPRODES.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPRODES_KeyUp);

@@ -1,4 +1,5 @@
 ﻿using Product_Management.BL;
+using Product_Management.Models;
 using Product_Management.RPT;
 using System;
 using System.Collections.Generic;
@@ -35,13 +36,37 @@ namespace Product_Management.PL
             LoadCustomers();
         }
 
+        void clearBoxes()
+        {
+            txtItemId.Clear();
+            txtItemName.Clear();
+            txtStockQty.Clear();
+            txtPrice.Clear();
+            txtQty.Clear();
+            txtDiscount.Text = "0";
+            txtAmount.Clear();
+        }
+
+        void Total()
+        {
+            if (!string.IsNullOrEmpty(txtQty.Text) && !string.IsNullOrEmpty(txtDiscount.Text) && !string.IsNullOrEmpty(txtPrice.Text))
+            {
+                int qty = Convert.ToInt32(txtQty.Text);
+                double discount = Convert.ToDouble(txtDiscount.Text);
+                double price = Convert.ToDouble(txtPrice.Text);
+
+                double amount = (price * qty);
+
+                txtAmount.Text = (amount - (amount * (discount / 100))).ToString();
+            }
+        }
+
         void CreateColumns()
         {
-            dt.Columns.Add("رقم الصنف");
+            dt.Columns.Add("معرف الصنف");
             dt.Columns.Add("اسم الصنف");
             dt.Columns.Add("سعر الوحدة");
             dt.Columns.Add("الكمية");
-            dt.Columns.Add("السعر قبل الخصم");
             dt.Columns.Add("الخصم (%)");
             dt.Columns.Add("المبلغ الاجمالي");
 
@@ -150,6 +175,7 @@ namespace Product_Management.PL
                 lblSaleName.Visible = true;
                 lblSalePer.Visible = true;
                 lblSaleSearch.Visible = true;
+                txtSalesRepresentativeId.Visible = true;
                 txtSaleName.Visible = true;
                 txtSalePer.Visible = true;
                 cmbSalesRepresentative.Visible = true;
@@ -160,6 +186,7 @@ namespace Product_Management.PL
                 lblSalePer.Visible = false;
                 lblSaleSearch.Visible = false;
                 txtSaleName.Visible = false;
+                txtSalesRepresentativeId.Visible = false;
                 txtSalePer.Visible = false;
                 cmbSalesRepresentative.Visible = false;
                 txtSalePer.Clear();
@@ -169,8 +196,42 @@ namespace Product_Management.PL
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            LoadItemsData();
-            cmbItems.Focus();
+            try
+            {
+                for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
+                {
+                    if (dgvInvoiceItems.Rows[i].Cells[0].Value.ToString() == txtItemId.Text)
+                    {
+                        MessageBox.Show("هذا الصنف تم ادخاله مسبقاً", "التحقق من الادخال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        clearBoxes();
+                        cmbItems.Focus();
+                        return;
+                    }
+                }
+
+                DataRow r = dt.NewRow();
+
+                r[0] = txtItemId.Text;
+                r[1] = txtItemName.Text;
+                r[2] = txtPrice.Text;
+                r[3] = txtQty.Text;
+                r[4] = txtDiscount.Text;
+                r[5] = txtAmount.Text;
+
+                dt.Rows.Add(r);
+                dgvInvoiceItems.DataSource = dt;
+
+                txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+
+                LoadItemsData();
+                clearBoxes();
+                txtSumTotal.Text = dgvInvoiceItems.Rows.Count.ToString();
+                cmbItems.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -219,10 +280,226 @@ namespace Product_Management.PL
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (dgvInvoiceItems.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("لا يوجد عناصر");
+                if (dgvInvoiceItems.Rows.Count == 0)
+                {
+                    MessageBox.Show("لا يوجد عناصر");
+                    return;
+                }
+
+                if (Convert.ToInt32(txtPaidAmount.Text) == Convert.ToInt32(txtRemainingAmount.Text))
+                {
+                    MessageBox.Show("عذراً ... الرجاء التحقق من الدفعيات", "دفعيات الطلبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPaidAmount.Focus();
+                    return;
+                }
+
+                if (cbSalesRepresentative.Checked && !string.IsNullOrEmpty(txtSalesRepresentativeId.Text))
+                {
+                    CLS_SalesRepresentativePercentage percentage = new CLS_SalesRepresentativePercentage();
+                    double per = Convert.ToDouble(txtSalePer.Text) / 100;
+                    int amoun = Convert.ToInt32(Convert.ToInt32(txtSumTotal.Text) * per);
+
+                    SalesRepresentativePercentage sales = new SalesRepresentativePercentage()
+                    {
+                        Id = 0,
+                        Amount = amoun,
+                        DateOfInvoice = DateTime.Now,
+                        orderId = Convert.ToInt32(txtInvoiceId.Text),
+                        SalesRepresentativeId = Convert.ToInt32(txtSalesRepresentativeId.Text)
+                    };
+
+                    var isValid = percentage.Add(sales);
+
+                    if (!isValid)
+                    {
+                        MessageBox.Show("يجب اختيار مندوب مبيعات ", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                if (txtInvoiceId.Text == string.Empty || txtInvoiceAmount.Text == string.Empty || txtInvoiceDesc.Text == string.Empty || lblCustomerId.Text == string.Empty || dgvInvoiceItems.Rows.Count == 0)
+                {
+                    MessageBox.Show("بعض المعلومات الناقصة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                order.Add_Order(Convert.ToInt32(txtInvoiceId.Text), Convert.ToDateTime(txtDate.Text), Convert.ToInt32(lblCustomerId.Text), txtInvoiceDesc.Text, txtUser.Text, Convert.ToInt32(txtInvoiceAmount.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
+
+                for (int i = 0; i < dgvInvoiceItems.Rows.Count - 1; i++)
+                {
+                    order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
+                                    Convert.ToInt32(txtInvoiceId.Text),
+                                    Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value),
+                                    dgvInvoiceItems.Rows[i].Cells[2].Value.ToString(),
+                                    Convert.ToDouble(dgvInvoiceItems.Rows[i].Cells[4].Value),
+                                    (Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value)).ToString(),
+                                    dgvInvoiceItems.Rows[i].Cells[5].Value.ToString(),
+                                    0);
+                }
+
+                MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = false;
+                btnPrint.Enabled = true;
+                btnPrint.Focus();
                 return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbItems_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    DataTable dt = new DataTable();
+                    dt = order.GetItemData(Convert.ToInt32(cmbItems.SelectedValue));
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtItemId.Text = dt.Rows[0]["ItemId"].ToString();
+                        txtItemName.Text = dt.Rows[0]["Product_Name"].ToString();
+                        txtStockQty.Text = dt.Rows[0]["QTY"].ToString();
+                        txtPrice.Text = dt.Rows[0]["SellingPrice"].ToString();
+                    }
+
+                    if (Convert.ToInt32(dt.Rows[0]["QTY"].ToString()) == 0)
+                    {
+                        cmbItems.Focus();
+                    }
+                    else
+                    {
+                        txtQty.Focus();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtQty.Text))
+            {
+                if (Convert.ToInt32(txtStockQty.Text) == 0)
+                {
+                    MessageBox.Show("الكمية الحالية بالمخزن: " + txtStockQty.Text, "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmbItems.Focus();
+                    return;
+                }
+
+                Total();
+            }
+        }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDiscount.Text))
+            {
+                Total();
+            }
+        }
+
+        private void cmbCustomers_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtCustomerName.Text = cmbCustomers.SelectedText.ToString();
+                lblCustomerId.Text = cmbCustomers.SelectedValue.ToString();
+            }
+        }
+
+        private void txtQty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
+            }
+        }
+
+        private void txtDiscount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnAdd_Click(sender, e);
+            }
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void lblCustomerId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInvoiceAmount_TextChanged(object sender, EventArgs e)
+        {
+            txtRemainingAmount.Text = txtInvoiceAmount.Text;
+            txtPaidAmount.Text = "0";
+        }
+
+        private void txtPaidAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtPaidAmount.Text) > Convert.ToInt32(txtInvoiceAmount.Text))
+            {
+                MessageBox.Show("لا يمكن ان يكون المبلغ المدفوع اكبر من المبلغ الاجالي", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPaidAmount.Text = "0";
+                return;
+            }
+
+            txtRemainingAmount.Text = (Convert.ToInt32(txtInvoiceAmount.Text) - Convert.ToInt32(txtPaidAmount.Text)).ToString();
+        }
+
+        private void btnDeleteItem_Click(object sender, EventArgs e)
+        {
+            dgvInvoiceItems.Rows.RemoveAt(dgvInvoiceItems.CurrentRow.Index);
+            txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+            txtSumTotal.Text = dgvInvoiceItems.Rows.Count.ToString();
+            cmbItems.Focus();
+        }
+
+        private void cmbSalesRepresentative_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DataTable dt = new DataTable();
+                dt = sales.GetById(Convert.ToInt32(cmbSalesRepresentative.SelectedValue));
+
+                if(dt.Rows.Count > 0)
+                {
+                    txtSalesRepresentativeId.Text = dt.Rows[0]["ID"].ToString();
+                    txtSaleName.Text = dt.Rows[0]["Name"].ToString();
+                    txtSalePer.Text = dt.Rows[0]["PercentageOfSales"].ToString();
+                }
             }
         }
     }

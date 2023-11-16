@@ -54,7 +54,7 @@
             this.txtSearch.Location = new System.Drawing.Point(169, 12);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 22);
-            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label1

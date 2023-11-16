@@ -1422,8 +1422,7 @@ SELECT [ID_Customer] as 'Id'
   FROM [dbo].[Customer]
 
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-  USE [Product_DB]
+USE [Product_DB]
 GO
 /****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-16 4:46:44 PM ******/
 SET ANSI_NULLS ON
@@ -1434,7 +1433,7 @@ ALTER proc [dbo].[GetStockStatus]
 @search nvarchar(50)
 as
 select 
- t.Product_Name as 'اصنف'
+ t.Product_Name as 'الصنف'
 ,sum(d.QTY) as 'الكمية بالمخزن'
 from PurchaseDetails d
 join Product t
@@ -1446,5 +1445,65 @@ group by t.Product_Name
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+create proc GetItemData
+@ItemId int
+as
+SELECT distinct  
+       [ItemId]
+      ,t.Product_Name
+      ,s.[QTY]
+	  ,dt.SellingPrice
+  FROM [dbo].[Stock] s
+  join Product t
+  on s.ItemId = t.ID_Product
+  join PurchaseDetails dt
+  on dt.ProductId = t.ID_Product
+  where s.ItemId = @ItemId
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[Order_Det]    Script Date: 2023-11-16 7:14:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER proc [dbo].[Order_Det]
+@ID_Product nvarchar(30),
+@ID_Order int,
+@qte int,
+@price nvarchar(50),
+@discount float,
+@amount nvarchar(50),
+@total nvarchar(50),
+@PurchaseId int
+as
+INSERT INTO [dbo].[Order_Details]
+           ([ID_Product]
+           ,[ID_Order]
+           ,[QTE]
+           ,[Price]
+           ,[Discount]
+           ,[Amount]
+           ,[Total]
+		   ,[PurchaseId])
+     VALUES
+           (@ID_Product
+           ,@ID_Order
+           ,@qte
+           ,@price
+           ,@discount
+           ,@amount
+           ,@total
+		   ,@PurchaseId)
+
+
+--update Product set QTE_Stock = QTE_Stock - @qte where ID_Product = @ID_Product
+update Stock set QTY = QTY - @qte where ItemId = @ID_Product
+update Stock set QTY = 0 where QTY < 0
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
