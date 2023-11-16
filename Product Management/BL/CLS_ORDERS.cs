@@ -22,6 +22,17 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public DataTable GetCustomersData()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+            dt = dal.SelectData("GetCustomersData", null);
+            dal.Close();
+            return dt;
+        }
+
         public DataTable GetOrder_RPT(int ID)
         {
             try

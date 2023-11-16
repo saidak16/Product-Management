@@ -1415,4 +1415,36 @@ SELECT [ItemId]
 
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+  create proc GetCustomersData
+as
+SELECT [ID_Customer] as 'Id'
+      ,[First_Name] + ' ' + [Last_Name] as 'CustomerName'
+  FROM [dbo].[Customer]
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-16 4:46:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetStockStatus]
+@search nvarchar(50)
+as
+select 
+ t.Product_Name as 'اصنف'
+,sum(d.QTY) as 'الكمية بالمخزن'
+from PurchaseDetails d
+join Product t
+on d.ProductId = t.ID_Product
+where t.Product_Name like '%' +@search+ '%'
+--d.ExpDate > GETDATE()
+group by t.Product_Name
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 

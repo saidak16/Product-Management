@@ -19,7 +19,7 @@ namespace Product_Management.PL
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = reporting.GetStockStatus();
+            dataGridView1.DataSource = reporting.GetStockStatus("");
         }
 
         private void FRM_ٍStockStatus_Load(object sender, EventArgs e)
@@ -34,6 +34,11 @@ namespace Product_Management.PL
             {
                 this.Close();
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = reporting.GetStockStatus(txtSearch.Text);
         }
     }
 }
