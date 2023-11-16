@@ -325,25 +325,33 @@ namespace Product_Management.PL
                     return;
                 }
 
-                order.Add_Order(Convert.ToInt32(txtInvoiceId.Text), Convert.ToDateTime(txtDate.Text), Convert.ToInt32(lblCustomerId.Text), txtInvoiceDesc.Text, txtUser.Text, Convert.ToInt32(txtInvoiceAmount.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
+                var isAdded = order.Add_Order(Convert.ToInt32(txtInvoiceId.Text), Convert.ToDateTime(txtDate.Text), Convert.ToInt32(lblCustomerId.Text), txtInvoiceDesc.Text, txtUser.Text, Convert.ToInt32(txtInvoiceAmount.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
 
-                for (int i = 0; i < dgvInvoiceItems.Rows.Count - 1; i++)
+                if (isAdded)
                 {
-                    order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
-                                    Convert.ToInt32(txtInvoiceId.Text),
-                                    Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value),
-                                    dgvInvoiceItems.Rows[i].Cells[2].Value.ToString(),
-                                    Convert.ToDouble(dgvInvoiceItems.Rows[i].Cells[4].Value),
-                                    (Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value)).ToString(),
-                                    dgvInvoiceItems.Rows[i].Cells[5].Value.ToString(),
-                                    0);
-                }
+                    for (int i = 0; i < dgvInvoiceItems.Rows.Count - 1; i++)
+                    {
+                        order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
+                                        Convert.ToInt32(txtInvoiceId.Text),
+                                        Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value),
+                                        dgvInvoiceItems.Rows[i].Cells[2].Value.ToString(),
+                                        Convert.ToDouble(dgvInvoiceItems.Rows[i].Cells[4].Value),
+                                        (Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value)).ToString(),
+                                        dgvInvoiceItems.Rows[i].Cells[5].Value.ToString(),
+                                        0);
+                    }
 
-                MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnSave.Enabled = false;
-                btnPrint.Enabled = true;
-                btnPrint.Focus();
-                return;
+                    MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSave.Enabled = false;
+                    btnPrint.Enabled = true;
+                    btnPrint.Focus();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("حدث خطأ ما", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             catch (Exception ex)
             {
@@ -500,6 +508,14 @@ namespace Product_Management.PL
                     txtSaleName.Text = dt.Rows[0]["Name"].ToString();
                     txtSalePer.Text = dt.Rows[0]["PercentageOfSales"].ToString();
                 }
+            }
+        }
+
+        private void txtPaidAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(sender, e);
             }
         }
     }

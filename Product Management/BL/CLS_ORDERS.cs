@@ -103,38 +103,46 @@ namespace Product_Management.BL
             }
         }
 
-        public void Add_Order(int id,DateTime Order_Date,int Cust_ID,string des,string SalesMan, int TotalAmount, int PaidAmount, int RemainingAmount)
+        public bool Add_Order(int id,DateTime Order_Date,int Cust_ID,string des,string SalesMan, int TotalAmount, int PaidAmount, int RemainingAmount)
         {
-            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[8];
-            dal.Open();
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[8];
+                dal.Open();
 
-            param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
-            param[0].Value = id;
+                param[0] = new SqlParameter("@ID_Order", SqlDbType.Int);
+                param[0].Value = id;
 
-            param[1] = new SqlParameter("@Date_Order", SqlDbType.Date);
-            param[1].Value = Order_Date;
+                param[1] = new SqlParameter("@Date_Order", SqlDbType.Date);
+                param[1].Value = Order_Date;
 
-            param[2] = new SqlParameter("@Customer_ID", SqlDbType.Int);
-            param[2].Value = Cust_ID;
+                param[2] = new SqlParameter("@Customer_ID", SqlDbType.Int);
+                param[2].Value = Cust_ID;
 
-            param[3] = new SqlParameter("@Des_Order", SqlDbType.NVarChar, 250);
-            param[3].Value = des;
+                param[3] = new SqlParameter("@Des_Order", SqlDbType.NVarChar, 250);
+                param[3].Value = des;
 
-            param[4] = new SqlParameter("@SalesMan", SqlDbType.NVarChar, 75);
-            param[4].Value = SalesMan;
-            
-            param[5] = new SqlParameter("@TotalAmount", SqlDbType.BigInt);
-            param[5].Value = TotalAmount;
-            
-            param[6] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
-            param[6].Value = PaidAmount;
-            
-            param[7] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
-            param[7].Value = RemainingAmount;
+                param[4] = new SqlParameter("@SalesMan", SqlDbType.NVarChar, 75);
+                param[4].Value = SalesMan;
 
-            dal.ExCommand("Add_Order", param);
-            dal.Close();
+                param[5] = new SqlParameter("@TotalAmount", SqlDbType.BigInt);
+                param[5].Value = TotalAmount;
+
+                param[6] = new SqlParameter("@PaidAmount", SqlDbType.BigInt);
+                param[6].Value = PaidAmount;
+
+                param[7] = new SqlParameter("@RemainingAmount", SqlDbType.BigInt);
+                param[7].Value = RemainingAmount;
+
+                dal.ExCommand("Add_Order", param);
+                dal.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
 

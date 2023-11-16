@@ -330,7 +330,7 @@ namespace Product_Management.PL
                     return;
                 }
 
-                order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text, Convert.ToInt32(txtTotalAmount.Text), Convert.ToInt32(txtPaidAmont.Text), Convert.ToInt32(txtRemAmount.Text));
+                var isAdded = order.Add_Order(Convert.ToInt32(txtOrderID.Text), Order_date.Value, Convert.ToInt32(txt_CUS_ID.Text), txtOrderDes.Text, txtSalesMan.Text, Convert.ToInt32(txtTotalAmount.Text), Convert.ToInt32(txtPaidAmont.Text), Convert.ToInt32(txtRemAmount.Text));
 
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {

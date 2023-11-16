@@ -697,6 +697,7 @@
             this.txtPaidAmount.Text = "0";
             this.txtPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
+            this.txtPaidAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaidAmount_KeyDown);
             this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaidAmount_KeyPress);
             // 
             // label17
