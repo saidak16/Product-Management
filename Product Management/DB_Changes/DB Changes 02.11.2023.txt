@@ -1506,4 +1506,167 @@ update Stock set QTY = QTY - @qte where ItemId = @ID_Product
 update Stock set QTY = 0 where QTY < 0
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetOrder_RPT]    Script Date: 2023-11-16 9:53:12 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetOrder_RPT]
+@ID int
+as
+SELECT [ID_Order] 
+      ,[Des_Order]
+      ,FORMAT([Date_Order], 'dd/MM/yyyy') as 'Date_Order' 
+      ,[SalesMan] 
+      ,[ID_Customer] 
+      ,[First_Name] +' '+[Last_Name] as 'CustomerName'
+      ,[TEL]
+      ,[E_Mail]
+      ,[ID_Product] 
+	  ,[Product_Name]
+      ,[QTE] 
+      ,FORMAT(convert(float,[Price]), 'C') as 'Price' 
+      ,FORMAT(CONVERT(float, [Amount]), 'C') as 'Amount' 
+      ,[Discount]
+	  ,FORMAT(CONVERT(float, [Total]), 'C') as 'Total' 
+      ,Format(TotalAmount,'C') as 'TotalAmount'
+	  ,Format(PaidAmount, 'C') as 'PaidAmount'
+	  ,Format(RemainingAmount, 'C') as 'RemainingAmount'
+  FROM [dbo].[Order_View]
+  where ID_Order = @ID
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteOrderDetails]    Script Date: 2023-11-16 10:24:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[DeleteOrderDetails]
+@ID int,
+@orderId int,
+@PurchaseId int
+as
+update PurchaseDetails set qty = qty + (select QTE from Order_Details WHERE ID = @ID) where Id = @PurchaseId
+
+update [Order] set TotalAmount = TotalAmount - (select TotalAmount from [Order_Details] where ID = @ID) where ID_Order = @orderId
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+if((select PaidAmount from [Order] where ID_Order = @orderId) > (select TotalAmount from [Order] where ID_Order = @orderId))
+BEGIN
+update [Order] set RemainingAmount = TotalAmount - PaidAmount  where ID_Order = @orderId
+update [Order] set PaidAmount = TotalAmount where ID_Order = @orderId
+END
+
+else
+
+BEGIN
+--update [Order] set PaidAmount = TotalAmount - RemainingAmount where ID_Order = @ID
+
+update [Order] set RemainingAmount = TotalAmount - PaidAmount  where ID_Order = @orderId
+
+END
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+if((select RemainingAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+ update [Order] set RemainingAmount = 0
+END
+
+
+if((select PaidAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+   update [Order] set PaidAmount = 0
+END
+
+
+if((select TotalAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+  update [Order] set TotalAmount = 0
+END
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO [dbo].[Order_Details_Returned_Items]
+           ([ID_Product]
+           ,[ID_Order]
+           ,[QTE]
+           ,[Price]
+           ,[Discount]
+           ,[Amount]
+           ,[Total]
+           ,[PurchaseId]
+		   ,[ReturnDate])
+
+SELECT [ID_Product]
+      ,[ID_Order]
+      ,[QTE]
+      ,[Price]
+      ,[Discount]
+      ,[Amount]
+      ,[Total]
+      ,[PurchaseId]
+	  ,GETDATE()
+  FROM [dbo].[Order_Details]
+  where [ID] = @ID
+
+------------------------------------------------------------------------------------------
+
+update Stock set QTY = QTY + (select QTE from Order_Details WHERE ID = @ID) where ItemId = (select ID_Product from Order_Details WHERE ID = @ID)
+
+-----------------------------------------------------------------------------------------------------------------------
+DELETE FROM [dbo].[Order_Details]
+      WHERE ID = @ID
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[AddPurchaseDetails]    Script Date: 2023-11-16 10:32:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[AddPurchaseDetails]
+@PurchaseId int
+           ,@ProductId int
+           ,@BatchNumber int
+           ,@ExpDate date
+           ,@QTY int
+           ,@PurchasePrice int
+           ,@SellingPrice int
+           ,@TotalPrice int
+as
+INSERT INTO [dbo].[PurchaseDetails]
+           ([PurchaseId]
+           ,[ProductId]
+           ,[BatchNumber]
+           ,[ExpDate]
+           ,[QTY]
+           ,[PurchasePrice]
+           ,[SellingPrice]
+           ,[TotalPrice]
+		   ,[PurchaseQty])
+     VALUES
+           (@PurchaseId
+           ,@ProductId
+           ,@BatchNumber
+           ,@ExpDate
+           ,@QTY
+           ,@PurchasePrice
+           ,@SellingPrice
+           ,@TotalPrice
+		   ,@QTY)
+
+--------------------------------------------------
+
+update Stock set QTY = QTY + @QTY where ItemId = @ProductId
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 

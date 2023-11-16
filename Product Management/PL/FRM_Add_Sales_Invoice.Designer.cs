@@ -149,9 +149,9 @@
             // txtAmount
             // 
             this.txtAmount.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtAmount.Enabled = false;
             this.txtAmount.Location = new System.Drawing.Point(49, 101);
             this.txtAmount.Name = "txtAmount";
+            this.txtAmount.ReadOnly = true;
             this.txtAmount.Size = new System.Drawing.Size(150, 25);
             this.txtAmount.TabIndex = 35;
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -212,9 +212,9 @@
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPrice.Enabled = false;
             this.txtPrice.Location = new System.Drawing.Point(383, 101);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(108, 25);
             this.txtPrice.TabIndex = 29;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -233,9 +233,9 @@
             // txtStockQty
             // 
             this.txtStockQty.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtStockQty.Enabled = false;
             this.txtStockQty.Location = new System.Drawing.Point(491, 101);
             this.txtStockQty.Name = "txtStockQty";
+            this.txtStockQty.ReadOnly = true;
             this.txtStockQty.Size = new System.Drawing.Size(127, 25);
             this.txtStockQty.TabIndex = 27;
             this.txtStockQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -264,9 +264,9 @@
             // txtItemName
             // 
             this.txtItemName.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtItemName.Enabled = false;
             this.txtItemName.Location = new System.Drawing.Point(620, 101);
             this.txtItemName.Name = "txtItemName";
+            this.txtItemName.ReadOnly = true;
             this.txtItemName.Size = new System.Drawing.Size(293, 25);
             this.txtItemName.TabIndex = 24;
             this.txtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -848,9 +848,9 @@
             // txtItemId
             // 
             this.txtItemId.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtItemId.Enabled = false;
             this.txtItemId.Location = new System.Drawing.Point(912, 101);
             this.txtItemId.Name = "txtItemId";
+            this.txtItemId.ReadOnly = true;
             this.txtItemId.Size = new System.Drawing.Size(99, 25);
             this.txtItemId.TabIndex = 38;
             this.txtItemId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -47,6 +47,17 @@ namespace Product_Management.PL
             txtAmount.Clear();
         }
 
+        void clearForm()
+        {
+            clearBoxes();
+            LoadItemsData();
+            LoadSalesRepresentative();
+            LoadCustomers();
+            dgvInvoiceItems.Rows.Clear();
+            dgvInvoiceItems.Refresh();
+            btnAdd.Enabled = false;
+        }
+
         void Total()
         {
             if (!string.IsNullOrEmpty(txtQty.Text) && !string.IsNullOrEmpty(txtDiscount.Text) && !string.IsNullOrEmpty(txtPrice.Text))
@@ -198,35 +209,38 @@ namespace Product_Management.PL
         {
             try
             {
-                for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
+                if (btnAdd.Enabled == true)
                 {
-                    if (dgvInvoiceItems.Rows[i].Cells[0].Value.ToString() == txtItemId.Text)
+                    for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
                     {
-                        MessageBox.Show("هذا الصنف تم ادخاله مسبقاً", "التحقق من الادخال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        clearBoxes();
-                        cmbItems.Focus();
-                        return;
+                        if (dgvInvoiceItems.Rows[i].Cells[0].Value.ToString() == txtItemId.Text)
+                        {
+                            MessageBox.Show("هذا الصنف تم ادخاله مسبقاً", "التحقق من الادخال", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            clearBoxes();
+                            cmbItems.Focus();
+                            return;
+                        }
                     }
+
+                    DataRow r = dt.NewRow();
+
+                    r[0] = txtItemId.Text;
+                    r[1] = txtItemName.Text;
+                    r[2] = txtPrice.Text;
+                    r[3] = txtQty.Text;
+                    r[4] = txtDiscount.Text;
+                    r[5] = txtAmount.Text;
+
+                    dt.Rows.Add(r);
+                    dgvInvoiceItems.DataSource = dt;
+
+                    txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+
+                    LoadItemsData();
+                    clearBoxes();
+                    txtSumTotal.Text = dgvInvoiceItems.Rows.Count.ToString();
+                    cmbItems.Focus();
                 }
-
-                DataRow r = dt.NewRow();
-
-                r[0] = txtItemId.Text;
-                r[1] = txtItemName.Text;
-                r[2] = txtPrice.Text;
-                r[3] = txtQty.Text;
-                r[4] = txtDiscount.Text;
-                r[5] = txtAmount.Text;
-
-                dt.Rows.Add(r);
-                dgvInvoiceItems.DataSource = dt;
-
-                txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
-
-                LoadItemsData();
-                clearBoxes();
-                txtSumTotal.Text = dgvInvoiceItems.Rows.Count.ToString();
-                cmbItems.Focus();
             }
             catch (Exception ex)
             {
@@ -288,6 +302,13 @@ namespace Product_Management.PL
                     return;
                 }
 
+                if (string.IsNullOrEmpty(lblCustomerId.Text) || string.IsNullOrEmpty(txtCustomerName.Text))
+                {
+                    MessageBox.Show("رجاء قم باختيار العميل");
+                    cmbCustomers.Focus();
+                    return;
+                }
+
                 if (Convert.ToInt32(txtPaidAmount.Text) == Convert.ToInt32(txtRemainingAmount.Text))
                 {
                     MessageBox.Show("عذراً ... الرجاء التحقق من الدفعيات", "دفعيات الطلبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -325,11 +346,11 @@ namespace Product_Management.PL
                     return;
                 }
 
-                var isAdded = order.Add_Order(Convert.ToInt32(txtInvoiceId.Text), Convert.ToDateTime(txtDate.Text), Convert.ToInt32(lblCustomerId.Text), txtInvoiceDesc.Text, txtUser.Text, Convert.ToInt32(txtInvoiceAmount.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
+                var isAdded = order.Add_Order(Convert.ToInt32(txtInvoiceId.Text), DateTime.ParseExact(txtDate.Text, "dd/MM/yyyy", null), Convert.ToInt32(lblCustomerId.Text), txtInvoiceDesc.Text, txtUser.Text, Convert.ToInt32(txtInvoiceAmount.Text), Convert.ToInt32(txtPaidAmount.Text), Convert.ToInt32(txtRemainingAmount.Text));
 
                 if (isAdded)
                 {
-                    for (int i = 0; i < dgvInvoiceItems.Rows.Count - 1; i++)
+                    for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
                     {
                         order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
                                         Convert.ToInt32(txtInvoiceId.Text),
@@ -344,6 +365,7 @@ namespace Product_Management.PL
                     MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSave.Enabled = false;
                     btnPrint.Enabled = true;
+                    //clearForm();
                     btnPrint.Focus();
                     return;
                 }
@@ -417,10 +439,18 @@ namespace Product_Management.PL
 
         private void cmbCustomers_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            try
             {
-                txtCustomerName.Text = cmbCustomers.SelectedText.ToString();
-                lblCustomerId.Text = cmbCustomers.SelectedValue.ToString();
+                if (e.KeyCode == Keys.Enter)
+                {
+                    txtCustomerName.Text = cmbCustomers.SelectedText.ToString();
+                    lblCustomerId.Text = cmbCustomers.SelectedValue.ToString();
+                    txtPaidAmount.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

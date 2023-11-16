@@ -311,6 +311,10 @@ namespace Product_Management.DBSet {
             
             private global::System.Data.DataColumn columnTotalAmount;
             
+            private global::System.Data.DataColumn columnPaidAmount;
+            
+            private global::System.Data.DataColumn columnRemainingAmount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrderRPTDataTable() {
@@ -474,6 +478,22 @@ namespace Product_Management.DBSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaidAmountColumn {
+                get {
+                    return this.columnPaidAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RemainingAmountColumn {
+                get {
+                    return this.columnRemainingAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -525,7 +545,9 @@ namespace Product_Management.DBSet {
                         string Amount, 
                         string Discount, 
                         string Total, 
-                        string TotalAmount) {
+                        string TotalAmount, 
+                        string PaidAmount, 
+                        string RemainingAmount) {
                 OrderRPTRow rowOrderRPTRow = ((OrderRPTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Order,
@@ -543,7 +565,9 @@ namespace Product_Management.DBSet {
                         Amount,
                         Discount,
                         Total,
-                        TotalAmount};
+                        TotalAmount,
+                        PaidAmount,
+                        RemainingAmount};
                 rowOrderRPTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderRPTRow);
                 return rowOrderRPTRow;
@@ -582,6 +606,8 @@ namespace Product_Management.DBSet {
                 this.columnDiscount = base.Columns["Discount"];
                 this.columnTotal = base.Columns["Total"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
+                this.columnPaidAmount = base.Columns["PaidAmount"];
+                this.columnRemainingAmount = base.Columns["RemainingAmount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -619,6 +645,10 @@ namespace Product_Management.DBSet {
                 base.Columns.Add(this.columnTotal);
                 this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalAmount);
+                this.columnPaidAmount = new global::System.Data.DataColumn("PaidAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaidAmount);
+                this.columnRemainingAmount = new global::System.Data.DataColumn("RemainingAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemainingAmount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1017,6 +1047,38 @@ namespace Product_Management.DBSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PaidAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrderRPT.PaidAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaidAmount\' in table \'OrderRPT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrderRPT.PaidAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RemainingAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrderRPT.RemainingAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RemainingAmount\' in table \'OrderRPT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrderRPT.RemainingAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_OrderNull() {
                 return this.IsNull(this.tableOrderRPT.ID_OrderColumn);
             }
@@ -1205,6 +1267,30 @@ namespace Product_Management.DBSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTotalAmountNull() {
                 this[this.tableOrderRPT.TotalAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPaidAmountNull() {
+                return this.IsNull(this.tableOrderRPT.PaidAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPaidAmountNull() {
+                this[this.tableOrderRPT.PaidAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRemainingAmountNull() {
+                return this.IsNull(this.tableOrderRPT.RemainingAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRemainingAmountNull() {
+                this[this.tableOrderRPT.RemainingAmountColumn] = global::System.Convert.DBNull;
             }
         }
         
