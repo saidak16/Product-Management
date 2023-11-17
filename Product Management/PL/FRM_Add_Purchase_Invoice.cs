@@ -1,5 +1,6 @@
 ﻿using Product_Management.BL;
 using Product_Management.Models;
+using Product_Management.RPT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -197,8 +198,9 @@ namespace Product_Management.PL
 
                     MessageBox.Show("تمت الاضافة بنجاح", "عملية الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FRM_Purchases.getMain.DVG();
-                    this.Close();
-
+                    btnSave.Enabled = false;
+                    btnPrint.Enabled = true;
+                    btnPrint.Focus();
                 }
                 else
                 {
@@ -214,7 +216,13 @@ namespace Product_Management.PL
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            DataTable dt = new DataTable();
+            rpt_Purchase_Invoice rep = new rpt_Purchase_Invoice();
+            dt = purchases.GetPurchaseInvoiceRpt(Convert.ToInt32(txtInvoiceId.Text));
+            rep.SetDataSource(dt);
+            FRM_Single_Product frm = new FRM_Single_Product();
+            frm.crystalReportViewer1.ReportSource = rep;
+            frm.ShowDialog();
         }
 
         private void btnStock_Click(object sender, EventArgs e)

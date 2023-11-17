@@ -628,6 +628,12 @@
       <DependentUpon>rpt_Price_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_Purchase_Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Purchase_Invoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_single_cal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -909,6 +915,10 @@
     <EmbeddedResource Include="RPT\rpt_Price_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Price_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_Purchase_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Purchase_Invoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_single_cal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

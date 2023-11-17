@@ -347,6 +347,29 @@ namespace Product_Management.BL
                 return null;
             }
         }
+        
+        public DataTable GetPurchaseInvoiceRpt(int invoiceId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@invoiceId", SqlDbType.Int);
+                param[0].Value = invoiceId;
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetPurchaseInvoiceRpt", param);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         public DataTable GetProductPriceById(int orderDetId)
         {

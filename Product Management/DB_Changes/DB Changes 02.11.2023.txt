@@ -1779,4 +1779,34 @@ where ProductId = @productId
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+createproc GetPurchaseInvoiceRpt
+@invoiceId int
+as
+SELECT p.[Id]
+      ,s.Name
+      ,[DateOfPurchase]
+      ,FORMAT([price], 'C') as 'price'
+      ,FORMAT([PaidAmount], 'C') as 'PaidAmount'
+      ,FORMAT([RemainingAmount], 'C') as 'RemainingAmount'
+      ,pm.Name as 'PaymentMethod'
+      ,[InvoiceNumber]
+	  ,t.Product_Name
+	  ,dt.[BatchNumber]
+      ,dt.[ExpDate]
+      ,FORMAT(dt.[PurchasePrice], 'C') as 'PurchasePrice'
+      ,FORMAT(dt.[SellingPrice], 'C') as 'SellingPrice'
+      ,FORMAT(dt.[TotalPrice], 'C') as 'TotalPrice'
+      ,dt.[PurchaseQty]
+  FROM [dbo].[Purchases] p
+  join Suppliers s
+  on p.SupplierId = s.ID
+  join PurchaseDetails dt
+  on p.Id = dt.PurchaseId
+  join Product t
+  on dt.ProductId = t.ID_Product
+  join PaymentMethod pm
+  on pm.Id = p.PaymentMethodId
+where p.Id = @invoiceId
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

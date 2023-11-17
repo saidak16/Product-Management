@@ -1,4 +1,5 @@
 ﻿using Product_Management.BL;
+using Product_Management.RPT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -170,6 +171,22 @@ namespace Product_Management.PL
             {
                 this.Close();
             }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                btnPrint_Click(sender, e);
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            rpt_Purchase_Invoice rep = new rpt_Purchase_Invoice();
+            dt = purchases.GetPurchaseInvoiceRpt(Convert.ToInt32(dvgPurchases.CurrentRow.Cells[0].Value));
+            rep.SetDataSource(dt);
+            FRM_Single_Product frm = new FRM_Single_Product();
+            frm.crystalReportViewer1.ReportSource = rep;
+            frm.ShowDialog();
         }
     }
 }

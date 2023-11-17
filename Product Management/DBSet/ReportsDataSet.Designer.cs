@@ -28,6 +28,8 @@ namespace Product_Management.DBSet {
         
         private StockStatusRptDataTable tableStockStatusRpt;
         
+        private PurchaseInvoiceRptDataTable tablePurchaseInvoiceRpt;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace Product_Management.DBSet {
                 }
                 if ((ds.Tables["StockStatusRpt"] != null)) {
                     base.Tables.Add(new StockStatusRptDataTable(ds.Tables["StockStatusRpt"]));
+                }
+                if ((ds.Tables["PurchaseInvoiceRpt"] != null)) {
+                    base.Tables.Add(new PurchaseInvoiceRptDataTable(ds.Tables["PurchaseInvoiceRpt"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace Product_Management.DBSet {
         public StockStatusRptDataTable StockStatusRpt {
             get {
                 return this.tableStockStatusRpt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PurchaseInvoiceRptDataTable PurchaseInvoiceRpt {
+            get {
+                return this.tablePurchaseInvoiceRpt;
             }
         }
         
@@ -173,6 +188,9 @@ namespace Product_Management.DBSet {
                 if ((ds.Tables["StockStatusRpt"] != null)) {
                     base.Tables.Add(new StockStatusRptDataTable(ds.Tables["StockStatusRpt"]));
                 }
+                if ((ds.Tables["PurchaseInvoiceRpt"] != null)) {
+                    base.Tables.Add(new PurchaseInvoiceRptDataTable(ds.Tables["PurchaseInvoiceRpt"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace Product_Management.DBSet {
                     this.tableStockStatusRpt.InitVars();
                 }
             }
+            this.tablePurchaseInvoiceRpt = ((PurchaseInvoiceRptDataTable)(base.Tables["PurchaseInvoiceRpt"]));
+            if ((initTable == true)) {
+                if ((this.tablePurchaseInvoiceRpt != null)) {
+                    this.tablePurchaseInvoiceRpt.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace Product_Management.DBSet {
             base.Tables.Add(this.tableOrderRPT);
             this.tableStockStatusRpt = new StockStatusRptDataTable();
             base.Tables.Add(this.tableStockStatusRpt);
+            this.tablePurchaseInvoiceRpt = new PurchaseInvoiceRptDataTable();
+            base.Tables.Add(this.tablePurchaseInvoiceRpt);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace Product_Management.DBSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeStockStatusRpt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializePurchaseInvoiceRpt() {
             return false;
         }
         
@@ -306,6 +338,9 @@ namespace Product_Management.DBSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void StockStatusRptRowChangeEventHandler(object sender, StockStatusRptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void PurchaseInvoiceRptRowChangeEventHandler(object sender, PurchaseInvoiceRptRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1086,6 +1121,449 @@ namespace Product_Management.DBSet {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PurchaseInvoiceRptDataTable : global::System.Data.TypedTableBase<PurchaseInvoiceRptRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnDateOfPurchase;
+            
+            private global::System.Data.DataColumn columnprice;
+            
+            private global::System.Data.DataColumn columnPaidAmount;
+            
+            private global::System.Data.DataColumn columnRemainingAmount;
+            
+            private global::System.Data.DataColumn columnPaymentMethod;
+            
+            private global::System.Data.DataColumn columnInvoiceNumber;
+            
+            private global::System.Data.DataColumn columnProduct_Name;
+            
+            private global::System.Data.DataColumn columnBatchNumber;
+            
+            private global::System.Data.DataColumn columnExpDate;
+            
+            private global::System.Data.DataColumn columnPurchasePrice;
+            
+            private global::System.Data.DataColumn columnSellingPrice;
+            
+            private global::System.Data.DataColumn columnTotalPrice;
+            
+            private global::System.Data.DataColumn columnPurchaseQty;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptDataTable() {
+                this.TableName = "PurchaseInvoiceRpt";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal PurchaseInvoiceRptDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected PurchaseInvoiceRptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DateOfPurchaseColumn {
+                get {
+                    return this.columnDateOfPurchase;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn priceColumn {
+                get {
+                    return this.columnprice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaidAmountColumn {
+                get {
+                    return this.columnPaidAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RemainingAmountColumn {
+                get {
+                    return this.columnRemainingAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PaymentMethodColumn {
+                get {
+                    return this.columnPaymentMethod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InvoiceNumberColumn {
+                get {
+                    return this.columnInvoiceNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Product_NameColumn {
+                get {
+                    return this.columnProduct_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BatchNumberColumn {
+                get {
+                    return this.columnBatchNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ExpDateColumn {
+                get {
+                    return this.columnExpDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PurchasePriceColumn {
+                get {
+                    return this.columnPurchasePrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SellingPriceColumn {
+                get {
+                    return this.columnSellingPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalPriceColumn {
+                get {
+                    return this.columnTotalPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PurchaseQtyColumn {
+                get {
+                    return this.columnPurchaseQty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptRow this[int index] {
+                get {
+                    return ((PurchaseInvoiceRptRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event PurchaseInvoiceRptRowChangeEventHandler PurchaseInvoiceRptRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event PurchaseInvoiceRptRowChangeEventHandler PurchaseInvoiceRptRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event PurchaseInvoiceRptRowChangeEventHandler PurchaseInvoiceRptRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event PurchaseInvoiceRptRowChangeEventHandler PurchaseInvoiceRptRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddPurchaseInvoiceRptRow(PurchaseInvoiceRptRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptRow AddPurchaseInvoiceRptRow(string Id, string Name, string DateOfPurchase, string price, string PaidAmount, string RemainingAmount, string PaymentMethod, string InvoiceNumber, string Product_Name, string BatchNumber, string ExpDate, string PurchasePrice, string SellingPrice, string TotalPrice, string PurchaseQty) {
+                PurchaseInvoiceRptRow rowPurchaseInvoiceRptRow = ((PurchaseInvoiceRptRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Id,
+                        Name,
+                        DateOfPurchase,
+                        price,
+                        PaidAmount,
+                        RemainingAmount,
+                        PaymentMethod,
+                        InvoiceNumber,
+                        Product_Name,
+                        BatchNumber,
+                        ExpDate,
+                        PurchasePrice,
+                        SellingPrice,
+                        TotalPrice,
+                        PurchaseQty};
+                rowPurchaseInvoiceRptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPurchaseInvoiceRptRow);
+                return rowPurchaseInvoiceRptRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PurchaseInvoiceRptDataTable cln = ((PurchaseInvoiceRptDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PurchaseInvoiceRptDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+                this.columnName = base.Columns["Name"];
+                this.columnDateOfPurchase = base.Columns["DateOfPurchase"];
+                this.columnprice = base.Columns["price"];
+                this.columnPaidAmount = base.Columns["PaidAmount"];
+                this.columnRemainingAmount = base.Columns["RemainingAmount"];
+                this.columnPaymentMethod = base.Columns["PaymentMethod"];
+                this.columnInvoiceNumber = base.Columns["InvoiceNumber"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
+                this.columnBatchNumber = base.Columns["BatchNumber"];
+                this.columnExpDate = base.Columns["ExpDate"];
+                this.columnPurchasePrice = base.Columns["PurchasePrice"];
+                this.columnSellingPrice = base.Columns["SellingPrice"];
+                this.columnTotalPrice = base.Columns["TotalPrice"];
+                this.columnPurchaseQty = base.Columns["PurchaseQty"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnDateOfPurchase = new global::System.Data.DataColumn("DateOfPurchase", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateOfPurchase);
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice);
+                this.columnPaidAmount = new global::System.Data.DataColumn("PaidAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaidAmount);
+                this.columnRemainingAmount = new global::System.Data.DataColumn("RemainingAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRemainingAmount);
+                this.columnPaymentMethod = new global::System.Data.DataColumn("PaymentMethod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentMethod);
+                this.columnInvoiceNumber = new global::System.Data.DataColumn("InvoiceNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInvoiceNumber);
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProduct_Name);
+                this.columnBatchNumber = new global::System.Data.DataColumn("BatchNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBatchNumber);
+                this.columnExpDate = new global::System.Data.DataColumn("ExpDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpDate);
+                this.columnPurchasePrice = new global::System.Data.DataColumn("PurchasePrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPurchasePrice);
+                this.columnSellingPrice = new global::System.Data.DataColumn("SellingPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSellingPrice);
+                this.columnTotalPrice = new global::System.Data.DataColumn("TotalPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalPrice);
+                this.columnPurchaseQty = new global::System.Data.DataColumn("PurchaseQty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPurchaseQty);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptRow NewPurchaseInvoiceRptRow() {
+                return ((PurchaseInvoiceRptRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PurchaseInvoiceRptRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PurchaseInvoiceRptRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PurchaseInvoiceRptRowChanged != null)) {
+                    this.PurchaseInvoiceRptRowChanged(this, new PurchaseInvoiceRptRowChangeEvent(((PurchaseInvoiceRptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PurchaseInvoiceRptRowChanging != null)) {
+                    this.PurchaseInvoiceRptRowChanging(this, new PurchaseInvoiceRptRowChangeEvent(((PurchaseInvoiceRptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PurchaseInvoiceRptRowDeleted != null)) {
+                    this.PurchaseInvoiceRptRowDeleted(this, new PurchaseInvoiceRptRowChangeEvent(((PurchaseInvoiceRptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PurchaseInvoiceRptRowDeleting != null)) {
+                    this.PurchaseInvoiceRptRowDeleting(this, new PurchaseInvoiceRptRowChangeEvent(((PurchaseInvoiceRptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemovePurchaseInvoiceRptRow(PurchaseInvoiceRptRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ReportsDataSet ds = new ReportsDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PurchaseInvoiceRptDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class OrderRPTRow : global::System.Data.DataRow {
@@ -1704,6 +2182,441 @@ namespace Product_Management.DBSet {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PurchaseInvoiceRptRow : global::System.Data.DataRow {
+            
+            private PurchaseInvoiceRptDataTable tablePurchaseInvoiceRpt;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal PurchaseInvoiceRptRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePurchaseInvoiceRpt = ((PurchaseInvoiceRptDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Id {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DateOfPurchase {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.DateOfPurchaseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateOfPurchase\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.DateOfPurchaseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string price {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.priceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PaidAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.PaidAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaidAmount\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.PaidAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RemainingAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.RemainingAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RemainingAmount\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.RemainingAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PaymentMethod {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.PaymentMethodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentMethod\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.PaymentMethodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string InvoiceNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.InvoiceNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'InvoiceNumber\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.InvoiceNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Product_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.Product_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Product_Name\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.Product_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BatchNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.BatchNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BatchNumber\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.BatchNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ExpDate {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.ExpDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExpDate\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.ExpDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PurchasePrice {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.PurchasePriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PurchasePrice\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.PurchasePriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SellingPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.SellingPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SellingPrice\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.SellingPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TotalPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.TotalPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalPrice\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.TotalPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PurchaseQty {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchaseInvoiceRpt.PurchaseQtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PurchaseQty\' in table \'PurchaseInvoiceRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchaseInvoiceRpt.PurchaseQtyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdNull() {
+                this[this.tablePurchaseInvoiceRpt.IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNameNull() {
+                this[this.tablePurchaseInvoiceRpt.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDateOfPurchaseNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.DateOfPurchaseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDateOfPurchaseNull() {
+                this[this.tablePurchaseInvoiceRpt.DateOfPurchaseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspriceNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpriceNull() {
+                this[this.tablePurchaseInvoiceRpt.priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPaidAmountNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.PaidAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPaidAmountNull() {
+                this[this.tablePurchaseInvoiceRpt.PaidAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRemainingAmountNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.RemainingAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRemainingAmountNull() {
+                this[this.tablePurchaseInvoiceRpt.RemainingAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPaymentMethodNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.PaymentMethodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPaymentMethodNull() {
+                this[this.tablePurchaseInvoiceRpt.PaymentMethodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsInvoiceNumberNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.InvoiceNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetInvoiceNumberNull() {
+                this[this.tablePurchaseInvoiceRpt.InvoiceNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsProduct_NameNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.Product_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetProduct_NameNull() {
+                this[this.tablePurchaseInvoiceRpt.Product_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBatchNumberNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.BatchNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBatchNumberNull() {
+                this[this.tablePurchaseInvoiceRpt.BatchNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExpDateNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.ExpDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExpDateNull() {
+                this[this.tablePurchaseInvoiceRpt.ExpDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPurchasePriceNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.PurchasePriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPurchasePriceNull() {
+                this[this.tablePurchaseInvoiceRpt.PurchasePriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSellingPriceNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.SellingPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSellingPriceNull() {
+                this[this.tablePurchaseInvoiceRpt.SellingPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalPriceNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.TotalPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalPriceNull() {
+                this[this.tablePurchaseInvoiceRpt.TotalPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPurchaseQtyNull() {
+                return this.IsNull(this.tablePurchaseInvoiceRpt.PurchaseQtyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPurchaseQtyNull() {
+                this[this.tablePurchaseInvoiceRpt.PurchaseQtyColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1757,6 +2670,40 @@ namespace Product_Management.DBSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StockStatusRptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class PurchaseInvoiceRptRowChangeEvent : global::System.EventArgs {
+            
+            private PurchaseInvoiceRptRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptRowChangeEvent(PurchaseInvoiceRptRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public PurchaseInvoiceRptRow Row {
                 get {
                     return this.eventRow;
                 }
