@@ -384,6 +384,7 @@
             this.الموظفينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اضافةموظفToolStripMenuItem,
             this.ادارةالموظفينToolStripMenuItem});
+            this.الموظفينToolStripMenuItem.Enabled = false;
             this.الموظفينToolStripMenuItem.Image = global::Product_Management.Properties.Resources.PD_Icons_06;
             this.الموظفينToolStripMenuItem.Name = "الموظفينToolStripMenuItem";
             this.الموظفينToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
@@ -393,7 +394,7 @@
             // 
             this.اضافةموظفToolStripMenuItem.Image = global::Product_Management.Properties.Resources.employee;
             this.اضافةموظفToolStripMenuItem.Name = "اضافةموظفToolStripMenuItem";
-            this.اضافةموظفToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.اضافةموظفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.اضافةموظفToolStripMenuItem.Text = "اضافة موظف";
             this.اضافةموظفToolStripMenuItem.Click += new System.EventHandler(this.اضافةموظفToolStripMenuItem_Click);
             // 
@@ -401,7 +402,7 @@
             // 
             this.ادارةالموظفينToolStripMenuItem.Image = global::Product_Management.Properties.Resources.download__4_;
             this.ادارةالموظفينToolStripMenuItem.Name = "ادارةالموظفينToolStripMenuItem";
-            this.ادارةالموظفينToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.ادارةالموظفينToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ادارةالموظفينToolStripMenuItem.Text = "ادارة الموظفين";
             this.ادارةالموظفينToolStripMenuItem.Click += new System.EventHandler(this.ادارةالموظفينToolStripMenuItem_Click);
             // 

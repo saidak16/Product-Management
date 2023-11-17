@@ -1779,12 +1779,12 @@ where ProductId = @productId
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-createproc GetPurchaseInvoiceRpt
+create proc GetPurchaseInvoiceRpt
 @invoiceId int
 as
 SELECT p.[Id]
       ,s.Name
-      ,[DateOfPurchase]
+      ,FORMAT([DateOfPurchase], 'dd/MM/yyyy') as 'DateOfPurchase'
       ,FORMAT([price], 'C') as 'price'
       ,FORMAT([PaidAmount], 'C') as 'PaidAmount'
       ,FORMAT([RemainingAmount], 'C') as 'RemainingAmount'
@@ -1792,7 +1792,7 @@ SELECT p.[Id]
       ,[InvoiceNumber]
 	  ,t.Product_Name
 	  ,dt.[BatchNumber]
-      ,dt.[ExpDate]
+      ,FORMAT(dt.[ExpDate], 'dd/MM/yyyy') as 'ExpDate' 
       ,FORMAT(dt.[PurchasePrice], 'C') as 'PurchasePrice'
       ,FORMAT(dt.[SellingPrice], 'C') as 'SellingPrice'
       ,FORMAT(dt.[TotalPrice], 'C') as 'TotalPrice'
