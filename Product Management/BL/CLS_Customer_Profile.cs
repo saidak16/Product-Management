@@ -47,7 +47,7 @@ namespace Product_Management.BL
                 param[0].Value = customerId;
                 
                 param[1] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
-                param[1].Value = customerId;
+                param[1].Value = search;
 
                 DataTable dt = new DataTable();
                 dt = dal.SelectData("GetCustomerReturnOrder", param);

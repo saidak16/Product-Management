@@ -109,7 +109,7 @@ namespace Product_Management.PL
                 return;
             }
 
-            int orderId = Convert.ToInt32(this.dgvReturnInvoices.CurrentRow.Cells[2].Value);
+            int orderId = Convert.ToInt32(this.dgvReturnInvoices.CurrentRow.Cells[0].Value);
             FRM_Order_Return_Items frm = new FRM_Order_Return_Items(orderId);
             frm.ShowDialog();
         }
