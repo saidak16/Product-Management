@@ -542,15 +542,21 @@ namespace Product_Management.BL
             }
         }
 
-        public bool DeletePurchasDetails(int id)
+        public bool DeletePurchasDetails(int id, int productId, int PurchaseId)
         {
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
-                SqlParameter[] param = new SqlParameter[1];
+                SqlParameter[] param = new SqlParameter[3];
 
-                param[0] = new SqlParameter("id", SqlDbType.Int);
+                param[0] = new SqlParameter("@Id", SqlDbType.Int);
                 param[0].Value = id;
+                
+                param[1] = new SqlParameter("@productId", SqlDbType.Int);
+                param[1].Value = productId;
+                
+                param[2] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+                param[2].Value = PurchaseId;
 
                 dal.Open();
                 dal.ExCommand("DeletePurchasDetails", param);
@@ -560,12 +566,6 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
-
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
-
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return false;
             }
         }

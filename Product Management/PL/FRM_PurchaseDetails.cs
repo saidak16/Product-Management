@@ -36,7 +36,7 @@ namespace Product_Management.PL
         {
             if (MessageBox.Show("هل تريد حذف العنصر المحدد ؟؟", "عملية الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                var isValid =  purchases.DeletePurchasDetails(Convert.ToInt32(this.dgvPurchaseDetails.CurrentRow.Cells[0].Value.ToString()));
+                var isValid =  purchases.DeletePurchasDetails(Convert.ToInt32(this.dgvPurchaseDetails.CurrentRow.Cells[0].Value), Convert.ToInt32(this.dgvPurchaseDetails.CurrentRow.Cells[2].Value), Convert.ToInt32(this.dgvPurchaseDetails.CurrentRow.Cells[1].Value));
 
                 if (isValid)
                 {

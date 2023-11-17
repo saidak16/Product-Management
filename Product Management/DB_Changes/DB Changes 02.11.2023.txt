@@ -1809,4 +1809,95 @@ SELECT p.[Id]
 where p.Id = @invoiceId
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetPurchaseDetails]    Script Date: 2023-11-17 10:49:43 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetPurchaseDetails]
+@Id int
+as
+SELECT d.[Id] as 'المعرف'
+      ,[PurchaseId] as 'معرف الفاتورة'
+	  ,t.ID_Product as 'معرف الصنف'
+      ,t.[Product_Name] as 'الصنف'
+      ,[BatchNumber] as 'رقم الدفعة'
+      ,[ExpDate] as 'تاريخ الصلاحية'
+	  ,[PurchaseQty] as 'الكمية عند الشراء'
+      ,[PurchasePrice] as 'سعر الشراء'
+      ,[SellingPrice] as 'سعر البيع'
+      ,[TotalPrice] as 'الاجمالي'
+  FROM [dbo].[PurchaseDetails] d
+  join Purchases p
+  on p.Id = d.PurchaseId
+  join Product t
+  on t.ID_Product = d.ProductId
+  where p.Id = @Id
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeletePurchasDetails]    Script Date: 2023-11-17 10:44:37 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[DeletePurchasDetails]
+@Id int,
+@productId int,
+@PurchaseId int
+as
+INSERT INTO [dbo].[PurchaseReturnedItems]
+           ([PurchaseId]
+           ,[ProductId]
+           ,[BatchNumber]
+           ,[ExpDate]
+           ,[QTY]
+           ,[PurchasePrice]
+           ,[SellingPrice]
+           ,[TotalPrice]
+           ,[PosPrice]
+           ,[TotalQuantity]
+		   ,[ReturnDate])
+           (SELECT @PurchaseId
+      ,@productId
+      ,[BatchNumber]
+      ,[ExpDate]
+      ,[QTY]
+      ,[PurchasePrice]
+      ,[SellingPrice]
+      ,[TotalPrice]
+      ,[PosPrice]
+      ,[TotalQuantity]
+	  ,GETDATE()
+  FROM [Pharmacy_DB].[dbo].[PurchaseDetails]
+  where [PurchaseDetails].Id = @Id);
+
+------
+DELETE FROM [dbo].[PurchaseDetails]
+      WHERE Id = @Id
+------
+
+update Stock set QTY = (select SUM(QTY) from PurchaseDetails where ProductId = @productId) where ItemId = @productId
+update Stock set QTY = 0 where QTY < 0
+
+-------
+
+update Purchases set price = (select ISNULL(SUM(TotalPrice),0) from PurchaseDetails where PurchaseId = @PurchaseId) where Id = @PurchaseId
+update Purchases set RemainingAmount = price - PaidAmount where Id = @PurchaseId
+
+if((select RemainingAmount from Purchases where Id = @PurchaseId) < 0)
+begin
+
+update Purchases set PaidAmount = PaidAmount + RemainingAmount where Id = @PurchaseId
+update Purchases set RemainingAmount = 0 where Id = @PurchaseId
+
+end
+
+update Purchases set PaidAmount = 0, RemainingAmount = 0 where price = 0
+update Stock set QTY = 0 where QTY < 0
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
