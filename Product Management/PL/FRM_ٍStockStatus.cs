@@ -30,6 +30,11 @@ namespace Product_Management.PL
 
         private void FRM_ٍStockStatus_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnPrint_Click(sender, e);
+            }
+            
             if (e.KeyCode == Keys.F4)
             {
                 this.Close();
@@ -39,6 +44,22 @@ namespace Product_Management.PL
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = reporting.GetStockStatus(txtSearch.Text);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            RPT.rpt_StockStatus rep = new RPT.rpt_StockStatus();
+            dt = reporting.GetStockStatusRpt();
+            rep.SetDataSource(dt);
+            RPT.FRM_Single_Product frm = new RPT.FRM_Single_Product();
+            frm.crystalReportViewer1.ReportSource = rep;
+            frm.ShowDialog();
         }
     }
 }

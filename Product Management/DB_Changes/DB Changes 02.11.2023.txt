@@ -1669,4 +1669,99 @@ update Stock set QTY = QTY + @QTY where ItemId = @ProductId
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteOrderDetails]    Script Date: 2023-11-17 11:05:13 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[DeleteOrderDetails]
+@ID int,
+@orderId int,
+@PurchaseId int
+as
+INSERT INTO [dbo].[Order_Details_Returned_Items]
+           ([ID_Product]
+           ,[ID_Order]
+           ,[QTE]
+           ,[Price]
+           ,[Discount]
+           ,[Amount]
+           ,[Total]
+           ,[PurchaseId]
+		   ,[ReturnDate])
+
+SELECT [ID_Product]
+      ,[ID_Order]
+      ,[QTE]
+      ,[Price]
+      ,[Discount]
+      ,[Amount]
+      ,[Total]
+      ,[PurchaseId]
+	  ,GETDATE()
+  FROM [dbo].[Order_Details]
+  where [ID] = @ID
+
+-----
+
+update Stock set QTY = QTY + (select QTE from Order_Details WHERE ID = @ID) where ItemId = (select ID_Product from Order_Details WHERE ID = @ID)
+
+-----
+
+DELETE FROM [dbo].[Order_Details]
+      WHERE ID = @ID
+------
+
+update [Order] set TotalAmount = (select SUM(CONVERT(int, Total)) from Order_Details where ID_Order = @orderId) where ID_Order = @orderId
+
+update [Order] set RemainingAmount = TotalAmount - PaidAmount where ID_Order = @orderId
+
+------
+
+if((select RemainingAmount from [Order] where ID_Order = @orderId) < 0)
+BEGIN
+
+update [Order] set PaidAmount = PaidAmount + RemainingAmount where ID_Order = @orderId
+update [Order] set RemainingAmount = 0 where ID_Order = @orderId
+
+END
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-17 12:08:37 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetStockStatus]
+@search nvarchar(50)
+as
+select 
+ t.Product_Name as 'الصنف'
+,s.QTY as 'الكمية بالمخزن'
+from Stock s
+join Product t
+on s.ItemId= t.ID_Product
+where t.Product_Name like '%' +@search+ '%'
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetStockStatusRpt
+as
+select 
+s.ItemId
+,t.Product_Name
+,s.QTY
+from Stock s
+join Product t
+on s.ItemId= t.ID_Product
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 

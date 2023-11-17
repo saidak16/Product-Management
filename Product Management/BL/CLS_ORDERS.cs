@@ -146,38 +146,47 @@ namespace Product_Management.BL
         }
 
 
-        public void Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total, int PurchaseId)
+        public bool Order_Det(string ID_Product, int ID_Order, int qte, string price, double discount, string amount, string total, int PurchaseId)
         {
-            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
-            SqlParameter[] param = new SqlParameter[8];
-            dal.Open();
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[8];
+                dal.Open();
 
-            param[0] = new SqlParameter("@ID_Product", SqlDbType.NVarChar , 30);
-            param[0].Value = ID_Product;
+                param[0] = new SqlParameter("@ID_Product", SqlDbType.NVarChar, 30);
+                param[0].Value = ID_Product;
 
-            param[1] = new SqlParameter("@ID_Order", SqlDbType.Int);
-            param[1].Value = ID_Order;
+                param[1] = new SqlParameter("@ID_Order", SqlDbType.Int);
+                param[1].Value = ID_Order;
 
-            param[2] = new SqlParameter("@qte", SqlDbType.Int);
-            param[2].Value = qte;
+                param[2] = new SqlParameter("@qte", SqlDbType.Int);
+                param[2].Value = qte;
 
-            param[3] = new SqlParameter("@price", SqlDbType.NVarChar, 50);
-            param[3].Value = price;
+                param[3] = new SqlParameter("@price", SqlDbType.NVarChar, 50);
+                param[3].Value = price;
 
-            param[4] = new SqlParameter("@discount", SqlDbType.Float);
-            param[4].Value = discount;
+                param[4] = new SqlParameter("@discount", SqlDbType.Float);
+                param[4].Value = discount;
 
-            param[5] = new SqlParameter("@amount", SqlDbType.NVarChar, 50);
-            param[5].Value = amount;
+                param[5] = new SqlParameter("@amount", SqlDbType.NVarChar, 50);
+                param[5].Value = amount;
 
-            param[6] = new SqlParameter("@total", SqlDbType.NVarChar, 50);
-            param[6].Value = total;
-            
-            param[7] = new SqlParameter("@PurchaseId", SqlDbType.Int);
-            param[7].Value = PurchaseId;
+                param[6] = new SqlParameter("@total", SqlDbType.NVarChar, 50);
+                param[6].Value = total;
 
-            dal.ExCommand("Order_Det", param);
-            dal.Close();
+                param[7] = new SqlParameter("@PurchaseId", SqlDbType.Int);
+                param[7].Value = PurchaseId;
+
+                dal.ExCommand("Order_Det", param);
+                dal.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
 

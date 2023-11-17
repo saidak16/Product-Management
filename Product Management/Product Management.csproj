@@ -133,6 +133,12 @@
     <Compile Include="PL\FRM_Add_Employee.Designer.cs">
       <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Add_Purchase_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Add_Purchase_Invoice.Designer.cs">
+      <DependentUpon>FRM_Add_Purchase_Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Add_Sales_Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -628,6 +634,12 @@
       <DependentUpon>rpt_single_cal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_StockStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_StockStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rpt_Suppliers_Receivables.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -636,6 +648,9 @@
     </Compile>
     <EmbeddedResource Include="PL\FRM_Add_Employee.resx">
       <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Add_Purchase_Invoice.resx">
+      <DependentUpon>FRM_Add_Purchase_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Add_Sales_Invoice.resx">
       <DependentUpon>FRM_Add_Sales_Invoice.cs</DependentUpon>
@@ -898,6 +913,10 @@
     <EmbeddedResource Include="RPT\rpt_single_cal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_single_cal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_StockStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_StockStatus.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rpt_Suppliers_Receivables.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

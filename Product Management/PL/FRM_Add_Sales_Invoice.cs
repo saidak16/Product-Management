@@ -352,7 +352,7 @@ namespace Product_Management.PL
                 {
                     for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
                     {
-                        order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
+                        var isChecked = order.Order_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
                                         Convert.ToInt32(txtInvoiceId.Text),
                                         Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value),
                                         dgvInvoiceItems.Rows[i].Cells[2].Value.ToString(),
@@ -360,6 +360,12 @@ namespace Product_Management.PL
                                         (Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value)).ToString(),
                                         dgvInvoiceItems.Rows[i].Cells[5].Value.ToString(),
                                         0);
+
+                        if (!isChecked)
+                        {
+                            MessageBox.Show("حدث خطأ ما", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
 
                     MessageBox.Show("تم حفظ الفاتورة بنجاح", "حفظ الفاتورة", MessageBoxButtons.OK, MessageBoxIcon.Information);

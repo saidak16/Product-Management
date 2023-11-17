@@ -40,6 +40,7 @@ namespace Product_Management.PL
             InitializeComponent();
             if (frm == null)
                 frm = this;
+
             DGV();
         }
 
@@ -68,6 +69,7 @@ namespace Product_Management.PL
         public void DGV()
         {
             dataGridView1.DataSource = order.GetAllOrders("");
+            txtTotalInvoice.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

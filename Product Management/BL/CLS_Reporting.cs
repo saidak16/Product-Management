@@ -16,7 +16,6 @@ namespace Product_Management.BL
         {
             try
             {
-
                 DataAccessLayer dal = new DataAccessLayer();
 
                 dal.Open();
@@ -28,16 +27,30 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                //if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                //    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
-
-                //string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
-
-                //File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
-        
+
+        public DataTable GetStockStatusRpt()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetStockStatusRpt", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
         public DataTable GetStockStatus(string search)
         {
             try
