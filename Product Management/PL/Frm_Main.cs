@@ -248,7 +248,7 @@ namespace Product_Management.PL
 
         private void اضافةعمليةشراءToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            FRM_Add_Purchase_Invoice frm = new FRM_Add_Purchase_Invoice();
             //FRM_Add_Purchases frm = new FRM_Add_Purchases();
             frm.ShowDialog();
         }
@@ -390,13 +390,13 @@ namespace Product_Management.PL
 
         private void picPurchase_Click(object sender, EventArgs e)
         {
-            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            FRM_Add_Purchase_Invoice frm = new FRM_Add_Purchase_Invoice();
             frm.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+            FRM_Add_Purchase_Invoice frm = new FRM_Add_Purchase_Invoice();
             frm.ShowDialog();
         }
 
@@ -506,7 +506,7 @@ namespace Product_Management.PL
 
             if (e.KeyCode == Keys.F2)
             {
-                FRM_Add_MultiPurchase frm = new FRM_Add_MultiPurchase();
+                FRM_Add_Purchase_Invoice frm = new FRM_Add_Purchase_Invoice();
                 frm.ShowDialog();
             }
 

@@ -34,6 +34,48 @@ namespace Product_Management.BL
             }
         }
 
+        public DataTable GetItemData(int ItemId)
+        {
+            try
+            {
+                DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@ItemId", SqlDbType.Int);
+                param[0].Value = ItemId;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetItemData", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetSuppliersDate()
+        {
+            try
+            {
+
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetSuppliersDate", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+               
+                return null;
+            }
+        }
+
         public DataTable GetAllReturnPurchases(string search)
         {
             try
@@ -272,12 +314,36 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
+                return null;
+            }
+        }
+        
+        public string GetProductPriceData(int productId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
 
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
+                param[0] = new SqlParameter("@productId", SqlDbType.Int);
+                param[0].Value = productId;
 
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetGetProductPriceData", param);
+                dal.Close();
+
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0][0].ToString();
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+            catch (Exception ex)
+            {
                 return null;
             }
         }
