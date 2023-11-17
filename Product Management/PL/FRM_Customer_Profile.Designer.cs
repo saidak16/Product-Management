@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Customer_Profile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtTotalRemaining = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastOrder = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtInvoiceSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,6 +106,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العميل";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(185, 216);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 37);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "مطلوبات العميل (F2)";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // txtTotalRemaining
             // 
@@ -582,19 +596,6 @@
             this.label9.Size = new System.Drawing.Size(66, 14);
             this.label9.TabIndex = 41;
             this.label9.Text = "ابحث هنا :";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(185, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 37);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "مطلوبات العميل (F2)";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // FRM_Customer_Profile
             // 
