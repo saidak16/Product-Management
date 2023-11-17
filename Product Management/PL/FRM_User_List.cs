@@ -40,7 +40,7 @@ namespace Product_Management.PL
         private void button2_Click(object sender, EventArgs e)
         {
             FRM_Add_User frm = new FRM_Add_User();
-            frm.btnADD.Text = "تعديل المستخدم";
+            frm.btnADD.Text = "تعديل المستخدم (F2)";
             frm.Text = "تعديل بيانات المستخدم";
             frm.txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             frm.txtFullName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();

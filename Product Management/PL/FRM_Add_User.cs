@@ -27,7 +27,7 @@ namespace Product_Management.PL
 
         private void btnADD_Click(object sender, EventArgs e)
         {
-            if (btnADD.Text == "اضافة المستخدم")
+            if (btnADD.Text == "اضافة المستخدم (F2)")
             {
                 if (txtPWD.Text != txtPWDConfairm.Text)
                 {
@@ -38,7 +38,7 @@ namespace Product_Management.PL
                 user.ADD_User(txtID.Text, txtFullName.Text, txtPWD.Text, cmdRole.Text);
                 MessageBox.Show("تم اضافة المستخدم بنجاح", "اضافة مستخدم", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (btnADD.Text == "تعديل المستخدم")
+            else if (btnADD.Text == "تعديل المستخدم (F2)")
             {
                 if (txtPWD.Text != txtPWDConfairm.Text)
                 {
