@@ -520,6 +520,11 @@ namespace Product_Management.PL
 
         private void txtPaidAmount_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtPaidAmount.Text))
+            {
+                txtPaidAmount.Text = "0";
+            }
+
             if (Convert.ToInt32(txtPaidAmount.Text) > Convert.ToInt32(txtInvoiceAmount.Text))
             {
                 MessageBox.Show("لا يمكن ان يكون المبلغ المدفوع اكبر من المبلغ الاجالي", "عذراً", MessageBoxButtons.OK, MessageBoxIcon.Error);
