@@ -209,6 +209,13 @@ namespace Product_Management.PL
         {
             try
             {
+                if (string.IsNullOrEmpty(txtQty.Text) || Convert.ToInt32(txtQty.Text) == 0)
+                {
+                    MessageBox.Show("تحقق من الكمية");
+                    txtQty.Focus();
+                    return;
+                }
+
                 if (btnAdd.Enabled == true)
                 {
                     for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
@@ -309,12 +316,12 @@ namespace Product_Management.PL
                     return;
                 }
 
-                if (Convert.ToInt32(txtPaidAmount.Text) == Convert.ToInt32(txtRemainingAmount.Text))
-                {
-                    MessageBox.Show("عذراً ... الرجاء التحقق من الدفعيات", "دفعيات الطلبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPaidAmount.Focus();
-                    return;
-                }
+                //if (Convert.ToInt32(txtPaidAmount.Text) == Convert.ToInt32(txtRemainingAmount.Text))
+                //{
+                //    MessageBox.Show("عذراً ... الرجاء التحقق من الدفعيات", "دفعيات الطلبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    txtPaidAmount.Focus();
+                //    return;
+                //}
 
                 if (cbSalesRepresentative.Checked && !string.IsNullOrEmpty(txtSalesRepresentativeId.Text))
                 {

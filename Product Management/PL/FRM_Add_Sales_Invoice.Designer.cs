@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_Sales_Invoice));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtItemId = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,6 +71,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblCustomerId = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -93,9 +96,6 @@
             this.txtSumTotal = new System.Windows.Forms.TextBox();
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.dgvInvoiceItems = new System.Windows.Forms.DataGridView();
-            this.txtItemId = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblCustomerId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,6 +133,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الاصناف";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtItemId
+            // 
+            this.txtItemId.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtItemId.Location = new System.Drawing.Point(912, 101);
+            this.txtItemId.Name = "txtItemId";
+            this.txtItemId.ReadOnly = true;
+            this.txtItemId.Size = new System.Drawing.Size(99, 25);
+            this.txtItemId.TabIndex = 38;
+            this.txtItemId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(921, 77);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(81, 19);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "معرف الصنف";
             // 
             // btnAdd
             // 
@@ -552,6 +572,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "بيانات العملية";
             // 
+            // lblCustomerId
+            // 
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerId.Location = new System.Drawing.Point(30, 129);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(104, 19);
+            this.lblCustomerId.TabIndex = 52;
+            this.lblCustomerId.Text = "lblCustomerId";
+            this.lblCustomerId.Visible = false;
+            this.lblCustomerId.Click += new System.EventHandler(this.lblCustomerId_Click);
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.btnStock);
@@ -560,7 +592,7 @@
             this.groupBox6.Controls.Add(this.btnCustomers);
             this.groupBox6.Controls.Add(this.btnPrint);
             this.groupBox6.Controls.Add(this.btnSave);
-            this.groupBox6.Location = new System.Drawing.Point(6, 327);
+            this.groupBox6.Location = new System.Drawing.Point(6, 315);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(205, 276);
             this.groupBox6.TabIndex = 3;
@@ -791,7 +823,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(94, 587);
+            this.label19.Location = new System.Drawing.Point(94, 525);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(72, 17);
             this.label19.TabIndex = 31;
@@ -801,7 +833,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(6, 586);
+            this.label21.Location = new System.Drawing.Point(6, 524);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(45, 17);
             this.label21.TabIndex = 30;
@@ -811,7 +843,7 @@
             // 
             this.txtSumTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSumTotal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSumTotal.Location = new System.Drawing.Point(53, 583);
+            this.txtSumTotal.Location = new System.Drawing.Point(53, 521);
             this.txtSumTotal.Name = "txtSumTotal";
             this.txtSumTotal.ReadOnly = true;
             this.txtSumTotal.Size = new System.Drawing.Size(36, 25);
@@ -823,7 +855,7 @@
             this.btnDeleteItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteItem.Image = global::Product_Management.Properties.Resources.Actions_edit_clear_icon1;
             this.btnDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteItem.Location = new System.Drawing.Point(435, 580);
+            this.btnDeleteItem.Location = new System.Drawing.Point(435, 518);
             this.btnDeleteItem.Name = "btnDeleteItem";
             this.btnDeleteItem.Size = new System.Drawing.Size(139, 32);
             this.btnDeleteItem.TabIndex = 8;
@@ -842,40 +874,8 @@
             this.dgvInvoiceItems.Location = new System.Drawing.Point(6, 19);
             this.dgvInvoiceItems.Name = "dgvInvoiceItems";
             this.dgvInvoiceItems.ReadOnly = true;
-            this.dgvInvoiceItems.Size = new System.Drawing.Size(568, 556);
+            this.dgvInvoiceItems.Size = new System.Drawing.Size(568, 495);
             this.dgvInvoiceItems.TabIndex = 0;
-            // 
-            // txtItemId
-            // 
-            this.txtItemId.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtItemId.Location = new System.Drawing.Point(912, 101);
-            this.txtItemId.Name = "txtItemId";
-            this.txtItemId.ReadOnly = true;
-            this.txtItemId.Size = new System.Drawing.Size(99, 25);
-            this.txtItemId.TabIndex = 38;
-            this.txtItemId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(921, 77);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(81, 19);
-            this.label20.TabIndex = 37;
-            this.label20.Text = "معرف الصنف";
-            // 
-            // lblCustomerId
-            // 
-            this.lblCustomerId.AutoSize = true;
-            this.lblCustomerId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerId.Location = new System.Drawing.Point(30, 129);
-            this.lblCustomerId.Name = "lblCustomerId";
-            this.lblCustomerId.Size = new System.Drawing.Size(104, 19);
-            this.lblCustomerId.TabIndex = 52;
-            this.lblCustomerId.Text = "lblCustomerId";
-            this.lblCustomerId.Visible = false;
-            this.lblCustomerId.Click += new System.EventHandler(this.lblCustomerId_Click);
             // 
             // FRM_Add_Sales_Invoice
             // 
