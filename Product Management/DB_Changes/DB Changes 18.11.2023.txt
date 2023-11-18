@@ -5,3 +5,24 @@ SELECT FORMAT(SUM(dt.PurchasePrice), 'C') as 'StockValue'
   join PurchaseDetails dt
   on s.ItemId = dt.ProductId
   where s.QTY > 0
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetLiabilitiesByCustomerId
+@customerId int
+as
+SELECT c.ID_Customer as 'ãÚÑÝ ÇáÚãíá'
+      ,c.First_Name + ' ' + c.Last_Name as 'ÇÓã ÇáÚãíá'
+      ,[ID_Order] as 'ãÚÑÝ ÇáÝÇÊæÑÉ'
+      ,[Date_Order] as 'ÊÇÑíÎ ÇáÝÇÊæÑÉ'
+      ,[Des_Order] as 'æÕÝ ÇáÝÇÊæÑÉ'
+      ,[SalesMan] as 'ÇáãÓÊÎÏã'
+      ,FORMAT([TotalAmount], 'C') as 'ÇÌãÇáí ÇáÝÇÊæÑÉ'
+      ,FORMAT([PaidAmount], 'C') as 'ÇáãÈáÛ ÇáãÏÝæÚ'
+      ,FORMAT([RemainingAmount], 'C') as 'ÇáãÈáÛ ÇáãÊÈÞí'
+  FROM [dbo].[Order] o
+  join Customer c
+  on o.Customer_ID = c.ID_Customer
+  where o.RemainingAmount > 0 and Customer_ID = @customerId
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

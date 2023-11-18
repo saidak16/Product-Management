@@ -116,10 +116,21 @@ namespace Product_Management.PL
 
         private void FRM_Customer_Profile_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.F2)
+            {
+                button1_Click(sender, e);
+            }
+            
             if (e.KeyCode == Keys.F4)
             {
                 this.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FRM_CustomerLiabilities frm = new FRM_CustomerLiabilities(customerId);
+            frm.ShowDialog();
         }
     }
 }
