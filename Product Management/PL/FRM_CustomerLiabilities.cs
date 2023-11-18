@@ -78,7 +78,7 @@ namespace Product_Management.PL
                 }
 
                 DataTable dt = new DataTable();
-                dt = profile.GetLiabilitiesByCustomerId(Convert.ToInt32(this.dgvCustomerLiabilities.CurrentRow.Cells[0].Value.ToString()));
+                dt = profile.CustomerLiabilitiesRpt(Convert.ToInt32(this.dgvCustomerLiabilities.CurrentRow.Cells[0].Value.ToString()));
 
                 if (dt.Rows.Count == 0)
                 {

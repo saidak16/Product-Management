@@ -56,7 +56,30 @@ namespace Product_Management.BL
                 return null;
             }
         }
-        
+
+        public DataTable CustomerLiabilitiesRpt(int customerId)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                dal.Open();
+
+                param[0] = new SqlParameter("@customerId", SqlDbType.Int);
+                param[0].Value = customerId;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("CustomerLiabilitiesRpt", param);
+                dal.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public DataTable GetCustomerReturnOrder(int customerId, string search)
         {
             try
