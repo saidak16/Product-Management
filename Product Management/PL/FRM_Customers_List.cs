@@ -64,9 +64,33 @@ namespace Product_Management
                 btnProfile_Click(sender, e);
             }
 
+            if (e.KeyCode == Keys.F1)
+            {
+                button1_Click(sender, e);
+            }
+
             if (e.KeyCode == Keys.F4)
             {
                 this.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("لا يوجد عناصر");
+                    return;
+                }
+
+                FRM_CustomerLiabilities frm = new FRM_CustomerLiabilities(Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value));
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

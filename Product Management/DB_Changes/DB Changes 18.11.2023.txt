@@ -36,9 +36,13 @@ SELECT c.ID_Customer as 'customerId'
       ,FORMAT([Date_Order], 'dd/M/yyyy') as 'InvoiceDate'
       ,[Des_Order] as 'InvoiceDesc'
       ,[SalesMan]
-      ,CONVERT(int, [TotalAmount]) as 'TotalAmount'
-      ,CONVERT(int, [PaidAmount]) as 'TotalAmount'
-      ,CONVERT(int, [RemainingAmount]) as 'TotalAmount'
+      ,[TotalAmount]
+      ,[PaidAmount]
+      ,[RemainingAmount]
+	  ,FORMAT((select sum(TotalAmount) from [Order] where Customer_ID = @customerId and RemainingAmount > 0), 'C') as 'SumTotalAmount'
+	  ,FORMAT((select sum(PaidAmount) from [Order] where Customer_ID = @customerId and RemainingAmount > 0), 'C') as 'SumPaidAmount'
+	  ,FORMAT((select sum(RemainingAmount) from [Order] where Customer_ID = @customerId and RemainingAmount > 0), 'C') as 'SumRemainingAmount'
+	  ,(select count(ID_Order) from [Order] where Customer_ID = @customerId and RemainingAmount > 0) as 'Count'
   FROM [dbo].[Order] o
   join Customer c
   on o.Customer_ID = c.ID_Customer

@@ -20,9 +20,9 @@ namespace Product_Management.PL
 
         public FRM_Customer_Profile(int customerId)
         {
-            InitializeComponent();
             this.customerId = customerId;
-
+            InitializeComponent();
+            
             ///////////////////////////////////////////////Customer Info///////////////////////////////////////////////////////////////////
             DataTable dt = new DataTable();
             dt = profile.GetCustomerInfo(customerId);

@@ -1623,6 +1623,14 @@ namespace Product_Management.DBSet {
             
             private global::System.Data.DataColumn columnRemainingAmount;
             
+            private global::System.Data.DataColumn columnSumTotalAmount;
+            
+            private global::System.Data.DataColumn columnSumPaidAmount;
+            
+            private global::System.Data.DataColumn columnSumRemainingAmount;
+            
+            private global::System.Data.DataColumn columnCount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CustomerLiabilitiesRptDataTable() {
@@ -1730,6 +1738,38 @@ namespace Product_Management.DBSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SumTotalAmountColumn {
+                get {
+                    return this.columnSumTotalAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SumPaidAmountColumn {
+                get {
+                    return this.columnSumPaidAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SumRemainingAmountColumn {
+                get {
+                    return this.columnSumRemainingAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CountColumn {
+                get {
+                    return this.columnCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1765,7 +1805,7 @@ namespace Product_Management.DBSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CustomerLiabilitiesRptRow AddCustomerLiabilitiesRptRow(string customerId, string CustomerName, string InvoiceNumber, string InvoiceDate, string InvoiceDesc, string SalesMan, string TotalAmount, string PaidAmount, string RemainingAmount) {
+            public CustomerLiabilitiesRptRow AddCustomerLiabilitiesRptRow(string customerId, string CustomerName, string InvoiceNumber, string InvoiceDate, string InvoiceDesc, string SalesMan, string TotalAmount, string PaidAmount, string RemainingAmount, string SumTotalAmount, string SumPaidAmount, string SumRemainingAmount, string Count) {
                 CustomerLiabilitiesRptRow rowCustomerLiabilitiesRptRow = ((CustomerLiabilitiesRptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         customerId,
@@ -1776,7 +1816,11 @@ namespace Product_Management.DBSet {
                         SalesMan,
                         TotalAmount,
                         PaidAmount,
-                        RemainingAmount};
+                        RemainingAmount,
+                        SumTotalAmount,
+                        SumPaidAmount,
+                        SumRemainingAmount,
+                        Count};
                 rowCustomerLiabilitiesRptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCustomerLiabilitiesRptRow);
                 return rowCustomerLiabilitiesRptRow;
@@ -1808,6 +1852,10 @@ namespace Product_Management.DBSet {
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columnPaidAmount = base.Columns["PaidAmount"];
                 this.columnRemainingAmount = base.Columns["RemainingAmount"];
+                this.columnSumTotalAmount = base.Columns["SumTotalAmount"];
+                this.columnSumPaidAmount = base.Columns["SumPaidAmount"];
+                this.columnSumRemainingAmount = base.Columns["SumRemainingAmount"];
+                this.columnCount = base.Columns["Count"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1831,6 +1879,14 @@ namespace Product_Management.DBSet {
                 base.Columns.Add(this.columnPaidAmount);
                 this.columnRemainingAmount = new global::System.Data.DataColumn("RemainingAmount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRemainingAmount);
+                this.columnSumTotalAmount = new global::System.Data.DataColumn("SumTotalAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSumTotalAmount);
+                this.columnSumPaidAmount = new global::System.Data.DataColumn("SumPaidAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSumPaidAmount);
+                this.columnSumRemainingAmount = new global::System.Data.DataColumn("SumRemainingAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSumRemainingAmount);
+                this.columnCount = new global::System.Data.DataColumn("Count", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3172,6 +3228,73 @@ namespace Product_Management.DBSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SumTotalAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerLiabilitiesRpt.SumTotalAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SumTotalAmount\' in table \'CustomerLiabilitiesRpt\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerLiabilitiesRpt.SumTotalAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SumPaidAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerLiabilitiesRpt.SumPaidAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SumPaidAmount\' in table \'CustomerLiabilitiesRpt\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerLiabilitiesRpt.SumPaidAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SumRemainingAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerLiabilitiesRpt.SumRemainingAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SumRemainingAmount\' in table \'CustomerLiabilitiesRpt\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerLiabilitiesRpt.SumRemainingAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Count {
+                get {
+                    try {
+                        return ((string)(this[this.tableCustomerLiabilitiesRpt.CountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Count\' in table \'CustomerLiabilitiesRpt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerLiabilitiesRpt.CountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscustomerIdNull() {
                 return this.IsNull(this.tableCustomerLiabilitiesRpt.customerIdColumn);
             }
@@ -3276,6 +3399,54 @@ namespace Product_Management.DBSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRemainingAmountNull() {
                 this[this.tableCustomerLiabilitiesRpt.RemainingAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSumTotalAmountNull() {
+                return this.IsNull(this.tableCustomerLiabilitiesRpt.SumTotalAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSumTotalAmountNull() {
+                this[this.tableCustomerLiabilitiesRpt.SumTotalAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSumPaidAmountNull() {
+                return this.IsNull(this.tableCustomerLiabilitiesRpt.SumPaidAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSumPaidAmountNull() {
+                this[this.tableCustomerLiabilitiesRpt.SumPaidAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSumRemainingAmountNull() {
+                return this.IsNull(this.tableCustomerLiabilitiesRpt.SumRemainingAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSumRemainingAmountNull() {
+                this[this.tableCustomerLiabilitiesRpt.SumRemainingAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCountNull() {
+                return this.IsNull(this.tableCustomerLiabilitiesRpt.CountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCountNull() {
+                this[this.tableCustomerLiabilitiesRpt.CountColumn] = global::System.Convert.DBNull;
             }
         }
         
