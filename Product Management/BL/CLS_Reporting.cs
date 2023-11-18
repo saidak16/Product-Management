@@ -31,6 +31,25 @@ namespace Product_Management.BL
             }
         }
 
+         public string GetStockValue()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetStockValue", null);
+                dal.Close();
+
+                return dt.Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public DataTable GetStockStatusRpt()
         {
             try

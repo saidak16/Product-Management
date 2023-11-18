@@ -1,0 +1,7 @@
+create proc GetStockValue
+as
+SELECT FORMAT(SUM(dt.PurchasePrice), 'C') as 'StockValue'
+  FROM [Product_DB].[dbo].[Stock] s
+  join PurchaseDetails dt
+  on s.ItemId = dt.ProductId
+  where s.QTY > 0

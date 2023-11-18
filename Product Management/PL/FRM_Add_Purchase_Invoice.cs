@@ -300,6 +300,11 @@ namespace Product_Management.PL
                         txtSalePrice.Text = dt.Rows[0]["SellingPrice"].ToString();
                         txtPrice.Text = purchases.GetProductPriceData(Convert.ToInt32(dt.Rows[0]["ItemId"]));
                     }
+                    else
+                    {
+                        txtItemId.Text = cmbItems.SelectedValue.ToString();
+                        txtItemName.Text = cmbItems.SelectedText.ToString();
+                    }
 
                     dtpExpDate.Focus();
                 }

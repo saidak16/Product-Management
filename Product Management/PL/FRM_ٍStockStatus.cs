@@ -20,6 +20,17 @@ namespace Product_Management.PL
             InitializeComponent();
 
             dataGridView1.DataSource = reporting.GetStockStatus("");
+            txtItemsCount.Text = dataGridView1.Rows.Count.ToString();
+
+            var foundRows = this.dataGridView1.Rows.Cast<DataGridViewRow>();
+
+            var finishedItems = foundRows.Where(row => Convert.ToInt32(row.Cells[1].Value) == 0);
+            var avilableItems = foundRows.Where(row => Convert.ToInt32(row.Cells[1].Value) > 0);
+
+            txtAvilableItems.Text = avilableItems.Count().ToString();
+            txtFinishedItems.Text = finishedItems.Count().ToString();
+
+            txtStockValue.Text = reporting.GetStockValue();
         }
 
         private void FRM_ٍStockStatus_Load(object sender, EventArgs e)
