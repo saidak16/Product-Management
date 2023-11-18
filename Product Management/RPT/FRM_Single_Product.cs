@@ -16,5 +16,19 @@ namespace Product_Management.RPT
         {
             InitializeComponent();
         }
+
+        private void FRM_Single_Product_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            //this.KeyDown += new KeyEventHandler(FRM_POS_KeyDown);
+        }
+
+        private void FRM_Single_Product_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                this.Close();
+            }
+        }
     }
 }

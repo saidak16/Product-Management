@@ -56,8 +56,10 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تقرير المنتج";
+            this.Text = "استعراض التقرير";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FRM_Single_Product_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FRM_Single_Product_KeyDown);
             this.ResumeLayout(false);
 
         }

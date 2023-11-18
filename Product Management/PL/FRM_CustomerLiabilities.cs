@@ -1,4 +1,5 @@
 ﻿using Product_Management.BL;
+using Product_Management.RPT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,20 @@ namespace Product_Management.PL
             InitializeComponent();
 
             dgvCustomerLiabilities.DataSource = profile.GetLiabilitiesByCustomerId(customerId);
+            txtCount.Text = dgvCustomerLiabilities.Rows.Count.ToString();
+
+            if (dgvCustomerLiabilities.Rows.Count > 0)
+            {
+                txtTotalAmoun.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[6].Value)).ToString("C");
+                txtTotalPaid.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[7].Value)).ToString("C");
+                txtTotalRemaining.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[8].Value)).ToString("C");
+            }
+            else
+            {
+                txtTotalAmoun.Text = "0";
+                txtTotalPaid.Text = "0";
+                txtTotalRemaining.Text = "0";
+            }
         }
 
         private void FRM_CustomerLiabilities_Load(object sender, EventArgs e)
@@ -56,7 +71,26 @@ namespace Product_Management.PL
         {
             try
             {
-                MessageBox.Show("Success!");
+                if (dgvCustomerLiabilities.Rows.Count == 0)
+                {
+                    MessageBox.Show("لا يوجد عناصر");
+                    return;
+                }
+
+                DataTable dt = new DataTable();
+                dt = profile.GetLiabilitiesByCustomerId(Convert.ToInt32(this.dgvCustomerLiabilities.CurrentRow.Cells[0].Value.ToString()));
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("تعذر طباعة التقرير", "عفواً", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                rpt_CustomerLiabilities rep = new rpt_CustomerLiabilities();
+                rep.SetDataSource(dt);
+                FRM_Single_Product frm = new FRM_Single_Product();
+                frm.crystalReportViewer1.ReportSource = rep;
+                frm.ShowDialog();
             }
             catch (Exception ex)
             {

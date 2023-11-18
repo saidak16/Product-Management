@@ -112,11 +112,11 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(185, 216);
+            this.button1.Location = new System.Drawing.Point(198, 216);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 37);
+            this.button1.Size = new System.Drawing.Size(136, 37);
             this.button1.TabIndex = 22;
-            this.button1.Text = "مطلوبات العميل (F2)";
+            this.button1.Text = "مطلوبات العميل";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -509,7 +509,7 @@
             this.groupBox3.Size = new System.Drawing.Size(928, 352);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "الفواتير و الاقساط";
+            this.groupBox3.Text = "الفواتير و الدفعيات";
             // 
             // label7
             // 
