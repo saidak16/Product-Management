@@ -109,6 +109,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Product_Management.Properties.Resources.Wireless_network_icons_12_32;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +120,6 @@
             this.button1.Text = "مطلوبات العميل";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtTotalRemaining
