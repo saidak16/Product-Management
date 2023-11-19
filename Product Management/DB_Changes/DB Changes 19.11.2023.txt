@@ -1,0 +1,34 @@
+alter proc GetStockValue
+as
+SELECT FORMAT(SUM((s.QTY * dt.PurchasePrice)), 'C') as 'StockValue'
+  FROM [dbo].[Stock] s
+  join Product t
+  on s.ItemId = t.ID_Product
+  join PurchaseDetails dt
+  on dt.ProductId =s.ItemId
+  where s.QTY > 0
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-19 12:32:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetStockStatus]
+@search nvarchar(50)
+as
+SELECT [ItemId] as 'معرف الصنف'
+	  ,t.Product_Name as 'الصنف'
+      ,s.[QTY] as 'الكمية الحالية بالمخزن'
+	  ,FORMAT(dt.PurchasePrice, 'C') as 'سعر الشراء'
+	  ,FORMAT((s.QTY * dt.PurchasePrice) , 'C') as 'القيمة'
+  FROM [dbo].[Stock] s
+  join Product t
+  on s.ItemId = t.ID_Product
+  join PurchaseDetails dt
+  on dt.ProductId =s.ItemId
+where t.Product_Name like '%' +@search+ '%'
+

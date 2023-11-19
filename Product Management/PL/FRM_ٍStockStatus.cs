@@ -24,8 +24,8 @@ namespace Product_Management.PL
 
             var foundRows = this.dataGridView1.Rows.Cast<DataGridViewRow>();
 
-            var finishedItems = foundRows.Where(row => Convert.ToInt32(row.Cells[1].Value) == 0);
-            var avilableItems = foundRows.Where(row => Convert.ToInt32(row.Cells[1].Value) > 0);
+            var finishedItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) == 0);
+            var avilableItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) > 0);
 
             txtAvilableItems.Text = avilableItems.Count().ToString();
             txtFinishedItems.Text = finishedItems.Count().ToString();

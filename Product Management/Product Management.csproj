@@ -1587,6 +1587,7 @@
   <ItemGroup>
     <Content Include="DB_Changes\DB Changes 02.11.2023.txt" />
     <Content Include="DB_Changes\DB Changes 18.11.2023.txt" />
+    <Content Include="DB_Changes\DB Changes 19.11.2023.txt" />
     <None Include="Resources\4011821.png" />
     <None Include="Resources\deliverybox-115847_1158211.png" />
     <None Include="Resources\401182.png" />
