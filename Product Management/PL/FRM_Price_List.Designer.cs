@@ -133,6 +133,7 @@
             this.txtCount.ReadOnly = true;
             this.txtCount.Size = new System.Drawing.Size(56, 25);
             this.txtCount.TabIndex = 21;
+            this.txtCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
