@@ -532,6 +532,12 @@ namespace Product_Management.PL
                 FRM_Customers_List frm = new FRM_Customers_List();
                 frm.ShowDialog();
             }
+
+            if (e.KeyCode == Keys.F7)
+            {
+                FRM_Price_List frm = new FRM_Price_List();
+                frm.ShowDialog();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
