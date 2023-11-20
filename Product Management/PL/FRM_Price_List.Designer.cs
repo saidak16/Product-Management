@@ -35,6 +35,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPriceList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +101,7 @@
             this.txtID.Location = new System.Drawing.Point(488, 10);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(282, 22);
-            this.txtID.TabIndex = 17;
+            this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label1
@@ -111,11 +114,44 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "ابحث هنا :";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1003, 414);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "عدد الاصناف";
+            // 
+            // txtCount
+            // 
+            this.txtCount.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtCount.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCount.Location = new System.Drawing.Point(1078, 409);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.ReadOnly = true;
+            this.txtCount.Size = new System.Drawing.Size(56, 25);
+            this.txtCount.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1138, 412);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "(صنف)";
+            // 
             // FRM_Price_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 514);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCount);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
@@ -146,5 +182,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCount;
+        private System.Windows.Forms.Label label3;
     }
 }

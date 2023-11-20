@@ -20,6 +20,7 @@ namespace Product_Management.PL
         {
             InitializeComponent();
             dgvPriceList.DataSource = reporting.GetPriceList();
+            txtCount.Text = dgvPriceList.Rows.Count.ToString();
             txtID.Focus();
         }
 
