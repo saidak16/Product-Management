@@ -26,9 +26,9 @@ namespace Product_Management.PL
 
             if (dgvCustomerLiabilities.Rows.Count > 0)
             {
-                txtTotalAmoun.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[6].Value)).ToString("C");
-                txtTotalPaid.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[7].Value)).ToString("C");
-                txtTotalRemaining.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[8].Value)).ToString("C");
+                txtTotalAmoun.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[6].Value)).ToString("N");
+                txtTotalPaid.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[7].Value)).ToString("N");
+                txtTotalRemaining.Text = dgvCustomerLiabilities.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[8].Value)).ToString("N");
             }
             else
             {

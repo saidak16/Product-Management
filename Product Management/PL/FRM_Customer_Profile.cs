@@ -32,7 +32,7 @@ namespace Product_Management.PL
             txtEmail.Text = dt.Rows[0]["E_Mail"].ToString();
             txtCreationDate.Text = Convert.ToDateTime(dt.Rows[0]["Creation_Date"]).ToShortDateString();
             txtLastOrder.Text = Convert.ToDateTime(dt.Rows[0]["LastOrder"]).ToShortDateString();
-            txtTotalRemaining.Text = Convert.ToInt32(dt.Rows[0]["TotalRemaining"]).ToString("C");
+            txtTotalRemaining.Text = Convert.ToInt32(dt.Rows[0]["TotalRemaining"]).ToString("N");
 
             ///////////////////////////////////////////////////Customer Invoices//////////////////////////////////////////////////////////////////////////////////////////
             dgvInvoices.DataSource = profile.GetCustomerInvoices(customerId, "");
@@ -54,9 +54,9 @@ namespace Product_Management.PL
 
             ///////////////////////////////////////////////////Customer Counter///////////////////////////////////////////////////////////////////////////////////////////
             txtTotalInvoices.Text = profile.GetCustomerTotalInvoices(customerId).ToString();
-            txtTotalAmount.Text = profile.GetCustomerTotalAmount(customerId).ToString("C");
-            txtPaid.Text = profile.GetCustomerPaidAmount(customerId).ToString("C");
-            txtRemainAmount.Text = profile.GetCustomerRemainingAmount(customerId).ToString("C");
+            txtTotalAmount.Text = profile.GetCustomerTotalAmount(customerId).ToString("N");
+            txtPaid.Text = profile.GetCustomerPaidAmount(customerId).ToString("N");
+            txtRemainAmount.Text = profile.GetCustomerRemainingAmount(customerId).ToString("N");
 
 
         }

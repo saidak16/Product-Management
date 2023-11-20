@@ -21,6 +21,7 @@ namespace Product_Management
             InitializeComponent();
 
             dataGridView1.DataSource = customers.GetCustomerList("");
+            txtCount.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void FRM_Customers_List_Load(object sender, EventArgs e)

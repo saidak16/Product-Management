@@ -56,9 +56,9 @@ namespace Product_Management.PL
 
             ////////////////////////////////////////// Counters /////////////////////////////////////////////////////////////////////////////
             txtTotalInvoices.Text = profile.GetTotalInvoices(supId).ToString();
-            txtTotalAmount.Text = profile.GetTotalAmount(supId).ToString("C");
-            txtPaid.Text = profile.GetPaidAmount(supId).ToString("C");
-            txtRemainAmount.Text = profile.GetRemainingAmount(supId).ToString("C");
+            txtTotalAmount.Text = profile.GetTotalAmount(supId).ToString("N");
+            txtPaid.Text = profile.GetPaidAmount(supId).ToString("N");
+            txtRemainAmount.Text = profile.GetRemainingAmount(supId).ToString("N");
 
         }
 
