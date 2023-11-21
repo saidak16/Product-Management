@@ -123,6 +123,7 @@
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 20;
             this.label2.Text = "عدد الاصناف";
+            this.label2.Visible = false;
             // 
             // txtCount
             // 
@@ -134,6 +135,7 @@
             this.txtCount.Size = new System.Drawing.Size(56, 25);
             this.txtCount.TabIndex = 21;
             this.txtCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCount.Visible = false;
             // 
             // label3
             // 
@@ -144,6 +146,7 @@
             this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 22;
             this.label3.Text = "(صنف)";
+            this.label3.Visible = false;
             // 
             // FRM_Price_List
             // 
