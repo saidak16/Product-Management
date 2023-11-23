@@ -566,5 +566,10 @@ namespace Product_Management.PL
                 btnSave_Click(sender, e);
             }
         }
+
+        private void txtRemainingAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

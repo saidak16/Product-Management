@@ -273,7 +273,7 @@ namespace Product_Management.PL
 
         private void استخراجفاتورةمبدئيةToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FRM_Proforma_Invoice frm = new FRM_Proforma_Invoice();
+            FRM_Add_ProformaInvoice frm = new FRM_Add_ProformaInvoice();
             frm.ShowDialog();
         }
 
@@ -536,6 +536,12 @@ namespace Product_Management.PL
             if (e.KeyCode == Keys.F7)
             {
                 FRM_Price_List frm = new FRM_Price_List();
+                frm.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F8)
+            {
+                FRM_Add_ProformaInvoice frm = new FRM_Add_ProformaInvoice();
                 frm.ShowDialog();
             }
         }

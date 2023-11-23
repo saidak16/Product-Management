@@ -1474,6 +1474,16 @@ namespace Product_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap invoice_3366317 {
+            get {
+                object obj = ResourceManager.GetObject("invoice_3366317", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jj_ico {
             get {
                 object obj = ResourceManager.GetObject("jj.ico", resourceCulture);
