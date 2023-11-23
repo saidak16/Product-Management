@@ -174,7 +174,7 @@ namespace Product_Management.PL
 
                 if (isAdded)
                 {
-                    for (int i = 0; i < dgvInvoiceItems.Rows.Count - 1; i++)
+                    for (int i = 0; i < dgvInvoiceItems.Rows.Count; i++)
                     {
                         proforma_Invoice.Proforma_Invoice_Det(dgvInvoiceItems.Rows[i].Cells[0].Value.ToString(),
                                         Convert.ToInt32(txtInvoiceId.Text),
