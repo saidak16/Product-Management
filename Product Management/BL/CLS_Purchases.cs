@@ -390,25 +390,19 @@ namespace Product_Management.BL
             }
             catch (Exception ex)
             {
-                if (!Directory.Exists(@"C:\BMS\BMS_Errors.txt"))
-                    Directory.CreateDirectory(@"C:\BMS\BMS_Errors.txt");
-
-                string errorMessage = DateTime.Now.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + "----------------------------------------------------------------------------------------------------------------------------" + Environment.NewLine;
-
-                File.WriteAllText(@"C:\BMS\BMS_Errors.txt", errorMessage);
                 return null;
             }
         }
 
-        public bool UpdateProductPrice(int orderDetId, int SellingPrice)
+        public bool UpdateProductPrice(int productId, int SellingPrice)
         {
             try
             {
                 DataAccessLayer dal = new DataAccessLayer();
                 SqlParameter[] param = new SqlParameter[2];
 
-                param[0] = new SqlParameter("@orderDetId", SqlDbType.Int);
-                param[0].Value = orderDetId;
+                param[0] = new SqlParameter("@productId", SqlDbType.Int);
+                param[0].Value = productId;
                 
                 param[1] = new SqlParameter("@SellingPrice", SqlDbType.Int);
                 param[1].Value = SellingPrice;

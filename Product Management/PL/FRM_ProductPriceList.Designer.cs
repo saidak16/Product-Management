@@ -68,7 +68,7 @@
             this.txtID.Location = new System.Drawing.Point(633, 12);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(291, 22);
-            this.txtID.TabIndex = 22;
+            this.txtID.TabIndex = 0;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // groupBox1
@@ -141,10 +141,10 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.TextBox txtID;
     }
 }

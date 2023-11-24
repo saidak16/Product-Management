@@ -72,11 +72,12 @@ namespace Product_Management.PL
                     FRM_ProductPrice frm = new FRM_ProductPrice();
 
                     frm.txtId.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    frm.txtProductName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    frm.txtSupName.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    frm.txtBatchNo.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    frm.txtPurPrice.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    frm.txtSealPrice.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    frm.lblProductId.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    frm.txtProductName.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    frm.txtSupName.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    frm.txtBatchNo.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    frm.txtPurPrice.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    frm.txtSealPrice.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
                     frm.ShowDialog();
                 }

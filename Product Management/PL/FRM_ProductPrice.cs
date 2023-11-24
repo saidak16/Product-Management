@@ -37,12 +37,14 @@ namespace Product_Management.PL
             {
                 if (!string.IsNullOrEmpty(txtSealPrice.Text))
                 {
-                    var isValid = purchases.UpdateProductPrice(Convert.ToInt32(txtId.Text), Convert.ToInt32(txtSealPrice.Text));
+                    var isValid = purchases.UpdateProductPrice(Convert.ToInt32(lblProductId.Text), Convert.ToInt32(txtSealPrice.Text));
 
                     if (isValid)
                     {
                         MessageBox.Show("تمت العملية ينجاح", "التحديث", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FRM_ProductPriceList.getMain.DGV();
+                        FRM_ProductPriceList.getMain.txtID.Clear();
+                        FRM_ProductPriceList.getMain.txtID.Focus();
                         this.Close();
                     }
                     else

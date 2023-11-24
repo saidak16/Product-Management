@@ -150,3 +150,83 @@ SELECT [ID] as 'ãÚÑÝ ÇáÝÇÊæÑÉ'
   where CONVERT(nvarchar(50), [Date_ProformaInvoice]) + CONVERT(nvarchar(50), [ID]) + c.First_Name + c.Last_Name + pn.SalesMan like '%' +@search+ '%'
 
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetProductPrice]    Script Date: 2023-11-24 6:01:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetProductPrice]
+@search nvarchar(50)
+as
+SELECT p.[Id] as 'ÇáãÚÑÝ' 
+      ,t.ID_Product as 'ãÚÑÝ ÇáãäÊÌ'
+      ,t.[Product_Name] as 'ÇáãäÊÌ'
+	  ,s.[Name] as 'ÇáãæÑÏ'
+      ,[BatchNumber] as 'ÑÞã ÇáÏÝÚÉ'
+      ,[PurchasePrice] as 'ÓÚÑ ÇáÔÑÇÁ'
+      ,[SellingPrice] as'ÓÚÑ ÇáÈíÚ'
+	  ,u.[DateOfPurchase] as 'ÊÇÑíÎ ÇáØáÈíÉ'
+  FROM [dbo].[PurchaseDetails] p
+  join Product t
+  on t.ID_Product = p.ProductId
+  join Purchases u
+  on u.Id = p.PurchaseId
+  join Suppliers s
+  on s.ID = u.SupplierId
+  where t.Product_Name + s.Name + CONVERT(nvarchar(50),p.BatchNumber) like '%' +@search+ '%'
+
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateProductPrice]    Script Date: 2023-11-24 6:02:06 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER proc [dbo].[UpdateProductPrice]
+@productId int,
+@SellingPrice int
+as
+UPDATE [dbo].[PurchaseDetails]
+   SET [SellingPrice] = @SellingPrice
+ WHERE ProductId = @productId
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetAllOrders]    Script Date: 2023-11-24 6:14:58 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetAllOrders]
+@search nvarchar(50)
+as
+SELECT distinct o.[ID_Order] as 'ÇáãÚÑÝ'
+      ,[Date_Order] as 'ÊÇÑíÎ ÇáØáÈíÉ'
+      ,c.First_Name + ' ' + c.Last_Name as 'ÇáÚãíá'
+      ,[Des_Order] as 'æÕÝ ÇáØáÈíÉ'
+      ,[SalesMan] as 'ÇáÈÇÆÚ'
+      ,[TotalAmount] as 'ÇÌãÇáí ÇáÝÇÊæÑÉ'
+      ,[PaidAmount] as 'ÇáãÈáÛ ÇáãÏÝæÚ'
+      ,[RemainingAmount] as 'ÇáãÈáÛ ÇáãÊÈÞí'
+  FROM [dbo].[Order] o
+  join Customer c
+  on c.ID_Customer = o.Customer_ID
+  join Order_Details dt
+  on dt.ID_Order = o.ID_Order
+  where CONVERT(nvarchar(50), o.ID_Order) + o.Des_Order + CONVERT(nvarchar(50), o.Date_Order) + c.First_Name + c.Last_Name + o.SalesMan like '%' +@search+ '%'
+  and o.TotalAmount > 0
+
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
