@@ -68,11 +68,11 @@ namespace Product_Management.PL
             DataTable dt = new DataTable();
             dt = _Stock.GetStockStatuse();
 
-            if(dt.Rows.Count > 0)
+            if(_Stock.GetStockCount() > 0)
             {
                 this.lblStock.Visible = true;
                 this.lblStock.BackColor = Color.Yellow;
-                this.lblStock.Text = " المخزون : " + dt.Rows.Count.ToString();
+                this.lblStock.Text = " المخزون : " + _Stock.GetStockCount().ToString();
                 picStock.Visible = true;
                 SystemSounds.Asterisk.Play();
                 
@@ -542,6 +542,12 @@ namespace Product_Management.PL
             if (e.KeyCode == Keys.F8)
             {
                 FRM_Add_ProformaInvoice frm = new FRM_Add_ProformaInvoice();
+                frm.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F9)
+            {
+                FRM_ٍStockStatus frm = new FRM_ٍStockStatus();
                 frm.ShowDialog();
             }
         }

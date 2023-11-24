@@ -1,0 +1,32 @@
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-24 1:36:10 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetStockStatus]
+@search nvarchar(50)
+as
+SELECT distinct [ItemId] as '„⁄—› «·’‰›'
+	  ,t.Product_Name as '«·’‰›'
+      ,s.[QTY] as '«·ﬂ„Ì… «·Õ«·Ì… »«·„Œ“‰'
+	  ,FORMAT(dt.PurchasePrice, 'N') as '”⁄— «·‘—«¡'
+	  ,FORMAT((s.QTY * dt.PurchasePrice) , 'N') as '«·ﬁÌ„…'
+	  ,(select MAX(SellingPrice) from PurchaseDetails where dt.ProductId = s.ItemId) as '”⁄— «·»Ì⁄'
+  FROM [dbo].[Stock] s
+  join Product t
+  on s.ItemId = t.ID_Product
+  join PurchaseDetails dt
+  on dt.ProductId =s.ItemId
+where t.Product_Name like '%' +@search+ '%'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetStockCount
+as
+select distinct COUNT(*) from Stock s where s.QTY <= (select y.QtyAlerts from SystemAlerts y)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

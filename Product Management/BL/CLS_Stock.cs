@@ -37,6 +37,19 @@ namespace Product_Management.BL
             return dt;
         }
 
+        public int GetStockCount()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+
+            dt = dal.SelectData("GetStockCount", null);
+            dal.Close();
+            
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
         public DataTable GetExpDateStore()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
