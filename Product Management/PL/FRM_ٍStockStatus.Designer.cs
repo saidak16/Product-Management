@@ -59,7 +59,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(7, 53);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(996, 382);
@@ -69,7 +69,7 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(433, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(315, 22);
             this.txtSearch.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.btnPrint.Image = global::Product_Management.Properties.Resources.icons8_send_to_printer_24__2_;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.Location = new System.Drawing.Point(361, 599);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(128, 40);
             this.btnPrint.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.btnExit.Image = global::Product_Management.Properties.Resources.icon_Exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(498, 599);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(148, 40);
             this.btnExit.TabIndex = 4;
@@ -132,9 +132,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 440);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1003, 151);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
@@ -156,7 +156,7 @@
             this.txtStockValue.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtStockValue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockValue.Location = new System.Drawing.Point(341, 96);
-            this.txtStockValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStockValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtStockValue.Name = "txtStockValue";
             this.txtStockValue.ReadOnly = true;
             this.txtStockValue.Size = new System.Drawing.Size(278, 26);
@@ -208,7 +208,7 @@
             // 
             this.txtFinishedItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtFinishedItems.Location = new System.Drawing.Point(52, 26);
-            this.txtFinishedItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFinishedItems.Margin = new System.Windows.Forms.Padding(4);
             this.txtFinishedItems.Name = "txtFinishedItems";
             this.txtFinishedItems.ReadOnly = true;
             this.txtFinishedItems.Size = new System.Drawing.Size(121, 26);
@@ -218,18 +218,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(183, 30);
+            this.label4.Location = new System.Drawing.Point(176, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 19);
+            this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 4;
-            this.label4.Text = "نواقص المخزن";
+            this.label4.Text = "الاصناف المنتهية";
             // 
             // txtAvilableItems
             // 
             this.txtAvilableItems.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtAvilableItems.Location = new System.Drawing.Point(416, 28);
-            this.txtAvilableItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAvilableItems.Margin = new System.Windows.Forms.Padding(4);
             this.txtAvilableItems.Name = "txtAvilableItems";
             this.txtAvilableItems.ReadOnly = true;
             this.txtAvilableItems.Size = new System.Drawing.Size(121, 26);
@@ -250,7 +250,7 @@
             // 
             this.txtItemsCount.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtItemsCount.Location = new System.Drawing.Point(785, 27);
-            this.txtItemsCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemsCount.Margin = new System.Windows.Forms.Padding(4);
             this.txtItemsCount.Name = "txtItemsCount";
             this.txtItemsCount.ReadOnly = true;
             this.txtItemsCount.Size = new System.Drawing.Size(121, 26);
@@ -281,7 +281,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRM_ٍStockStatus";

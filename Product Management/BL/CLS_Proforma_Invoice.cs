@@ -139,5 +139,24 @@ namespace Product_Management.BL
             dal.Close();
         }
 
+        public DataTable GetProformaInvoices(string search)
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+                SqlParameter[] param = new SqlParameter[1];
+
+                param[0] = new SqlParameter("@search", SqlDbType.NVarChar, 50);
+                param[0].Value = search;
+
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetProformaInvoices", param);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

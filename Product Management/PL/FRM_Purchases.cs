@@ -43,6 +43,7 @@ namespace Product_Management.PL
             if (frm == null)
                 frm = this;
             DVG();
+            txtInvoiceCount.Text = dvgPurchases.Rows.Count.ToString();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace Product_Management.PL
             try
             {
                 dvgPurchases.DataSource = purchases.SearchPurchases(txtID.Text);
+                txtSearchInvoices.Text = dvgPurchases.Rows.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -69,7 +71,7 @@ namespace Product_Management.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FRM_Add_MultiPurchase _Purchases = new FRM_Add_MultiPurchase();
+            FRM_Add_Purchase_Invoice _Purchases = new FRM_Add_Purchase_Invoice();
             _Purchases.ShowDialog();
         }
 

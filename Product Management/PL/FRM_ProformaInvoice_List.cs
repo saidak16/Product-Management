@@ -19,7 +19,7 @@ namespace Product_Management.PL
         public FRM_ProformaInvoice_List()
         {
             InitializeComponent();
-            dataGridView1.DataSource = proforma_Invoice.Proforma_Invoice_Del("");
+            dataGridView1.DataSource = proforma_Invoice.GetProformaInvoices("");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace Product_Management.PL
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = proforma_Invoice.Proforma_Invoice_Del(txtID.Text);
+            dataGridView1.DataSource = proforma_Invoice.GetProformaInvoices(txtID.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

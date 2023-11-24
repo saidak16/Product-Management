@@ -1,27 +1,3 @@
-USE [Product_DB]
-GO
-/****** Object:  StoredProcedure [dbo].[GetStockStatus]    Script Date: 2023-11-24 1:36:10 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER proc [dbo].[GetStockStatus]
-@search nvarchar(50)
-as
-SELECT distinct [ItemId] as '„⁄—› «·’‰›'
-	  ,t.Product_Name as '«·’‰›'
-      ,s.[QTY] as '«·ﬂ„Ì… «·Õ«·Ì… »«·„Œ“‰'
-	  ,FORMAT(dt.PurchasePrice, 'N') as '”⁄— «·‘—«¡'
-	  ,FORMAT((s.QTY * dt.PurchasePrice) , 'N') as '«·ﬁÌ„…'
-	  ,(select MAX(SellingPrice) from PurchaseDetails where dt.ProductId = s.ItemId) as '”⁄— «·»Ì⁄'
-  FROM [dbo].[Stock] s
-  join Product t
-  on s.ItemId = t.ID_Product
-  join PurchaseDetails dt
-  on dt.ProductId =s.ItemId
-where t.Product_Name like '%' +@search+ '%'
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 create proc GetStockCount
 as
@@ -29,4 +5,134 @@ select distinct COUNT(*) from Stock s where s.QTY <= (select y.QtyAlerts from Sy
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetTotalStockCount
+as
+select distinct COUNT(*) from Stock s
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetAvilableStockCount
+as
+select distinct COUNT(*) from Stock s where s.QTY > 0
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create proc GetEndStockCount
+as
+select distinct COUNT(*) from Stock s where s.QTY = 0
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetAllPurchases]    Script Date: 2023-11-24 5:01:05 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetAllPurchases]
+as
+SELECT distinct p.[Id] as '«·„⁄—›'
+      ,p.[InvoiceNumber] as '—ﬁ„ «·›« Ê—…'
+      ,s.Name as '«·„Ê—œ'
+      ,p.[DateOfPurchase] as ' «—ÌŒ «·‘—«¡'
+	  ,py.Name as 'ÿ—Ìﬁ… «·œ›⁄'
+	  ,p.price as '«Ã„«·Ì «·›« Ê—…'
+      ,p.[PaidAmount] as '«·„»·€ «·„œ›Ê⁄'
+      ,p.[RemainingAmount] as '«·„»·€ «·„ »ﬁÌ'
+	   FROM [dbo].[Purchases] p
+  join PurchaseDetails d
+  on p.Id = d.PurchaseId
+  join Suppliers s
+  on 
+  p.SupplierId = s.ID
+  join Product t
+  on
+  d.ProductId = t.ID_Product
+  join PaymentMethod py
+  on py.Id = p.PaymentMethodId
+--SELECT p.[Id] as '«·„⁄—›'
+--      ,s.Name as '«·„Ê—œ'
+--      ,t.Product_Name as '«·„‰ Ã'
+--      ,p.[DateOfPurchase] as ' «—ÌŒ «·‘—«¡'
+--      ,d.ExpDate as ' «—ÌŒ «·’·«ÕÌ…'
+--      ,d.[QTY] as '«·ﬂ„Ì…'
+--      ,d.PurchasePrice as '”⁄— «·‘—«¡'
+--      ,d.SellingPrice as '”⁄— «·»Ì⁄'
+--      ,d.TotalPrice as '«·”⁄—'
+--      ,p.[PaidAmount] as '«·„»·€ «·„œ›Ê⁄'
+--      ,p.[RemainingAmount] as '«·„»·€ «·„ »ﬁÌ'
+--      ,p.[PaymentMethodId] as 'ÿ—Ìﬁ… «·œ›⁄'
+--      ,p.[InvoiceNumber] as '—ﬁ„ «·›« Ê—…'
+--      ,d.BatchNumber as '—ﬁ„ «·œ›⁄…'
+--	  ,p.price as '«Ã„«·Ì «·›« Ê—…'
+--  FROM [dbo].[Purchases] p
+--  join PurchaseDetails d
+--  on p.Id = d.PurchaseId
+--  join Suppliers s
+--  on 
+--  p.SupplierId = s.ID
+--  join Product t
+--  on
+--  d.ProductId = t.ID_Product
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[SearchPurchases]    Script Date: 2023-11-24 5:06:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[SearchPurchases]
+@search nvarchar(50)
+as
+SELECT distinct p.[Id] as '«·„⁄—›'
+      ,p.[InvoiceNumber] as '—ﬁ„ «·›« Ê—…'
+      ,s.Name as '«·„Ê—œ'
+      ,p.[DateOfPurchase] as ' «—ÌŒ «·‘—«¡'
+	  ,py.Name as 'ÿ—Ìﬁ… «·œ›⁄'
+	  ,p.price as '«Ã„«·Ì «·›« Ê—…'
+      ,p.[PaidAmount] as '«·„»·€ «·„œ›Ê⁄'
+      ,p.[RemainingAmount] as '«·„»·€ «·„ »ﬁÌ'
+	   FROM [dbo].[Purchases] p
+  join PurchaseDetails d
+  on p.Id = d.PurchaseId
+  join Suppliers s
+  on 
+  p.SupplierId = s.ID
+  join Product t
+  on
+  d.ProductId = t.ID_Product
+  join PaymentMethod py
+  on py.Id = p.PaymentMethodId
+--SELECT p.[Id] as '«·„⁄—›'
+--      ,s.Name as '«·„Ê—œ'
+--      ,t.Product_Name as '«·„‰ Ã'
+--      ,p.[DateOfPurchase] as ' «—ÌŒ «·‘—«¡'
+--      ,d.ExpDate as ' «—ÌŒ «·’·«ÕÌ…'
+--      ,d.[QTY] as '«·ﬂ„Ì…'
+--      ,d.PurchasePrice as '”⁄— «·‘—«¡'
+--      ,d.SellingPrice as '”⁄— «·»Ì⁄'
+--      ,d.TotalPrice as '«·”⁄—'
+--      ,p.[PaidAmount] as '«·„»·€ «·„œ›Ê⁄'
+--      ,p.[RemainingAmount] as '«·„»·€ «·„ »ﬁÌ'
+--      ,p.[PaymentMethodId] as 'ÿ—Ìﬁ… «·œ›⁄'
+--      ,p.[InvoiceNumber] as '—ﬁ„ «·›« Ê—…'
+--      ,d.BatchNumber as '—ﬁ„ «·œ›⁄…'
+--	  ,p.price as '«Ã„«·Ì «·›« Ê—…'
+--  FROM [dbo].[Purchases] p
+--  join PurchaseDetails d
+--  on p.Id = d.PurchaseId
+--  join Suppliers s
+--  on 
+--  p.SupplierId = s.ID
+--  join Product t
+--  on
+--  d.ProductId = t.ID_Product
+  where s.Name  + py.Name  like '%' + @search + '%' 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

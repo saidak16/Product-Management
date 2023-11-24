@@ -14,21 +14,22 @@ namespace Product_Management.PL
     public partial class FRM_ٍStockStatus : Form
     {
         CLS_Reporting reporting = new CLS_Reporting();
+        CLS_Stock stock = new CLS_Stock();
 
         public FRM_ٍStockStatus()
         {
             InitializeComponent();
 
             dataGridView1.DataSource = reporting.GetStockStatus("");
-            txtItemsCount.Text = dataGridView1.Rows.Count.ToString();
+            txtItemsCount.Text = stock.GetTotalStockCount().ToString();
 
-            var foundRows = this.dataGridView1.Rows.Cast<DataGridViewRow>();
+            //var foundRows = this.dataGridView1.Rows.Cast<DataGridViewRow>();
 
-            var finishedItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) == 0);
-            var avilableItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) > 0);
+            //var finishedItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) == 0);
+            //var avilableItems = foundRows.Where(row => Convert.ToInt32(row.Cells[2].Value) > 0);
 
-            txtAvilableItems.Text = avilableItems.Count().ToString();
-            txtFinishedItems.Text = finishedItems.Count().ToString();
+            txtAvilableItems.Text = stock.GetAvilableStockCount().ToString(); //avilableItems.Count().ToString();
+            txtFinishedItems.Text = stock.GetEndStockCount().ToString(); //finishedItems.Count().ToString();
 
             txtStockValue.Text = reporting.GetStockValue();
         }

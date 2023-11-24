@@ -50,6 +50,45 @@ namespace Product_Management.BL
             return Convert.ToInt32(dt.Rows[0][0]);
         }
 
+        public int GetTotalStockCount()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+
+            dt = dal.SelectData("GetTotalStockCount", null);
+            dal.Close();
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
+        public int GetAvilableStockCount()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+
+            dt = dal.SelectData("GetAvilableStockCount", null);
+            dal.Close();
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
+        public int GetEndStockCount()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+
+            dal.Open();
+            DataTable dt = new DataTable();
+
+            dt = dal.SelectData("GetEndStockCount", null);
+            dal.Close();
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
         public DataTable GetExpDateStore()
         {
             DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
