@@ -78,7 +78,7 @@ namespace Product_Management.PL
             dt.Columns.Add("اسم الصنف");
             dt.Columns.Add("سعر الوحدة");
             dt.Columns.Add("الكمية");
-            dt.Columns.Add("الخصم (%)");
+           // dt.Columns.Add("الخصم (%)");
             dt.Columns.Add("المبلغ الاجمالي");
 
             dgvInvoiceItems.DataSource = dt;
@@ -235,13 +235,13 @@ namespace Product_Management.PL
                     r[1] = txtItemName.Text;
                     r[2] = txtPrice.Text;
                     r[3] = txtQty.Text;
-                    r[4] = txtDiscount.Text;
-                    r[5] = txtAmount.Text;
+                    //r[4] = txtDiscount.Text;
+                    r[4] = txtAmount.Text;
 
                     dt.Rows.Add(r);
                     dgvInvoiceItems.DataSource = dt;
 
-                    txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+                    txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[4].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString();
 
                     LoadItemsData();
                     clearBoxes();
@@ -363,9 +363,9 @@ namespace Product_Management.PL
                                         Convert.ToInt32(txtInvoiceId.Text),
                                         Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value),
                                         dgvInvoiceItems.Rows[i].Cells[2].Value.ToString(),
-                                        Convert.ToDouble(dgvInvoiceItems.Rows[i].Cells[4].Value),
+                                        Convert.ToInt32(txtDiscount.Text),
                                         (Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[2].Value) * Convert.ToInt32(dgvInvoiceItems.Rows[i].Cells[3].Value)).ToString(),
-                                        dgvInvoiceItems.Rows[i].Cells[5].Value.ToString(),
+                                        dgvInvoiceItems.Rows[i].Cells[4].Value.ToString(),
                                         0);
 
                         if (!isChecked)
@@ -538,7 +538,7 @@ namespace Product_Management.PL
         private void btnDeleteItem_Click(object sender, EventArgs e)
         {
             dgvInvoiceItems.Rows.RemoveAt(dgvInvoiceItems.CurrentRow.Index);
-            txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[5].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+            txtInvoiceAmount.Text = (from DataGridViewRow row in dgvInvoiceItems.Rows where row.Cells[4].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString();
             txtSumTotal.Text = dgvInvoiceItems.Rows.Count.ToString();
             cmbItems.Focus();
         }
