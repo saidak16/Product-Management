@@ -230,3 +230,46 @@ SELECT distinct o.[ID_Order] as '«·„⁄—›'
 
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+  USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetOrderInstallment]    Script Date: 2023-11-25 11:35:20 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[GetOrderInstallment]
+@orderId int
+as
+SELECT distinct
+       [PaymentDate] as ' «—ÌŒ «·ﬁ”ÿ'
+      ,[OrderId] as '—ﬁ„ «·›« Ê—…'
+      ,FORMAT([TotalAmount], 'N') as '«Ã„«·Ì „»·€ «·›« Ê—…'
+      ,FORMAT([PaidAmount], 'N') as '«·„»·€ «·„œ›Ê⁄ ⁄‰œ «·”œ«œ'
+      ,FORMAT([Remainamont], 'N') as '«·„»€ «·„ »ﬁÌ ⁄‰œ «·”œ«œ'
+      ,FORMAT([CurrentPayment], 'N') as 'ﬁÌ„… «·œ›⁄Ì…'
+  FROM [dbo].[OrderInstallment]
+  where OrderId = @orderId
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetPurchasesInstallment]    Script Date: 2023-11-25 11:50:47 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER proc [dbo].[GetPurchasesInstallment]
+@orderId int
+as
+SELECT distinct
+       [PaymentDate] as ' «—ÌŒ «·ﬁ”ÿ'
+      ,[OrderId] as '—ﬁ„ «·›« Ê—…'
+      ,FORMAT([TotalAmount], 'N') as '«Ã„«·Ì «·›« Ê—…'
+      ,FORMAT([PaidAmount], 'N') as '«·„»·€ «·„œ›Ê⁄'
+      ,FORMAT([Remainamont], 'N') as '«·„»·€ «·„ »ﬁÌ'
+      ,FORMAT([CurrentPayment], 'N') as 'ﬁÌ„… «·œ›⁄Ì…'
+  FROM [dbo].[PurchasesInstallment]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
