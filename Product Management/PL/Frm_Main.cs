@@ -13,6 +13,7 @@ namespace Product_Management.PL
     {
         private static Frm_Main frm;
         CLS_Stock _Stock = new CLS_Stock();
+        CLS_Reporting reporting = new CLS_Reporting();
         static void frm_FormClosed(object sender, FormClosedEventArgs e)
         {
             frm = null;
@@ -306,9 +307,16 @@ namespace Product_Management.PL
 
         private void مطلوباتالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rpt_CustomersLiabilities myrpt = new rpt_CustomersLiabilities();
+            DataTable dt = new DataTable();
+            rpt_TotalCustomersLiabilities myrpt = new rpt_TotalCustomersLiabilities();
+            dt = reporting.GetTotalCustomersLiabilities();
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("لا يوجد عناصر");
+            }
+            myrpt.SetDataSource(dt);
             FRM_Single_Product myfrm = new FRM_Single_Product();
-            myrpt.Refresh();
             myfrm.crystalReportViewer1.ReportSource = myrpt;
             myfrm.ShowDialog();
         }

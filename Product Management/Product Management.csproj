@@ -670,6 +670,12 @@
       <DependentUpon>rpt_Suppliers_Receivables.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RPT\rpt_TotalCustomersLiabilities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_TotalCustomersLiabilities.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="PL\FRM_Add_Employee.resx">
       <DependentUpon>FRM_Add_Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -959,6 +965,10 @@
     <EmbeddedResource Include="RPT\rpt_Suppliers_Receivables.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Suppliers_Receivables.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rpt_TotalCustomersLiabilities.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_TotalCustomersLiabilities.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="DBSet\ReportsDataSet.xsc">
       <DependentUpon>ReportsDataSet.xsd</DependentUpon>

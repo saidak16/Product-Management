@@ -31,6 +31,25 @@ namespace Product_Management.BL
             }
         }
 
+         public DataTable GetTotalCustomersLiabilities()
+        {
+            try
+            {
+                DataAccessLayer dal = new DataAccessLayer();
+
+                dal.Open();
+                DataTable dt = new DataTable();
+                dt = dal.SelectData("GetTotalCustomersLiabilities", null);
+                dal.Close();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
          public string GetStockValue()
         {
             try
