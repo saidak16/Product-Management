@@ -1,0 +1,5 @@
+
+  update Purchases set RemainingAmount = (RemainingAmount * -1) where RemainingAmount < 0
+
+  ------------------------------------------------------------------------------------------------------------------------------
+
