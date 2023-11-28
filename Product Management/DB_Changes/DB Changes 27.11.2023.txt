@@ -1,5 +1,63 @@
 
-  update Purchases set RemainingAmount = (RemainingAmount * -1) where RemainingAmount < 0
-
+  
   ------------------------------------------------------------------------------------------------------------------------------
 
+  USE [Product_DB]
+GO
+
+/****** Object:  Table [dbo].[Employees]    Script Date: 2023-11-27 8:03:23 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Employees](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [nvarchar](max) NOT NULL,
+	[Job] [nvarchar](50) NOT NULL,
+	[Phone] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[Address] [int] NOT NULL,
+	[Hlidays] [int] NOT NULL,
+	[EmpImage] [image] NOT NULL,
+ CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create proc AddEmployee
+       @FullName nvarchar(MAX)
+      ,@Job nvarchar(50)
+      ,@Phone nvarchar(50)
+      ,@Email nvarchar(50)
+      ,@Address nvarchar(50)
+      ,@Hlidays int
+      ,@EmpImage image
+	  ,@Salary int
+	  as
+INSERT INTO [dbo].[Employees]
+           ([FullName]
+           ,[Job]
+           ,[Phone]
+           ,[Email]
+           ,[Address]
+           ,[Hlidays]
+           ,[EmpImage]
+		   ,[Salary])
+     VALUES
+           (@FullName
+           ,@Job
+           ,@Phone
+           ,@Email
+           ,@Address
+           ,@Hlidays
+           ,@EmpImage
+		   ,@Salary)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
