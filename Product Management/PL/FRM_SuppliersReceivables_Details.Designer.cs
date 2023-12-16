@@ -70,11 +70,12 @@
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(720, 421);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(197, 53);
+            this.btnExit.Size = new System.Drawing.Size(125, 53);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "الخروج (F4)";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FRM_SuppliersReceivables_Details
             // 

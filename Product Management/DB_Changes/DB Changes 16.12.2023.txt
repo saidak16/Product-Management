@@ -1,0 +1,83 @@
+
+ALTER proc [dbo].[GetMovementOfItems]
+@seaarch nvarchar(50)
+as
+select 
+t.ID_Product as 'المعرف'
+,t.Product_Name as 'المنتج'
+,s.QTY as 'الكمية الحالية في المخزن'
+,(select SUM(QTE) from Order_Details dt where dt.ID_Product = d.ProductId) as 'اجمالي المبيعات'
+from PurchaseDetails d
+join Product t
+on d.ProductId = t.ID_Product
+join Order_Details o
+on o.ID_Product = t.ID_Product
+join Stock s
+on s.ItemId = d.ProductId
+where t.Product_Name like '%' +@seaarch+ '%'
+group by t.Product_Name, t.ID_Product, s.QTY, d.ProductId
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+USE [Product_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateCustomersLiabilities]    Script Date: 2023-12-16 3:40:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[UpdateCustomersLiabilities]
+@ID int,
+@AmountPaid int
+as
+if((select RemainingAmount from [Order] where ID_Order = @ID) > 0)
+BEGIN
+  UPDATE [dbo].[Order]
+  SET [PaidAmount] = PaidAmount + @AmountPaid
+      ,[RemainingAmount] = RemainingAmount - @AmountPaid
+ WHERE ID_Order = @ID
+END
+
+ELSE
+
+BEGIN
+UPDATE [dbo].[Order]
+   SET [RemainingAmount] = RemainingAmount - @AmountPaid
+ WHERE ID_Order = @ID
+END
+
+-------------------------------------------
+
+INSERT INTO [dbo].[OrderInstallment]
+           ([PaymentDate]
+           ,[OrderId]
+           ,[TotalAmount]
+           ,[PaidAmount]
+           ,[Remainamont]
+           ,[CurrentPayment])
+          (
+		  
+SELECT GETDATE() as 'PaymentDate'
+      ,ID_Order
+      ,[TotalAmount]
+      ,[PaidAmount]
+      ,[RemainingAmount]
+	  ,[PaidAmount]
+  FROM [dbo].[Order]
+  where TotalAmount is not null
+  and ID_Order = @ID
+		  )
+
+------------------------------------------------
+
+update [Order] set RemainingAmount = 0 where RemainingAmount < 0
+update [Order] set PaidAmount = 0 where PaidAmount < 0
+update [Order] set TotalAmount = TotalAmount * -1 where TotalAmount < 0
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+update [Order] set RemainingAmount = 0 where RemainingAmount < 0
+update [Order] set PaidAmount = 0 where PaidAmount < 0
+update [Order] set TotalAmount = TotalAmount * -1 where TotalAmount < 0

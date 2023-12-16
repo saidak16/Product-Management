@@ -1,0 +1,7 @@
+ delete FROM [Product_DB].[dbo].[Purchases] 
+  --join Suppliers s
+  --on s.ID = p.SupplierId
+  where Id <> InvoiceNumber
+  and SupplierId = 5
+  and InvoiceNumber = 3105
+  and Id <> 3126
