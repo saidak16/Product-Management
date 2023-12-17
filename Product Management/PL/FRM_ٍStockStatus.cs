@@ -31,7 +31,8 @@ namespace Product_Management.PL
             txtAvilableItems.Text = stock.GetAvilableStockCount().ToString(); //avilableItems.Count().ToString();
             txtFinishedItems.Text = stock.GetEndStockCount().ToString(); //finishedItems.Count().ToString();
 
-            txtStockValue.Text = reporting.GetStockValue();
+            //txtStockValue.Text = reporting.GetStockValue();
+            txtStockValue.Text = (from DataGridViewRow row in dataGridView1.Rows where row.Cells[4].FormattedValue.ToString() != string.Empty select Convert.ToDouble(row.Cells[4].FormattedValue)).Sum().ToString("N");
         }
 
         private void FRM_ٍStockStatus_Load(object sender, EventArgs e)
